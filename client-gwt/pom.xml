@@ -1,106 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project
-  xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-  <!-- POM file generated with GWT webAppCreator -->
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.topophone</groupId>
-  <artifactId>client-gwt</artifactId>
-  <packaging>war</packaging>
-  <version>1.0-SNAPSHOT</version>
+	<!-- POM file generated with GWT webAppCreator -->
+	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-                <groupId>fr.topophone</groupId>
-                <artifactId>website</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-        </parent>
+		<groupId>fr.topophone</groupId>
+		<artifactId>website</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	<artifactId>client-gwt</artifactId>
+	<packaging>war</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>Topophone GWT</name>
 
+<!-- 	<properties> -->
+		<!-- GWT needs at least java 1.5 -->
+<!-- 		<webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory> -->
+<!-- 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> -->
+<!-- 	</properties> -->
+	
+	 <dependencies>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-user</artifactId>
+            <version>${gwt.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-dev</artifactId>
+            <version>${gwt.version}</version>
+        </dependency>
+    </dependencies>
 
-  <properties>
-    <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
-  </properties>
-
-  <build>
-    <!-- Generate compiled stuff in the folder used for developing mode -->
-    <outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
-
-    <plugins>
-
-      <!-- GWT Maven Plugin -->
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>gwt-maven-plugin</artifactId>
-        <version>2.5.0-rc1</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>compile</goal>
-              <goal>test</goal>
-              <goal>i18n</goal>
-              <goal>generateAsync</goal>
-            </goals>
-          </execution>
-        </executions>
-        <!-- Plugin configuration. There are many available options, see 
-          gwt-maven-plugin documentation at codehaus.org -->
-        <configuration>
-          <runTarget>gwt.html</runTarget>
-          <hostedWebapp>${webappDirectory}</hostedWebapp>
-          <i18nMessagesBundle>com.topophone.client.Messages</i18nMessagesBundle>
-        </configuration>
-      </plugin>
-
-      <!-- Copy static web files before executing gwt:run -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-war-plugin</artifactId>
-        <version>2.1.1</version>
-        <executions>
-          <execution>
-            <phase>compile</phase>
-            <goals>
-              <goal>exploded</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <webappDirectory>${webappDirectory}</webappDirectory>
-        </configuration>
-      </plugin>
-<plugin>
-                                <groupId>org.mortbay.jetty</groupId>
-                                <artifactId>maven-jetty-plugin</artifactId>
-                                <version>6.1.10</version>
-                                <configuration>
-                                        <scanIntervalSeconds>10</scanIntervalSeconds>
-                                        <stopKey>foo</stopKey>
-                                        <stopPort>9999</stopPort>
-                                </configuration>
-                                <executions>
-                                        <execution>
-                                                <id>start-jetty</id>
-                                                <phase>pre-integration-test</phase>
-                                                <goals>
-                                                        <goal>run</goal>
-                                                </goals>
-                                                <configuration>
-                                                        <scanIntervalSeconds>0</scanIntervalSeconds>
-                                                        <daemon>true</daemon>
-                                                </configuration>
-                                        </execution>
-                                        <execution>
-                                                <id>stop-jetty</id>
-                                                <phase>post-integration-test</phase>
-                                                <goals>
-                                                        <goal>stop</goal>
-                                                </goals>
-                                        </execution>
-                                </executions>
-                        </plugin>
-
-    </plugins>
-  </build>
-
+	 <build>
+        <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>gwt-maven-plugin</artifactId>
+                <configuration>
+                    <runTarget>Topophone.html</runTarget>
+                    <extraJvmArgs>
+                        -Xmx512M -Xss128M
+                    </extraJvmArgs>
+                    <localWorkers>1</localWorkers>
+                    <compileReport>true</compileReport>
+                    <modules>
+                        <module>fr.topophone.Topophone</module>
+                    </modules>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <configuration>
+                    <downloadSources>true</downloadSources>
+                    <downloadJavadocs>false</downloadJavadocs>
+                    <wtpversion>2.0</wtpversion>
+                    <additionalBuildcommands>
+                        <buildCommand>
+                            <name>com.google.gwt.eclipse.core.gwtProjectValidator</name>
+                        </buildCommand>
+                    </additionalBuildcommands>
+                    <additionalProjectnatures>
+                        <projectnature>org.eclipse.ajdt.ui.ajnature</projectnature>
+                        <projectnature>com.google.gwt.eclipse.core.gwtNature</projectnature>
+                    </additionalProjectnatures>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+	 
 </project>
