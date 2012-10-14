@@ -1,0 +1,94 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+	<ui:style>
+		.center {
+			margin: 0 auto;
+			min-height: 100%;
+			position: relative;
+			width: 650px;
+			padding-top: 5px;
+		}
+		
+		.menu-itemsContainer {
+			overflow: hidden;
+			position: relative;
+			text-align: center;
+			height: 50px;
+			width: 650px;
+			overflow: visible;
+			white-space: nowrap;
+		}
+		
+		.menu-entry {
+			display: inline-block;
+			width: 130px;
+		}
+		
+		.menu-entry-c-gapper {
+			padding: 0 4px;
+		}
+		
+		.menu-entry-c-wrapper {
+			border-top: 1px solid #999999;
+			color: #999999;
+			cursor: pointer;
+			font: bold 12px/1.1em "Helvetica", "Arial", "sans-serif";
+		}
+		
+		.menu-entry-label {
+			display: inline-block;
+			padding: 8px;
+		}
+	</ui:style>
+	<g:HTMLPanel styleName="{style.center}">
+		<div class="{style.menu-itemsContainer}">
+			<div class="{style.menu-entry}">
+				<div class="{style.menu-entry-c-gapper}">
+					<div class="{style.menu-entry-c-wrapper}">
+						<div>
+							<p style="line-height: 50px; width: auto;" class="{style.menu-entry-label}">Qui&nbsp;sommes-nous?</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="{style.menu-entry}">
+				<div class="{style.menu-entry-c-gapper}">
+					<div class="{style.menu-entry-c-wrapper}">
+						<div>
+							<p style="line-height: 50px; width: auto;" class="{style.menu-entry-label}">Artistes</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="{style.menu-entry}">
+				<div class="{style.menu-entry-c-gapper}">
+					<div class="{style.menu-entry-c-wrapper}">
+						<div>
+							<p style="line-height: 50px; width: auto;" class="{style.menu-entry-label}">Actions</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="{style.menu-entry}">
+				<div class="{style.menu-entry-c-gapper}">
+					<div class="{style.menu-entry-c-wrapper}">
+						<div>
+							<p style="line-height: 50px; width: auto;" class="{style.menu-entry-label}">Intégrez le Topophonie</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="{style.menu-entry}">
+				<div class="{style.menu-entry-c-gapper}">
+					<div class="{style.menu-entry-c-wrapper}">
+						<div>
+							<p style="line-height: 50px; width: auto;" class="{style.menu-entry-label}">Partenaires</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder>

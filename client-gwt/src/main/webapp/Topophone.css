@@ -51,3 +51,22 @@ body {
 	text-align: justify;
 }
 
+/*
+#SITE_PAGES
+{
+    left: 50%;
+    width: 1000px;
+}
+*/
+/*#SITE_HEADER, #SITE_FOOTER #SITE_PAGES
+{
+    position: relative;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+}*/
+/* .hidden { */
+/* 	display: none !important; */
+/* } */

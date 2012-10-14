@@ -14,10 +14,8 @@ public class MainActivity extends AbstractActivity implements
 	// Alternatively, could be injected via GIN
 	private ClientFactory clientFactory;
 	// Name that will be appended to "Hello,"
-	private String name;
 
 	public MainActivity(MainPlace place, ClientFactory clientFactory) {
-		this.name = place.getHelloName();
 		this.clientFactory = clientFactory;
 	}
 

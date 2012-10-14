@@ -3,7 +3,6 @@ package fr.topophone.client.main;
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceTokenizer;
 
-//public class HelloPlace extends ActivityPlace<HelloActivity>
 public class MainPlace extends Place
 {
 	private String helloName;
@@ -35,15 +34,4 @@ public class MainPlace extends Place
 
 	}
 	
-//	@Override
-//	protected Place getPlace(String token)
-//	{
-//		return new HelloPlace(token);
-//	}
-//
-//	@Override
-//	protected Activity getActivity()
-//	{
-//		return new HelloActivity("David");
-//	}
 }

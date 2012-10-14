@@ -1,13 +1,13 @@
-package fr.topophone.client.header;
+package fr.topophone.client.menu;
 
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceTokenizer;
 
-public class HeaderPlace extends Place
+public class MenuPlace extends Place
 {
 	private String goodbyeName;
 	
-	public HeaderPlace(String token)
+	public MenuPlace(String token)
 	{
 		this.goodbyeName = token;
 	}
@@ -17,18 +17,18 @@ public class HeaderPlace extends Place
 		return goodbyeName;
 	}
 
-	public static class Tokenizer implements PlaceTokenizer<HeaderPlace>
+	public static class Tokenizer implements PlaceTokenizer<MenuPlace>
 	{
 		@Override
-		public String getToken(HeaderPlace place)
+		public String getToken(MenuPlace place)
 		{
 			return place.getGoodbyeName();
 		}
 
 		@Override
-		public HeaderPlace getPlace(String token)
+		public MenuPlace getPlace(String token)
 		{
-			return new HeaderPlace(token);
+			return new MenuPlace(token);
 		}
 	}
 	

@@ -1,4 +1,4 @@
-package fr.topophone.client.header;
+package fr.topophone.client.menu;
 
 import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.event.shared.EventBus;
@@ -6,10 +6,10 @@ import com.google.gwt.user.client.ui.AcceptsOneWidget;
 
 import fr.topophone.client.ClientFactory;
 
-public class HeaderActivity extends AbstractActivity {
+public class MenuActivity extends AbstractActivity {
 	private ClientFactory clientFactory;
 
-	public HeaderActivity(HeaderPlace place, ClientFactory clientFactory) {
+	public MenuActivity(MenuPlace place, ClientFactory clientFactory) {
 		this.clientFactory = clientFactory;
 	}
 

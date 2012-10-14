@@ -4,8 +4,6 @@ import com.google.gwt.event.shared.SimpleEventBus;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.web.bindery.event.shared.EventBus;
 
-import fr.topophone.client.header.HeaderView;
-import fr.topophone.client.header.HeaderViewImpl;
 import fr.topophone.client.main.MainView;
 import fr.topophone.client.main.MainViewImpl;
 
@@ -16,7 +14,6 @@ public class ClientFactoryImpl implements ClientFactory {
 			eventBus);
 	
 	private static final MainView helloView = new MainViewImpl();
-	private static final HeaderView goodbyeView = new HeaderViewImpl();
 
 	@Override
 	public EventBus getEventBus() {
@@ -31,11 +28,6 @@ public class ClientFactoryImpl implements ClientFactory {
 	@Override
 	public PlaceController getPlaceController() {
 		return placeController;
-	}
-
-	@Override
-	public HeaderView getGoodbyeView() {
-		return goodbyeView;
 	}
 
 }
