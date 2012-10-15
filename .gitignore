@@ -1,0 +1,15 @@
+.project
+.settings/
+backend/.classpath
+backend/.project
+backend/.settings/org.eclipse.core.resources.prefs
+backend/bin/
+client-gwt/.classpath
+client-gwt/.gitignore
+client-gwt/.project
+client-gwt/.settings/
+client-gwt/bin/
+backend/target/
+client-gwt/.gwt/
+client-gwt/target/
+target/
