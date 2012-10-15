@@ -2,7 +2,9 @@ package fr.topophone.client.main;
 
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceTokenizer;
+import com.google.inject.Singleton;
 
+@Singleton
 public class MainPlace extends Place
 {
 	private String helloName;

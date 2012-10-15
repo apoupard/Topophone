@@ -1,5 +1,7 @@
 package fr.topophone.client.main;
 
+import javax.inject.Inject;
+
 import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.Place;
@@ -11,11 +13,12 @@ public class MainActivity extends AbstractActivity implements
 		MainView.Presenter {
 	
 	// Used to obtain views, eventBus, placeController
-	// Alternatively, could be injected via GIN
+//	 Alternatively, could be injected via GIN
 	private ClientFactory clientFactory;
 	// Name that will be appended to "Hello,"
 
-	public MainActivity(MainPlace place, ClientFactory clientFactory) {
+	@Inject
+	public MainActivity(ClientFactory clientFactory) {
 		this.clientFactory = clientFactory;
 	}
 
@@ -24,9 +27,7 @@ public class MainActivity extends AbstractActivity implements
 	 */
 	@Override
 	public void start(AcceptsOneWidget containerWidget, EventBus eventBus) {
-		MainView helloView = clientFactory.getHelloView();
-		helloView.setPresenter(this);
-		containerWidget.setWidget(helloView.asWidget());
+		containerWidget.setWidget(clientFactory.getMainView().asWidget());
 	}
 
 	/**

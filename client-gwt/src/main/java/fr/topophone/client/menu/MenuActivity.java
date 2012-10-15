@@ -7,10 +7,10 @@ import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import fr.topophone.client.ClientFactory;
 
 public class MenuActivity extends AbstractActivity {
-	private ClientFactory clientFactory;
+//	private ClientFactory clientFactory;
 
 	public MenuActivity(MenuPlace place, ClientFactory clientFactory) {
-		this.clientFactory = clientFactory;
+//		this.clientFactory = clientFactory;
 	}
 
 	@Override

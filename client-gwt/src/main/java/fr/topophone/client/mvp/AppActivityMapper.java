@@ -19,8 +19,7 @@ public class AppActivityMapper implements ActivityMapper {
 	 * @param clientFactory
 	 *            Factory to be passed to activities
 	 */
-	public AppActivityMapper(ClientFactory clientFactory) {
-		super();
+	public AppActivityMapper(final ClientFactory clientFactory) {
 		this.clientFactory = clientFactory;
 	}
 
@@ -32,7 +31,7 @@ public class AppActivityMapper implements ActivityMapper {
 	public Activity getActivity(Place place) {
 		// This is begging for GIN
 		if (place instanceof MainPlace)
-			return new MainActivity((MainPlace) place, clientFactory);
+			return new MainActivity(clientFactory);
 
 		return null;
 	}
