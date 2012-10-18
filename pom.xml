@@ -13,6 +13,7 @@
 	<modules>
 		<module>client-gwt</module>
 		<module>backend</module>
+		<module>GinMvpMaven</module>
 	</modules>
 
 	<build>
