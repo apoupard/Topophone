@@ -9,7 +9,6 @@
 		<groupId>fr.topophone</groupId>
 		<artifactId>website</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>../pom.xml</relativePath>
 	</parent>
 	<artifactId>client-gwt</artifactId>
 	<packaging>war</packaging>
@@ -38,7 +37,11 @@
 			<artifactId>gin</artifactId>
 			<version>${gin.version}</version>
 		</dependency>
-            
+		<dependency>
+			<groupId>com.google.code.ginmvp</groupId>
+			<artifactId>GinMvpMaven</artifactId>
+			<version>1.1</version>
+		</dependency>
     </dependencies>
 
 	 <build>

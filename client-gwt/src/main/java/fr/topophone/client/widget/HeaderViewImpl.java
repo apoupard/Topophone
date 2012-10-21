@@ -1,4 +1,4 @@
-package fr.topophone.client.ui;
+package fr.topophone.client.widget;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;

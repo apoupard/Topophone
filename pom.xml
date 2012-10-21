@@ -148,15 +148,5 @@
 			<version>${lombok.version}</version>
 			<scope>provided</scope>
 		</dependency>
-<!-- 		<dependency> -->
-<!-- 			<groupId>net.customware.gwt.dispatch</groupId> -->
-<!-- 			<artifactId>gwt-dispatch</artifactId> -->
-<!-- 			<version>1.2.0</version> -->
-<!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>net.customware.gwt.presenter</groupId> -->
-<!-- 			<artifactId>gwt-presenter</artifactId> -->
-<!-- 			<version>1.1.1</version> -->
-<!-- 		</dependency> -->
 	</dependencies>
 </project>

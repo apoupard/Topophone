@@ -4,12 +4,10 @@ import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 
-import fr.topophone.client.ClientFactory;
-
 public class MenuActivity extends AbstractActivity {
 //	private ClientFactory clientFactory;
 
-	public MenuActivity(MenuPlace place, ClientFactory clientFactory) {
+	public MenuActivity(MenuPlace place) {
 //		this.clientFactory = clientFactory;
 	}
 

@@ -3,9 +3,8 @@
 
     <!-- Inherit the core Web Toolkit stuff. -->
     <inherits name="com.google.gwt.user.User" />
-    <inherits name="com.google.gwt.inject.Inject" />
-    <inherits name="com.google.gwt.activity.Activity" />
-    <inherits name="com.google.gwt.place.Place" />
+    <inherits name='com.google.code.ginmvp.GinMvp' />
+    
     <inherits name="com.google.gwt.user.theme.standard.Standard" />
     <!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
     <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/> -->

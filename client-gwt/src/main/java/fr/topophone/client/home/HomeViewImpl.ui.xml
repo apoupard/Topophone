@@ -1,0 +1,23 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+    xmlns:g="urn:import:com.google.gwt.user.client.ui"
+    xmlns:my="urn:import:fr.topophone.client.widget" >
+	
+	<ui:style>
+		.center {
+			position: relative;
+			margin-left: auto;
+			margin-right: auto;
+			width: 1000px;
+			text-align: left;
+		}
+		
+	</ui:style>
+
+    <g:HTMLPanel>
+        <my:HeaderViewImpl/>
+        <my:MenuViewImpl/>
+       	<g:HTMLPanel  styleName="{style.center}" ui:field="detailsPanel" ></g:HTMLPanel>
+    </g:HTMLPanel>
+
+</ui:UiBinder>
