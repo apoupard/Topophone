@@ -6,6 +6,7 @@ import com.google.inject.Singleton;
 
 import fr.topophone.client.asso.AssoView;
 import fr.topophone.client.asso.AssoViewImpl;
+import fr.topophone.client.home.HomePlace;
 import fr.topophone.client.home.HomeView;
 import fr.topophone.client.home.HomeViewImpl;
 import fr.topophone.client.news.NewsPlace;

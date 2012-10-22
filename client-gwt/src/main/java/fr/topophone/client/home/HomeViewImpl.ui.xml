@@ -11,12 +11,11 @@
 			width: 1000px;
 			text-align: left;
 		}
-		
 	</ui:style>
 
     <g:HTMLPanel>
         <my:HeaderViewImpl/>
-        <my:MenuViewImpl/>
+        <my:MenuWidget ui:field="menuPanel"/>
        	<g:HTMLPanel  styleName="{style.center}" ui:field="detailsPanel" ></g:HTMLPanel>
     </g:HTMLPanel>
 
