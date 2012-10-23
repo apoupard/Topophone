@@ -4,11 +4,14 @@ import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
 
 import fr.topophone.client.TopophonePlaceManager;
+import fr.topophone.client.asso.AssoPresenter;
+import fr.topophone.client.asso.AssoView;
 import fr.topophone.client.mainpage.MainPagePresenter;
-import fr.topophone.client.mainpage.MainPagePresenter.TopophoneProxy;
 import fr.topophone.client.mainpage.MainPageView;
+import fr.topophone.client.news.NewsPresenter;
+import fr.topophone.client.news.NewsView;
 
-public class TopophoneClientModule extends AbstractPresenterModule {
+public class ClientModule extends AbstractPresenterModule {
 
 	@Override
 	protected void configure() {		
@@ -16,9 +19,15 @@ public class TopophoneClientModule extends AbstractPresenterModule {
 		// Default implementation of standard resources
 	    install(new DefaultModule(TopophonePlaceManager.class));
 
-	    // Presenters
-	    bindPresenter(MainPagePresenter.class, MainPagePresenter.MyView.class,
-	        MainPageView.class, TopophoneProxy.class);
+	    bindPresenter(MainPagePresenter.class, MainPagePresenter.IView.class,
+	            MainPageView.class, MainPagePresenter.IProxy.class);
+	    
+	    bindPresenter(NewsPresenter.class, NewsPresenter.IView.class,
+	            NewsView.class, NewsPresenter.IProxy.class);
+	    
+	    bindPresenter(AssoPresenter.class, AssoPresenter.IView.class,
+	    		AssoView.class, AssoPresenter.IProxy.class);
+	    
 
 //	    bindPresenter(ResponsePresenter.class, ResponsePresenter.MyView.class,
 //	        ResponseView.class, TopophoneProxy.class);

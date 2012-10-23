@@ -21,6 +21,6 @@
 		
 	</ui:style>
 	<g:HTMLPanel styleName="{style.center}">
-		<g:HTMLPanel ui:field="entryContainer" styleName="{style.menu-entryContainer}"/>
+		<g:FlowPanel ui:field="entryContainer" styleName="{style.menu-entryContainer}"/>
 	</g:HTMLPanel>
 </ui:UiBinder>

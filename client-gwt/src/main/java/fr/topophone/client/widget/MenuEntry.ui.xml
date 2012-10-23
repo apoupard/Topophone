@@ -1,0 +1,40 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style type='fr.topophone.client.widget.MenuEntry.Style'>
+		.menu-entry {
+			display: inline-block;
+			font: bold 12px/1.1em "Helvetica", "Arial", "sans-serif";
+		}
+		
+		.active {
+	 		border-top: 4px solid #FFFFFF;
+			color: #FFFFFF;
+		}
+		
+		.inactive {
+			border-top: 1px solid #999999;
+			color: #999999;
+			cursor: pointer;
+		}
+		
+		.menu-entry-c-gapper {
+			padding: 0 4px;
+		}
+		
+		.menu-entry-label {
+			display: inline-block;
+			padding: 8px;
+			line-height: 50px;
+			width: auto;
+			padding: 8px 30px 0px 30px;
+		}
+	</ui:style>
+	<g:Hyperlink styleName="{style.menu-entry}" ui:field="entryLink">
+		<div class="{style.menu-entry-c-gapper}">
+			<div ui:field="entry" class="{style.inactive}">
+				<p class="{style.menu-entry-label}" ui:field="entryLabel"></p>
+			</div>
+		</div>
+	</g:Hyperlink>
+</ui:UiBinder>

@@ -6,15 +6,15 @@ import com.google.gwt.uibinder.client.UiConstructor;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 
-public class HeaderViewImpl extends Composite {
+public class HeaderView extends Composite {
 
 	private static HeaderViewImplUiBinder uiBinder = GWT.create(HeaderViewImplUiBinder.class);
 
-	interface HeaderViewImplUiBinder extends UiBinder<Widget, HeaderViewImpl> {
+	interface HeaderViewImplUiBinder extends UiBinder<Widget, HeaderView> {
 	}
 
 	@UiConstructor
-	public HeaderViewImpl() {
+	public HeaderView() {
 		initWidget(uiBinder.createAndBindUi(this));
 	}
 

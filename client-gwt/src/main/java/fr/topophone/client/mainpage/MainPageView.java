@@ -16,80 +16,80 @@
 
 package fr.topophone.client.mainpage;
 
-import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.uibinder.client.UiBinder;
+import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.HTMLPanel;
-import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
-
+import com.gwtplatform.mvp.client.Tab;
+import com.gwtplatform.mvp.client.TabData;
 import com.gwtplatform.mvp.client.ViewImpl;
 
-/**
- * @author Philippe Beaudoin
- */
-public class MainPageView extends ViewImpl implements MainPagePresenter.MyView {
+import fr.topophone.client.widget.MainMenuView;
 
-  private static String html = "<h1>Web Application Starter Project</h1>\n"
-      + "<table align=\"center\">\n"
-      + "  <tr>\n"
-      + "    <td colspan=\"2\" style=\"font-weight:bold;\">Please enter your name:</td>\n"
-      + "  </tr>\n"
-      + "  <tr>\n"
-      + "    <td id=\"nameFieldContainer\"></td>\n"
-      + "    <td id=\"sendButtonContainer\"></td>\n"
-      + "  </tr>\n"
-      + "  <tr>\n"
-      + "    <td colspan=\"2\" style=\"color:red;\" id=\"errorLabelContainer\"></td>\n"
-      + "  </tr>\n" + "</table>\n";
+public class MainPageView extends ViewImpl implements MainPagePresenter.IView {
+	/**
+	   */
+	public interface Binder extends UiBinder<Widget, MainPageView> {
+	}
 
-  HTMLPanel panel = new HTMLPanel(html);
+	public final Widget widget;
 
-  private final Label errorLabel;
-  private final TextBox nameField;
-  private final Button sendButton;
+	@UiField
+	MainMenuView menuPanel;
 
-  @Inject
-  public MainPageView() {
-    sendButton = new Button("Send");
-    nameField = new TextBox();
-    nameField.setText("GWT User");
-    errorLabel = new Label();
+	@UiField
+	HTMLPanel contentPanel;
 
-    // We can add style names to widgets
-    sendButton.addStyleName("sendButton");
+	@Inject
+	public MainPageView(Binder uiBinder) {
+		widget = uiBinder.createAndBindUi(this);
+	}
 
-    // Add the nameField and sendButton to the RootPanel
-    // Use RootPanel.get() to get the entire body element
-    panel.add(nameField, "nameFieldContainer");
-    panel.add(sendButton, "sendButtonContainer");
-    panel.add(errorLabel, "errorLabelContainer");
-  }
+	@Override
+	public Widget asWidget() {
+		return widget;
+	}
 
-  @Override
-  public Widget asWidget() {
-    return panel;
-  }
+	@Override
+	public void setInSlot(Object slot, Widget content) {
+		if (slot == MainPagePresenter.TYPE_SetTabContent) {
+			setPanelContent(content);
+		} else {
+			super.setInSlot(slot, content);
+		}
+	}
 
-  @Override
-  public String getName() {
-    return nameField.getText();
-  }
+	public void setPanelContent(Widget content) {
+		contentPanel.clear();
+		if (content != null) {
+			contentPanel.add(content);
+		}
+	}
 
-  @Override
-  public Button getSendButton() {
-    return sendButton;
-  }
+	@Override
+	public Tab addTab(TabData tabData, String historyToken) {
+		return menuPanel.addTab(tabData, historyToken);
+	}
 
-  @Override
-  public void resetAndFocus() {
-    // Focus the cursor on the name field when the app loads
-    nameField.setFocus(true);
-    nameField.selectAll();
-  }
+	@Override
+	public void removeTab(Tab tab) {
+		menuPanel.removeTab(tab);
+	}
 
-  @Override
-  public void setError(String errorText) {
-    errorLabel.setText(errorText);
-  }
+	@Override
+	public void removeTabs() {
+		menuPanel.removeTabs();
+	}
+
+	@Override
+	public void setActiveTab(Tab tab) {
+		menuPanel.setActiveTab(tab);
+	}
+
+	@Override
+	public void changeTab(Tab tab, TabData tabData, String historyToken) {
+		menuPanel.changeTab(tab, tabData, historyToken);
+	}
+
 }

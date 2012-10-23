@@ -7,6 +7,7 @@
 			width: 100%;
 			visibility: visible;
 			min-height: 80px;
+			min-width: 1000px;
 			position: absolute;
 		}
 		
