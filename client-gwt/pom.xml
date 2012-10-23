@@ -15,85 +15,101 @@
 	<version>1.0-SNAPSHOT</version>
 	<name>Topophone GWT</name>
 
-<!-- 	<properties> -->
-		<!-- GWT needs at least java 1.5 -->
-<!-- 		<webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory> -->
-<!-- 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> -->
-<!-- 	</properties> -->
-	
-	 <dependencies>
-        <dependency>
-            <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-user</artifactId>
-            <version>${gwt.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-dev</artifactId>
-            <version>${gwt.version}</version>
-        </dependency>
+	<!-- <properties> -->
+	<!-- GWT needs at least java 1.5 -->
+	<!-- <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory> -->
+	<!-- <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> -->
+	<!-- </properties> -->
+
+	<dependencies>
+		<dependency>
+			<groupId>com.gwtplatform</groupId>
+			<artifactId>gwtp-mvp-client</artifactId>
+			<version>${gwtp.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.gwtplatform</groupId>
+			<artifactId>gwtp-dispatch-client</artifactId>
+			<version>${gwtp.version}</version>
+			<scope>provided</scope> <!-- Remove for GWTP 0.5.1 and earlier -->
+		</dependency>
+		<dependency>
+			<groupId>com.gwtplatform</groupId>
+			<artifactId>gwtp-dispatch-server-guice</artifactId>
+			<!-- Or, if you use spring: <artifactId>gwtp-dispatch-server-spring</artifactId> -->
+			<!-- For GWTP 0.5.1 and earlier: <artifactId>gwtp-dispatch-server</artifactId> -->
+			<version>${gwtp.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.gwtplatform</groupId>
+			<artifactId>gwtp-crawler</artifactId>
+			<version>${gwtp.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.gwtplatform</groupId>
+			<artifactId>gwtp-processors</artifactId>
+			<version>${gwtp.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.gwtplatform</groupId>
+			<artifactId>gwtp-tester</artifactId>
+			<version>${gwtp.version}</version>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>com.google.gwt.inject</groupId>
 			<artifactId>gin</artifactId>
 			<version>${gin.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.code.ginmvp</groupId>
-			<artifactId>GinMvpMaven</artifactId>
-			<version>1.1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava-gwt</artifactId>
-			<version>${guava.version}</version>
-		</dependency>
-    </dependencies>
+		</dependency>	
+	</dependencies>
 
-	 <build>
-        <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>gwt-maven-plugin</artifactId>
-                <configuration>
-                    <runTarget>Topophone.html</runTarget>
-                    <extraJvmArgs>
-                        -Xmx512M -Xss128M
-                    </extraJvmArgs>
-                    <localWorkers>1</localWorkers>
-                    <compileReport>true</compileReport>
-                    <modules>
-                        <module>fr.topophone.Topophone</module>
-                    </modules>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>compile</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-eclipse-plugin</artifactId>
-                <configuration>
-                    <downloadSources>true</downloadSources>
-                    <downloadJavadocs>false</downloadJavadocs>
-                    <wtpversion>2.0</wtpversion>
-                    <additionalBuildcommands>
-                        <buildCommand>
-                            <name>com.google.gwt.eclipse.core.gwtProjectValidator</name>
-                        </buildCommand>
-                    </additionalBuildcommands>
-                    <additionalProjectnatures>
-                        <projectnature>org.eclipse.ajdt.ui.ajnature</projectnature>
-                        <projectnature>com.google.gwt.eclipse.core.gwtNature</projectnature>
-                    </additionalProjectnatures>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-	 
+	<build>
+		<outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>gwt-maven-plugin</artifactId>
+				<configuration>
+					<runTarget>Topophone.html</runTarget>
+					<extraJvmArgs>
+						-Xmx512M -Xss128M
+					</extraJvmArgs>
+					<localWorkers>1</localWorkers>
+					<compileReport>true</compileReport>
+					<modules>
+						<module>fr.topophone.Topophone</module>
+					</modules>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<configuration>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>false</downloadJavadocs>
+					<wtpversion>2.0</wtpversion>
+					<additionalBuildcommands>
+						<buildCommand>
+							<name>com.google.gwt.eclipse.core.gwtProjectValidator</name>
+						</buildCommand>
+					</additionalBuildcommands>
+					<additionalProjectnatures>
+						<projectnature>org.eclipse.ajdt.ui.ajnature</projectnature>
+						<projectnature>com.google.gwt.eclipse.core.gwtNature</projectnature>
+					</additionalProjectnatures>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>

@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module rename-to="Topophone" >
+<module rename-to="Topophone">
 
-    <!-- Inherit the core Web Toolkit stuff. -->
-    <inherits name="com.google.gwt.user.User" />
-    <inherits name='com.google.code.ginmvp.GinMvp' />
-    <inherits name="com.google.common.collect.Collect"/>
-    
-    <inherits name="com.google.gwt.user.theme.standard.Standard" />
-    <!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
-    <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/> -->
+	<inherits name="com.google.gwt.user.User" />
+
+	<inherits name="com.google.common.collect.Collect" />
+	<inherits name='com.gwtplatform.dispatch.Dispatch' />
+	<inherits name='com.gwtplatform.mvp.Mvp' />
+
+	<inherits name="com.google.gwt.user.theme.standard.Standard" />
+	<!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
+	<!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/> -->
 
 
-    <!-- Specify the app entry point class. -->
-    <entry-point class="fr.topophone.client.Topophone" />
+	<entry-point class="fr.topophone.client.Topophone" />
 
-    <!-- Specify the paths for translatable code -->
-    <source path="client" />
+	<source path="client" />
+
+	<define-configuration-property name="gin.ginjector"
+		is-multi-valued="false" />
+	<set-configuration-property name="gin.ginjector"
+		value="fr.topophone.client.TopophoneGinjector" />
 
 </module>

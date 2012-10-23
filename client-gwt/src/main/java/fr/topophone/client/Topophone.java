@@ -1,24 +1,20 @@
 package fr.topophone.client;
 
-//import com.google.code.ginmvp.client.GinMvpDisplay;
-import com.google.code.ginmvp.client.GinMvpDisplay;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.user.client.ui.RootPanel;
-import com.google.gwt.user.client.ui.Widget;
+import com.gwtplatform.mvp.client.DelayedBindRegistry;
+
+import fr.topophone.client.gin.TopophoneGinjector;
 
 
 public class Topophone implements EntryPoint {
 
-	public void onModuleLoad() {
-		
-		TopophoneGinjector ginjector = GWT.create(TopophoneGinjector.class);
-		
-		GinMvpDisplay display = ginjector.getMainView();
-		
-		RootPanel.get().add((Widget) display);
+	public final TopophoneGinjector ginjector = GWT.create(TopophoneGinjector.class);
 
-		ginjector.getPlaceHistoryHandler().handleCurrentHistory();
-		
-	}
+	  public void onModuleLoad() {
+
+	    DelayedBindRegistry.bind(ginjector);
+
+	    ginjector.getPlaceManager().revealCurrentPlace();
+	  }
 }
