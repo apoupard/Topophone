@@ -13,7 +13,6 @@
 	<modules>
 		<module>client-gwt</module>
 		<module>backend</module>
-		<module>GinMvpMaven</module>
 	</modules>
 
 	<build>
@@ -43,6 +42,7 @@
 		<lombok.version>0.11.4</lombok.version>
 		<gwt.version>2.5.0-rc2</gwt.version>
 		<gin.version>2.0.0</gin.version>
+		<gwtp.version>0.7</gwtp.version>
 	</properties>
 
 	<dependencies>
@@ -63,11 +63,6 @@
 			<artifactId>gwt-dev</artifactId>
 			<version>2.5.0-rc1</version>
 			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.google.gwt.inject</groupId>
-			<artifactId>gin</artifactId>
-			<version>${gin.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -152,6 +147,45 @@
 			<artifactId>lombok</artifactId>
 			<version>${lombok.version}</version>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.gwt.inject</groupId>
+			<artifactId>gin</artifactId>
+			<version>${gin.version}</version>
+		</dependency>		
+		<dependency>
+			<groupId>com.gwtplatform</groupId>
+			<artifactId>gwtp-mvp-client</artifactId>
+			<version>${gwtp.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.gwtplatform</groupId>
+			<artifactId>gwtp-dispatch-client</artifactId>
+			<version>${gwtp.version}</version>
+			<scope>provided</scope> <!-- Remove for GWTP 0.5.1 and earlier -->
+		</dependency>
+		<dependency>
+			<groupId>com.gwtplatform</groupId>
+			<artifactId>gwtp-dispatch-server-guice</artifactId>
+			<version>${gwtp.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.gwtplatform</groupId>
+			<artifactId>gwtp-crawler</artifactId>
+			<version>${gwtp.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.gwtplatform</groupId>
+			<artifactId>gwtp-processors</artifactId>
+			<version>${gwtp.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.gwtplatform</groupId>
+			<artifactId>gwtp-tester</artifactId>
+			<version>${gwtp.version}</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 </project>

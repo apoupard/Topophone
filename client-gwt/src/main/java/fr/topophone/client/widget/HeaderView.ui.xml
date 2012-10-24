@@ -1,0 +1,81 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+	<ui:style>
+		.header {
+			width: 100%;
+			visibility: visible;
+			min-height: 80px;
+			min-width: 1000px;
+			position: absolute;
+		}
+		
+		.header-c-bg {
+			background-color: #1C1C1C;
+			border-bottom: 0 solid transparent;
+			border-top: 0 solid transparent;
+			bottom: 0;
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+		
+		.header-centeredContent {
+			position: relative;
+			margin-left: auto;
+			margin-right: auto;
+			width: 1000px;
+			text-align: left;
+		}
+		
+		.font_7 {
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: 16px;
+			line-height: 1.3em;
+			color: #FFFFFF;
+		}
+		
+	</ui:style>
+
+	<g:HTMLPanel styleName="{style.header}">
+		<div class="{style.header-c-bg}">
+		</div>
+
+		<div class="{style.header-centeredContent}">
+			<div>
+				<div
+					style="visibility: visible; left: 0px; top: 30px; width: 279px; min-height: 38px; position: absolute;">
+					<div>
+
+						<p>
+							<a href="#!Home|mainPage" target="_self">
+
+								<span class="{style.font_7} bold">
+									TOPOPHONE
+								</span>
+							</a>
+						</p>
+					</div>
+				</div>
+
+				<div
+					style="visibility: visible; right:0px; top: 30px; width: 72px; min-height: 19px; position: absolute;">
+					<div
+						style="cursor: pointer;visibility: visible; width: 24px; height: 19px; display: inline-block;visibility: visible; position: relative; overflow: hidden; left: 0px; top: 0px; width: 19px; height: 19px; background-image: url(&quot;http://static.wix.com/media/7355b116f509973815da125ab3ce4065.wix_mp_srz_19_19_85_22_0.50_1.20_0.00_wix_mp_srz&quot;); background-size: 19px 19px; background-position: 0px 0px; background-repeat: no-repeat;">
+					</div>
+
+					<div
+						style="cursor: pointer;visibility: visible; width: 24px; height: 19px; display: inline-block;visibility: visible; position: relative; overflow: hidden; left: 0px; top: 0px; width: 19px; height: 19px; background-image: url(&quot;http://static.wix.com/media/3cd1664d6987d12be07673ea28f49263.wix_mp_srz_19_19_85_22_0.50_1.20_0.00_wix_mp_srz&quot;); background-size: 19px 19px; background-position: 0px 0px; background-repeat: no-repeat;">
+					</div>
+
+					<div
+						style="cursor: pointer;visibility: visible; width: 19px; height: 19px; display: inline-block;visibility: visible; position: relative; overflow: hidden; left: 0px; top: 0px; width: 19px; height: 19px; background-image: url(&quot;http://static.wix.com/media/608e7725939b0eda16493c462180552c.wix_mp_srz_19_19_85_22_0.50_1.20_0.00_wix_mp_srz&quot;); background-size: 19px 19px; background-position: 0px 0px; background-repeat: no-repeat;">
+					</div>
+				</div>
+			</div>
+		</div>
+	</g:HTMLPanel>
+
+</ui:UiBinder>

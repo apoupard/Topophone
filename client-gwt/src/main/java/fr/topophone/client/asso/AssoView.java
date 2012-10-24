@@ -1,13 +1,25 @@
 package fr.topophone.client.asso;
 
-import com.google.gwt.user.client.ui.IsWidget;
+import com.google.gwt.uibinder.client.UiBinder;
+import com.google.gwt.user.client.ui.Widget;
+import com.google.inject.Inject;
+import com.gwtplatform.mvp.client.ViewImpl;
 
-public interface AssoView extends IsWidget {
+public class AssoView extends ViewImpl implements AssoPresenter.IView {
 
-	void setPresenter(Presenter presenter);
-	
-	public interface Presenter {
-		void goToHome();
+	public interface Binder extends UiBinder<Widget, AssoView> {
 	}
-	
+
+	private final Widget widget;
+
+	@Inject
+	public AssoView(Binder uiBinder) {
+		widget = uiBinder.createAndBindUi(this);
+	}
+
+	@Override
+	public Widget asWidget() {
+		return widget;
+	}
+
 }

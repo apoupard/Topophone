@@ -1,0 +1,26 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+	<ui:style>
+		.center {
+			margin: 0 auto;
+			min-height: 80px;
+			position: relative;
+			padding-top: 5px;
+		}
+		
+		.menu-entryContainer {
+			overflow: hidden;
+			position: relative;
+			text-align: center;
+			height: 50px;
+			overflow: visible;
+			white-space: nowrap;
+		}
+		
+	</ui:style>
+	<g:HTMLPanel styleName="{style.center}">
+		<g:FlowPanel ui:field="entryContainer" styleName="{style.menu-entryContainer}"/>
+	</g:HTMLPanel>
+</ui:UiBinder>
