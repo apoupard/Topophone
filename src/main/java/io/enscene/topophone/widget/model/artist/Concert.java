@@ -3,7 +3,7 @@ package io.enscene.topophone.widget.model.artist;
 import java.util.Date;
 
 public class Concert {
-  
+
   private Date date;
   private String place;
   private String city;

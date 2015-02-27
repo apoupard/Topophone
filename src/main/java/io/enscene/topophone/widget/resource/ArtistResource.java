@@ -21,7 +21,7 @@ public class ArtistResource {
 
   private final Configuration freemakerConfig;
   private final ArtistDao dao;
-  
+
   @Inject
   ArtistResource(Configuration freemakerConfig, ArtistDao dao) {
     this.freemakerConfig = freemakerConfig;
@@ -32,19 +32,19 @@ public class ArtistResource {
   @Path("/{id}")
   @Produces(MediaType.APPLICATION_JSON)
   public Artist getProfile(@PathParam("id") String id) throws Exception {
-    return dao.get(id)
-        .orElseThrow(() -> new Exception("Artist not found!"));
+    return dao.get(id).orElseThrow(() -> new Exception("Artist not found!"));
   }
 
   @GET
   @Path("/{id}/{template}")
   @Produces(MediaType.TEXT_HTML)
-  public String getHtmlProfile(@PathParam("id") String id, @PathParam("template") String template) throws Exception {
-    Template temp = freemakerConfig.getTemplate("artist/"+template+".html");
+  public String getHtmlProfile(@PathParam("id") String id, @PathParam("template") String template)
+      throws Exception {
+    Template temp = freemakerConfig.getTemplate("artist/" + template + ".html");
     StringWriter out = new StringWriter();
-    Artist art =  getProfile(id);
+    Artist art = getProfile(id);
     temp.process(art, out);
-//    return Processor.process(out.toString());
+    // return Processor.process(out.toString());
     return out.toString();
   }
 

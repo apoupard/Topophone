@@ -1,11 +1,11 @@
 package io.enscene.topophone.widget.model.partner;
 
 public class Partner {
-  
+
   private String type;
   private String logo;
   private String description;
-  
+
   public Partner(String type, String logo, String description) {
     this.type = type;
     this.logo = logo;
@@ -35,5 +35,5 @@ public class Partner {
   public void setType(String type) {
     this.type = type;
   }
-  
+
 }

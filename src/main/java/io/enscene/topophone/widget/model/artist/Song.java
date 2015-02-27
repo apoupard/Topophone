@@ -1,9 +1,8 @@
 package io.enscene.topophone.widget.model.artist;
 
 public class Song {
-  
+
   private String title;
-  
   private String duration;
 
   public Song(String title, String duration) {
@@ -26,5 +25,5 @@ public class Song {
   public void setDuration(String duration) {
     this.duration = duration;
   }
-  
+
 }

@@ -33,5 +33,5 @@ public class HeaderResource {
     temp.process(null, out);
     return out.toString();
   }
-  
+
 }

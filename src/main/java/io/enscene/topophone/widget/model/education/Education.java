@@ -5,7 +5,7 @@ public class Education {
   private String id;
   private String description;
   private String image;
-  
+
   public Education(String id, String description, String image) {
     this.id = id;
     this.description = description;
@@ -35,5 +35,5 @@ public class Education {
   public void setId(String id) {
     this.id = id;
   }
-  
+
 }

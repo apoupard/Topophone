@@ -3,7 +3,6 @@ package io.enscene.topophone.widget.model.artist;
 public class Media {
 
   private String id;
-
   private String href;
   
   public Media(String id, String href) {

@@ -3,7 +3,7 @@ package io.enscene.topophone.widget.model.nav;
 import java.util.List;
 
 public class Nav {
-  
+
   List<Entry> entries;
 
   public Nav(List<Entry> entries) {
@@ -18,5 +18,5 @@ public class Nav {
   public void setEntries(List<Entry> entries) {
     this.entries = entries;
   }
-  
+
 }

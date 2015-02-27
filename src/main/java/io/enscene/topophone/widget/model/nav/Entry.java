@@ -5,31 +5,31 @@ import java.util.List;
 import com.google.common.collect.ImmutableList;
 
 public class Entry {
-  
+
   private String id;
   private String displayName;
   private String href;
   private List<Entry> entries;
   private String styleNames;
-  
+
   public static Entry of(String id, String displayName, String href, List<Entry> entries) {
     return new Entry(id, displayName, href, entries, "");
   }
-  
+
   public static Entry of(String id, String displayName, String href) {
-    return new Entry(id, displayName, href, ImmutableList.of(),"");
+    return new Entry(id, displayName, href, ImmutableList.of(), "");
   }
 
   public static Entry separator() {
     return new Entry("", "", "", ImmutableList.of(), "separator");
   }
-  
+
   public Entry(String id, String displayName, String href, List<Entry> entries, String styleNames) {
     this.id = id;
     this.displayName = displayName;
     this.href = href;
     this.entries = entries;
-    this.styleNames= styleNames;
+    this.styleNames = styleNames;
   }
 
   public String getId() {
@@ -71,5 +71,5 @@ public class Entry {
   public void setStyleNames(String styleNames) {
     this.styleNames = styleNames;
   }
-  
+
 }
