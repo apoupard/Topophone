@@ -1,0 +1,20 @@
+<#macro widgets>
+  <div class="widgets">
+    <#nested/>
+  </div>
+</#macro>
+
+<#macro widget opacity gradient>
+<div class="widget">
+  <#if opacity> 
+    <#if gradient>
+      <div class="opacity opacity-wrap-gradient"></div>
+    <#else>
+      <div class="opacity opacity-wrap"></div>
+    </#if> 
+  </#if>
+  <div class="content">
+    <#nested/>
+  </div>
+</div>
+</#macro>

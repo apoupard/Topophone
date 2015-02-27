@@ -1,0 +1,8 @@
+<h3 class="title">
+	Tournée <span>2014/2015</span>
+</h3>
+<ul>
+  <#list concerts as concert>
+   <li>${concert.date?string["dd MMM"]} -  ${concert.place} - ${concert.city}</li>
+  </#list>
+</ul>

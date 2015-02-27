@@ -1,0 +1,31 @@
+<#import "/container/widgets.html" as container>
+<div class="side column-left">
+  <@container.widgets>
+    <@container.widget opacity=true gradient=true>
+      <div class="summary">
+	      <ul>
+		      <#list partners?keys as key>
+		        <li><a onclick="document.getElementById('${key}').scrollIntoView()">${key}</a></li>
+		      </#list>
+	      </ul>
+      </div>
+    </@container.widget>
+  </@container.widgets>
+</div>
+<div class="two-column-center">
+  <@container.widgets>
+	  <@container.widget opacity=true gradient=true>
+		  <div class="partners">
+		    <h1>Nos partenaires</h1>
+		    <#list partners?keys as key>
+			    <div class="partner">
+			      <h3 id="${key}">${key}</h3>
+			      <#list partners[key] as partner> 
+			      <#include "/partner/partner.html">
+			      </#list>
+			    </div>
+		    </#list>
+		  </div>
+	  </@container.widget>
+  </@container.widgets>
+</div>

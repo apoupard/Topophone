@@ -1,0 +1,30 @@
+<#import "/container/widgets.html" as container>
+<div id="page">
+    <div class="side column-left">
+      <@container.widgets>
+        <@container.widget opacity=true gradient=true>
+          <div class="summary">
+					  <ul>
+					    <li> <a href="${restcontext}/education/creation">Création musicale</a></li>
+					    <li><a href="${restcontext}/education/initiation">Initiation à l'écoute</a></li>
+					    <li><a href="${restcontext}/education/meeting">Rencontre d'artistes</a></li>
+					  </ul>
+					</div>
+        </@container.widget>
+      </@container.widgets>
+    </div>
+    <div class="column-center">
+       <@container.widgets>
+         <@container.widget opacity=true gradient=true>
+          ${edu.description}
+         </@container.widget>
+       </@container.widgets>
+    </div>
+    <div class="side column-right">
+      <@container.widgets>
+         <@container.widget opacity=true gradient=true>
+            <img src="${edu.image}"></img>
+         </@container.widget>
+       </@container.widgets>
+    </div>
+</div>
