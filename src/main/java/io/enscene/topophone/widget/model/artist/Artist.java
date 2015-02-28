@@ -1,8 +1,10 @@
 package io.enscene.topophone.widget.model.artist;
 
+import io.enscene.topophone.api.ResourceModel;
+
 import java.util.List;
 
-public class Artist {
+public class Artist implements ResourceModel {
 
   private String picture;
   private List<Media> medias;

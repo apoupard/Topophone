@@ -4,6 +4,7 @@ import io.enscene.topophone.widget.dao.ArtistDao;
 import io.enscene.topophone.widget.model.artist.Artist;
 
 import java.io.StringWriter;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -11,6 +12,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+
+import com.google.common.collect.ImmutableMap;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
@@ -21,6 +24,8 @@ public class ArtistResource {
 
   private final Configuration freemakerConfig;
   private final ArtistDao dao;
+  
+//  Map<String, ResourceDao<ResourceModel>> daos;
 
   @Inject
   ArtistResource(Configuration freemakerConfig, ArtistDao dao) {
@@ -29,9 +34,9 @@ public class ArtistResource {
   }
 
   @GET
-  @Path("/{id}")
+  @Path("/{resourceId}")
   @Produces(MediaType.APPLICATION_JSON)
-  public Artist getProfile(@PathParam("id") String id) throws Exception {
+  public Artist get(@PathParam("resourceId") String id) throws Exception {
     return dao.get(id).orElseThrow(() -> new Exception("Artist not found!"));
   }
 
@@ -42,10 +47,13 @@ public class ArtistResource {
       throws Exception {
     Template temp = freemakerConfig.getTemplate("artist/" + template + ".html");
     StringWriter out = new StringWriter();
-    Artist art = getProfile(id);
-    temp.process(art, out);
+    temp.process(getHtmlModel(id), out);
     // return Processor.process(out.toString());
     return out.toString();
+  }
+
+  private Map<String, Object> getHtmlModel(String id) throws Exception {
+    return ImmutableMap.of("artist", get(id));
   }
 
 }

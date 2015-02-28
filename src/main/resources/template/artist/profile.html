@@ -1,6 +1,6 @@
-<img alt="" src="${appcontext}${picture}"></img>
+<img alt="" src="${appcontext}${artist.picture}"></img>
 <div class="external-link">
-  <#list medias as media>
+  <#list artist.medias as media>
     <a class="${media.id}" href="${media.href}"></a>
   </#list>
 </div>

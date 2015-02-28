@@ -1,6 +1,8 @@
 package io.enscene.topophone.widget.model.partner;
 
-public class Partner {
+import io.enscene.topophone.api.ResourceModel;
+
+public class Partner implements ResourceModel {
 
   private String type;
   private String logo;

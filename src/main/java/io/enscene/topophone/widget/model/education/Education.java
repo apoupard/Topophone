@@ -1,6 +1,8 @@
 package io.enscene.topophone.widget.model.education;
 
-public class Education {
+import io.enscene.topophone.api.ResourceModel;
+
+public class Education implements ResourceModel {
 
   private String id;
   private String description;
