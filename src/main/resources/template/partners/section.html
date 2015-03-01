@@ -1,0 +1,53 @@
+<#import "/container/widgets.html" as container>
+<div class="side column-left">
+  <@container.widgets>
+    <@container.widget opacity=true gradient=true>
+      <div class="summary">
+	      <ul>
+		        <li><a onclick="document.getElementById('institutionnels').scrollIntoView()">Institutionnels</a></li>
+            <li><a onclick="document.getElementById('prives').scrollIntoView()">Privés</a></li>
+            <li><a onclick="document.getElementById('associatifs').scrollIntoView()">Associatifs</a></li>
+	      </ul>
+      </div>
+    </@container.widget>
+  </@container.widgets>
+</div>
+
+<#assign institutionnels = '<h3 id="institutionnels">Institutionnels</h3>'> 
+<#assign prives = '<h3 id="Prives">Privés</h3>'> 
+<#assign associatifs = '<h3 id="associatifs">Associatifs</h3>'>
+
+<#list partners as partner>
+  <#switch partner.type>
+    <#case 'Institutionnels'>
+      <#assign institutionnels>
+        ${institutionnels}
+        <#include "/partners/widgets/partner.html"> 
+      </#assign>
+      <#break>
+    <#case 'Privés'>
+      <#assign prives >
+        ${prives}
+        <#include "/partners/widgets/partner.html"> 
+      </#assign>
+      <#break>
+    <#case 'Associatifs'>
+      <#assign associatifs>
+        associatifs
+        <#include "/partners/widgets/partner.html"> 
+      </#assign>
+      <#break>
+  </#switch>
+</#list>
+<div class="two-column-center">
+  <@container.widgets>
+	  <@container.widget opacity=true gradient=true>
+		  <div class="partners">
+		    <h1>Nos partenaires</h1>
+		    ${institutionnels}
+		    ${prives}
+		    ${associatifs}
+		  </div>
+	  </@container.widget>
+  </@container.widgets>
+</div>

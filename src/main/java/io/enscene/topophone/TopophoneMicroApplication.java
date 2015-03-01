@@ -55,6 +55,7 @@ public class TopophoneMicroApplication extends MicroService {
    
     resourceDaoBinder.addBinding("artist").to(ArtistDao.class);
     resourceDaoBinder.addBinding("education").to(EducationDao.class);
+    resourceDaoBinder.addBinding("partners").to(PartnerDao.class);
   }
 
 }

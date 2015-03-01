@@ -1,13 +1,11 @@
 package io.enscene.topophone.widget.resource;
 
-import static com.google.common.collect.Multimaps.index;
 import io.enscene.topophone.widget.dao.PartnerDao;
 import io.enscene.topophone.widget.model.partner.Partner;
 
 import java.io.IOException;
 import java.io.StringWriter;
 import java.util.Collection;
-import java.util.Map;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -39,11 +37,8 @@ public class PartnerResource {
   @GET
   @Path("/")
   @Produces(MediaType.APPLICATION_JSON)
-  public Map<String, Collection<Partner>> getPartners() throws IOException, TemplateException {
-    return index(partnerDao.getAll(), (partner) -> {
-      return partner.getType();
-    }).asMap();
-
+  public Collection<Partner> getPartners() throws IOException, TemplateException {
+    return partnerDao.getAll();
   }
 
   @GET
@@ -51,7 +46,7 @@ public class PartnerResource {
   @Produces(MediaType.TEXT_HTML)
   public String getHtmlProfile(@PathParam("template") String template) throws IOException,
       TemplateException {
-    Template temp = freemakerConfig.getTemplate("partner/" + template + ".html");
+    Template temp = freemakerConfig.getTemplate("partners/" + template + ".html");
     StringWriter out = new StringWriter();
     temp.process(ImmutableMap.of("partners", getPartners()), out);
     // return Processor.process(out.toString());

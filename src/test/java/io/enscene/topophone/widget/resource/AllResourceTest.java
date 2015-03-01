@@ -30,14 +30,6 @@ public class AllResourceTest {
   
   @Test
   @RunAsClient
-  public void test(
-      @ArquillianResteasyResource("html/all") ResteasyWebTarget webTarget) {
-    String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
-    Assertions.assertThat(href).contains("toto");
-  }
-
-  @Test
-  @RunAsClient
   public void should_getJson(
       @ArquillianResteasyResource("html/all/artist/lecommondiamond/section") ResteasyWebTarget webTarget) {
     String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
@@ -53,4 +45,13 @@ public class AllResourceTest {
     Assertions.assertThat(href).contains("<h1>Création musicale</h1>");
   }
 
+  @Test
+  @RunAsClient
+  public void should_getPartners(
+      @ArquillianResteasyResource("html/all/partners") ResteasyWebTarget webTarget) {
+    String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
+    Assertions.assertThat(href).contains("<li><a onclick=\"document.getElementById('institutionnels').scrollIntoView()\">Institutionnels</a></li>")
+    .contains("<img src=\"/images/partners/fse.png\"/>");
+  }
+  
 }

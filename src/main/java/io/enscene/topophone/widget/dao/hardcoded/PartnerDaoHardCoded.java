@@ -13,7 +13,7 @@ import com.google.common.collect.ImmutableMap;
 
 @Singleton
 public class PartnerDaoHardCoded extends AstractHardCoded<Partner> implements PartnerDao {
-
+  
   @Override
   void init(Map<String, Partner> database) {
     database
