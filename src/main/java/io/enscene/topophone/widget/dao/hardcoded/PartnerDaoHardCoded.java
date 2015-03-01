@@ -1,19 +1,15 @@
 package io.enscene.topophone.widget.dao.hardcoded;
 
-import static com.google.common.collect.Multimaps.index;
 import io.enscene.topophone.widget.dao.PartnerDao;
 import io.enscene.topophone.widget.model.partner.Partner;
 
 import java.util.Map;
-import java.util.Optional;
 
 import javax.inject.Singleton;
 
-import com.google.common.collect.ImmutableMap;
-
 @Singleton
 public class PartnerDaoHardCoded extends AstractHardCoded<Partner> implements PartnerDao {
-  
+
   @Override
   void init(Map<String, Partner> database) {
     database
@@ -72,23 +68,6 @@ public class PartnerDaoHardCoded extends AstractHardCoded<Partner> implements Pa
                 "Associatifs",
                 "/images/partners/franceactive.png",
                 "<span class=\"bold\">France Active</span> est un réseau de proximité qui aide les personnes en difficulté et finance les entreprises solidaires (insertion par l’activité économique, associations d’utilité sociale).\" Topophone est accompagné par Midi-Pyrénées Active au titre du \"Contrat d’amorçage associatif\", qui a pour objectif de proposer aux petites associations en création une première marche vers la structuration financière."));
-  }
-
-  @Override
-  public Map<String, ? extends Object> getAllHtmlModel() {
-    return index(getAll(), (partner) -> {
-      return partner.getType();
-    }).asMap();
-  }
-
-  @Override
-  public Map<String, ? extends Object> getHtmlModel(String id) {
-    Optional<Partner> partner = get(id);
-    if(partner.isPresent()) {
-      return ImmutableMap.of("partner", partner);
-    } else {
-      return ImmutableMap.of();
-    }
   }
 
 }

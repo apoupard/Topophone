@@ -4,11 +4,8 @@ import io.enscene.topophone.widget.dao.EducationDao;
 import io.enscene.topophone.widget.model.education.Education;
 
 import java.util.Map;
-import java.util.Optional;
 
 import javax.inject.Singleton;
-
-import com.google.common.collect.ImmutableMap;
 
 @Singleton
 public class EducationDaoHardCoded extends AstractHardCoded<Education> implements EducationDao {
@@ -36,21 +33,6 @@ public class EducationDaoHardCoded extends AstractHardCoded<Education> implement
                 "meeting",
                 "<h1>Rencontre d’artistes</h1> <h3>L'atelier</h3><p>Des musiciens professionnels interviennent en classe durant 1 à 2 heures. Sur la base d’un récit d’expérience suivi d’un concert « interactif », ce moment permet la rencontre, l’échange et le partage entre musiciens et jeune public.</p><h3>Objectifs généraux</h3><ul><li>Sensibiliser et ouvrir les élèves à la découverte musicale par la rencontre et l’échange avec des musiciens professionnels.</li><li>Utiliser la rencontre avec des artistes comme un vecteur de connaissances et d’enrichissement individuel</li></ul>",
                 "/images/education/meeting.png"));
-  }
-
-  @Override
-  public Map<String, ? extends Object> getAllHtmlModel() {
-    return database;
-  }
-
-  @Override
-  public Map<String, ? extends Object> getHtmlModel(String id) {
-    Optional<Education> edu  = get(id);
-    if(edu.isPresent()) {
-      return ImmutableMap.of("education", edu);
-    } else {
-      return ImmutableMap.of();
-    }
   }
 
 }

@@ -1,21 +1,19 @@
 package io.enscene.topophone.widget.dao.hardcoded;
 
-import java.util.GregorianCalendar;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-
-import javax.inject.Singleton;
-
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-
 import io.enscene.topophone.widget.dao.ArtistDao;
 import io.enscene.topophone.widget.model.artist.Artist;
 import io.enscene.topophone.widget.model.artist.Concert;
 import io.enscene.topophone.widget.model.artist.Headband;
 import io.enscene.topophone.widget.model.artist.Media;
 import io.enscene.topophone.widget.model.artist.Song;
+
+import java.util.GregorianCalendar;
+import java.util.List;
+import java.util.Map;
+
+import javax.inject.Singleton;
+
+import com.google.common.collect.ImmutableList;
 
 @Singleton
 public class ArtistDaoHardCoded extends AstractHardCoded<Artist> implements ArtistDao {
@@ -68,29 +66,4 @@ public class ArtistDaoHardCoded extends AstractHardCoded<Artist> implements Arti
     return "contact@lecommundiamond.com";
   }
   
-  @Override
-  public Map<String, ? extends Object> getHtmlModel(String id) {
-    Optional<Artist> edu  = get(id);
-    if(edu.isPresent()) {
-      return ImmutableMap.of("artist", edu);
-    } else {
-      return ImmutableMap.of();
-    }
-  }
-
-  @Override
-  public Map<String, ? extends Object> getAllHtmlModel() {
-    return database;
-  }
-  
-//  @Override
-//  public Optional<Artist> get(String id) {
-//    return null;
-//  }
-
-//  @Override
-//  public Collection<Artist> getAll() {
-//    return null;
-//  }
-
 }

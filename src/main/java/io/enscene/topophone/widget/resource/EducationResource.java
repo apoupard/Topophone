@@ -4,6 +4,7 @@ import io.enscene.topophone.widget.dao.EducationDao;
 import io.enscene.topophone.widget.model.education.Education;
 
 import java.io.StringWriter;
+import java.util.Optional;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -34,7 +35,7 @@ public class EducationResource {
   @Path("/{id}")
   @Produces(MediaType.APPLICATION_JSON)
   public Education getEducation(@PathParam("id") String id) throws Exception {
-    return educationDao.get(id).orElseThrow(() -> new Exception("Education not found"));
+    return educationDao.get(id, Optional.empty()).orElseThrow(() -> new Exception("Education not found"));
   }
 
   @GET

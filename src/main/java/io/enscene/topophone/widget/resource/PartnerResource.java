@@ -6,6 +6,7 @@ import io.enscene.topophone.widget.model.partner.Partner;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.util.Collection;
+import java.util.Optional;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -38,7 +39,7 @@ public class PartnerResource {
   @Path("/")
   @Produces(MediaType.APPLICATION_JSON)
   public Collection<Partner> getPartners() throws IOException, TemplateException {
-    return partnerDao.getAll();
+    return partnerDao.getAll(Optional.empty());
   }
 
   @GET

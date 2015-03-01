@@ -5,6 +5,7 @@ import io.enscene.topophone.widget.model.artist.Artist;
 
 import java.io.StringWriter;
 import java.util.Map;
+import java.util.Optional;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -37,7 +38,7 @@ public class ArtistResource {
   @Path("/{resourceId}")
   @Produces(MediaType.APPLICATION_JSON)
   public Artist get(@PathParam("resourceId") String id) throws Exception {
-    return dao.get(id).orElseThrow(() -> new Exception("Artist not found!"));
+    return dao.get(id, Optional.empty()).orElseThrow(() -> new Exception("Artist not found!"));
   }
 
   @GET

@@ -18,7 +18,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(Arquillian.class)
-public class AllResourceTest {
+public class SectionsResourceTest {
   
   @ArquillianResource
   private URL deploymentURL;
@@ -31,7 +31,7 @@ public class AllResourceTest {
   @Test
   @RunAsClient
   public void should_getJson(
-      @ArquillianResteasyResource("html/all/artist/lecommondiamond/section") ResteasyWebTarget webTarget) {
+      @ArquillianResteasyResource("html/sections/artist/lecommondiamond") ResteasyWebTarget webTarget) {
     String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
     Assertions.assertThat(href).contains("/images/lecommondiamond.png");
   }
@@ -39,8 +39,8 @@ public class AllResourceTest {
   @Test
   @RunAsClient
   public void should_getCreationSectionHtml(
-      @ArquillianResteasyResource("html/all/education/creation/section") ResteasyWebTarget webTarget) {
-    String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
+      @ArquillianResteasyResource("html/sections/education/creation") ResteasyWebTarget webTarget) {
+    String href = webTarget.queryParam("template", "section").request(MediaType.TEXT_HTML).get(String.class);
     System.out.println(href);
     Assertions.assertThat(href).contains("<h1>Création musicale</h1>");
   }
@@ -48,7 +48,7 @@ public class AllResourceTest {
   @Test
   @RunAsClient
   public void should_getPartners(
-      @ArquillianResteasyResource("html/all/partners") ResteasyWebTarget webTarget) {
+      @ArquillianResteasyResource("html/sections/partners") ResteasyWebTarget webTarget) {
     String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
     Assertions.assertThat(href).contains("<li><a onclick=\"document.getElementById('institutionnels').scrollIntoView()\">Institutionnels</a></li>")
     .contains("<img src=\"/images/partners/fse.png\"/>");

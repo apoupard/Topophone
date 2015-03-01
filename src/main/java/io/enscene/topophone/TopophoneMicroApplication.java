@@ -4,19 +4,21 @@ import freemarker.template.Configuration;
 import io.enscene.core.MicroService;
 import io.enscene.topophone.api.ResourceDao;
 import io.enscene.topophone.api.ResourceModel;
+import io.enscene.topophone.templating.FreemakerTemplateEngine;
+import io.enscene.topophone.templating.HtmlTemplateEngine;
 import io.enscene.topophone.widget.dao.ArtistDao;
 import io.enscene.topophone.widget.dao.EducationDao;
 import io.enscene.topophone.widget.dao.PartnerDao;
 import io.enscene.topophone.widget.dao.hardcoded.ArtistDaoHardCoded;
 import io.enscene.topophone.widget.dao.hardcoded.EducationDaoHardCoded;
 import io.enscene.topophone.widget.dao.hardcoded.PartnerDaoHardCoded;
-import io.enscene.topophone.widget.resource.AllResource;
 import io.enscene.topophone.widget.resource.ArtistResource;
 import io.enscene.topophone.widget.resource.EducationResource;
 import io.enscene.topophone.widget.resource.HeaderResource;
 import io.enscene.topophone.widget.resource.IndexResource;
 import io.enscene.topophone.widget.resource.NavResource;
 import io.enscene.topophone.widget.resource.PartnerResource;
+import io.enscene.topophone.widget.resource.SectionsResource;
 
 import javax.ws.rs.ApplicationPath;
 
@@ -41,7 +43,9 @@ public class TopophoneMicroApplication extends MicroService {
     binder.bind(EducationResource.class);
     binder.bind(IndexResource.class);
    
-    binder.bind(AllResource.class);
+    binder.bind(SectionsResource.class);
+    
+    binder.bind(HtmlTemplateEngine.class).to(FreemakerTemplateEngine.class);
    
     binder.bind(ArtistDao.class).to(ArtistDaoHardCoded.class);
     binder.bind(EducationDao.class).to(EducationDaoHardCoded.class);
