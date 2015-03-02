@@ -9,7 +9,4 @@ public interface ResourceDao<RESOURCE extends ResourceModel> {
 
   public Collection<RESOURCE> getAll(Optional<String> version);
   
-//  public Map<String, ? extends Object> getAllHtmlModel();
-//  public Map<String, ? extends Object> getHtmlModel(String id);
-  
 }
