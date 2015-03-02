@@ -71,25 +71,25 @@ public class SectionsResourceTest {
                 deploymentURL.getPath()));
   }
 
-  @Test
-  @RunAsClient
-  public void should_getEducationNav(
-      @ArquillianResteasyResource("html/sections/subnav/education") ResteasyWebTarget webTarget) {
-    String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
-    System.out.println(href);
-    Assertions.assertThat(href).contains(String.format("<a href=\"%sappli/education/creation\">Création musicale</a>",
-        deploymentURL.getPath()));
-  }
-
-  @Test
-  @RunAsClient
-  public void should_getSectionHtml(
-      @ArquillianResteasyResource("html/sections/header") ResteasyWebTarget webTarget) {
-    
-    String path = deploymentURL.getPath();
-    String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
-    System.out.println(href);
-    Assertions.assertThat(href).contains(String.format("<img class=\"logo\" src=\"%simages/logo.png\">", path));
-  }
+//  @Test
+//  @RunAsClient
+//  public void should_getEducationNav(
+//      @ArquillianResteasyResource("html/sections/subnav/education") ResteasyWebTarget webTarget) {
+//    String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
+//    System.out.println(href);
+//    Assertions.assertThat(href).contains(String.format("<a href=\"%sappli/education/creation\">Création musicale</a>",
+//        deploymentURL.getPath()));
+//  }
+//
+//  @Test
+//  @RunAsClient
+//  public void should_getSectionHtml(
+//      @ArquillianResteasyResource("html/sections/header") ResteasyWebTarget webTarget) {
+//    
+//    String path = deploymentURL.getPath();
+//    String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
+//    System.out.println(href);
+//    Assertions.assertThat(href).contains(String.format("<img class=\"logo\" src=\"%simages/logo.png\">", path));
+//  }
   
 }
