@@ -11,7 +11,7 @@ void main() {
                .then((resp) => querySelector("#header").appendHtml(resp.responseText))
                .catchError((error) => print(error));
   
-  HttpRequest.request(context + "html/nav", method: 'GET', requestHeaders: {'Accept': 'text/html'})
+  HttpRequest.request(context + "html/sections/nav", method: 'GET', requestHeaders: {'Accept': 'text/html'})
              .then((resp) => querySelector("nav").appendHtml(resp.responseText))
              .catchError((error) => print(error));
   route..addHandler(new UrlPattern(r'/(.*)'), show)
@@ -32,7 +32,7 @@ String getContext(){
 }
 
 void show(String path) {
-  String url = path.replaceAll(new RegExp('appli'), "html") + "/section";
+  String url = path.replaceAll(new RegExp('appli'), "html/sections");
   HttpRequest.request(url, method: 'GET', requestHeaders: {'Accept': 'text/html'})
       .then((HttpRequest resp) {
         Element content = querySelector("#content")..nodes.clear()

@@ -1,10 +1,12 @@
 package io.enscene.topophone.widget.model.nav;
 
+import io.enscene.topophone.api.ResourceModel;
+
 import java.util.List;
 
 import com.google.common.collect.ImmutableList;
 
-public class Entry {
+public class Entry implements ResourceModel {
 
   private String id;
   private String displayName;

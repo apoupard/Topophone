@@ -1,8 +1,10 @@
 package io.enscene.topophone.widget.model.nav;
 
+import io.enscene.topophone.api.ResourceModel;
+
 import java.util.List;
 
-public class Nav {
+public class Nav implements ResourceModel{
 
   List<Entry> entries;
 

@@ -8,9 +8,11 @@ import io.enscene.topophone.templating.FreemakerTemplateEngine;
 import io.enscene.topophone.templating.HtmlTemplateEngine;
 import io.enscene.topophone.widget.dao.ArtistDao;
 import io.enscene.topophone.widget.dao.EducationDao;
+import io.enscene.topophone.widget.dao.NavDao;
 import io.enscene.topophone.widget.dao.PartnerDao;
 import io.enscene.topophone.widget.dao.hardcoded.ArtistDaoHardCoded;
 import io.enscene.topophone.widget.dao.hardcoded.EducationDaoHardCoded;
+import io.enscene.topophone.widget.dao.hardcoded.NavDaoHardCoded;
 import io.enscene.topophone.widget.dao.hardcoded.PartnerDaoHardCoded;
 import io.enscene.topophone.widget.resource.ArtistResource;
 import io.enscene.topophone.widget.resource.EducationResource;
@@ -50,7 +52,7 @@ public class TopophoneMicroApplication extends MicroService {
     binder.bind(ArtistDao.class).to(ArtistDaoHardCoded.class);
     binder.bind(EducationDao.class).to(EducationDaoHardCoded.class);
     binder.bind(PartnerDao.class).to(PartnerDaoHardCoded.class);
-    
+    binder.bind(NavDao.class).to(NavDaoHardCoded.class);
     
     MapBinder<String, ResourceDao<? extends ResourceModel>> resourceDaoBinder =
         MapBinder.newMapBinder(binder, new TypeLiteral<String>() {},
@@ -60,6 +62,8 @@ public class TopophoneMicroApplication extends MicroService {
     resourceDaoBinder.addBinding("artist").to(ArtistDao.class);
     resourceDaoBinder.addBinding("education").to(EducationDao.class);
     resourceDaoBinder.addBinding("partners").to(PartnerDao.class);
+    resourceDaoBinder.addBinding("nav").to(NavDao.class);
+    resourceDaoBinder.addBinding("subnav").to(NavDao.class);
   }
 
 }

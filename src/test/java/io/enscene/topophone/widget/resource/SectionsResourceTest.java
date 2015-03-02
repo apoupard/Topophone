@@ -19,15 +19,15 @@ import org.junit.runner.RunWith;
 
 @RunWith(Arquillian.class)
 public class SectionsResourceTest {
-  
+
   @ArquillianResource
   private URL deploymentURL;
 
   @Deployment
-  public static WebArchive createDeployment () {
+  public static WebArchive createDeployment() {
     return TopophoneWebArchive.get();
   }
-  
+
   @Test
   @RunAsClient
   public void should_getJson(
@@ -35,12 +35,13 @@ public class SectionsResourceTest {
     String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
     Assertions.assertThat(href).contains("/images/lecommondiamond.png");
   }
-  
+
   @Test
   @RunAsClient
   public void should_getCreationSectionHtml(
       @ArquillianResteasyResource("html/sections/education/creation") ResteasyWebTarget webTarget) {
-    String href = webTarget.queryParam("template", "section").request(MediaType.TEXT_HTML).get(String.class);
+    String href =
+        webTarget.queryParam("template", "section").request(MediaType.TEXT_HTML).get(String.class);
     System.out.println(href);
     Assertions.assertThat(href).contains("<h1>Création musicale</h1>");
   }
@@ -50,8 +51,34 @@ public class SectionsResourceTest {
   public void should_getPartners(
       @ArquillianResteasyResource("html/sections/partners") ResteasyWebTarget webTarget) {
     String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
-    Assertions.assertThat(href).contains("<li><a onclick=\"document.getElementById('institutionnels').scrollIntoView()\">Institutionnels</a></li>")
-    .contains("<img src=\"/images/partners/fse.png\"/>");
+    Assertions
+        .assertThat(href)
+        .contains(
+            "<li><a onclick=\"document.getElementById('institutionnels').scrollIntoView()\">Institutionnels</a></li>")
+        .contains("<img src=\"/images/partners/fse.png\"/>");
   }
-  
+
+  @Test
+  @RunAsClient
+  public void should_getAllNav(
+      @ArquillianResteasyResource("html/sections/nav") ResteasyWebTarget webTarget) {
+    String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
+    System.out.println(href);
+    Assertions.assertThat(href).contains(
+        String.format("<a href=\"%sappli/artist/lecommondiamond\">le common diamond</a>",
+            deploymentURL.getPath()))
+            .contains(String.format("<a href=\"%sappli/education/creation\">Création musicale</a>",
+                deploymentURL.getPath()));
+  }
+
+  @Test
+  @RunAsClient
+  public void should_getEducationNav(
+      @ArquillianResteasyResource("html/sections/subnav/education") ResteasyWebTarget webTarget) {
+    String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
+    System.out.println(href);
+    Assertions.assertThat(href).contains(String.format("<a href=\"%sappli/education/creation\">Création musicale</a>",
+        deploymentURL.getPath()));
+  }
+
 }
