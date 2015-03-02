@@ -17,6 +17,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
+import com.google.common.collect.ImmutableMap;
+
 @Path("sections")
 public class SectionsResource {
 
@@ -47,7 +49,7 @@ public class SectionsResource {
   public String getResourcesHtml(@PathParam("name") String name,
       @QueryParam("version") String version) throws Exception {
     Collection<? extends ResourceModel> res = getResourceModels(name, version);
-    return templateEngine.execute(name, empty(), res);
+    return templateEngine.execute(name, empty(), ImmutableMap.of(name, res));
   }
 
   @GET
@@ -69,7 +71,7 @@ public class SectionsResource {
       @QueryParam("version") String version, @QueryParam("template") String template)
       throws Exception {
     ResourceModel res = get(name, id, version);
-    return templateEngine.execute(name, ofNullable(template), res);
+    return templateEngine.execute(name, ofNullable(template), ImmutableMap.of(name, res));
   }
 
 }

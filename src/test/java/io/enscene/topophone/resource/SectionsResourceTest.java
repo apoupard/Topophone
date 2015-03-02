@@ -30,7 +30,7 @@ public class SectionsResourceTest {
 
   @Test
   @RunAsClient
-  public void should_getJson(
+  public void should_getArtist(
       @ArquillianResteasyResource("html/sections/artist/lecommondiamond") ResteasyWebTarget webTarget) {
     String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
     Assertions.assertThat(href).contains("/images/lecommondiamond.png");
@@ -55,7 +55,7 @@ public class SectionsResourceTest {
         .assertThat(href)
         .contains(
             "<li><a onclick=\"document.getElementById('institutionnels').scrollIntoView()\">Institutionnels</a></li>")
-        .contains("<img src=\"/images/partners/fse.png\"/>");
+        .contains(String.format("<img src=\"%simages/partners/fse.png\"/>", deploymentURL.getPath()));
   }
 
   @Test
@@ -81,4 +81,15 @@ public class SectionsResourceTest {
         deploymentURL.getPath()));
   }
 
+  @Test
+  @RunAsClient
+  public void should_getSectionHtml(
+      @ArquillianResteasyResource("html/sections/header") ResteasyWebTarget webTarget) {
+    
+    String path = deploymentURL.getPath();
+    String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
+    System.out.println(href);
+    Assertions.assertThat(href).contains(String.format("<img class=\"logo\" src=\"%simages/logo.png\">", path));
+  }
+  
 }

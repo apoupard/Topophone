@@ -2,11 +2,10 @@ package io.enscene.topophone.templating;
 
 import java.io.IOException;
 import java.io.StringWriter;
+import java.util.Map;
 import java.util.Optional;
 
 import javax.inject.Inject;
-
-import com.google.common.collect.ImmutableMap;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
@@ -22,7 +21,7 @@ public class FreemakerTemplateEngine implements HtmlTemplateEngine {
   }
 
   @Override
-  public String execute(String name, Optional<String> template, Object res) throws IOException,
+  public String execute(String name, Optional<String> template, Map<String, Object> res) throws IOException,
       TemplateException {
     String templateName =
         new StringBuilder().append(name).append("/").append(template.orElse("section"))
@@ -30,7 +29,7 @@ public class FreemakerTemplateEngine implements HtmlTemplateEngine {
 
     Template temp = freemakerConfig.getTemplate(templateName);
     StringWriter out = new StringWriter();
-    temp.process(ImmutableMap.of(name, res), out);
+    temp.process(res, out);
     // return Processor.process(out.toString());
     return out.toString();
   }

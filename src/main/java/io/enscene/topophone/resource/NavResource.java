@@ -1,73 +1,65 @@
 package io.enscene.topophone.resource;
 
+import static java.util.Optional.empty;
+import static java.util.Optional.of;
+import freemarker.template.TemplateException;
+import io.enscene.topophone.dao.NavDao;
 import io.enscene.topophone.model.nav.Entry;
-import io.enscene.topophone.model.nav.Nav;
+import io.enscene.topophone.templating.HtmlTemplateEngine;
 
 import java.io.IOException;
-import java.io.StringWriter;
-import java.util.List;
+import java.util.Collection;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import com.google.common.collect.ImmutableList;
-
-import freemarker.template.Configuration;
-import freemarker.template.Template;
-import freemarker.template.TemplateException;
+import com.google.common.collect.ImmutableMap;
 
 
 @Path("nav")
 public class NavResource {
 
-  private final Configuration freemakerConfig;
+  private HtmlTemplateEngine htmlTemplateEngine;
+  private  NavDao dao;
 
   @Inject
-  NavResource(Configuration freemakerConfig) {
-    this.freemakerConfig = freemakerConfig;
+  NavResource(HtmlTemplateEngine htmlTemplateEngine, NavDao dao) {
+    this.htmlTemplateEngine = htmlTemplateEngine;
+    this.dao = dao;
   }
 
   @GET
   @Path("/")
   @Produces(MediaType.APPLICATION_JSON)
-  public Nav getMenu() throws IOException, TemplateException {
-    return new Nav(entries());
-  }
-
-  private List<Entry> entries() {
-    return ImmutableList.<Entry>builder()
-        .add(Entry.of("accompanying", "accompagnement", "/accompanying")).add(educationSubMenu())
-        .add(Entry.separator()).add(artist()).add(Entry.of("partners", "partenaires", "/partners"))
-        .build();
-  }
-
-  private Entry artist() {
-    return Entry.of("artist", "Artistes", "/artist", ImmutableList.of(Entry.of("lecommondiamond",
-        "le common diamond", "/artist/lecommondiamond"), Entry.of("internationalhyperrythmique",
-        "international hyper rythmique", "/artist/internationalhyperrythmique")));
-  }
-
-  private Entry educationSubMenu() {
-    return Entry.of(
-        "education",
-        "Actions éducative",
-        "/education",
-        ImmutableList.of(Entry.of("creation", "Création musicale", "/education/creation"),
-            Entry.of("initiation", "Initiation à l'écoute", "/education/initiation"),
-            Entry.of("meeting", "Rencontre d'artistes", "/education/meeting")));
+  public Collection<Entry> getMenu() throws IOException, TemplateException {
+    return dao.getAll(empty());
   }
 
   @GET
   @Path("/")
   @Produces(MediaType.TEXT_HTML)
   public String getHtmlProfile() throws IOException, TemplateException {
-    Template temp = freemakerConfig.getTemplate("nav/read.html");
-    StringWriter out = new StringWriter();
-    temp.process(getMenu(), out);
-    return out.toString();
+    Collection<Entry> nav = getMenu();
+    return htmlTemplateEngine.execute("nav", empty(), ImmutableMap.of("nav", nav));
   }
 
+  @GET
+  @Path("/{id}")
+  @Produces(MediaType.APPLICATION_JSON)
+  private Entry getSubMenu(String id) throws Exception {
+    return dao.get(id, empty()).orElseThrow(() -> new Exception("Entry not found"));
+  }
+  
+  @GET
+  @Path("/{id}")
+  @Produces(MediaType.TEXT_HTML)
+  public String getHtmlProfile(@PathParam("id") String id) throws Exception {
+    Entry entry = getSubMenu(id);
+    return htmlTemplateEngine.execute("nav", of("subsection"), ImmutableMap.of("entry", entry));
+  }
+  
 }

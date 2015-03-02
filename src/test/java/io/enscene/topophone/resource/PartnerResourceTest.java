@@ -7,6 +7,7 @@ import java.net.URL;
 import javax.ws.rs.core.MediaType;
 
 import static org.assertj.core.api.Assertions.*;
+
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.RunAsClient;
 import org.jboss.arquillian.extension.rest.client.ArquillianResteasyResource;
@@ -31,12 +32,13 @@ public class PartnerResourceTest {
   @Test
   @RunAsClient
   public void should_getSectionHtml(
-      @ArquillianResteasyResource("html/partners/section") ResteasyWebTarget webTarget) {
+      @ArquillianResteasyResource("html/partners/") ResteasyWebTarget webTarget) {
     String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
     System.out.println(href);
     assertThat(href)
-      .contains("<h1>Nos partenaires</h1>")
-      .contains("<img src=\"/images/partners/fse.png\"/>");
+    .contains(
+        "<li><a onclick=\"document.getElementById('institutionnels').scrollIntoView()\">Institutionnels</a></li>")
+    .contains(String.format("<img src=\"%simages/partners/fse.png\"/>", deploymentURL.getPath()));
   }
 }
 

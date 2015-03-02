@@ -1,7 +1,10 @@
 package io.enscene.topophone.resource;
 
+import freemarker.template.TemplateException;
+import io.enscene.topophone.templating.HtmlTemplateEngine;
+
 import java.io.IOException;
-import java.io.StringWriter;
+import java.util.Optional;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -11,28 +14,21 @@ import javax.ws.rs.core.MediaType;
 
 import com.google.common.collect.ImmutableMap;
 
-import freemarker.template.Configuration;
-import freemarker.template.Template;
-import freemarker.template.TemplateException;
-
 
 @Path("index")
 public class IndexResource {
 
-  private final Configuration freemakerConfig;
+  private final HtmlTemplateEngine htmlTemplateEngine;
 
   @Inject
-  IndexResource(Configuration freemakerConfig) {
-    this.freemakerConfig = freemakerConfig;
+  IndexResource(HtmlTemplateEngine htmlTemplateEngine) {
+    this.htmlTemplateEngine = htmlTemplateEngine;
   }
 
   @GET
   @Produces(MediaType.TEXT_HTML)
   public String getHtmlIndex() throws IOException, TemplateException {
-    Template temp = freemakerConfig.getTemplate("index.html");
-    StringWriter out = new StringWriter();
-    temp.process(ImmutableMap.of(), out);
-    return out.toString();
+    return htmlTemplateEngine.execute("index", Optional.of("index"), ImmutableMap.of());
   }
 
 }

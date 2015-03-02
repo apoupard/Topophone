@@ -1,37 +1,46 @@
 package io.enscene.topophone.resource;
 
+import freemarker.template.TemplateException;
+import io.enscene.topophone.dao.HeaderDao;
+import io.enscene.topophone.model.header.Header;
+import io.enscene.topophone.templating.HtmlTemplateEngine;
+
 import java.io.IOException;
-import java.io.StringWriter;
+import static java.util.Optional.ofNullable;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
-import freemarker.template.Configuration;
-import freemarker.template.Template;
-import freemarker.template.TemplateException;
+import com.google.common.collect.ImmutableMap;
 
 
 @Path("header")
 public class HeaderResource {
 
-  private final Configuration freemakerConfig;
+  private final HeaderDao headerDao;
+  private final HtmlTemplateEngine htmlTemplateEngine;
 
   @Inject
-  HeaderResource(Configuration freemakerConfig) {
-    this.freemakerConfig = freemakerConfig;
+  HeaderResource(HeaderDao headerDao, HtmlTemplateEngine htmlTemplateEngine) {
+    this.headerDao = headerDao;
+    this.htmlTemplateEngine = htmlTemplateEngine;
+  }
+  
+  @GET
+  @Produces(MediaType.APPLICATION_JSON)
+  public Header getHeader(@QueryParam("template") String template, @QueryParam("template") String version) throws IOException, TemplateException {
+    return headerDao.get(ofNullable(template));
   }
 
   @GET
-  @Path("/")
   @Produces(MediaType.TEXT_HTML)
-  public String getHtmlProfile() throws IOException, TemplateException {
-    Template temp = freemakerConfig.getTemplate("header/read.html");
-    StringWriter out = new StringWriter();
-    temp.process(null, out);
-    return out.toString();
+  public String getHtmlProfile(@QueryParam("template") String template, @QueryParam("template") String version) throws IOException, TemplateException {
+    Header header = getHeader(template, version);
+    return htmlTemplateEngine.execute("header", ofNullable(template), ImmutableMap.of("header", header));
   }
 
 }
