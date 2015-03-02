@@ -4,8 +4,7 @@ import 'package:route/client.dart';
 final Router route = new Router();
 String context;
 void main() {
-  //window.location.pathname*
-  
+
   context = getContext();
   HttpRequest.request(context + "html/header", method: 'GET', requestHeaders: {'Accept': 'text/html'})
                .then((resp) => querySelector("#header").appendHtml(resp.responseText))
@@ -14,9 +13,15 @@ void main() {
   HttpRequest.request(context + "html/sections/nav", method: 'GET', requestHeaders: {'Accept': 'text/html'})
              .then((resp) => querySelector("nav").appendHtml(resp.responseText))
              .catchError((error) => print(error));
-  route..addHandler(new UrlPattern(r'/(.*)'), show)
-        ..listen();
-  route.gotoPath(window.location.pathname, '');
+  try {
+    route..addHandler(new UrlPattern(context), showHome)
+          ..addHandler(new UrlPattern(r''+context+'(.+)'), show)
+          ..listen();
+    
+    route.gotoPath(window.location.pathname, '');
+  } catch (exception, stackTrace){
+    showHome('');
+  }
 }
 
 String getContext(){
@@ -29,6 +34,15 @@ String getContext(){
     return "/";
   }
   return pathname.substring(0, index +1);
+}
+
+void showHome(String path) {
+  HttpRequest.request(context+'html/main', method: 'GET', requestHeaders: {'Accept': 'text/html'})
+      .then((HttpRequest resp) {
+        Element content = querySelector("#content")..nodes.clear()
+            ..appendHtml(resp.responseText);
+    }
+  ).catchError((error) => print(error));
 }
 
 void show(String path) {
