@@ -25,6 +25,12 @@ public class Entry implements ResourceModel {
   public static Entry separator() {
     return new Entry("", "", "", ImmutableList.of(), "separator");
   }
+  
+
+  public static Entry smallSeparator() {
+    return new Entry("", "", "", ImmutableList.of(), "smallSeparator");
+  }
+
 
   public Entry(String id, String displayName, String href, List<Entry> entries, String styleNames) {
     this.id = id;
@@ -73,5 +79,4 @@ public class Entry implements ResourceModel {
   public void setStyleNames(String styleNames) {
     this.styleNames = styleNames;
   }
-
 }

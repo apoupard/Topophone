@@ -26,9 +26,17 @@ public class NavDaoHardCoded implements NavDao {
 
 
   private List<Entry> entries() {
+  
     return ImmutableList.<Entry>builder()
-        .add(Entry.of("accompanying", "accompagnement", "/accompanying")).add(educationSubMenu())
-        .add(Entry.separator()).add(artist()).add(Entry.of("partners", "partenaires", "/partners"))
+        .add(Entry.smallSeparator())
+        .add(Entry.of("accompanying", "accompagnement", "/accompanying"))
+        .add(Entry.smallSeparator())
+        .add(educationSubMenu())
+        .add(Entry.separator())
+        .add(artist())
+        .add(Entry.smallSeparator())
+        .add(Entry.of("partners", "partenaires", "/partners"))
+        .add(Entry.smallSeparator())
         .build();
   }
 

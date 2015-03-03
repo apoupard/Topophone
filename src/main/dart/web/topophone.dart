@@ -4,11 +4,13 @@ import 'package:route/client.dart';
 final Router route = new Router();
 String context;
 void main() {
-
   context = getContext();
   HttpRequest.request(context + "html/header", method: 'GET', requestHeaders: {'Accept': 'text/html'})
-               .then((resp) => querySelector("#header").appendHtml(resp.responseText))
-               .catchError((error) => print(error));
+              .then((resp) {
+                querySelector("#header").appendHtml(resp.responseText);
+                resizeHeader();
+                window.onResize.listen((event)=>resizeHeader());
+  }).catchError((error) => print(error));
   
   HttpRequest.request(context + "html/sections/nav", method: 'GET', requestHeaders: {'Accept': 'text/html'})
              .then((resp) => querySelector("nav").appendHtml(resp.responseText))
@@ -22,6 +24,18 @@ void main() {
   } catch (exception, stackTrace){
     showHome('');
   }
+}
+
+void resizeHeader(){
+  Element all = querySelector("#header #all");
+  Element deco = querySelector("#header #deco");
+  Element left = querySelector("#header #decoLeft");
+  Element rigth = querySelector("#header #decoRight");
+  
+  var sideSize = (window.innerWidth - deco.clientWidth-4)/2;
+  left.style.width = sideSize.toStringAsFixed(0)+'px';
+  rigth.style.width = sideSize.toStringAsFixed(0)+'px';
+  
 }
 
 String getContext(){

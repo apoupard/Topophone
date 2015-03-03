@@ -1,42 +1,40 @@
 <#import "/container/widgets.html" as container>
-<div id="content">
-	<div id="top">
-	 <#include "/artist/headband.html">
-	</div>
-	<div id="page">
-		<div class="side column-left">
-		  <@container.widgets>
-			  <@container.widget opacity=true gradient=true>
-			      <#include "/artist/profile.html">
-			  </@container.widget>
-			   <@container.widget opacity=true gradient=false>
-             <#include "/artist/audio.html">
-         </@container.widget>
-       </@container.widgets>
-		</div>
-    <div class="column-center">
-       <@container.widgets>
-         <@container.widget opacity=true gradient=true>
-           <#include "/artist/description.html">
-         </@container.widget>
-       </@container.widgets>
-    </div>
-		<div class="side column-right">
-       <@container.widgets>
-         <@container.widget opacity=true gradient=true>
-             <#include "/artist/concert.html">          
-         </@container.widget>
-          <@container.widget opacity=true gradient=false>
-             <#include "/artist/contact.html">
-         </@container.widget>
-       </@container.widgets>
-		</div>
-	</div>
-	<div id="bottom">
+<div id="top">
+ <#include "/artist/headband.html">
+</div>
+<div id="page">
+	<div class="side column-left">
 	  <@container.widgets>
-       <@container.widget opacity=true gradient=false>
-         <#include "/artist/video.html">
-       </@container.widget>
-     </@container.widgets>
+		  <@container.widget opacity=true gradient=true>
+		      <#include "/artist/profile.html">
+		  </@container.widget>
+		   <@container.widget opacity=true gradient=false>
+            <#include "/artist/audio.html">
+        </@container.widget>
+      </@container.widgets>
 	</div>
+   <div class="column-center">
+      <@container.widgets>
+        <@container.widget opacity=true gradient=true>
+          <#include "/artist/description.html">
+        </@container.widget>
+      </@container.widgets>
+   </div>
+	<div class="side column-right">
+      <@container.widgets>
+        <@container.widget opacity=true gradient=true>
+            <#include "/artist/concert.html">          
+        </@container.widget>
+         <@container.widget opacity=true gradient=false>
+            <#include "/artist/contact.html">
+        </@container.widget>
+      </@container.widgets>
+	</div>
+</div>
+<div id="bottom">
+  <@container.widgets>
+      <@container.widget opacity=true gradient=false>
+        <#include "/artist/video.html">
+      </@container.widget>
+    </@container.widgets>
 </div>
