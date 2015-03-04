@@ -599,7 +599,7 @@ nav ul ul li a, nav ul ul li a:visited, nav ul ul li a:hover {
 	text-align: center;
 	display: block;
 	border-bottom: 1px solid white;
-}
+	}
 
 .accompanying .widgets .widget .content p {
 	color: black;
@@ -620,6 +620,8 @@ nav ul ul li a, nav ul ul li a:visited, nav ul ul li a:hover {
 	border-bottom: solid 1px white;
 	margin-top: 15px;
 	color: black;
+  font-size: 1em;
+  font-weight: normal;
 }
 
 .widgets .widget .content .artistContact {
