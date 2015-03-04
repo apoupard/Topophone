@@ -66,7 +66,7 @@ public class ArtistResourceTest {
   public void should_getDescriptionHtml(
       @ArquillianResteasyResource("html/artist/lecommondiamond") ResteasyWebTarget webTarget) {
     String href = webTarget.queryParam("template", "description").request(MediaType.TEXT_HTML).get(String.class);
-    Assertions.assertThat(href).contains("<div class=\"block\">Floran et Thomas puisent dans le solaire et");
+    Assertions.assertThat(href).contains("<p>Floran et Thomas puisent dans le solaire et");
   }
   
   @Test
@@ -82,7 +82,7 @@ public class ArtistResourceTest {
   public void should_getContactHtml(
       @ArquillianResteasyResource("html/artist/lecommondiamond") ResteasyWebTarget webTarget) {
     String href = webTarget.queryParam("template", "contact").request(MediaType.TEXT_HTML).get(String.class);
-    Assertions.assertThat(href).contains("<div><a href=\"mailto:contact@lecommundiamond.com\" class=\"contact\">CONTACT BOOKING</a></div>");
+    Assertions.assertThat(href).contains("<a href=\"mailto:contact@lecommundiamond.com\" class=\"contact\">CONTACT BOOKING</a>");
   }
   
   @Test
@@ -91,7 +91,7 @@ public class ArtistResourceTest {
       @ArquillianResteasyResource("html/artist/lecommondiamond") ResteasyWebTarget webTarget) {
     String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
     System.out.println(href);
-    Assertions.assertThat(href).contains("<div><a href=\"mailto:contact@lecommundiamond.com\" class=\"contact\">CONTACT BOOKING</a></div>");
+    Assertions.assertThat(href).contains("<a href=\"mailto:contact@lecommundiamond.com\" class=\"contact\">CONTACT BOOKING</a>");
   }
 }
 

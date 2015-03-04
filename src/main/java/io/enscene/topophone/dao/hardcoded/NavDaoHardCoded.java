@@ -52,7 +52,6 @@ public class NavDaoHardCoded implements NavDao {
         "actions éducatives",
         "/education",
         ImmutableList.of(Entry.of("creation", "Création musicale", "/education/creation"),
-            Entry.of("initiation", "Initiation à l'écoute", "/education/initiation"),
             Entry.of("meeting", "Rencontre d'artistes", "/education/meeting")));
   }
 

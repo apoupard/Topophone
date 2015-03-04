@@ -414,7 +414,7 @@ nav ul ul li a, nav ul ul li a:visited, nav ul ul li a:hover {
 	margin-top: 10px;
 }
 
-.widgets .widget .content {
+.widgets .widget .content>div {
 	padding: 10px;
 }
 
@@ -550,13 +550,17 @@ nav ul ul li a, nav ul ul li a:visited, nav ul ul li a:hover {
 	margin-bottom: 20px;
 }
 
-/* accompanying */
-.accompanying .widgets .widget {
-	border-radius: 5px;
-	border: 2px solid #237587;
+.side .widgets .widget .content .internallink a, .side .widgets .widget .content .internallink a:VISITED
+  {
+  color: black;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  font-weight: bold;
 }
 
-.column-center .widgets .widget, .column-center .opacity-wrap-gradient {
+/* accompanying */
+.accompanying .column-center .widgets .widget, .column-center .opacity-wrap-gradient {
 	border-top: none;
 	-webkit-border-top-left-radius: 0px;
 	-webkit-border-top-right-radius: 0px;
@@ -564,20 +568,6 @@ nav ul ul li a, nav ul ul li a:visited, nav ul ul li a:hover {
 	-moz-border-radius-topright: 0px;
 	border-top-left-radius: 0px;
 	border-top-right-radius: 0px;
-}
-
-.accompanying .widgets .widget .opacity-wrap {
-	background-color: #c6dede;
-	border-radius: 5px;
-}
-
-.accompanying .side .widgets .widget .content a, .accompanying .side .widgets .widget .content a:VISITED
-	{
-	color: #0a3234;
-	text-transform: uppercase;
-	text-align: center;
-	display: block;
-	font-weight: bold;
 }
 
 .widgets .widget .content .image {
@@ -616,6 +606,76 @@ nav ul ul li a, nav ul ul li a:visited, nav ul ul li a:hover {
 	height: 338px;
 }
 
+.accompanying .widgets .widget .opacity-wrap {
+  background-color: #c6dede;
+  border-radius: 5px;
+}
+
+.accompanying .widgets .widget {
+  border-radius: 5px;
+  border: 2px solid #237587;
+}
+
+/* education */
+.education .column-center .widgets .widget, .column-center .opacity-wrap-gradient {
+  border-top: none;
+  -webkit-border-top-left-radius: 0px;
+  -webkit-border-top-right-radius: 0px;
+  -moz-border-radius-topleft: 0px;
+  -moz-border-radius-topright: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.education .widgets .widget .content img {
+  border-radius: 5px;
+}
+
+.education .side .widgets .widget .content h2 {
+  color: white;
+  text-transform: uppercase;
+}
+
+.education .side .widgets .widget .content h3 {
+  color: black;
+  text-align: center;
+  display: block;
+  border-bottom: 1px solid white;
+  }
+
+.education .widgets .widget .content p {
+  color: black;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-weight: normal;
+}
+
+.education .side .widgets .widget .content .objectives {
+  text-align: center;
+}
+
+.education .widgets .widget .content .image {
+/*   height: 338px; */
+}
+
+.education .widgets .widget .opacity-wrap {
+  background-color: #a6c569;
+  border-radius: 5px;
+}
+.education .widgets .widget {
+  border-radius: 5px;
+  border: 2px solid #618c00;
+}
+
+.widgets .widget .content .chiffres li {
+  text-align: center;
+}
+
+.widgets .widget .content .chiffres .chiffre {
+  font-size: 1.3em;
+}
+
+/* artist */
 .widgets .widget .content .concerts h3 {
 	border-bottom: solid 1px white;
 	margin-top: 15px;
@@ -625,6 +685,6 @@ nav ul ul li a, nav ul ul li a:visited, nav ul ul li a:hover {
 }
 
 .widgets .widget .content .artistContact {
-	margin: 10px;
+	padding: 20px;
 	text-align: center;
 }

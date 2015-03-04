@@ -1,30 +1,53 @@
 <#import "/container/widgets.html" as container>
-<div id="page">
+<#import "/widget/headband.html" as top>
+<#import "/widget/internallink.html" as link>
+<#import "/widget/image.html" as images>
+<div id="top">
+  <@top.headband main=education.headband.main logo=education.headband.logo />
+</div>
+<div id="page" class="education">
     <div class="side column-left">
       <@container.widgets>
-        <@container.widget opacity=true gradient=true>
-          <div class="summary">
-					  <ul>
-					    <li> <a href="${restcontext}/education/creation">Création musicale</a></li>
-					    <li><a href="${restcontext}/education/initiation">Initiation à l'écoute</a></li>
-					    <li><a href="${restcontext}/education/meeting">Rencontre d'artistes</a></li>
-					  </ul>
-					</div>
+        <@container.widget opacity=true gradient=false>
+          <@link.internallink href="/education/creation" label="Initiation à la création musicale" />
+        </@container.widget>
+        <@container.widget opacity=true gradient=false>
+          <@link.internallink href="/education/meeting" label="A la rencontre des artistes" />
+        </@container.widget>
+        <@container.widget opacity=true gradient=false>
+          <@images.image href=education.imageLeft />
         </@container.widget>
       </@container.widgets>
     </div>
     <div class="column-center">
        <@container.widgets>
-         <@container.widget opacity=true gradient=true>
+         <@container.widget opacity=true gradient=false>
           ${education.description}
          </@container.widget>
        </@container.widgets>
     </div>
     <div class="side column-right">
       <@container.widgets>
-         <@container.widget opacity=true gradient=true>
-            <img src="${appcontext}${education.image}"></img>
-         </@container.widget>
+        <@container.widget opacity=true gradient=false>
+          <div class="chiffres">
+	          <h3>L'attelier de création en chiffres</h3>
+	          <ul>
+	            <li class="chiffre">600</li>
+	            <li>jeunes impliqués sur 2013/14</li>
+	            <li class="chiffre">12</li>
+	            <li>projets création</li>
+	            <li class="chiffre">21</li>
+	            <li>structures bénéficiares</li>
+	            <li class="chiffre">42</li>
+	            <li>enregistrements réalisés</li>
+	            <li class="chiffre">22</li>
+	            <li>restitutions publiques organisées</li>
+	          </ul>
+          </div>
+        </@container.widget>
+        <@container.widget opacity=true gradient=false>
+          <@images.image href=education.image />
+        </@container.widget>
        </@container.widgets>
     </div>
 </div>

@@ -38,7 +38,7 @@ public class SectionsResource {
   public Collection<? extends ResourceModel> getResourceModels(@PathParam("name") String name,
       @QueryParam("version") String version) throws Exception {
     Collection<? extends ResourceModel> models =
-        ofNullable(daos.get(name)).orElseThrow(() -> new Exception("Resource not found!")).getAll(
+        ofNullable(daos.get(name)).orElseThrow(() -> new Exception("Resource["+name+"] not found!")).getAll(
             ofNullable(version));
     return models;
   }
