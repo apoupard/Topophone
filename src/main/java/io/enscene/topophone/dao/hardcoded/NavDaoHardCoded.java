@@ -29,19 +29,19 @@ public class NavDaoHardCoded implements NavDao {
   
     return ImmutableList.<Entry>builder()
         .add(Entry.smallSeparator())
-        .add(Entry.of("accompanying", "accompagnement", "/accompanying"))
+        .add(Entry.of("partners", "partenaires", "/partners"))
         .add(Entry.smallSeparator())
         .add(educationSubMenu())
         .add(Entry.separator())
-        .add(artist())
+        .add(Entry.of("accompanying", "accompagnement", "/accompanying"))
         .add(Entry.smallSeparator())
-        .add(Entry.of("partners", "partenaires", "/partners"))
+        .add(artist())
         .add(Entry.smallSeparator())
         .build();
   }
 
   private Entry artist() {
-    return Entry.of("artist", "Artistes", "/artist", ImmutableList.of(Entry.of("lecommondiamond",
+    return Entry.of("artist", "artistes", "/artist", ImmutableList.of(Entry.of("lecommondiamond",
         "le common diamond", "/artist/lecommondiamond"), Entry.of("internationalhyperrythmique",
         "international hyper rythmique", "/artist/internationalhyperrythmique")));
   }
@@ -49,7 +49,7 @@ public class NavDaoHardCoded implements NavDao {
   private Entry educationSubMenu() {
     return Entry.of(
         "education",
-        "Actions éducative",
+        "actions éducatives",
         "/education",
         ImmutableList.of(Entry.of("creation", "Création musicale", "/education/creation"),
             Entry.of("initiation", "Initiation à l'écoute", "/education/initiation"),

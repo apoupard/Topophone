@@ -151,12 +151,15 @@ a, a:visited, a:hover {
 	z-index: 100;
 	height: 100px;
 	width: 100px;
-	top: 80px;
+	/* 	top: 80px; */
+	top: 98px;
+	left: -43px;
 }
 
 #page {
 	position: relative;
 	margin-top: 10px;
+	height: 500px;
 }
 
 #page .side {
@@ -168,46 +171,27 @@ a, a:visited, a:hover {
 	text-align: center;
 }
 
-#content #bottom .widgets .widget {
-	width: 350px;
-	height: 100px;
-	position: relative;
-	display: inline-block;
-	opacity: 0.65;
-	border-radius: 20px;
-}
-
-.widgets .widget .content, .widgets .widget img {
-	height: 100%;
-	width: 100%;
-}
-
 .column-left {
-	/*  float: left; */
 	display: inline-block;
 }
 
 .column-right {
-	/*  float: right; */
 	display: inline-block;
 }
 
 .column-center {
 	display: inline-block;
-	width: 560px;
-	padding-left: 20px;
-	padding-right: 20px;
+	width: 585px;
+	height: 100%;
+	padding-left: 5px;
+	padding-right: 5px;
 	position: relative;
 	vertical-align: top;
 }
 
+}
 .column-center .opacity-wrap-gradient {
 	border-radius: 0px;
-}
-
-.column-center h3 {
-	margin-top: 60px;
-	border-bottom: 1px solid white;
 }
 
 .two-column-center {
@@ -382,6 +366,10 @@ nav ul ul li a, nav ul ul li a:visited, nav ul ul li a:hover {
 .right {
 	display: inline-block;
 	vertical-align: top;
+	vertical-align: top;
+	width: 450px;
+	margin-left: 45px;
+	margin-right: 5px;
 	width: 450px;
 	margin-left: 45px;
 	margin-right: 5px;
@@ -416,14 +404,26 @@ nav ul ul li a, nav ul ul li a:visited, nav ul ul li a:hover {
 	position: relative;
 }
 
-.side .widgets .widget {
+.widgets {
 	position: relative;
-	padding: 10px;
-	margin: 5px;
-	border-radius: 15px;
+	height: 100%
 }
 
+.side .widgets .widget {
+	position: relative;
+	margin-top: 10px;
+}
+
+.widgets .widget .content {
+	padding: 10px;
+}
+
+/* .widgets .widget .content>div { */
+/* 	margin: 10px; */
+/* } */
 .widgets .widget img {
+	height: 100%;
+	width: 100%;
 	border-radius: 15px;
 }
 
@@ -437,11 +437,6 @@ nav ul ul li a, nav ul ul li a:visited, nav ul ul li a:hover {
 	text-align: center;
 	margin-top: 10px;
 	margin-bottom: 10px;
-}
-
-.widget .title {
-	border-bottom: solid 1px white;
-	margin-top: 15px;
 }
 
 .widget .title span {
@@ -471,7 +466,32 @@ nav ul ul li a, nav ul ul li a:visited, nav ul ul li a:hover {
 	background-image: url(images/socnet/bandcamp.png);
 }
 
-.widgets .widget .contact {
+#content #bottom .widgets .widget {
+	width: 350px;
+	height: 100px;
+	position: relative;
+	display: inline-block;
+	opacity: 0.65;
+	border-radius: 20px;
+}
+
+.column-center .widgets .widget {
+	position: relative;
+	height: 100%;
+}
+
+.column-center .widgets .widget .content h3 {
+	margin-top: 25px;
+	margin-bottom: 10px;
+	color: white;
+	border-bottom: 1px solid white;
+}
+
+.column-center .widgets .widget .content {
+	padding: 30px 20px 0px 20px;
+}
+
+.widgets .widget a.contact {
 	color: white;
 	font-weight: bold;
 }
@@ -528,4 +548,81 @@ nav ul ul li a, nav ul ul li a:visited, nav ul ul li a:hover {
 	display: inline-block;
 	width: 500px;
 	margin-bottom: 20px;
+}
+
+/* accompanying */
+.accompanying .widgets .widget {
+	border-radius: 5px;
+	border: 2px solid #237587;
+}
+
+.column-center .widgets .widget, .column-center .opacity-wrap-gradient {
+	border-top: none;
+	-webkit-border-top-left-radius: 0px;
+	-webkit-border-top-right-radius: 0px;
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-topright: 0px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
+.accompanying .widgets .widget .opacity-wrap {
+	background-color: #c6dede;
+	border-radius: 5px;
+}
+
+.accompanying .side .widgets .widget .content a, .accompanying .side .widgets .widget .content a:VISITED
+	{
+	color: #0a3234;
+	text-transform: uppercase;
+	text-align: center;
+	display: block;
+	font-weight: bold;
+}
+
+.widgets .widget .content .image {
+	padding: 5px;
+	margin: 0px;
+}
+
+.accompanying .widgets .widget .content img {
+	border-radius: 5px;
+}
+
+.accompanying .side .widgets .widget .content h2 {
+	color: white;
+	text-transform: uppercase;
+}
+
+.accompanying .side .widgets .widget .content h3 {
+	color: black;
+	text-align: center;
+	display: block;
+	border-bottom: 1px solid white;
+}
+
+.accompanying .widgets .widget .content p {
+	color: black;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	font-weight: normal;
+}
+
+.accompanying .side .widgets .widget .content .objectives {
+	text-align: center;
+}
+
+.accompanying .widgets .widget .content .image {
+	height: 338px;
+}
+
+.widgets .widget .content .concerts h3 {
+	border-bottom: solid 1px white;
+	margin-top: 15px;
+	color: black;
+}
+
+.widgets .widget .content .artistContact {
+	margin: 10px;
+	text-align: center;
 }

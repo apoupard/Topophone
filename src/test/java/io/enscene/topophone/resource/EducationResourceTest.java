@@ -33,7 +33,7 @@ public class EducationResourceTest {
   @Test
   @RunAsClient
   public void should_getCreationSectionHtml(
-      @ArquillianResteasyResource("html/education/creation/section") ResteasyWebTarget webTarget) {
+      @ArquillianResteasyResource("html/education/creation") ResteasyWebTarget webTarget) {
     String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
     System.out.println(href);
     Assertions.assertThat(href).contains("<h1>Création musicale</h1>");
@@ -42,7 +42,7 @@ public class EducationResourceTest {
   @Test
   @RunAsClient
   public void should_getInitiationSectionHtml(
-      @ArquillianResteasyResource("html/education/initiation/section") ResteasyWebTarget webTarget) {
+      @ArquillianResteasyResource("html/education/initiation") ResteasyWebTarget webTarget) {
     String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
     System.out.println(href);
     Assertions.assertThat(href).contains("<h1>Initiation à l’écoute</h1>");
@@ -51,7 +51,7 @@ public class EducationResourceTest {
   @Test
   @RunAsClient
   public void should_getMeetingSectionHtml(
-      @ArquillianResteasyResource("html/education/meeting/section") ResteasyWebTarget webTarget) {
+      @ArquillianResteasyResource("html/education/meeting") ResteasyWebTarget webTarget) {
     String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
     System.out.println(href);
     Assertions.assertThat(href).contains("<h1>Rencontre d’artistes</h1>");

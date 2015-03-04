@@ -30,14 +30,14 @@ public class ArtistResource {
   }
 
   @GET
-  @Path("/{resourceId}")
+  @Path("/{id}")
   @Produces(MediaType.APPLICATION_JSON)
-  public Artist get(@PathParam("resourceId") String id) throws Exception {
+  public Artist get(@PathParam("id") String id) throws Exception {
     return dao.get(id, Optional.empty()).orElseThrow(() -> new Exception("Artist not found!"));
   }
 
   @GET
-  @Path("/{id}/{template}")
+  @Path("/{id}")
   @Produces(MediaType.TEXT_HTML)
   public String getHtmlProfile(@PathParam("id") String id, @QueryParam("template") String template) throws Exception {
     Artist artist = get(id);

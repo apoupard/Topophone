@@ -1,0 +1,50 @@
+<#import "/container/widgets.html" as container>
+<#import "/widget/headband.html" as top>
+<#import "/widget/internallink.html" as link>
+<#import "/widget/image.html" as images>
+<div id="top">
+  <@top.headband main=accompanying.headband.main logo=accompanying.headband.logo />
+</div>
+<div id="page" class="accompanying">
+  <div class="side column-left">
+    <@container.widgets>
+      <@container.widget opacity=true gradient=false>
+         <@link.internallink href="test" label="développement d'artistes" />
+      </@container.widget>
+      <@container.widget opacity=true gradient=false>
+        <@link.internallink href="test" label="accompagnement scénique" />
+      </@container.widget>
+      <@container.widget opacity=true gradient=false>
+        <@images.image href=accompanying.picture />
+      </@container.widget>
+    </@container.widgets>
+  </div>
+   <div class="column-center">
+      <@container.widgets>
+        <@container.widget opacity=true gradient=false>
+          ${accompanying.description}
+        </@container.widget>
+      </@container.widgets>
+   </div>
+  <div class="side column-right">
+      <@container.widgets>
+        <@container.widget opacity=true gradient=false>
+          <div class="objectives">
+            <h3>Nos objectifs</h3>
+            <#list accompanying.objectives as objective>
+              <p>${objective}</p>
+            </#list>
+           </div>
+        </@container.widget>
+        <@container.widget opacity=true gradient=false>
+          <div class="contact">
+            <h2>Contacts</h2>
+            <p>${accompanying.contact.name}</p>
+            <p>${accompanying.contact.phone}</p>
+            <p>${accompanying.contact.email}</p>
+            <p>${accompanying.contact.address}</p>
+          </div>
+        </@container.widget>
+      </@container.widgets>
+  </div>
+</div>

@@ -36,7 +36,7 @@ public class EducationResource {
   }
 
   @GET
-  @Path("/{id}/{template}")
+  @Path("/{id}")
   @Produces(MediaType.TEXT_HTML)
   public String getHtmlProfile(@PathParam("id") String id, @QueryParam("template") String template)
       throws Exception {

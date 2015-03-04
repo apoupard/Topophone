@@ -60,7 +60,7 @@ void showHome(String path) {
 }
 
 void show(String path) {
-  String url = path.replaceAll(new RegExp('appli'), "html/sections");
+  String url = path.replaceAll(new RegExp('appli'), "html");
   HttpRequest.request(url, method: 'GET', requestHeaders: {'Accept': 'text/html'})
       .then((HttpRequest resp) {
         Element content = querySelector("#content")..nodes.clear()

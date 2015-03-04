@@ -39,8 +39,8 @@ public class ArtistResourceTest {
   @Test
   @RunAsClient
   public void should_getProfileHtml(
-      @ArquillianResteasyResource("html/artist/lecommondiamond/profile") ResteasyWebTarget webTarget) {
-    String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
+      @ArquillianResteasyResource("html/artist/lecommondiamond") ResteasyWebTarget webTarget) {
+    String href = webTarget.queryParam("template", "profile").request(MediaType.TEXT_HTML).get(String.class);
     Assertions.assertThat(href).contains(String.format("<img alt=\"\" src=\"%simages/lecommondiamond.png\"></img>", deploymentURL.getPath()));
   }
   
@@ -48,47 +48,47 @@ public class ArtistResourceTest {
   @Test
   @RunAsClient
   public void should_getSongHtml(
-      @ArquillianResteasyResource("html/artist/lecommondiamond/audio") ResteasyWebTarget webTarget) {
-    String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
+      @ArquillianResteasyResource("html/artist/lecommondiamond") ResteasyWebTarget webTarget) {
+    String href = webTarget.queryParam("template", "audio").request(MediaType.TEXT_HTML).get(String.class);
     Assertions.assertThat(href).contains("Go faster <span class=\"track-time\"> 00:00 / 3:52</span>");
   }
   
   @Test
   @RunAsClient
   public void should_getConcertHtml(
-      @ArquillianResteasyResource("html/artist/lecommondiamond/concert") ResteasyWebTarget webTarget) {
-    String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
+      @ArquillianResteasyResource("html/artist/lecommondiamond") ResteasyWebTarget webTarget) {
+    String href = webTarget.queryParam("template", "concert").request(MediaType.TEXT_HTML).get(String.class);
     Assertions.assertThat(href).contains("<li>11 juil. -  Club liberté - Helsinki</li>");
   }
   
   @Test
   @RunAsClient
   public void should_getDescriptionHtml(
-      @ArquillianResteasyResource("html/artist/lecommondiamond/description") ResteasyWebTarget webTarget) {
-    String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
+      @ArquillianResteasyResource("html/artist/lecommondiamond") ResteasyWebTarget webTarget) {
+    String href = webTarget.queryParam("template", "description").request(MediaType.TEXT_HTML).get(String.class);
     Assertions.assertThat(href).contains("<div class=\"block\">Floran et Thomas puisent dans le solaire et");
   }
   
   @Test
   @RunAsClient
   public void should_getHeadbandHtml(
-      @ArquillianResteasyResource("html/artist/lecommondiamond/headband") ResteasyWebTarget webTarget) {
-    String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
+      @ArquillianResteasyResource("html/artist/lecommondiamond") ResteasyWebTarget webTarget) {
+    String href = webTarget.queryParam("template", "headband").request(MediaType.TEXT_HTML).get(String.class);
     Assertions.assertThat(href).contains(String.format("<img class=\"content\" alt=\"\" src=\"%simages/bandeau.png\">", deploymentURL.getPath()));
   }
  
   @Test
   @RunAsClient
   public void should_getContactHtml(
-      @ArquillianResteasyResource("html/artist/lecommondiamond/contact") ResteasyWebTarget webTarget) {
-    String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
+      @ArquillianResteasyResource("html/artist/lecommondiamond") ResteasyWebTarget webTarget) {
+    String href = webTarget.queryParam("template", "contact").request(MediaType.TEXT_HTML).get(String.class);
     Assertions.assertThat(href).contains("<div><a href=\"mailto:contact@lecommundiamond.com\" class=\"contact\">CONTACT BOOKING</a></div>");
   }
   
   @Test
   @RunAsClient
   public void should_getSectionHtml(
-      @ArquillianResteasyResource("html/artist/lecommondiamond/section") ResteasyWebTarget webTarget) {
+      @ArquillianResteasyResource("html/artist/lecommondiamond") ResteasyWebTarget webTarget) {
     String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
     System.out.println(href);
     Assertions.assertThat(href).contains("<div><a href=\"mailto:contact@lecommundiamond.com\" class=\"contact\">CONTACT BOOKING</a></div>");

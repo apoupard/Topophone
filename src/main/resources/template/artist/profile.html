@@ -1,4 +1,5 @@
-<img alt="" src="${appcontext}${artist.picture}"></img>
+<#import "/widget/image.html" as images>
+<@images.image href=artist.picture />
 <div class="external-link">
   <#list artist.medias as media>
     <a class="${media.id}" href="${media.href}"></a>

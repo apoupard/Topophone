@@ -39,23 +39,25 @@ public class ArtistDaoHardCoded extends AstractHardCoded<Artist> implements Arti
   
   public String getDescription() {
     return "<h3>Bio</h3>"+
-        "<div class=\"block\">Floran et Thomas puisent dans le solaire et"+
+        "<p>Floran et Thomas puisent dans le solaire et"+
         "    l’abyssal pour délivrer un subtil cocktail de chansons reflétant leurs"+
         "    pensées inondées de beautés féminines, de sentiments non maitrisés, de"+
-        "    frustration, de rêves d’idéaux et d’envies de voyages.</div>"+
-        "<div class=\"block\">Le Common Diamond est armé d’une musique"+
+        "    frustration, de rêves d’idéaux et d’envies de voyages.</p>"+
+        "<p>Le Common Diamond est armé d’une musique"+
         "    cérébrale et cardiaque, mêlant pop, minimalisme électronique et grands"+
         "    espaces : de la space-pop . Le beat est froid, la guitare chaude, les"+
         "    synthés vibrants, et les voix transcendent au service des chansons. Le"+
-        "    couple s’inspire mais ne réchauffe pas.</div>"+
+        "    couple s’inspire mais ne réchauffe pas.</p>"+ 
+        "<h3>Actu</h3>"+
+        "<p>Selection 15/12 connexion Toulouse<br/>Début de la tournée nationale</p>"+
         "<h3>Ils en parlent</h3>"+
-        "<div class=\"block\">"+
-        "    <span class=\"GDPD4GNPJ\">Madame Le Figaro</span>"+
-        "    <p>“Deux Toulousains aux envolées surf-pop qui sentent bon l’été"+
-        "        sur la ecôte Atlantique”</p>"+
-        "    <span class=\"GDPD4GNPJ\">Listen Before You Buy</span>"+
-        "    <p>“The moodiness of Air, the sexuality of Sébastien Tellier”</p>"+
-        "</div>";
+        "<p><span class=\"GDPD4GNPJ\">Madame Le Figaro</span><br/>"+
+        "    “Deux Toulousains aux envolées surf-pop qui sentent bon l’été"+
+        "        sur la ecôte Atlantique”"
+        + "</p>"+
+        "<p>    <span class=\"GDPD4GNPJ\">Listen Before You Buy</span><br/>"+
+        "    “The moodiness of Air, the sexuality of Sébastien Tellier”"+
+        "</p>";
   }
   
   public Headband getHeadband() {
