@@ -1,6 +1,7 @@
 <#import "/container/widgets.html" as container>
+<#import "/widget/headband.html" as top>
 <div id="top">
- <#include "/artist/headband.html">
+  <@top.headband main=artist.headband.main logo=artist.headband.logo />
 </div>
 <div id="page" class="artist">
 	<div class="side column-left">

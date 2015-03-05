@@ -1,0 +1,29 @@
+.education .column-center .widget, .column-center .opacity-wrap-gradient {
+  border-top: none;
+  -webkit-border-top-left-radius: 0px;
+  -webkit-border-top-right-radius: 0px;
+  -moz-border-radius-topleft: 0px;
+  -moz-border-radius-topright: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.education .widget img {
+  border-radius: 5px;
+}
+
+.education .side .widget h3 {
+  color: black;
+  text-align: center;
+  display: block;
+  border-bottom: 1px solid white;
+  }
+
+.education .widget p {
+  color: black;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-weight: normal;
+}
+
+

@@ -1,0 +1,250 @@
+.widgets {
+	position: relative;
+	height: 100%
+}
+
+.widget {
+  border-radius: 5px;
+}
+
+.widget .widget-content {
+	position: relative;
+}
+
+.widget .widget-content>div {
+	padding: 10px;
+}
+
+.widget img {
+	height: 100%;
+	width: 100%;
+	border-radius: 5px;
+}
+
+.widget ul {
+	list-style-type: none;
+	padding: 0px;
+	margin: 10px 0px 20px 5px;
+}
+
+.widget p {
+	color: black;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.widget .opacity-wrap-gradient {
+	background-image: linear-gradient(black, #888888);
+	border-radius: 5px;
+}
+
+.widget .opacity {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	margin: 0 auto;
+	top: 0;
+	left: 0;
+	opacity: 0.65;
+}
+
+.widget .opacity-wrap {
+	background-color: #888888;
+	border-radius: 5px;
+}
+
+.side .widget {
+	position: relative;
+	margin-top: 10px;
+}
+
+.column-center .widget .opacity-wrap-gradient {
+	border-radius: 0px;
+}
+
+.column-center .widget, .column-center .widget .opacity-wrap-gradient {
+	border-top: none;
+	-webkit-border-top-left-radius: 0px;
+	-webkit-border-top-right-radius: 0px;
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-topright: 0px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
+/* summary */
+.widget .summary {
+	vertical-align: top;
+	display: inline-block;
+	width: 200px;
+	margin: 0;
+}
+
+.widget .summary ul {
+	list-style: none;
+	border-top: solid 2px black;
+	border-bottom: solid 2px black;
+	padding-left: 4px;
+}
+
+.widget .summary a {
+	cursor: pointer;
+	color: white;
+}
+
+#bottom .widget {
+	width: 350px;
+	height: 100px;
+	position: relative;
+	display: inline-block;
+	opacity: 0.65;
+	border-radius: 20px;
+}
+
+.column-center .widget {
+	position: relative;
+	height: 100%;
+}
+
+.side .widget h3 {
+	color: black;
+	text-align: center;
+	display: block;
+	border-bottom: 1px solid white;
+}
+
+.column-center .widget      h3 {
+	margin-top: 25px;
+	margin-bottom: 10px;
+	color: white;
+	border-bottom: 1px solid white;
+}
+
+.column-center .widget {
+	padding: 30px 20px 0px 20px;
+}
+
+/* partners */
+.widget .partners {
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 35px;
+	margin-right: 35px;
+	width: 730px;
+	margin-top: 30px;
+}
+
+.widget .partners h1 {
+	font-size: 180%;
+	margin-bottom: 30px;
+}
+
+.widget .partners h3 {
+	font-size: 110%;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	border-bottom: solid 3px black;
+}
+
+.widget .partners .partner img {
+	width: 200px;
+	height: 140px;
+	vertical-align: top;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.widget .partners .partner p {
+	display: inline-block;
+	width: 500px;
+	margin-bottom: 20px;
+}
+
+/* image */
+.widget .image {
+	padding: 5px;
+	margin: 0px;
+}
+
+/* chiffres */
+.widget .chiffres li {
+	text-align: center;
+}
+
+.widget .chiffres .chiffre {
+	font-size: 1.3em;
+}
+
+/* concerts */
+
+.widget .concerts h3 {
+	border-bottom: solid 1px white;
+	margin-top: 15px;
+	color: black;
+	font-size: 1em;
+  margin-bottom: 5px;
+}
+
+.widget .artistContact {
+	padding: 20px;
+	text-align: center;
+}
+
+/* link */
+.widget .link h3 {
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+/* internallink */
+.widget .internallink a, .widget .internallink a:VISITED {
+	color: black;
+	text-transform: uppercase;
+	text-align: center;
+	display: block;
+	font-weight: bold;
+}
+
+/* objectives */
+.side .widget .objectives {
+	text-align: center;
+}
+
+.description {
+  margin: 20px;
+}
+
+.description p {
+  margin-bottom: 5px;
+}
+
+/* profile */
+.external-link a {
+	height: 45px;
+	width: 45px;
+	overflow: hidden;
+	display: inline-block;
+	margin-left: 13px;
+	border-radius: 5px;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.external-link .youtube {
+	background-image: url(images/socnet/youtube.png);
+}
+
+.external-link .facebook {
+	background-image: url(images/socnet/facebook.png);
+}
+
+.external-link .bandcamp {
+	background-image: url(images/socnet/bandcamp.png);
+}
+
+/* ?????????? */
+.widget a.contact {
+	color: white;
+	font-weight: bold;
+}

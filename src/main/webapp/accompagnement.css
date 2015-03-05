@@ -1,0 +1,25 @@
+.accompanying .widget .opacity-wrap {
+  background-color: #c6dede;
+  border-radius: 5px;
+}
+
+.accompanying .widget {
+  border: 2px solid #237587;
+}
+
+.accompanying .widget .image {
+  height: 338px;
+}
+
+
+.accompanying .widget h2 {
+  color: white;
+  text-transform: uppercase;
+}
+
+.education .widget .opacity-wrap {
+  background-color: #a6c569;
+}
+.education .widget {
+  border: 2px solid #618c00;
+}

@@ -1,0 +1,38 @@
+.column-center .widgets .widget, .column-center .opacity-wrap-gradient{
+	
+	
+}
+
+.widgets .widget .content img {
+	
+}
+.accompanying .side .widgets .widget .content h2  {
+	
+	
+}
+
+.column-center .widgets .widget .content h3 {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+.widgets .widget .content p {
+	
+}
+
+.widgets .widget .content .image {
+  padding: 5px;
+  margin: 0px;
+}
+
+.widgets .widget .opacity-wrap {
+  background-color: #888888;
+  border-radius: 15px;
+}
+
+.side .widgets .widget {
+  position: relative;
+  margin-top: 10px;
+}

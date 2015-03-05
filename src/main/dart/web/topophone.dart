@@ -51,19 +51,14 @@ String getContext(){
 }
 
 void showHome(String path) {
-  HttpRequest.request(context+'html/sections/main', method: 'GET', requestHeaders: {'Accept': 'text/html'})
-      .then((HttpRequest resp) {
-        Element content = querySelector("#content")..nodes.clear()
-            ..appendHtml(resp.responseText);
-    }
-  ).catchError((error) => print(error));
+  show(context+'html/sections/main');
 }
 
 void show(String path) {
   String url = path.replaceAll(new RegExp('appli'), "html/sections");
   HttpRequest.request(url, method: 'GET', requestHeaders: {'Accept': 'text/html'})
       .then((HttpRequest resp) {
-        Element content = querySelector("#content")..nodes.clear()
+        Element content = querySelector("#section")..nodes.clear()
             ..appendHtml(resp.responseText);
     }
   ).catchError((error) => print(error));
