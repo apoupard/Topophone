@@ -3,10 +3,10 @@ package io.enscene.topophone.resource;
 import static java.util.Optional.empty;
 import static java.util.Optional.ofNullable;
 import io.enscene.topophone.api.ResourceDao;
+import io.enscene.topophone.api.ResourceIdMapper;
 import io.enscene.topophone.api.ResourceModel;
 import io.enscene.topophone.templating.HtmlTemplateEngine;
 
-import java.util.Collection;
 import java.util.Map;
 
 import javax.inject.Inject;
@@ -23,33 +23,15 @@ import com.google.common.collect.ImmutableMap;
 public class SectionsResource {
 
   private final HtmlTemplateEngine templateEngine;
+  private final ResourceIdMapper resourceIdMapper;
   private final Map<String, ResourceDao<? extends ResourceModel>> daos;
 
   @Inject
-  SectionsResource(HtmlTemplateEngine templateEngine,
+  SectionsResource(HtmlTemplateEngine templateEngine, ResourceIdMapper resourceIdMapper,
       Map<String, ResourceDao<? extends ResourceModel>> daos) {
     this.templateEngine = templateEngine;
+    this.resourceIdMapper = resourceIdMapper;
     this.daos = daos;
-  }
-
-  @GET
-  @Path("/{name}")
-  @Produces(MediaType.APPLICATION_JSON)
-  public Collection<? extends ResourceModel> getResourceModels(@PathParam("name") String name,
-      @QueryParam("version") String version) throws Exception {
-    Collection<? extends ResourceModel> models =
-        ofNullable(daos.get(name)).orElseThrow(() -> new Exception("Resource["+name+"] not found!")).getAll(
-            ofNullable(version));
-    return models;
-  }
-
-  @GET
-  @Path("/{name}")
-  @Produces(MediaType.TEXT_HTML)
-  public String getResourcesHtml(@PathParam("name") String name,
-      @QueryParam("version") String version) throws Exception {
-    Collection<? extends ResourceModel> res = getResourceModels(name, version);
-    return templateEngine.execute(name, empty(), ImmutableMap.of(name, res));
   }
 
   @GET
@@ -57,11 +39,11 @@ public class SectionsResource {
   @Produces(MediaType.APPLICATION_JSON)
   public ResourceModel get(@PathParam("name") String name, @PathParam("id") String id,
       @QueryParam("version") String version) throws Exception {
-    ResourceModel model =
-        ofNullable(daos.get(name)).orElseThrow(() -> new Exception("Resource not found!"))
-            .get(id, ofNullable(version))
-            .orElseThrow(() -> new Exception(name + "[" + id + "] not found!"));
-    return model;
+    ResourceDao<? extends ResourceModel> dao =
+        ofNullable(daos.get(name)).orElseThrow(
+            () -> new Exception("ResourceDao[" + name + "] not found!"));
+    return dao.get(id, ofNullable(version)).orElseThrow(
+        () -> new Exception("Resource[" + name + "] not found!"));
   }
 
   @GET
@@ -74,4 +56,23 @@ public class SectionsResource {
     return templateEngine.execute(name, ofNullable(template), ImmutableMap.of(name, res));
   }
 
+  @GET
+  @Path("/{name}")
+  @Produces(MediaType.APPLICATION_JSON)
+  public ResourceModel getResourceModels(@PathParam("name") String name,
+      @QueryParam("version") String version) throws Exception {
+    String resourceId =
+        resourceIdMapper.getResourceId(name).orElseThrow(
+            () -> new Exception("Resource[" + name + "] not found!"));
+    return get(name, resourceId, version);
+  }
+
+  @GET
+  @Path("/{name}")
+  @Produces(MediaType.TEXT_HTML)
+  public String getResourcesHtml(@PathParam("name") String name,
+      @QueryParam("version") String version) throws Exception {
+    ResourceModel res = getResourceModels(name, version);
+    return templateEngine.execute(name, empty(), ImmutableMap.of(name, res));
+  }
 }

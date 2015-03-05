@@ -31,7 +31,7 @@ public class MainResource {
   @Path("/")
   @Produces(MediaType.APPLICATION_JSON)
   public Main get() throws Exception {
-    return mainDao.get(Optional.empty()).orElseThrow(() -> new Exception("Education not found"));
+    return mainDao.get("1", Optional.empty()).orElseThrow(() -> new Exception("Education not found"));
   }
 
   @GET

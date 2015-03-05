@@ -31,7 +31,7 @@ public class AccompanyingResource {
   @GET
   @Produces(MediaType.APPLICATION_JSON)
   public Accompanying get() throws Exception {
-    return dao.get(Optional.empty()).orElseThrow(() -> new Exception("Accompanying not found!"));
+    return dao.get("1",Optional.empty()).orElseThrow(() -> new Exception("Accompanying not found!"));
   }
 
   @GET

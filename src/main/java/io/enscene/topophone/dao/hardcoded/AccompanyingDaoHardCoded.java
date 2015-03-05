@@ -1,23 +1,24 @@
 package io.enscene.topophone.dao.hardcoded;
 
-import java.util.Collection;
-import java.util.Optional;
-
-import com.google.common.collect.ImmutableList;
-
-import static java.util.Optional.*;
 import io.enscene.topophone.dao.AccompanyingDao;
 import io.enscene.topophone.model.accompanying.Accompanying;
 import io.enscene.topophone.model.accompanying.Contact;
 import io.enscene.topophone.model.artist.Headband;
 
-public class AccompanyingDaoHardCoded implements AccompanyingDao {
+import java.util.Collection;
+import java.util.Map;
+
+import com.google.common.collect.ImmutableList;
+
+public class AccompanyingDaoHardCoded extends AstractHardCoded<Accompanying> implements AccompanyingDao {
 
   @Override
-  public Optional<Accompanying> get(Optional<String> version) {
-    return of(new Accompanying(getHeadBand(), getObjective(), getContact(), getDescription(), getPicture()));
+  void init(Map<String, Accompanying> database) {
+    database.put("1", new Accompanying(getHeadBand(), getObjective(), getContact(), getDescription(), getPicture()));
   }
 
+  
+  
   private Headband getHeadBand() {
     return new Headband("/images/accompanying/headband.png", "/images/accompanying/headbandlogo.png");
   }

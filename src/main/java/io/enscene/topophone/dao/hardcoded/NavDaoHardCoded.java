@@ -4,27 +4,22 @@ import io.enscene.topophone.dao.NavDao;
 import io.enscene.topophone.model.nav.Entry;
 import io.enscene.topophone.model.nav.Nav;
 
-import java.util.Collection;
 import java.util.List;
-import java.util.Optional;
+import java.util.Map;
 
-import javax.inject.Inject;
 import javax.inject.Singleton;
-
-import org.apache.commons.lang.StringUtils;
 
 import com.google.common.collect.ImmutableList;
 
 @Singleton
-public class NavDaoHardCoded implements NavDao {
+public class NavDaoHardCoded extends AstractHardCoded<Nav> implements NavDao {
 
-  final Nav nav;
-
-  @Inject NavDaoHardCoded() {
-    this.nav = new Nav(entries());
+  @Override
+  void init(Map<String, Nav> database) {
+    database.put("1", new Nav(entries()));
   }
 
-
+  
   private List<Entry> entries() {
   
     return ImmutableList.<Entry>builder()
@@ -53,23 +48,6 @@ public class NavDaoHardCoded implements NavDao {
         "/education",
         ImmutableList.of(Entry.of("creation", "Création musicale", "/education/creation"),
             Entry.of("meeting", "Rencontre d'artistes", "/education/meeting")));
-  }
-
-
-  @Override
-  public Optional<Entry> get(String id, Optional<String> optional) {
-    for(Entry entry : entries()) {
-      if(StringUtils.equals(id, entry.getId())) {
-        return Optional.of(entry);
-      };
-    }
-    return Optional.empty();
-  }
-
-
-  @Override
-  public Collection<Entry> getAll(Optional<String> optional) {
-    return nav.getEntries();
   }
 
 }

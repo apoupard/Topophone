@@ -10,14 +10,14 @@ import io.enscene.topophone.dao.EducationDao;
 import io.enscene.topophone.dao.HeaderDao;
 import io.enscene.topophone.dao.MainDao;
 import io.enscene.topophone.dao.NavDao;
-import io.enscene.topophone.dao.PartnerDao;
+import io.enscene.topophone.dao.PartnersDao;
 import io.enscene.topophone.dao.hardcoded.AccompanyingDaoHardCoded;
 import io.enscene.topophone.dao.hardcoded.ArtistDaoHardCoded;
 import io.enscene.topophone.dao.hardcoded.EducationDaoHardCoded;
 import io.enscene.topophone.dao.hardcoded.HeaderDaoHardCoded;
 import io.enscene.topophone.dao.hardcoded.MainDaoHardCoded;
 import io.enscene.topophone.dao.hardcoded.NavDaoHardCoded;
-import io.enscene.topophone.dao.hardcoded.PartnerDaoHardCoded;
+import io.enscene.topophone.dao.hardcoded.PartnersDaoHardCoded;
 import io.enscene.topophone.resource.AccompanyingResource;
 import io.enscene.topophone.resource.ArtistResource;
 import io.enscene.topophone.resource.EducationResource;
@@ -61,7 +61,7 @@ public class TopophoneMicroApplication extends MicroService {
    
     binder.bind(ArtistDao.class).to(ArtistDaoHardCoded.class);
     binder.bind(EducationDao.class).to(EducationDaoHardCoded.class);
-    binder.bind(PartnerDao.class).to(PartnerDaoHardCoded.class);
+    binder.bind(PartnersDao.class).to(PartnersDaoHardCoded.class);
     binder.bind(NavDao.class).to(NavDaoHardCoded.class);
     binder.bind(HeaderDao.class).to(HeaderDaoHardCoded.class);
     binder.bind(MainDao.class).to(MainDaoHardCoded.class);
@@ -73,9 +73,11 @@ public class TopophoneMicroApplication extends MicroService {
    
     resourceDaoBinder.addBinding("artist").to(ArtistDao.class);
     resourceDaoBinder.addBinding("education").to(EducationDao.class);
-    resourceDaoBinder.addBinding("partners").to(PartnerDao.class);
+    resourceDaoBinder.addBinding("partners").to(PartnersDao.class);
     resourceDaoBinder.addBinding("nav").to(NavDao.class);
-    resourceDaoBinder.addBinding("subnav").to(NavDao.class);
+    resourceDaoBinder.addBinding("header").to(HeaderDao.class);
+    resourceDaoBinder.addBinding("main").to(MainDao.class);
+    resourceDaoBinder.addBinding("accompanying").to(AccompanyingDao.class);
   }
 
 }

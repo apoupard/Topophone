@@ -1,12 +1,8 @@
 package io.enscene.topophone.dao;
 
-import java.util.Optional;
-
+import io.enscene.topophone.api.ResourceDao;
 import io.enscene.topophone.model.header.Header;
 
-
-public interface HeaderDao {
-
-  Header get(Optional<String> version);
+public interface HeaderDao extends ResourceDao<Header> {
 
 }

@@ -37,15 +37,15 @@ public class NavResourceTest {
     Assertions.assertThat(href).contains(String.format("<a href=\"%sappli/artist/lecommondiamond\">le common diamond</a>", deploymentURL.getPath()));
   }
   
-  @Test
-  @RunAsClient
-  public void should_getSubSectionHtml(
-      @ArquillianResteasyResource("html/nav/education") ResteasyWebTarget webTarget) {
-    String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
-    System.out.println(href);
-    Assertions.assertThat(href).contains(String.format("<a href=\"%sappli/education/creation\">Création musicale</a>",
-        deploymentURL.getPath()));
-   }
+//  @Test
+//  @RunAsClient
+//  public void should_getSubSectionHtml(
+//      @ArquillianResteasyResource("html/nav/education") ResteasyWebTarget webTarget) {
+//    String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
+//    System.out.println(href);
+//    Assertions.assertThat(href).contains(String.format("<a href=\"%sappli/education/creation\">Création musicale</a>",
+//        deploymentURL.getPath()));
+//   }
   
 }
 

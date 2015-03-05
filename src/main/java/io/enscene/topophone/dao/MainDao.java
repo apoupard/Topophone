@@ -1,11 +1,8 @@
 package io.enscene.topophone.dao;
 
+import io.enscene.topophone.api.ResourceDao;
 import io.enscene.topophone.model.main.Main;
 
-import java.util.Optional;
+public interface MainDao extends ResourceDao<Main> {
 
-public interface MainDao {
-
-  Optional<Main> get(Optional<String> version);
-  
 }

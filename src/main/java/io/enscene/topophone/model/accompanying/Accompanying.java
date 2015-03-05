@@ -1,10 +1,11 @@
 package io.enscene.topophone.model.accompanying;
 
+import io.enscene.topophone.api.ResourceModel;
 import io.enscene.topophone.model.artist.Headband;
 
 import java.util.Collection;
 
-public class Accompanying {
+public class Accompanying implements ResourceModel {
   
   private Headband headband;
   

@@ -1,8 +1,8 @@
 package io.enscene.topophone.dao;
 
 import io.enscene.topophone.api.ResourceDao;
-import io.enscene.topophone.model.nav.Entry;
+import io.enscene.topophone.model.nav.Nav;
 
-public interface NavDao extends ResourceDao<Entry> {
+public interface NavDao extends ResourceDao<Nav> {
 
 }

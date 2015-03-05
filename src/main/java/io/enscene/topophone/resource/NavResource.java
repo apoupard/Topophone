@@ -1,19 +1,16 @@
 package io.enscene.topophone.resource;
 
 import static java.util.Optional.empty;
-import static java.util.Optional.of;
-import freemarker.template.TemplateException;
+import io.enscene.topophone.api.ResourceIdMapper;
 import io.enscene.topophone.dao.NavDao;
-import io.enscene.topophone.model.nav.Entry;
+import io.enscene.topophone.model.nav.Nav;
 import io.enscene.topophone.templating.HtmlTemplateEngine;
 
-import java.io.IOException;
-import java.util.Collection;
+import java.util.Optional;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -23,43 +20,31 @@ import com.google.common.collect.ImmutableMap;
 @Path("nav")
 public class NavResource {
 
-  private HtmlTemplateEngine htmlTemplateEngine;
-  private  NavDao dao;
+  private final HtmlTemplateEngine htmlTemplateEngine;
+  private final NavDao dao;
+  private final ResourceIdMapper resourceIdMapper;
 
   @Inject
-  NavResource(HtmlTemplateEngine htmlTemplateEngine, NavDao dao) {
+  NavResource(HtmlTemplateEngine htmlTemplateEngine, NavDao dao, ResourceIdMapper resourceIdMapper) {
     this.htmlTemplateEngine = htmlTemplateEngine;
     this.dao = dao;
+    this.resourceIdMapper = resourceIdMapper;
   }
 
   @GET
   @Path("/")
   @Produces(MediaType.APPLICATION_JSON)
-  public Collection<Entry> getMenu() throws IOException, TemplateException {
-    return dao.getAll(empty());
+  public Nav getMenu() throws Exception {
+    String id = resourceIdMapper.getResourceId("nav").orElseThrow(() -> new Exception("[nav] Default resource id not found"));
+    return dao.get(id, Optional.empty()).orElseThrow(() -> new Exception("[nav] Default resource id not found"));
   }
 
   @GET
   @Path("/")
   @Produces(MediaType.TEXT_HTML)
-  public String getHtmlProfile() throws IOException, TemplateException {
-    Collection<Entry> nav = getMenu();
+  public String getHtmlProfile() throws Exception {
+    Nav nav = getMenu();
     return htmlTemplateEngine.execute("nav", empty(), ImmutableMap.of("nav", nav));
   }
 
-  @GET
-  @Path("/{id}")
-  @Produces(MediaType.APPLICATION_JSON)
-  private Entry getSubMenu(String id) throws Exception {
-    return dao.get(id, empty()).orElseThrow(() -> new Exception("Entry not found"));
-  }
-  
-  @GET
-  @Path("/{id}")
-  @Produces(MediaType.TEXT_HTML)
-  public String getHtmlProfile(@PathParam("id") String id) throws Exception {
-    Entry entry = getSubMenu(id);
-    return htmlTemplateEngine.execute("nav", of("subsection"), ImmutableMap.of("entry", entry));
-  }
-  
 }

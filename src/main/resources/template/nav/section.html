@@ -1,7 +1,7 @@
 <ul>
   <li class="first"><a href="${appcontext}"><img src="${appcontext}/images/home.png" border="0"></a>
   </li>
-  <#list nav as entry>
+  <#list nav.entries as entry>
     <li class="${entry.styleNames}">
       <#if entry.href != ''>
         <a href="${restcontext}${entry.href}">${entry.displayName}</a>

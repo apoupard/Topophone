@@ -38,6 +38,7 @@ public class PartnerResourceTest {
     assertThat(href)
     .contains(
         "<li><a onclick=\"document.getElementById('institutionnels').scrollIntoView()\">Institutionnels</a></li>")
+        .contains("<h3 id=\"prives\">Privés</h3>")
     .contains(String.format("<img src=\"%simages/partners/fse.png\"/>", deploymentURL.getPath()));
   }
 }
