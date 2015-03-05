@@ -5,7 +5,7 @@ final Router route = new Router();
 String context;
 void main() {
   context = getContext();
-  HttpRequest.request(context + "html/header", method: 'GET', requestHeaders: {'Accept': 'text/html'})
+  HttpRequest.request(context + "html/sections/header", method: 'GET', requestHeaders: {'Accept': 'text/html'})
               .then((resp) {
                 querySelector("#header").appendHtml(resp.responseText);
                 resizeHeader();
@@ -51,7 +51,7 @@ String getContext(){
 }
 
 void showHome(String path) {
-  HttpRequest.request(context+'html/main', method: 'GET', requestHeaders: {'Accept': 'text/html'})
+  HttpRequest.request(context+'html/sections/main', method: 'GET', requestHeaders: {'Accept': 'text/html'})
       .then((HttpRequest resp) {
         Element content = querySelector("#content")..nodes.clear()
             ..appendHtml(resp.responseText);
@@ -60,7 +60,7 @@ void showHome(String path) {
 }
 
 void show(String path) {
-  String url = path.replaceAll(new RegExp('appli'), "html");
+  String url = path.replaceAll(new RegExp('appli'), "html/sections");
   HttpRequest.request(url, method: 'GET', requestHeaders: {'Accept': 'text/html'})
       .then((HttpRequest resp) {
         Element content = querySelector("#content")..nodes.clear()
