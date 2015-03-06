@@ -21,19 +21,42 @@ public class ArtistDaoHardCoded extends AstractHardCoded<Artist> implements Arti
   @Override
   void init(Map<String, Artist> database) {
     database.put("lecommondiamond", getLeCommonDiamond("lecommondiamond"));
+    database.put("ihr", getInternationalHyperRythmique("ihr"));
   }
   
+  private Artist getInternationalHyperRythmique(String id) {
+    Song song = new Song("Cowboy", "4:03");
+    List<Concert> concerts = ImmutableList.of(
+        new Concert(new GregorianCalendar(2015, 06, 11).getTime(), "Club liberté", "Helsinki"),
+        new Concert(new GregorianCalendar(2015, 06, 12).getTime(), "Mbar", "Helsinki")
+     );
+    return new Artist(getProfileImage(id), getSocialMedia(id), song,concerts, getDescription(), getHeadband(id), "contact@ihr.com");
+  }
+
+  private String getProfileImage(String id) {
+    return "/images/artists/"+id+"/profile.png";
+  }
+
+  private Headband getHeadband(String id) {
+    return new Headband("/images/artists/"+id+"/bandeau.png", "/images/artists/"+id+"/bandeauLogo.png");
+  }
+
   private Artist getLeCommonDiamond(String id){
-    List<Media> medias =ImmutableList.of(
-        new Media("youtube", "http://www.youtube.com/"+id), 
-        new Media("facebook","http://www.facebook.com/"+id), 
-        new Media("bandcamp", "http://www.bandcamp.com/"+id));
+    List<Media> medias = getSocialMedia(id);
     Song song = new Song("Go faster", "3:52");
     List<Concert> concerts = ImmutableList.of(
         new Concert(new GregorianCalendar(2015, 06, 11).getTime(), "Club liberté", "Helsinki"),
         new Concert(new GregorianCalendar(2015, 06, 12).getTime(), "Mbar", "Helsinki")
      );
-    return new Artist("/images/"+id+".png", medias, song,concerts, getDescription(), getHeadband(), getContactEmail());
+    return new Artist(getProfileImage(id), medias, song,concerts, getDescription(), getHeadband(id), "contact@lecommundiamond.com");
+  }
+
+  private List<Media> getSocialMedia(String id) {
+    List<Media> medias =ImmutableList.of(
+        new Media("youtube", "http://www.youtube.com/"+id), 
+        new Media("facebook","http://www.facebook.com/"+id), 
+        new Media("bandcamp", "http://www.bandcamp.com/"+id));
+    return medias;
   }
 
   
@@ -58,14 +81,6 @@ public class ArtistDaoHardCoded extends AstractHardCoded<Artist> implements Arti
         "<p>    <span class=\"GDPD4GNPJ\">Listen Before You Buy</span><br/>"+
         "    “The moodiness of Air, the sexuality of Sébastien Tellier”"+
         "</p>";
-  }
-  
-  public Headband getHeadband() {
-    return new Headband("/images/bandeau.png", "/images/bandeauLogo.png");
-  }
-  
-  public String getContactEmail() {
-    return "contact@lecommundiamond.com";
   }
   
 }

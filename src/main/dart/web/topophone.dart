@@ -62,4 +62,22 @@ void show(String path) {
             ..appendHtml(resp.responseText);
     }
   ).catchError((error) => print(error));
+  
+  changeBackground(path);
 }
+
+void changeBackground(String path) {
+  Element background = querySelector("#background");
+  background.classes.clear();
+  
+  int appliIndex = path.indexOf("appli/");
+  if(appliIndex>=0){
+    String subPath = path.substring(appliIndex + "appli/".length);
+    subPath.split("/").forEach((String part) {
+      if(!part.trim().isEmpty){
+        querySelector("#background").classes.add(part);
+      }
+    });
+  }
+}
+

@@ -44,12 +44,23 @@ a, a:visited, a:hover {
 	width: 100%;
 	height: 100%;
 	position: fixed;
-	background-image: url(images/background.png);
 	background-repeat: no-repeat;
 	background-size: 100%;
-	background-position: left 15%;
 	background-attachment: fixed;
-	top: 0px;
+  background-position: left bottom;
+}
+
+#background.lecommondiamond {
+  background-image: url(images/background/lecommondiamond.png);
+  background-position: left 15%;
+}
+
+#background.ihr {
+	background-image: url(images/background/ihr.jpg);
+}
+
+#background.education {
+	background-image: url(images/background/education.jpg);
 }
 
 #site {
@@ -110,12 +121,12 @@ a, a:visited, a:hover {
 }
 
 #section {
-  position: relative;
-  margin: 0px auto;
-  width: 1050px;
-  min-height: 100%;
-  color: white;
-  padding-left: 5px;
+	position: relative;
+	margin: 0px auto;
+	width: 1050px;
+	min-height: 100%;
+	color: white;
+	padding-left: 5px;
 }
 
 #top {
@@ -297,21 +308,21 @@ nav ul ul li a, nav ul ul li a:visited, nav ul ul li a:hover {
 }
 
 .main .news {
-  width: 1000px;
-  overflow: hidden;
-  height: 280px;
-  margin: auto;
+	width: 1000px;
+	overflow: hidden;
+	height: 280px;
+	margin: auto;
 }
 
 .main .ui-carousel>.wrapper {
-  margin: 0;
-  padding: 0;
-  width: 9999px;
+	margin: 0;
+	padding: 0;
+	width: 9999px;
 }
 
 .main .news div {
-  color: black;
-  text-decoration: none;
+	color: black;
+	text-decoration: none;
 }
 
 .main .main-left {
@@ -330,12 +341,12 @@ nav ul ul li a, nav ul ul li a:visited, nav ul ul li a:hover {
 }
 
 .main .next1 {
-  position: absolute;
-  cursor: pointer;
-  top: 180px;
-  cursor: pointer;
-  opacity: 0.8;
-  right: 0;
-  width: 80px;
-  height: 100px;
+	position: absolute;
+	cursor: pointer;
+	top: 180px;
+	cursor: pointer;
+	opacity: 0.8;
+	right: 0;
+	width: 80px;
+	height: 100px;
 }

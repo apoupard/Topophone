@@ -37,8 +37,8 @@ public class NavDaoHardCoded extends AstractHardCoded<Nav> implements NavDao {
 
   private Entry artist() {
     return Entry.of("artist", "artistes", "/artist", ImmutableList.of(Entry.of("lecommondiamond",
-        "le common diamond", "/artist/lecommondiamond"), Entry.of("internationalhyperrythmique",
-        "international hyper rythmique", "/artist/internationalhyperrythmique")));
+        "le common diamond", "/artist/lecommondiamond"), Entry.of("ihr",
+        "international hyper rythmique", "/artist/ihr")));
   }
 
   private Entry educationSubMenu() {

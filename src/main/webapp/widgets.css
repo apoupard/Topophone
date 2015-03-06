@@ -62,7 +62,7 @@
 	border-radius: 0px;
 }
 
-.column-center .widget, .column-center .widget .opacity-wrap-gradient {
+.column-center .widget, .column-center .widget .opacity-wrap-gradient, .column-center .widget .opacity-wrap {
 	border-top: none;
 	-webkit-border-top-left-radius: 0px;
 	-webkit-border-top-right-radius: 0px;
@@ -241,6 +241,41 @@
 
 .external-link .bandcamp {
 	background-image: url(images/socnet/bandcamp.png);
+}
+
+/* accompanying */
+.accompanying .widget .opacity-wrap {
+  background-color: #c6dede;
+  border-radius: 5px;
+}
+
+.accompanying .widget {
+  border: 2px solid #237587;
+}
+
+.accompanying .widget .image {
+  height: 338px;
+}
+
+.accompanying .widget h2 {
+  color: white;
+  text-transform: uppercase;
+}
+
+.accompanying .column-center .widget {
+  border-top: none;
+}
+
+/* education */
+.education .widget .opacity-wrap {
+  background-color: #a6c569;
+}
+.education .widget {
+  border: 2px solid #618c00;
+}
+
+.education .column-center .widget {
+  border-top: none;
 }
 
 /* ?????????? */
