@@ -4,7 +4,7 @@
 }
 
 .widget {
-  border-radius: 5px;
+	border-radius: 5px;
 }
 
 .widget .widget-content {
@@ -34,7 +34,10 @@
 }
 
 .widget .opacity-wrap-gradient {
-	background-image: linear-gradient(black, #888888);
+	background-image: url(images/package/backDegrade.png);
+	background-repeat: repeat-x;
+	background-position: right top;
+	background-color: #8a8a8a;
 	border-radius: 5px;
 }
 
@@ -45,7 +48,7 @@
 	margin: 0 auto;
 	top: 0;
 	left: 0;
-	opacity: 0.65;
+	opacity: 0.85;
 }
 
 .widget .opacity-wrap {
@@ -62,7 +65,8 @@
 	border-radius: 0px;
 }
 
-.column-center .widget, .column-center .widget .opacity-wrap-gradient, .column-center .widget .opacity-wrap {
+.column-center .widget, .column-center .widget .opacity-wrap-gradient,
+	.column-center .widget .opacity-wrap {
 	border-top: none;
 	-webkit-border-top-left-radius: 0px;
 	-webkit-border-top-right-radius: 0px;
@@ -93,12 +97,7 @@
 }
 
 #bottom .widget {
-	width: 350px;
-	height: 100px;
 	position: relative;
-	display: inline-block;
-	opacity: 0.65;
-	border-radius: 20px;
 }
 
 .column-center .widget {
@@ -113,7 +112,7 @@
 	border-bottom: 1px solid white;
 }
 
-.column-center .widget      h3 {
+.column-center .widget h3 {
 	margin-top: 25px;
 	margin-bottom: 10px;
 	color: white;
@@ -122,6 +121,8 @@
 
 .column-center .widget {
 	padding: 30px 20px 0px 20px;
+	height: 450px;
+	overflow: auto;
 }
 
 /* partners */
@@ -176,13 +177,12 @@
 }
 
 /* concerts */
-
 .widget .concerts h3 {
 	border-bottom: solid 1px white;
 	margin-top: 15px;
 	color: black;
 	font-size: 1em;
-  margin-bottom: 5px;
+	margin-bottom: 5px;
 }
 
 .widget .artistContact {
@@ -206,17 +206,23 @@
 	font-weight: bold;
 }
 
+/* artistContact */
+.widget .artistContact a {
+	color: white;
+	font-weight: bold;
+}
+
 /* objectives */
 .side .widget .objectives {
 	text-align: center;
 }
 
 .description {
-  margin: 20px;
+	margin: 20px;
 }
 
 .description p {
-  margin-bottom: 5px;
+	margin-bottom: 5px;
 }
 
 /* profile */
@@ -245,41 +251,102 @@
 
 /* accompanying */
 .accompanying .widget .opacity-wrap {
-  background-color: #c6dede;
-  border-radius: 5px;
+	background-color: #c6dede;
+	border-radius: 5px;
 }
 
 .accompanying .widget {
-  border: 2px solid #237587;
+	border: 2px solid #237587;
 }
 
 .accompanying .widget .image {
-  height: 338px;
+	height: 338px;
 }
 
 .accompanying .widget h2 {
-  color: white;
-  text-transform: uppercase;
+	color: white;
+	text-transform: uppercase;
 }
 
 .accompanying .column-center .widget {
-  border-top: none;
+	border-top: none;
 }
 
 /* education */
 .education .widget .opacity-wrap {
-  background-color: #a6c569;
+	background-color: #a6c569;
 }
+
 .education .widget {
-  border: 2px solid #618c00;
+	border: 2px solid #618c00;
 }
 
 .education .column-center .widget {
-  border-top: none;
+	border-top: none;
 }
 
-/* ?????????? */
-.widget a.contact {
-	color: white;
-	font-weight: bold;
+/* ARTIST SECTION */
+.artist .column-center .widget .opacity-wrap-gradient {
+	height: 570px;
 }
+
+#bottom.artist .videos div {
+	display: inline-block;
+	height: 110px;
+	vertical-align: top;
+}
+
+#bottom.artist .videos .video {
+	width: 390px;
+	background-image:  url(images/widget/video/background2.png);
+	background-repeat: repeat-x;
+  position: relative;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+#bottom.artist .videos .video-next {
+	width: 30px;
+}
+
+.videos .video-previous a, .videos .video-next a  {
+	display: block;
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.videos .video-previous a {
+	background-image: url(images/widget/video/left.png);
+}
+
+.videos .video-next a {
+	background-image: url(images/widget/video/right.png);
+}
+
+.video .decoLeft{
+	position: absolute;
+	top: 0;
+	left: -20px;
+	height: 100%;
+	width: 20px;
+	background-image: url(images/widget/video/backLeft.png);
+  background-repeat: no-repeat;
+}
+
+.video .decoRight {
+  position: absolute;
+  top: 0;
+  right: -20px;
+  height: 100%;
+  width: 20px;
+  background-image: url(images/widget/video/backRight.png);
+  background-repeat: no-repeat;
+}
+
+#bottom.artist .videos .image {
+  height: 80px;
+  width: 140px;	
+}
+
