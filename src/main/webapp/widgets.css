@@ -305,6 +305,10 @@
   margin-right: 30px;
 }
 
+.videos .video .video-content {
+  padding-top: 8px;
+}
+
 #bottom.artist .videos .video-next {
 	width: 30px;
 }

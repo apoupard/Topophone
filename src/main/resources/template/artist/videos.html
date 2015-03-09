@@ -1,25 +1,18 @@
 <#import "/widget/image.html" as images>
 <div class="videos">
-	<div class="video">
-	  <div class="decoLeft"></div>
-    <div class="decoRight"></div>
-		<a href="#"> <@images.image href="/images/artists/lecommondiamond/video1.png" /> </a>
-			<div class="description">
-				Clip "le 1er clip"<br/>
-	      Common diamond<br/>
-	      Elliot Broué / 2010
-      </div>
-	</div>
-	<div class="video">
-	  <div class="decoLeft"></div>
-    <div class="decoRight"></div>
-		<a href="#"> <@images.image href="/images/artists/lecommondiamond/video2.png" /> </a>
-		<div class="description">
-			Clip "AFTER ALL"<br/>
-	    Common diamond<br/>
-	    Elliot Broué / 2014
-    </div>
-	</div>
+	<#list artist.videos as video>
+		<div class="video">
+			<div class="decoLeft"></div>
+			<div class="decoRight"></div>
+			<div class="video-content">
+				<a href="#"> 
+				 <@images.image href=video.thumbnail /> </a>
+				<div class="description">
+	        ${video.description} 
+	 			</div>
+			</div>
+		</div>
+	</#list>
 	<div class="video-next">
 		<a href="#"></a>
 	</div>

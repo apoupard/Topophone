@@ -8,13 +8,14 @@ public class Artist implements ResourceModel {
 
   private String picture;
   private List<Media> medias;
+  private List<Video> videos;
   private List<Concert> concerts;
   private Song song;
   private String description;
   private Headband headband;
   private String contactEmail;
   
-  public Artist(String picture, List<Media> medias, Song song, List<Concert> concerts, String description, Headband headband, String contactEmail) {
+  public Artist(String picture, List<Media> medias, Song song, List<Concert> concerts, String description, Headband headband, String contactEmail, List<Video> videos) {
     this.picture = picture;
     this.medias = medias;
     this.song = song;
@@ -22,6 +23,7 @@ public class Artist implements ResourceModel {
     this.description = description;
     this.headband = headband;
     this.contactEmail = contactEmail;
+    this.videos= videos; 
   }
 
   public String getPicture() {
@@ -79,5 +81,12 @@ public class Artist implements ResourceModel {
   public void setContactEmail(String contactEmail) {
     this.contactEmail = contactEmail;
   }
-  
+
+  public List<Video> getVideos() {
+    return videos;
+  }
+
+  public void setVideos(List<Video> videos) {
+    this.videos = videos;
+  }
 }

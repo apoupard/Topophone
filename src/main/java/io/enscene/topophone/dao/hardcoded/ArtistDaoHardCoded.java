@@ -6,6 +6,7 @@ import io.enscene.topophone.model.artist.Concert;
 import io.enscene.topophone.model.artist.Headband;
 import io.enscene.topophone.model.artist.Media;
 import io.enscene.topophone.model.artist.Song;
+import io.enscene.topophone.model.artist.Video;
 
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -30,9 +31,16 @@ public class ArtistDaoHardCoded extends AstractHardCoded<Artist> implements Arti
         new Concert(new GregorianCalendar(2015, 06, 11).getTime(), "Club liberté", "Helsinki"),
         new Concert(new GregorianCalendar(2015, 06, 12).getTime(), "Mbar", "Helsinki")
      );
-    return new Artist(getProfileImage(id), getSocialMedia(id), song,concerts, getDescription(), getHeadband(id), "contact@ihr.com");
+    return new Artist(getProfileImage(id), getSocialMedia(id), song,concerts, getDescription(), getHeadband(id), "contact@ihr.com", getVideos());
   }
 
+  private List<Video> getVideos() {
+  return ImmutableList.of(
+    new Video("/images/artists/lecommondiamond/video1.png", "Clip \"le 1er clip\"<br /> Common diamond<br /> Elliot Broué / 2010"),
+    new Video("/images/artists/lecommondiamond/video2.png", "Clip \"AFTER ALL\"<br /> Common diamond<br /> Elliot Broué / 2010")
+   );
+  }
+  
   private String getProfileImage(String id) {
     return "/images/artists/"+id+"/profile.png";
   }
@@ -48,7 +56,7 @@ public class ArtistDaoHardCoded extends AstractHardCoded<Artist> implements Arti
         new Concert(new GregorianCalendar(2015, 06, 11).getTime(), "Club liberté", "Helsinki"),
         new Concert(new GregorianCalendar(2015, 06, 12).getTime(), "Mbar", "Helsinki")
      );
-    return new Artist(getProfileImage(id), medias, song,concerts, getDescription(), getHeadband(id), "contact@lecommundiamond.com");
+    return new Artist(getProfileImage(id), medias, song,concerts, getDescription(), getHeadband(id), "contact@lecommundiamond.com", getVideos());
   }
 
   private List<Media> getSocialMedia(String id) {
