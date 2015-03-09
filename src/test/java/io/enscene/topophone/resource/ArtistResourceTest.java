@@ -33,7 +33,7 @@ public class ArtistResourceTest {
   public void should_getJson(
       @ArquillianResteasyResource("html/artist/lecommondiamond") ResteasyWebTarget webTarget) {
     String href = webTarget.request(MediaType.APPLICATION_JSON).get(String.class);
-    Assertions.assertThat(href).contains("/images/lecommondiamond.png");
+    Assertions.assertThat(href).contains("images/artists/lecommondiamond/profile.png");
   }
   
   @Test
@@ -41,7 +41,7 @@ public class ArtistResourceTest {
   public void should_getProfileHtml(
       @ArquillianResteasyResource("html/artist/lecommondiamond") ResteasyWebTarget webTarget) {
     String href = webTarget.queryParam("template", "profile").request(MediaType.TEXT_HTML).get(String.class);
-    Assertions.assertThat(href).contains(String.format("<img alt=\"\" src=\"%simages/lecommondiamond.png\"></img>", deploymentURL.getPath()));
+    Assertions.assertThat(href).contains(String.format("<img alt=\"\" src=\"%simages/artists/lecommondiamond/profile.png\"></img>", deploymentURL.getPath()));
   }
   
   
@@ -71,18 +71,10 @@ public class ArtistResourceTest {
   
   @Test
   @RunAsClient
-  public void should_getHeadbandHtml(
-      @ArquillianResteasyResource("html/artist/lecommondiamond") ResteasyWebTarget webTarget) {
-    String href = webTarget.queryParam("template", "headband").request(MediaType.TEXT_HTML).get(String.class);
-    Assertions.assertThat(href).contains(String.format("<img class=\"content\" alt=\"\" src=\"%simages/bandeau.png\">", deploymentURL.getPath()));
-  }
- 
-  @Test
-  @RunAsClient
   public void should_getContactHtml(
       @ArquillianResteasyResource("html/artist/lecommondiamond") ResteasyWebTarget webTarget) {
     String href = webTarget.queryParam("template", "contact").request(MediaType.TEXT_HTML).get(String.class);
-    Assertions.assertThat(href).contains("<a href=\"mailto:contact@lecommundiamond.com\" class=\"contact\">CONTACT BOOKING</a>");
+    Assertions.assertThat(href).contains("<a href=\"mailto:contact@lecommundiamond.com\">CONTACT BOOKING</a>");
   }
   
   @Test
@@ -91,7 +83,7 @@ public class ArtistResourceTest {
       @ArquillianResteasyResource("html/artist/lecommondiamond") ResteasyWebTarget webTarget) {
     String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
     System.out.println(href);
-    Assertions.assertThat(href).contains("<a href=\"mailto:contact@lecommundiamond.com\" class=\"contact\">CONTACT BOOKING</a>");
+    Assertions.assertThat(href).contains("<a href=\"mailto:contact@lecommundiamond.com\">CONTACT BOOKING</a>");
   }
 }
 

@@ -44,7 +44,7 @@ public class AccompanyingResourceTest {
     String html = webTarget.request(MediaType.TEXT_HTML).get(String.class);
     System.out.println(html);
     Assertions.assertThat(html)
-      .contains(String.format("<img class=\"content\" alt=\"\" src=\"%simages/accompanying/headband.png\">", deploymentURL.getPath()))
-      .contains(String.format("<img class=\"rond\" alt=\"\" src=\"%simages/accompanying/headbandlogo.png\">", deploymentURL.getPath()));
+      .contains(String.format("<img class=\"main\" alt=\"\" src=\"%simages/accompanying/headband.png\">", deploymentURL.getPath()))
+      .contains(String.format("<img class=\"logo\" alt=\"\" src=\"%simages/accompanying/headbandlogo.png\">", deploymentURL.getPath()));
   }
 }
