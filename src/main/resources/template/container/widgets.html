@@ -4,13 +4,17 @@
   </div>
 </#macro>
 
-<#macro widget opacity gradient>
-<div class="widget">
+<#macro widget opacity=false gradient=false onlyBorder=false class="">
+<div class="widget ${class}">
   <#if opacity> 
-    <#if gradient>
-      <div class="opacity opacity-wrap-gradient"></div>
+    <#if onlyBorder>
+       <div class="opacity opacity-wrap-gradient-border"></div>
     <#else>
-      <div class="opacity opacity-wrap"></div>
+      <#if gradient>
+        <div class="opacity opacity-wrap-gradient"></div>
+      <#else>
+        <div class="opacity opacity-wrap"></div>
+      </#if>
     </#if> 
   </#if>
   <div class="widget-content">

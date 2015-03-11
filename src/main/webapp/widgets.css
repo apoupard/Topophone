@@ -3,6 +3,10 @@
 	height: 100%
 }
 
+.widgets .first{
+  height: 380px; 
+}
+
 .widget {
 	border-radius: 5px;
 }
@@ -39,6 +43,16 @@
 	background-position: right top;
 	background-color: #8a8a8a;
 	border-radius: 5px;
+}
+
+
+.widget .opacity-wrap-gradient-border {
+  background-image: url(images/artists/backgroundBorder.png);
+  background-position: top center;
+  background-size: 100% 100%;
+  background-color: #cfcdce;
+  border-radius: 5px;
+  opacity: 0.55 !important;
 }
 
 .widget .opacity {
