@@ -1,8 +1,8 @@
 package io.enscene.topophone.resource;
 
 import static java.util.Optional.empty;
+import io.enscene.topophone.api.ResourceDao;
 import io.enscene.topophone.api.ResourceIdMapper;
-import io.enscene.topophone.dao.NavDao;
 import io.enscene.topophone.model.nav.Nav;
 import io.enscene.topophone.templating.HtmlTemplateEngine;
 
@@ -21,11 +21,11 @@ import com.google.common.collect.ImmutableMap;
 public class NavResource {
 
   private final HtmlTemplateEngine htmlTemplateEngine;
-  private final NavDao dao;
+  private final ResourceDao<Nav> dao;
   private final ResourceIdMapper resourceIdMapper;
 
   @Inject
-  NavResource(HtmlTemplateEngine htmlTemplateEngine, NavDao dao, ResourceIdMapper resourceIdMapper) {
+  NavResource(HtmlTemplateEngine htmlTemplateEngine, ResourceDao<Nav> dao, ResourceIdMapper resourceIdMapper) {
     this.htmlTemplateEngine = htmlTemplateEngine;
     this.dao = dao;
     this.resourceIdMapper = resourceIdMapper;

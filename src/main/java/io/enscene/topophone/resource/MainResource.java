@@ -1,6 +1,6 @@
 package io.enscene.topophone.resource;
 
-import io.enscene.topophone.dao.MainDao;
+import io.enscene.topophone.api.ResourceDao;
 import io.enscene.topophone.model.main.Main;
 import io.enscene.topophone.templating.HtmlTemplateEngine;
 
@@ -19,10 +19,10 @@ import com.google.common.collect.ImmutableMap;
 public class MainResource {
 
   private final HtmlTemplateEngine htmlTemplateEngine;
-  private final MainDao mainDao;
+  private final ResourceDao<Main> mainDao;
 
   @Inject
-  MainResource(HtmlTemplateEngine htmlTemplateEngine, MainDao mainDao) {
+  MainResource(HtmlTemplateEngine htmlTemplateEngine, ResourceDao<Main> mainDao) {
     this.htmlTemplateEngine = htmlTemplateEngine;
     this.mainDao = mainDao;
   }

@@ -4,13 +4,6 @@ import freemarker.template.Configuration;
 import io.enscene.core.MicroService;
 import io.enscene.topophone.api.ResourceDao;
 import io.enscene.topophone.api.ResourceModel;
-import io.enscene.topophone.dao.AccompanyingDao;
-import io.enscene.topophone.dao.ArtistDao;
-import io.enscene.topophone.dao.EducationDao;
-import io.enscene.topophone.dao.HeaderDao;
-import io.enscene.topophone.dao.MainDao;
-import io.enscene.topophone.dao.NavDao;
-import io.enscene.topophone.dao.PartnersDao;
 import io.enscene.topophone.dao.hardcoded.AccompanyingDaoHardCoded;
 import io.enscene.topophone.dao.hardcoded.ArtistDaoHardCoded;
 import io.enscene.topophone.dao.hardcoded.EducationDaoHardCoded;
@@ -58,26 +51,18 @@ public class TopophoneMicroApplication extends MicroService {
     
     
     binder.bind(HtmlTemplateEngine.class).to(FreemakerTemplateEngine.class);
-   
-    binder.bind(ArtistDao.class).to(ArtistDaoHardCoded.class);
-    binder.bind(EducationDao.class).to(EducationDaoHardCoded.class);
-    binder.bind(PartnersDao.class).to(PartnersDaoHardCoded.class);
-    binder.bind(NavDao.class).to(NavDaoHardCoded.class);
-    binder.bind(HeaderDao.class).to(HeaderDaoHardCoded.class);
-    binder.bind(MainDao.class).to(MainDaoHardCoded.class);
-    binder.bind(AccompanyingDao.class).to(AccompanyingDaoHardCoded.class);
-    
+
     MapBinder<String, ResourceDao<? extends ResourceModel>> resourceDaoBinder =
         MapBinder.newMapBinder(binder, new TypeLiteral<String>() {},
             new TypeLiteral<ResourceDao<? extends ResourceModel>>() {});
    
-    resourceDaoBinder.addBinding("artist").to(ArtistDao.class);
-    resourceDaoBinder.addBinding("education").to(EducationDao.class);
-    resourceDaoBinder.addBinding("partners").to(PartnersDao.class);
-    resourceDaoBinder.addBinding("nav").to(NavDao.class);
-    resourceDaoBinder.addBinding("header").to(HeaderDao.class);
-    resourceDaoBinder.addBinding("main").to(MainDao.class);
-    resourceDaoBinder.addBinding("accompanying").to(AccompanyingDao.class);
+    resourceDaoBinder.addBinding("artist").to(new TypeLiteral<ArtistDaoHardCoded>() {});
+    resourceDaoBinder.addBinding("education").to(new TypeLiteral<EducationDaoHardCoded>(){});
+    resourceDaoBinder.addBinding("partners").to(new TypeLiteral<PartnersDaoHardCoded>(){});
+    resourceDaoBinder.addBinding("nav").to(new TypeLiteral<NavDaoHardCoded>(){});
+    resourceDaoBinder.addBinding("header").to(new TypeLiteral<HeaderDaoHardCoded>(){});
+    resourceDaoBinder.addBinding("main").to(new TypeLiteral<MainDaoHardCoded>(){});
+    resourceDaoBinder.addBinding("accompanying").to(new TypeLiteral<AccompanyingDaoHardCoded>(){});
   }
 
 }

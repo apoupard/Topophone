@@ -1,6 +1,6 @@
 package io.enscene.topophone.resource;
 
-import io.enscene.topophone.dao.EducationDao;
+import io.enscene.topophone.api.ResourceDao;
 import io.enscene.topophone.model.education.Education;
 import io.enscene.topophone.templating.HtmlTemplateEngine;
 
@@ -20,10 +20,10 @@ import com.google.common.collect.ImmutableMap;
 public class EducationResource {
 
   private final HtmlTemplateEngine htmlTemplateEngine;
-  private final EducationDao educationDao;
+  private final ResourceDao<Education> educationDao;
 
   @Inject
-  EducationResource(HtmlTemplateEngine htmlTemplateEngine, EducationDao educationDao) {
+  EducationResource(HtmlTemplateEngine htmlTemplateEngine, ResourceDao<Education> educationDao) {
     this.htmlTemplateEngine = htmlTemplateEngine;
     this.educationDao = educationDao;
   }
@@ -32,7 +32,8 @@ public class EducationResource {
   @Path("/{id}")
   @Produces(MediaType.APPLICATION_JSON)
   public Education getEducation(@PathParam("id") String id) throws Exception {
-    return educationDao.get(id, Optional.empty()).orElseThrow(() -> new Exception("Education not found"));
+    return educationDao.get(id, Optional.empty()).orElseThrow(
+        () -> new Exception("Education not found"));
   }
 
   @GET
@@ -41,7 +42,8 @@ public class EducationResource {
   public String getHtmlProfile(@PathParam("id") String id, @QueryParam("template") String template)
       throws Exception {
     Education education = getEducation(id);
-    return htmlTemplateEngine.execute("education", Optional.ofNullable(template), ImmutableMap.of("education", education));
+    return htmlTemplateEngine.execute("education", Optional.ofNullable(template),
+        ImmutableMap.of("education", education));
   }
 
 }

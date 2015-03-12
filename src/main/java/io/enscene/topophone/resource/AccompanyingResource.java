@@ -1,6 +1,6 @@
 package io.enscene.topophone.resource;
 
-import io.enscene.topophone.dao.AccompanyingDao;
+import io.enscene.topophone.api.ResourceDao;
 import io.enscene.topophone.model.accompanying.Accompanying;
 import io.enscene.topophone.templating.HtmlTemplateEngine;
 
@@ -18,12 +18,12 @@ import com.google.common.collect.ImmutableMap;
 public class AccompanyingResource {
 
   private static final String ACCOMPANYING = "accompanying";
-  
+
   private final HtmlTemplateEngine htmlTemplateEngine;
-  private final AccompanyingDao dao;
-  
+  private final ResourceDao<Accompanying> dao;
+
   @Inject
-  AccompanyingResource(HtmlTemplateEngine htmlTemplateEngine, AccompanyingDao dao) {
+  AccompanyingResource(HtmlTemplateEngine htmlTemplateEngine, ResourceDao<Accompanying> dao) {
     this.htmlTemplateEngine = htmlTemplateEngine;
     this.dao = dao;
   }
@@ -31,7 +31,8 @@ public class AccompanyingResource {
   @GET
   @Produces(MediaType.APPLICATION_JSON)
   public Accompanying get() throws Exception {
-    return dao.get("1",Optional.empty()).orElseThrow(() -> new Exception("Accompanying not found!"));
+    return dao.get("1", Optional.empty()).orElseThrow(
+        () -> new Exception("Accompanying not found!"));
   }
 
   @GET

@@ -1,6 +1,5 @@
 package io.enscene.topophone.dao.hardcoded;
 
-import io.enscene.topophone.dao.MainDao;
 import io.enscene.topophone.model.main.Main;
 
 import java.util.Map;
@@ -10,7 +9,7 @@ import javax.inject.Singleton;
 import com.google.common.collect.ImmutableList;
 
 @Singleton
-public class MainDaoHardCoded extends AstractHardCoded<Main> implements MainDao {
+public class MainDaoHardCoded extends AstractHardCoded<Main> {
 
   @Override
   void init(Map<String, Main> database) {

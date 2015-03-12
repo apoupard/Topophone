@@ -2,7 +2,7 @@ package io.enscene.topophone.resource;
 
 import static java.util.Optional.empty;
 import static java.util.Optional.ofNullable;
-import io.enscene.topophone.dao.HeaderDao;
+import io.enscene.topophone.api.ResourceDao;
 import io.enscene.topophone.model.header.Header;
 import io.enscene.topophone.templating.HtmlTemplateEngine;
 
@@ -19,26 +19,29 @@ import com.google.common.collect.ImmutableMap;
 @Path("header")
 public class HeaderResource {
 
-  private final HeaderDao headerDao;
+  private final ResourceDao<Header> headerDao;
   private final HtmlTemplateEngine htmlTemplateEngine;
 
   @Inject
-  HeaderResource(HeaderDao headerDao, HtmlTemplateEngine htmlTemplateEngine) {
+  HeaderResource(ResourceDao<Header> headerDao, HtmlTemplateEngine htmlTemplateEngine) {
     this.headerDao = headerDao;
     this.htmlTemplateEngine = htmlTemplateEngine;
   }
-  
+
   @GET
   @Produces(MediaType.APPLICATION_JSON)
-  public Header getHeader(@QueryParam("template") String template, @QueryParam("template") String version) throws Exception {
-    return headerDao.get("1",empty()).orElseThrow(() -> new Exception("Resource not found!"));
+  public Header getHeader(@QueryParam("template") String template,
+      @QueryParam("template") String version) throws Exception {
+    return headerDao.get("1", empty()).orElseThrow(() -> new Exception("Resource not found!"));
   }
 
   @GET
   @Produces(MediaType.TEXT_HTML)
-  public String getHtmlProfile(@QueryParam("template") String template, @QueryParam("template") String version) throws Exception {
+  public String getHtmlProfile(@QueryParam("template") String template,
+      @QueryParam("template") String version) throws Exception {
     Header header = getHeader(template, version);
-    return htmlTemplateEngine.execute("header", ofNullable(template), ImmutableMap.of("header", header));
+    return htmlTemplateEngine.execute("header", ofNullable(template),
+        ImmutableMap.of("header", header));
   }
 
 }

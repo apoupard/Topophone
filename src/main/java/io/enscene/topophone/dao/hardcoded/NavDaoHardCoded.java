@@ -1,6 +1,5 @@
 package io.enscene.topophone.dao.hardcoded;
 
-import io.enscene.topophone.dao.NavDao;
 import io.enscene.topophone.model.nav.Entry;
 import io.enscene.topophone.model.nav.Nav;
 
@@ -12,7 +11,7 @@ import javax.inject.Singleton;
 import com.google.common.collect.ImmutableList;
 
 @Singleton
-public class NavDaoHardCoded extends AstractHardCoded<Nav> implements NavDao {
+public class NavDaoHardCoded extends AstractHardCoded<Nav> {
 
   @Override
   void init(Map<String, Nav> database) {

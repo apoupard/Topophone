@@ -1,6 +1,6 @@
 package io.enscene.topophone.resource;
 
-import io.enscene.topophone.dao.ArtistDao;
+import io.enscene.topophone.api.ResourceDao;
 import io.enscene.topophone.model.artist.Artist;
 import io.enscene.topophone.templating.HtmlTemplateEngine;
 
@@ -21,10 +21,10 @@ import com.google.common.collect.ImmutableMap;
 public class ArtistResource {
 
   private final HtmlTemplateEngine htmlTemplateEngine;
-  private final ArtistDao dao;
-  
+  private final ResourceDao<Artist> dao;
+
   @Inject
-  ArtistResource(HtmlTemplateEngine htmlTemplateEngine, ArtistDao dao) {
+  ArtistResource(HtmlTemplateEngine htmlTemplateEngine, ResourceDao<Artist> dao) {
     this.htmlTemplateEngine = htmlTemplateEngine;
     this.dao = dao;
   }
@@ -39,9 +39,11 @@ public class ArtistResource {
   @GET
   @Path("/{id}")
   @Produces(MediaType.TEXT_HTML)
-  public String getHtmlProfile(@PathParam("id") String id, @QueryParam("template") String template) throws Exception {
+  public String getHtmlProfile(@PathParam("id") String id, @QueryParam("template") String template)
+      throws Exception {
     Artist artist = get(id);
-    return htmlTemplateEngine.execute("artist", Optional.ofNullable(template), ImmutableMap.of("artist", artist));
+    return htmlTemplateEngine.execute("artist", Optional.ofNullable(template),
+        ImmutableMap.of("artist", artist));
   }
 
 }
