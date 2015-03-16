@@ -8,11 +8,11 @@ import freemarker.template.Configuration;
 import freemarker.template.TemplateExceptionHandler;
 import freemarker.template.TemplateModelException;
 
-public class FmConfigProvider implements Provider<Configuration> {
+public class FreemarkerConfigurationProvider implements Provider<Configuration> {
 
   private final ServletContext context;
   
-  @Inject FmConfigProvider(ServletContext context) {
+  @Inject FreemarkerConfigurationProvider(ServletContext context) {
     super();
     this.context = context;
   }

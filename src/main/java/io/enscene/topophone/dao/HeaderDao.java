@@ -1,13 +1,13 @@
-package io.enscene.topophone.dao.hardcoded;
+package io.enscene.topophone.dao;
 
-import io.enscene.topophone.model.header.Header;
+import io.enscene.topophone.model.Header;
 
 import java.util.Map;
 
 import javax.inject.Singleton;
 
 @Singleton
-public class HeaderDaoHardCoded extends AstractHardCoded<Header> {
+public class HeaderDao extends AstractHardCoded<Header> {
 
   @Override
   void init(Map<String, Header> database) {

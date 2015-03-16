@@ -19,12 +19,12 @@ import org.junit.runner.RunWith;
 
 @RunWith(Arquillian.class)
 public class EducationResourceTest {
-  
+
   @ArquillianResource
   private URL deploymentURL;
 
   @Deployment
-  public static WebArchive createDeployment () {
+  public static WebArchive createDeployment() {
     WebArchive archive = TopophoneWebArchive.get();
     System.out.println(archive.toString(true));
     return archive;
@@ -34,18 +34,9 @@ public class EducationResourceTest {
   @RunAsClient
   public void should_getCreationSectionHtml(
       @ArquillianResteasyResource("html/education/creation") ResteasyWebTarget webTarget) {
-    String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
+    String href = webTarget.request(MediaType.APPLICATION_JSON).get(String.class);
     System.out.println(href);
-    Assertions.assertThat(href).contains("<h1>Création musicale</h1>");
+    Assertions.assertThat(href).contains("Création musicale");
   }
-  
-  @Test
-  @RunAsClient
-  public void should_getMeetingSectionHtml(
-      @ArquillianResteasyResource("html/education/meeting") ResteasyWebTarget webTarget) {
-    String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
-    System.out.println(href);
-    Assertions.assertThat(href).contains("<h1>Rencontre d’artistes</h1>");
-  }
-}
 
+}

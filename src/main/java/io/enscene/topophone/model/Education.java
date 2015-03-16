@@ -1,4 +1,4 @@
-package io.enscene.topophone.model.education;
+package io.enscene.topophone.model;
 
 import io.enscene.topophone.api.ResourceModel;
 import io.enscene.topophone.model.artist.Headband;

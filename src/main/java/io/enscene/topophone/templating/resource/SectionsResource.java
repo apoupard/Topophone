@@ -1,4 +1,4 @@
-package io.enscene.topophone.resource;
+package io.enscene.topophone.templating.resource;
 
 import static java.util.Optional.empty;
 import static java.util.Optional.ofNullable;
@@ -24,7 +24,7 @@ public class SectionsResource {
 
   private final HtmlTemplateEngine templateEngine;
   private final ResourceIdMapper resourceIdMapper;
-  private final Map<String, ResourceDao<? extends ResourceModel>> daos;
+  private final Map<String,? extends ResourceDao<? extends ResourceModel>> daos;
 
   @Inject
   SectionsResource(HtmlTemplateEngine templateEngine, ResourceIdMapper resourceIdMapper,

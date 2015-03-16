@@ -1,4 +1,4 @@
-package io.enscene.topophone.resource;
+package io.enscene.topophone.templating.resource;
 
 import io.enscene.topophone.TopophoneWebArchive;
 
@@ -18,7 +18,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(Arquillian.class)
-public class HeaderResourceTest {
+public class NavResourceTest {
 
   @ArquillianResource
   private URL deploymentURL;
@@ -31,12 +31,21 @@ public class HeaderResourceTest {
   @Test
   @RunAsClient
   public void should_getSectionHtml(
-      @ArquillianResteasyResource("html/header") ResteasyWebTarget webTarget) {
-    
-    String path = deploymentURL.getPath();
+      @ArquillianResteasyResource("html/nav") ResteasyWebTarget webTarget) {
     String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
     System.out.println(href);
-    Assertions.assertThat(href).contains(String.format("<img class=\"logo\" src=\"%simages/logo.png\">", path));
+    Assertions.assertThat(href).contains(String.format("<a href=\"%sappli/artist/lecommondiamond\">le common diamond</a>", deploymentURL.getPath()));
   }
+  
+//  @Test
+//  @RunAsClient
+//  public void should_getSubSectionHtml(
+//      @ArquillianResteasyResource("html/nav/education") ResteasyWebTarget webTarget) {
+//    String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
+//    System.out.println(href);
+//    Assertions.assertThat(href).contains(String.format("<a href=\"%sappli/education/creation\">Création musicale</a>",
+//        deploymentURL.getPath()));
+//   }
+  
 }
 

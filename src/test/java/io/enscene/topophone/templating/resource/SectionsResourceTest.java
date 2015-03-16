@@ -1,4 +1,4 @@
-package io.enscene.topophone.resource;
+package io.enscene.topophone.templating.resource;
 
 import io.enscene.topophone.TopophoneWebArchive;
 

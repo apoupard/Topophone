@@ -1,9 +1,10 @@
-package io.enscene.topophone.resource;
+package io.enscene.topophone.templating.resource;
 
 import static java.util.Optional.empty;
 import static java.util.Optional.ofNullable;
 import io.enscene.topophone.api.ResourceDao;
-import io.enscene.topophone.model.header.Header;
+import io.enscene.topophone.dao.HeaderDao;
+import io.enscene.topophone.model.Header;
 import io.enscene.topophone.templating.HtmlTemplateEngine;
 
 import javax.inject.Inject;
@@ -23,7 +24,7 @@ public class HeaderResource {
   private final HtmlTemplateEngine htmlTemplateEngine;
 
   @Inject
-  HeaderResource(ResourceDao<Header> headerDao, HtmlTemplateEngine htmlTemplateEngine) {
+  HeaderResource(HeaderDao headerDao, HtmlTemplateEngine htmlTemplateEngine) {
     this.headerDao = headerDao;
     this.htmlTemplateEngine = htmlTemplateEngine;
   }

@@ -33,13 +33,12 @@ public class PartnerResourceTest {
   @RunAsClient
   public void should_getSectionHtml(
       @ArquillianResteasyResource("html/partners/") ResteasyWebTarget webTarget) {
-    String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
+    String href = webTarget.request(MediaType.APPLICATION_JSON).get(String.class);
     System.out.println(href);
     assertThat(href)
-    .contains(
-        "<li><a onclick=\"document.getElementById('institutionnels').scrollIntoView()\">Institutionnels</a></li>")
-        .contains("<h3 id=\"prives\">Privés</h3>")
-    .contains(String.format("<img src=\"%simages/partners/fse.png\"/>", deploymentURL.getPath()));
+    .contains("Institutionnels")
+        .contains("Privés")
+    .contains(String.format("images/partners/fse.png", deploymentURL.getPath()));
   }
 }
 

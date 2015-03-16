@@ -1,4 +1,4 @@
-package io.enscene.topophone.dao.hardcoded;
+package io.enscene.topophone.dao;
 
 import io.enscene.topophone.model.partner.Institution;
 import io.enscene.topophone.model.partner.Partner;
@@ -12,7 +12,7 @@ import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 
 @Singleton
-public class PartnersDaoHardCoded extends AstractHardCoded<Partners> {
+public class PartnersDao extends AstractHardCoded<Partners> {
 
   @Override
   void init(Map<String, Partners> database) {

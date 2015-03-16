@@ -1,9 +1,10 @@
-package io.enscene.topophone.resource;
+package io.enscene.topophone.templating.resource;
 
 import static java.util.Optional.empty;
 import io.enscene.topophone.api.ResourceDao;
 import io.enscene.topophone.api.ResourceIdMapper;
-import io.enscene.topophone.model.nav.Nav;
+import io.enscene.topophone.dao.NavDao;
+import io.enscene.topophone.model.Nav;
 import io.enscene.topophone.templating.HtmlTemplateEngine;
 
 import java.util.Optional;
@@ -25,7 +26,7 @@ public class NavResource {
   private final ResourceIdMapper resourceIdMapper;
 
   @Inject
-  NavResource(HtmlTemplateEngine htmlTemplateEngine, ResourceDao<Nav> dao, ResourceIdMapper resourceIdMapper) {
+  NavResource(HtmlTemplateEngine htmlTemplateEngine, NavDao dao, ResourceIdMapper resourceIdMapper) {
     this.htmlTemplateEngine = htmlTemplateEngine;
     this.dao = dao;
     this.resourceIdMapper = resourceIdMapper;

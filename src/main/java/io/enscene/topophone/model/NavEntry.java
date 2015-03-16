@@ -1,4 +1,4 @@
-package io.enscene.topophone.model.nav;
+package io.enscene.topophone.model;
 
 import io.enscene.topophone.api.ResourceModel;
 
@@ -6,33 +6,33 @@ import java.util.List;
 
 import com.google.common.collect.ImmutableList;
 
-public class Entry implements ResourceModel {
+public class NavEntry implements ResourceModel {
 
   private String id;
   private String displayName;
   private String href;
-  private List<Entry> entries;
+  private List<NavEntry> entries;
   private String styleNames;
 
-  public static Entry of(String id, String displayName, String href, List<Entry> entries) {
-    return new Entry(id, displayName, href, entries, "");
+  public static NavEntry of(String id, String displayName, String href, List<NavEntry> entries) {
+    return new NavEntry(id, displayName, href, entries, "");
   }
 
-  public static Entry of(String id, String displayName, String href) {
-    return new Entry(id, displayName, href, ImmutableList.of(), "");
+  public static NavEntry of(String id, String displayName, String href) {
+    return new NavEntry(id, displayName, href, ImmutableList.of(), "");
   }
 
-  public static Entry separator() {
-    return new Entry("", "", "", ImmutableList.of(), "separator");
+  public static NavEntry separator() {
+    return new NavEntry("", "", "", ImmutableList.of(), "separator");
   }
   
 
-  public static Entry smallSeparator() {
-    return new Entry("", "", "", ImmutableList.of(), "smallSeparator");
+  public static NavEntry smallSeparator() {
+    return new NavEntry("", "", "", ImmutableList.of(), "smallSeparator");
   }
 
 
-  public Entry(String id, String displayName, String href, List<Entry> entries, String styleNames) {
+  public NavEntry(String id, String displayName, String href, List<NavEntry> entries, String styleNames) {
     this.id = id;
     this.displayName = displayName;
     this.href = href;
@@ -64,11 +64,11 @@ public class Entry implements ResourceModel {
     this.href = href;
   }
 
-  public List<Entry> getEntries() {
+  public List<NavEntry> getEntries() {
     return entries;
   }
 
-  public void setEntries(List<Entry> entries) {
+  public void setEntries(List<NavEntry> entries) {
     this.entries = entries;
   }
 

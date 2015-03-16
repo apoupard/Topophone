@@ -1,4 +1,4 @@
-package io.enscene.topophone.dao.hardcoded;
+package io.enscene.topophone.dao;
 
 import io.enscene.topophone.model.accompanying.Accompanying;
 import io.enscene.topophone.model.accompanying.Contact;
@@ -9,7 +9,7 @@ import java.util.Map;
 
 import com.google.common.collect.ImmutableList;
 
-public class AccompanyingDaoHardCoded extends AstractHardCoded<Accompanying> {
+public class AccompanyingDao extends AstractHardCoded<Accompanying> {
 
   @Override
   void init(Map<String, Accompanying> database) {

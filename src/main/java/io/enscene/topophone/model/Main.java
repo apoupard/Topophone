@@ -1,4 +1,4 @@
-package io.enscene.topophone.model.main;
+package io.enscene.topophone.model;
 
 import io.enscene.topophone.api.ResourceModel;
 

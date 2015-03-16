@@ -32,19 +32,9 @@ public class AccompanyingResourceTest {
   @RunAsClient
   public void should_getHtlm(
       @ArquillianResteasyResource("html/accompanying") ResteasyWebTarget webTarget) {
-    String html = webTarget.request(MediaType.TEXT_HTML).get(String.class);
+    String html = webTarget.request(MediaType.APPLICATION_JSON).get(String.class);
     System.out.println(html);
-    Assertions.assertThat(html).contains("<p>Professionnaliser le projet musical des groupes</p>");
+    Assertions.assertThat(html).contains("Professionnaliser le projet musical des groupes");
   }
 
-  @Test
-  @RunAsClient
-  public void should_getHeadBand(
-      @ArquillianResteasyResource("html/accompanying") ResteasyWebTarget webTarget) {
-    String html = webTarget.request(MediaType.TEXT_HTML).get(String.class);
-    System.out.println(html);
-    Assertions.assertThat(html)
-      .contains(String.format("<img class=\"main\" alt=\"\" src=\"%simages/accompanying/headband.png\">", deploymentURL.getPath()))
-      .contains(String.format("<img class=\"logo\" alt=\"\" src=\"%simages/accompanying/headbandlogo.png\">", deploymentURL.getPath()));
-  }
 }

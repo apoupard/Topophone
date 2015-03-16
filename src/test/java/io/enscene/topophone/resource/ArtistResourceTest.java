@@ -24,7 +24,7 @@ public class ArtistResourceTest {
   private URL deploymentURL;
 
   @Deployment
-  public static WebArchive createDeployment () {
+  public static WebArchive createDeployment() {
     return TopophoneWebArchive.get();
   }
 
@@ -35,55 +35,5 @@ public class ArtistResourceTest {
     String href = webTarget.request(MediaType.APPLICATION_JSON).get(String.class);
     Assertions.assertThat(href).contains("images/artists/lecommondiamond/profile.png");
   }
-  
-  @Test
-  @RunAsClient
-  public void should_getProfileHtml(
-      @ArquillianResteasyResource("html/artist/lecommondiamond") ResteasyWebTarget webTarget) {
-    String href = webTarget.queryParam("template", "profile").request(MediaType.TEXT_HTML).get(String.class);
-    Assertions.assertThat(href).contains(String.format("<img alt=\"\" src=\"%simages/artists/lecommondiamond/profile.png\"></img>", deploymentURL.getPath()));
-  }
-  
-  
-  @Test
-  @RunAsClient
-  public void should_getSongHtml(
-      @ArquillianResteasyResource("html/artist/lecommondiamond") ResteasyWebTarget webTarget) {
-    String href = webTarget.queryParam("template", "audio").request(MediaType.TEXT_HTML).get(String.class);
-    Assertions.assertThat(href).contains("Go faster <span class=\"track-time\"> 00:00 / 3:52</span>");
-  }
-  
-  @Test
-  @RunAsClient
-  public void should_getConcertHtml(
-      @ArquillianResteasyResource("html/artist/lecommondiamond") ResteasyWebTarget webTarget) {
-    String href = webTarget.queryParam("template", "concert").request(MediaType.TEXT_HTML).get(String.class);
-    Assertions.assertThat(href).contains("<li>11 juil. -  Club liberté - Helsinki</li>");
-  }
-  
-  @Test
-  @RunAsClient
-  public void should_getDescriptionHtml(
-      @ArquillianResteasyResource("html/artist/lecommondiamond") ResteasyWebTarget webTarget) {
-    String href = webTarget.queryParam("template", "description").request(MediaType.TEXT_HTML).get(String.class);
-    Assertions.assertThat(href).contains("<p>Floran et Thomas puisent dans le solaire et");
-  }
-  
-  @Test
-  @RunAsClient
-  public void should_getContactHtml(
-      @ArquillianResteasyResource("html/artist/lecommondiamond") ResteasyWebTarget webTarget) {
-    String href = webTarget.queryParam("template", "contact").request(MediaType.TEXT_HTML).get(String.class);
-    Assertions.assertThat(href).contains("<a href=\"mailto:contact@lecommundiamond.com\">CONTACT BOOKING</a>");
-  }
-  
-  @Test
-  @RunAsClient
-  public void should_getSectionHtml(
-      @ArquillianResteasyResource("html/artist/lecommondiamond") ResteasyWebTarget webTarget) {
-    String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
-    System.out.println(href);
-    Assertions.assertThat(href).contains("<a href=\"mailto:contact@lecommundiamond.com\">CONTACT BOOKING</a>");
-  }
-}
 
+}

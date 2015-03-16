@@ -1,4 +1,4 @@
-package io.enscene.topophone.dao.hardcoded;
+package io.enscene.topophone.dao;
 
 import io.enscene.topophone.model.artist.Artist;
 import io.enscene.topophone.model.artist.Concert;
@@ -16,7 +16,7 @@ import javax.inject.Singleton;
 import com.google.common.collect.ImmutableList;
 
 @Singleton
-public class ArtistDaoHardCoded extends AstractHardCoded<Artist> {
+public class ArtistDao extends AstractHardCoded<Artist> {
 
   @Override
   void init(Map<String, Artist> database) {

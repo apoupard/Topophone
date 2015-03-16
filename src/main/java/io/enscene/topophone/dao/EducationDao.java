@@ -1,14 +1,14 @@
-package io.enscene.topophone.dao.hardcoded;
+package io.enscene.topophone.dao;
 
+import io.enscene.topophone.model.Education;
 import io.enscene.topophone.model.artist.Headband;
-import io.enscene.topophone.model.education.Education;
 
 import java.util.Map;
 
 import javax.inject.Singleton;
 
 @Singleton
-public class EducationDaoHardCoded extends AstractHardCoded<Education> {
+public class EducationDao extends AstractHardCoded<Education> {
 
   @Override
   void init(Map<String, Education> database) {
