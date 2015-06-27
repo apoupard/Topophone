@@ -1,7 +1,5 @@
 package io.enscene.topophone.templating.resource;
 
-import static java.util.Optional.empty;
-
 import java.util.Optional;
 
 import javax.inject.Inject;

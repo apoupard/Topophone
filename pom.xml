@@ -16,7 +16,17 @@
 		<version.enscene>0.0.1-SNAPSHOT</version.enscene>
 		<version.enscene-testing-arquillian>0.0.1-SNAPSHOT</version.enscene-testing-arquillian>
 		<version.shiro>1.2.3</version.shiro>
+
+		<dart.home>/usr/lib/dart</dart.home>
 	</properties>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 
 	<dependencies>
 		<dependency>
@@ -126,7 +136,7 @@
 				<version>3.0.8</version>
 				<configuration>
 					<checkedMode>true</checkedMode>
-					<dartSdk>/Applications/Eclipse.app/Contents/Eclipse/dart-sdk</dartSdk>
+					<dartSdk>${dart.home}</dartSdk>
 				</configuration>
 				<executions>
 					<execution>
@@ -172,8 +182,6 @@
 		</plugins>
 		<pluginManagement>
 			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings 
-					only. It has no influence on the Maven build itself. -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
@@ -210,6 +218,19 @@
 		</pluginManagement>
 	</build>
 
+	<profiles>
+		<profile>
+			<id>travis-mac</id>
+			<activation>
+				<os>
+					<family>mac</family>
+				</os>
+			</activation>
+			<properties>
+				<dart.home>/Applications/Eclipse.app/Contents/Eclipse/dart-sdk</dart.home>
+			</properties>
+		</profile>
+	</profiles>
 
 	<distributionManagement>
 		<repository>
