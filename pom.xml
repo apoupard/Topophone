@@ -15,14 +15,20 @@
 	<properties>
 		<version.enscene>0.0.1-SNAPSHOT</version.enscene>
 		<version.enscene-testing-arquillian>0.0.1-SNAPSHOT</version.enscene-testing-arquillian>
+		<version.shiro>1.2.3</version.shiro>
 	</properties>
 
 	<dependencies>
-		<!-- <dependency> -->
-		<!-- <groupId>org.apache.shiro</groupId> -->
-		<!-- <artifactId>shiro-core</artifactId> -->
-		<!-- <version>1.2.3</version> -->
-		<!-- </dependency> -->
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-web</artifactId>
+			<version>${version.shiro}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-guice</artifactId>
+			<version>${version.shiro}</version>
+		</dependency>
 		<dependency>
 			<groupId>commons-lang</groupId>
 			<artifactId>commons-lang</artifactId>
@@ -66,7 +72,7 @@
 		</dependency>
 		<dependency>
 			<groupId>io.enscene.testing.arquillian</groupId>
-			<artifactId>enscene-testing-arquillian-jetty-9</artifactId>
+			<artifactId>enscene-testing-arquillian-jetty-8</artifactId>
 			<version>${project.version}</version>
 			<type>pom</type>
 			<scope>test</scope>
@@ -120,7 +126,7 @@
 				<version>3.0.8</version>
 				<configuration>
 					<checkedMode>true</checkedMode>
-					<dartSdk>/home/adrien/data/Tools/eclipse/dart-sdk</dartSdk>
+					<dartSdk>/Applications/Eclipse.app/Contents/Eclipse/dart-sdk</dartSdk>
 				</configuration>
 				<executions>
 					<execution>
@@ -129,6 +135,37 @@
 						<goals>
 							<goal>dart2js</goal>
 						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<configuration>
+					<altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo</altDeploymentRepository>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>0.11</version>
+				<configuration>
+					<message>Maven artifacts for ${project.version}</message>
+					<noJekyll>true</noJekyll>
+					<outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
+					<branch>refs/heads/master</branch>
+					<merge>true</merge>
+					<includes>
+						<include>**/*</include>
+					</includes>
+					<repositoryName>maven-repo</repositoryName>
+					<repositoryOwner>apoupard</repositoryOwner>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>site</goal>
+						</goals>
+						<phase>deploy</phase>
 					</execution>
 				</executions>
 			</plugin>
@@ -172,5 +209,24 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+
+
+	<distributionManagement>
+		<repository>
+			<id>internal.repo</id>
+			<name>Temporary Staging Repository</name>
+			<url>file://${project.build.directory}/mvn-repo</url>
+		</repository>
+	</distributionManagement>
+
+	<repositories>
+		<repository>
+			<id>enscene-parent-mvn-repo</id>
+			<url>https://raw.github.com/apoupard/maven-repo/master</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
 
 </project>

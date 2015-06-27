@@ -1,7 +1,5 @@
 package io.enscene.topophone;
 
-import io.enscene.topophone.TopophoneMicroApplication;
-
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.jboss.shrinkwrap.resolver.api.maven.Maven;
@@ -9,12 +7,13 @@ import org.jboss.shrinkwrap.resolver.api.maven.Maven;
 public class TopophoneWebArchive {
 
   public static WebArchive get() {
-    return ShrinkWrap
+    WebArchive archive = ShrinkWrap
         .create(WebArchive.class)
-        .addPackages(true, TopophoneMicroApplication.class.getPackage())
+        .addPackages(true, TopophoneGuiceConfiguration.class.getPackage())
         .addAsLibraries(
             Maven.resolver().loadPomFromFile("pom.xml").importCompileAndRuntimeDependencies()
                 .resolve().withTransitivity().asFile());
-
+    System.out.println(archive.toString(true));
+     return archive;
   }
 }

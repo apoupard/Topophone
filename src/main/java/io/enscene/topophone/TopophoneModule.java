@@ -1,7 +1,11 @@
 package io.enscene.topophone;
 
+import com.google.inject.TypeLiteral;
+import com.google.inject.multibindings.MapBinder;
+import com.google.inject.servlet.ServletModule;
+
 import freemarker.template.Configuration;
-import io.enscene.core.MicroService;
+import io.enscene.topophone.account.AccountsResource;
 import io.enscene.topophone.api.ResourceDao;
 import io.enscene.topophone.api.ResourceModel;
 import io.enscene.topophone.dao.AccompanyingDao;
@@ -18,37 +22,38 @@ import io.enscene.topophone.resource.PartnerResource;
 import io.enscene.topophone.templating.FreemakerTemplateEngine;
 import io.enscene.topophone.templating.HtmlTemplateEngine;
 import io.enscene.topophone.templating.resource.HeaderResource;
+import io.enscene.topophone.templating.resource.IndexResource;
 import io.enscene.topophone.templating.resource.NavResource;
 import io.enscene.topophone.templating.resource.SectionsResource;
 
-import javax.ws.rs.ApplicationPath;
-
-import com.google.inject.Binder;
-import com.google.inject.TypeLiteral;
-import com.google.inject.multibindings.MapBinder;
-import com.google.inject.servlet.ServletModule;
-
-@ApplicationPath("html")
-public class TopophoneMicroApplication extends MicroService {
+public class TopophoneModule extends ServletModule {
+  
+  
 
   @Override
-  public void configure(Binder binder) {
-    binder.install(new ServletModule());
+  protected void configureServlets() {
+    // TODO Auto-generated method stub
+//    super.configureServlets();
+//  }
 
-    binder.bind(HtmlTemplateEngine.class).to(FreemakerTemplateEngine.class);
-    binder.bind(Configuration.class).toProvider(FreemarkerConfigurationProvider.class);
+//  @Override
+//  protected void configure() {
+    
+    bind(HtmlTemplateEngine.class).to(FreemakerTemplateEngine.class);
+    bind(Configuration.class).toProvider(FreemarkerConfigurationProvider.class);
 
-    binder.bind(ArtistResource.class);
-    binder.bind(NavResource.class);
-    binder.bind(HeaderResource.class);
-    binder.bind(PartnerResource.class);
-    binder.bind(EducationResource.class);
-    binder.bind(SectionsResource.class);
-    binder.bind(AccompanyingResource.class);
-
-
+    bind(AccountsResource.class);
+    bind(ArtistResource.class);
+    bind(NavResource.class);
+    bind(HeaderResource.class);
+    bind(PartnerResource.class);
+    bind(EducationResource.class);
+    bind(SectionsResource.class);
+    bind(AccompanyingResource.class);
+    bind(IndexResource.class);
+    
     MapBinder<String, ResourceDao<? extends ResourceModel>> resourceDaoBinder =
-        MapBinder.newMapBinder(binder, new TypeLiteral<String>() {},
+        MapBinder.newMapBinder(binder(), new TypeLiteral<String>() {},
             new TypeLiteral<ResourceDao<? extends ResourceModel>>() {});
 
     resourceDaoBinder.addBinding("artist").to(new TypeLiteral<ArtistDao>() {});
@@ -58,6 +63,9 @@ public class TopophoneMicroApplication extends MicroService {
     resourceDaoBinder.addBinding("header").to(new TypeLiteral<HeaderDao>() {});
     resourceDaoBinder.addBinding("main").to(new TypeLiteral<MainDao>() {});
     resourceDaoBinder.addBinding("accompanying").to(new TypeLiteral<AccompanyingDao>() {});
+    bind(Servlet.class).asEagerSingleton();
+    
+    serve("/", "/index.html", Servlet.APPLICATION_CONTEXT + "/*").with(Servlet.class);
   }
 
 }

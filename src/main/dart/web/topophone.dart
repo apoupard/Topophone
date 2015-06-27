@@ -32,7 +32,7 @@ void resizeHeader(){
   Element left = querySelector("#header #decoLeft");
   Element rigth = querySelector("#header #decoRight");
   
-  var sideSize = (window.innerWidth - deco.clientWidth-4)/2;
+  var sideSize = ((window.innerWidth - deco.clientWidth-4)/2)+2;
   left.style.width = sideSize.toStringAsFixed(0)+'px';
   rigth.style.width = sideSize.toStringAsFixed(0)+'px';
   
