@@ -24,7 +24,7 @@ public class SectionsResource {
 
   private final HtmlTemplateEngine templateEngine;
   private final ResourceIdMapper resourceIdMapper;
-  private final Map<String,? extends ResourceDao<? extends ResourceModel>> daos;
+  private final Map<String, ? extends ResourceDao<? extends ResourceModel>> daos;
 
   @Inject
   SectionsResource(HtmlTemplateEngine templateEngine, ResourceIdMapper resourceIdMapper,
@@ -39,11 +39,10 @@ public class SectionsResource {
   @Produces(MediaType.APPLICATION_JSON)
   public ResourceModel get(@PathParam("name") String name, @PathParam("id") String id,
       @QueryParam("version") String version) throws Exception {
-    ResourceDao<? extends ResourceModel> dao =
-        ofNullable(daos.get(name)).orElseThrow(
-            () -> new Exception("ResourceDao[" + name + "] not found!"));
-    return dao.get(id, ofNullable(version)).orElseThrow(
-        () -> new Exception("Resource[" + name + "] not found!"));
+    ResourceDao<? extends ResourceModel> dao = ofNullable(daos.get(name))
+        .orElseThrow(() -> new Exception("ResourceDao[" + name + "] not found!"));
+    return dao.get(id, ofNullable(version))
+        .orElseThrow(() -> new Exception("Resource[" + name + "] not found!"));
   }
 
   @GET
@@ -51,7 +50,7 @@ public class SectionsResource {
   @Produces(MediaType.TEXT_HTML)
   public String getHtmlProfile(@PathParam("name") String name, @PathParam("id") String id,
       @QueryParam("version") String version, @QueryParam("template") String template)
-      throws Exception {
+          throws Exception {
     ResourceModel res = get(name, id, version);
     return templateEngine.execute(name, ofNullable(template), ImmutableMap.of(name, res));
   }
@@ -61,9 +60,8 @@ public class SectionsResource {
   @Produces(MediaType.APPLICATION_JSON)
   public ResourceModel getResourceModels(@PathParam("name") String name,
       @QueryParam("version") String version) throws Exception {
-    String resourceId =
-        resourceIdMapper.getResourceId(name).orElseThrow(
-            () -> new Exception("Resource[" + name + "] not found!"));
+    String resourceId = resourceIdMapper.getResourceId(name)
+        .orElseThrow(() -> new Exception("Resource[" + name + "] not found!"));
     return get(name, resourceId, version);
   }
 

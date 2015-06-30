@@ -10,6 +10,7 @@ import io.enscene.topophone.api.ResourceDao;
 import io.enscene.topophone.api.ResourceModel;
 import io.enscene.topophone.dao.AccompanyingDao;
 import io.enscene.topophone.dao.ArtistDao;
+import io.enscene.topophone.dao.DevArtistsDao;
 import io.enscene.topophone.dao.EducationDao;
 import io.enscene.topophone.dao.HeaderDao;
 import io.enscene.topophone.dao.MainDao;
@@ -32,12 +33,6 @@ public class TopophoneModule extends ServletModule {
 
   @Override
   protected void configureServlets() {
-    // TODO Auto-generated method stub
-//    super.configureServlets();
-//  }
-
-//  @Override
-//  protected void configure() {
     
     bind(HtmlTemplateEngine.class).to(FreemakerTemplateEngine.class);
     bind(Configuration.class).toProvider(FreemarkerConfigurationProvider.class);
@@ -56,6 +51,7 @@ public class TopophoneModule extends ServletModule {
         MapBinder.newMapBinder(binder(), new TypeLiteral<String>() {},
             new TypeLiteral<ResourceDao<? extends ResourceModel>>() {});
 
+    resourceDaoBinder.addBinding("devartists").to(new TypeLiteral<DevArtistsDao>() {});
     resourceDaoBinder.addBinding("artist").to(new TypeLiteral<ArtistDao>() {});
     resourceDaoBinder.addBinding("education").to(new TypeLiteral<EducationDao>() {});
     resourceDaoBinder.addBinding("partners").to(new TypeLiteral<PartnersDao>() {});

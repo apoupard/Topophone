@@ -298,6 +298,19 @@
 .education .column-center .widget {
 	border-top: none;
 }
+/* devartists */
+.devartists .widget .opacity-wrap {
+	background-color: #c4d7d7;
+}
+
+.devartists .widget {
+	border: 2px solid #6ea2ad;
+}
+
+.devartists .internallinkImg {
+	padding: 0px !important;
+}
+
 
 /* ARTIST SECTION */
 .artist .column-center .widget .opacity-wrap-gradient {

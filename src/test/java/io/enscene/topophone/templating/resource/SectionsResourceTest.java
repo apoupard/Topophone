@@ -57,6 +57,16 @@ public class SectionsResourceTest {
             "<li><a onclick=\"document.getElementById('institutionnels').scrollIntoView()\">Institutionnels</a></li>")
         .contains(String.format("<img src=\"%simages/partners/fse.png\"/>", deploymentURL.getPath()));
   }
+  
+  @Test
+  @RunAsClient
+  public void should_getDevArtists(
+      @ArquillianResteasyResource("html/sections/devartists") ResteasyWebTarget webTarget) {
+    String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
+    Assertions
+        .assertThat(href)
+        .contains(String.format(" <img alt=\"\" src=\"%simages/devartists/ihr.jpg\">", deploymentURL.getPath()));
+  }
 
   @Test
   @RunAsClient
@@ -71,16 +81,6 @@ public class SectionsResourceTest {
                 deploymentURL.getPath()));
   }
 
-//  @Test
-//  @RunAsClient
-//  public void should_getEducationNav(
-//      @ArquillianResteasyResource("html/sections/subnav/education") ResteasyWebTarget webTarget) {
-//    String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
-//    System.out.println(href);
-//    Assertions.assertThat(href).contains(String.format("<a href=\"%sappli/education/creation\">Création musicale</a>",
-//        deploymentURL.getPath()));
-//  }
-//
   @Test
   @RunAsClient
   public void should_getSectionHtml(

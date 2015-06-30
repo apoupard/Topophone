@@ -1,0 +1,54 @@
+<#import "/container/widgets.html" as container>
+<#import "/widget/headband.html" as top>
+<#import "/widget/internallink.html" as link>
+<#import "/widget/image.html" as images>
+<div id="top">
+  <@top.headband main=devartists.headband.main logo=devartists.headband.logo />
+</div>
+<div id="page" class="devartists">
+    <div class="side column-left">
+      <@container.widgets>
+        <@container.widget opacity=true gradient=false>
+          <@link.internallink href="/devartists/presentation" label="Développements d'artistes" />
+        </@container.widget>
+        <@container.widget opacity=true gradient=false>
+          <@link.internallink href="/devartists/appscenic" label="Accompagnement scénique" />
+        </@container.widget>
+        <#list devartists.artistLinks as artistLink>
+          <@container.widget opacity=true gradient=false>
+	        <@link.internallink href=artistLink.link class="internallinkImg">
+              <@images.image href=artistLink.image />
+            </@link.internallink>
+          </@container.widget>
+        </#list>
+      </@container.widgets>
+    </div>
+    <div class="column-center">
+       <@container.widgets>
+         <@container.widget opacity=true gradient=false>
+          ${devartists.description}
+         </@container.widget>
+       </@container.widgets>
+    </div>
+    <div class="side column-right">
+      <@container.widgets>
+        <@container.widget opacity=true gradient=false>
+          <div class="chiffres">
+	          <h3>L'attelier de création en chiffres</h3>
+	          <ul>
+	            <li class="chiffre">600</li>
+	            <li>jeunes impliqués sur 2013/14</li>
+	            <li class="chiffre">12</li>
+	            <li>projets création</li>
+	            <li class="chiffre">21</li>
+	            <li>structures bénéficiares</li>
+	            <li class="chiffre">42</li>
+	            <li>enregistrements réalisés</li>
+	            <li class="chiffre">22</li>
+	            <li>restitutions publiques organisées</li>
+	          </ul>
+          </div>
+        </@container.widget>
+       </@container.widgets>
+    </div>
+</div>

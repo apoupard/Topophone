@@ -1,5 +1,8 @@
-<#macro internallink href label class="">
+<#macro internallink href label="" class="">
 	<div class="internallink ${class}">
-    <a href="${restcontext}${href}">${label}</a>
+    <a href="${restcontext}${href}">
+    	${label}
+    	<#nested/>
+    </a>
 	</div>
 </#macro>

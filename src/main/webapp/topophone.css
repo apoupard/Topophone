@@ -50,6 +50,11 @@ a, a:visited, a:hover {
   background-position: left bottom;
 }
 
+#background.devartists {
+  background-image: url(images/devartists/background.jpg);
+  background-position: left 15%;
+}
+
 #background.lecommondiamond {
   background-image: url(images/background/lecommondiamond.png);
   background-position: left 15%;
@@ -125,7 +130,6 @@ a, a:visited, a:hover {
 	margin: 0px auto;
 	width: 1050px;
 	min-height: 100%;
-	color: white;
 	padding-left: 5px;
 }
 
@@ -297,7 +301,7 @@ nav ul ul {
 nav ul ul li {
 	float: none;
 	position: relative;
-	margin: 2px 0px 0px 0px;
+	margin: 5px 0px 0px 0px;
 	background: black;
 }
 
