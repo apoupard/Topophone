@@ -220,7 +220,7 @@
 
 	<profiles>
 		<profile>
-			<id>travis-mac</id>
+			<id>dart-mac</id>
 			<activation>
 				<os>
 					<family>mac</family>
