@@ -13,7 +13,6 @@ public class TopophoneWebArchive {
         .addAsLibraries(
             Maven.resolver().loadPomFromFile("pom.xml").importCompileAndRuntimeDependencies()
                 .resolve().withTransitivity().asFile());
-    System.out.println(archive.toString(true));
      return archive;
   }
 }

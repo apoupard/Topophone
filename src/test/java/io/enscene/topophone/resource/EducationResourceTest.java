@@ -36,7 +36,7 @@ public class EducationResourceTest {
       @ArquillianResteasyResource("html/education/creation") ResteasyWebTarget webTarget) {
     String href = webTarget.request(MediaType.APPLICATION_JSON).get(String.class);
     System.out.println(href);
-    Assertions.assertThat(href).contains("Création musicale");
+    Assertions.assertThat(href).contains("les participants appréhendent");
   }
 
 }

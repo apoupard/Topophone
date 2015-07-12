@@ -43,7 +43,7 @@ public class SectionsResourceTest {
     String href =
         webTarget.queryParam("template", "section").request(MediaType.TEXT_HTML).get(String.class);
     System.out.println(href);
-    Assertions.assertThat(href).contains("<h1>Création musicale</h1>");
+    Assertions.assertThat(href).contains("les participants appréhendent");
   }
 
   @Test

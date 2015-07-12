@@ -21,7 +21,6 @@ public class FreemarkerConfigurationProvider implements Provider<Configuration> 
   public Configuration get() {
     Configuration cfg = new Configuration(Configuration.VERSION_2_3_21);
     cfg.setClassForTemplateLoading(this.getClass(), "/template");
-    cfg.setDefaultEncoding("UTF-8");
     cfg.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER); 
     try {
       cfg.setSharedVariable("restcontext", context.getContextPath()+Servlet.APPLICATION_CONTEXT);

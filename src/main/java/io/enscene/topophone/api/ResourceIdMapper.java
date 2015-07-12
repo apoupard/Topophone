@@ -14,6 +14,7 @@ public class ResourceIdMapper {
       .put("main", "1")
       .put("partners", "1")
       .put("devartists", "appscenic")
+      .put("education", "presentation")
       .put("nav", "1")
       .build();
 
