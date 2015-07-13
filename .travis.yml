@@ -12,7 +12,7 @@ before_install:
  - sudo apt-get install dart
  
 after_success:
-  - set MAVEN_OPTS="-Xmx512m"
+  - export MAVEN_OPTS="-Xmx512m"
   - mvn deploy -DskipTests=true
 
 branches:
