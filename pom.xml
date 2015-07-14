@@ -18,6 +18,8 @@
 		<version.shiro>1.2.3</version.shiro>
 
 		<dart.home>/usr/lib/dart</dart.home>
+		
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<licenses>
