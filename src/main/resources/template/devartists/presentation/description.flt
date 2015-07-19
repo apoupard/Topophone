@@ -1,4 +1,4 @@
-<#import "/widget/image.html" as images>
+<#import "/widget/image.flt" as images>
 <h3>Présentation :</h3>
 <p>L’association développe le projet artistique et professionnel d'artistes musiciens « en développement ».</p>
 <p>A l’aide d’un réseau de partenaires professionnels de la filière musicale qui mettent leurs compétences au service de l’association, Topophone coordonne le développement de chaque artiste en mettant à sa disposition des services lui permettant d’opérer une mutation vers sa professionnalisation.</p>

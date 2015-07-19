@@ -1,5 +1,5 @@
-<#import "/container/widgets.html" as container>
-<#import "/widget/headband.html" as top>
+<#import "/container/widgets.flt" as container>
+<#import "/widget/headband.flt" as top>
 <div id="top">
   <@top.headband main=artist.headband.main logo=artist.headband.logo />
 </div>
@@ -7,27 +7,27 @@
 	<div class="side column-left">
 	  <@container.widgets>
 		  <@container.widget opacity=true gradient=true class="first">
-		      <#include "/artist/profile.html">
+		      <#include "/artist/profile.flt">
 		  </@container.widget>
 		   <@container.widget opacity=true gradient=false>
-            <#include "/artist/audio.html">
+            <#include "/artist/audio.flt">
         </@container.widget>
       </@container.widgets>
 	</div>
    <div class="column-center">
       <@container.widgets>
         <@container.widget opacity=true gradient=true>
-          <#include "/artist/description.html">
+          <#include "/artist/description.flt">
         </@container.widget>
       </@container.widgets>
    </div>
 	<div class="side column-right">
       <@container.widgets>
         <@container.widget opacity=true onlyBorder=true class="first">
-            <#include "/artist/concert.html">          
+            <#include "/artist/concert.flt">          
         </@container.widget>
          <@container.widget opacity=true gradient=false>
-            <#include "/artist/contact.html">
+            <#include "/artist/contact.flt">
         </@container.widget>
       </@container.widgets>
 	</div>
@@ -35,7 +35,7 @@
 <div id="bottom" class="artist">
   <@container.widgets>
       <@container.widget opacity=false gradient=false>
-        <#include "/artist/videos.html">
+        <#include "/artist/videos.flt">
       </@container.widget>
     </@container.widgets>
 </div>

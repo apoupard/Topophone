@@ -1,7 +1,7 @@
 <div id="main">
 	<div>
 		<div>
-			 <#include "/main/carousel.html">
+			 <#include "/main/carousel.flt">
 		</div>
 		<div class="description">
       <div class="main-left">

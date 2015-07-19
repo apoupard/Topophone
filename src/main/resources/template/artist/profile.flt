@@ -1,4 +1,4 @@
-<#import "/widget/image.html" as images>
+<#import "/widget/image.flt" as images>
 <@images.image href=artist.picture />
 <div class="external-link">
   <#list artist.medias as media>

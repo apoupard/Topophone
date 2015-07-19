@@ -11,6 +11,8 @@
 	border-radius: 5px;
 }
 
+
+
 .widget .widget-content {
 	position: relative;
 }
@@ -386,3 +388,8 @@
   width: 140px;	
 }
 
+.widget-selected {
+	border-right: none;
+	width: 230px;
+	z-index: 100;
+}

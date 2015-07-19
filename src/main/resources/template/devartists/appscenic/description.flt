@@ -1,4 +1,4 @@
-<#import "/widget/image.html" as images>
+<#import "/widget/image.flt" as images>
 <h3>Présentation :</h3>
 <p>
 En parallèle au projet « Développement d'artistes », Topophone développe une action annexe de « Développement Scénique ». Celle-ci émane d'un constat réalisé sur les premières années de fonctionnement de Topophone. La plupart des groupes rencontrés se consacrent quasi-exclusivement à la partie musicale de leur projet, en n'envisageant que très rarement la scénographie de leur spectacle.

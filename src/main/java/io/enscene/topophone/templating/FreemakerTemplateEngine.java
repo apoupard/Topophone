@@ -29,12 +29,16 @@ public class FreemakerTemplateEngine implements HtmlTemplateEngine {
   public String execute(String name, Optional<String> template, Map<String, Object> res)
       throws IOException, TemplateException {
     String templateName = new StringBuilder().append(name).append("/")
-        .append(template.orElse("section")).append(".html").toString();
+        .append(template.orElse("section")).append(".flt").toString();
 
     Template temp = freemakerConfig.getTemplate(templateName);
     StringWriter out = new StringWriter();
     temp.process(res, out);
-    return out.toString();
+
+    String processedTemplate = out.toString();
+    logger.debug("Processed template: {}", processedTemplate);
+    
+    return processedTemplate;
   }
 
 

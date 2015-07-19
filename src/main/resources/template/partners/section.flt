@@ -1,4 +1,4 @@
-<#import "/container/widgets.html" as container>
+<#import "/container/widgets.flt" as container>
 <div class="side column-left">
   <@container.widgets>
     <@container.widget opacity=true gradient=true>
@@ -14,7 +14,7 @@
 	<div class="partner">
 	  <h3 id="${key.code}">${key.displayName}</h3>
     <#list partners.partnersByInstitution?values[key_index] as partner>
-	   <#include "/partners/widgets/partner.html"> 
+	   <#include "/partners/widgets/partner.flt"> 
 	  </#list>
 	</div>
 </#list>
