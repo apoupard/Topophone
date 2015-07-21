@@ -11,13 +11,13 @@
 	border-radius: 5px;
 }
 
-
-
 .widget .widget-content {
 	position: relative;
 }
 
-
+.widget .widget-content ul {
+	margin: 10px 0px 0px 5px;
+}
 
 .widget .widget-content>div {
 	padding: 10px;
@@ -66,11 +66,11 @@
 	margin: 0 auto;
 	top: 0;
 	left: 0;
-	opacity: 0.85;
+	opacity: 0.40;
 }
 
 .widget .opacity-wrap {
-	background-color: #888888;
+	background-color: #fff1e4;
 	border-radius: 5px;
 }
 
@@ -79,18 +79,17 @@
 	margin-top: 10px;
 }
 
-
 .column-center .widget {
-	padding: 30px 20px 0px 20px;
+	padding: 30px 0px 20px 0px;
 	height: 450px;
 	position: relative;
 	height: 100%;
 }
 
-
 .column-center .widget .widget-content{
 	height: 100%;
 	overflow-y: scroll;
+	padding: 0px 20px 0px 20px;
 }
 
 .column-center .widget .opacity-wrap-gradient {
@@ -294,10 +293,6 @@
 }
 
 /* education */
-.education .widget .opacity-wrap {
-	background-color: #a6c569;
-}
-
 .education .widget {
 	border: 2px solid #618c00;
 }
@@ -306,9 +301,9 @@
 	border-top: none;
 }
 /* devartists */
-.devartists .widget .opacity-wrap {
-	background-color: #c4d7d7;
-}
+/* .devartists .widget .opacity-wrap { */
+/* 	background-color: #c4d7d7; */
+/* } */
 
 .devartists .widget {
 	border: 2px solid #6ea2ad;

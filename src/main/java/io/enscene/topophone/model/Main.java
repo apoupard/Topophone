@@ -1,45 +1,18 @@
 package io.enscene.topophone.model;
 
 import io.enscene.topophone.api.ResourceModel;
-
-import java.util.Collection;
+import io.enscene.topophone.model.artist.Headband;
 
 public class Main implements ResourceModel {
 
-  private Collection<String> images;
+  private final Headband headband;
   
-  private String description;
+  public Main(Headband headband) {
+    this.headband = headband;
+  }
+
+  public Headband getHeadband() {
+    return headband;
+  }
   
-  private String demarche;
-  
-  public Main(Collection<String> images, String description, String demarche) {
-    this.images = images;
-    this.description = description;
-    this.demarche = demarche;
-  }
-
-  public Collection<String> getImages() {
-    return images;
-  }
-
-  public void setImages(Collection<String> images) {
-    this.images = images;
-  }
-
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  public String getDemarche() {
-    return demarche;
-  }
-
-  public void setDemarche(String demarche) {
-    this.demarche = demarche;
-  }
-
 }

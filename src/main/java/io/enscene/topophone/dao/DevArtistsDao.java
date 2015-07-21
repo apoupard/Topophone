@@ -1,31 +1,18 @@
 package io.enscene.topophone.dao;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
-import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 
-import freemarker.template.TemplateException;
 import io.enscene.topophone.model.DevArtists;
 import io.enscene.topophone.model.DevArtists.ArtistLink;
 import io.enscene.topophone.model.artist.Headband;
-import io.enscene.topophone.templating.HtmlTemplateEngine;
 
 @Singleton
 public class DevArtistsDao extends AstractHardCoded<DevArtists> {
-
-//  private final HtmlTemplateEngine engine;
-
-//  @Inject
-//  public DevArtistsDao(HtmlTemplateEngine engine) {
-//    this.engine = engine;
-//  }
 
   @Override
   void init(Map<String, DevArtists> database) {
