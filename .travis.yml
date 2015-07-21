@@ -12,7 +12,6 @@ before_install:
  - sudo apt-get install dart
  
 after_success:
-  - export MAVEN_OPTS=”-Xmx1024M -XX:MaxPermSize=1024m”
   - mvn deploy -DskipTests=true
 
 branches:
