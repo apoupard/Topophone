@@ -47,7 +47,9 @@ a, a:visited, a:hover {
 	background-repeat: no-repeat;
 	background-size: 100%;
 	background-attachment: fixed;
-  background-position: left bottom;
+  	background-position: left bottom;
+  	background-image: url(images/background/default.jpg);
+  	
 }
 
 #background.devartists {

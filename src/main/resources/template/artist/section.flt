@@ -17,7 +17,7 @@
    <div class="column-center">
       <@container.widgets>
         <@container.widget opacity=true gradient=true>
-          <#include "/artist/description.flt">
+          ${artist.description}
         </@container.widget>
       </@container.widgets>
    </div>

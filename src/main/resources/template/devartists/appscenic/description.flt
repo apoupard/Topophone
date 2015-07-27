@@ -8,58 +8,67 @@ Après avoir initié cette action dans le cadre du projet « Développement d'A
 </p>
 
 <h3>Objectifs généraux :</h3>
-<ul>
-<li>- Questionner le groupe impliqué sur son identité scénique</li>
-<li>- Permettre à chaque groupe de développer la scénographie et la mise en scène de son projet</li>
-<li>- Donner à chaque groupe des clefs de développement de son spectacle</li>
+<ul class="dash">
+<li>Questionner le groupe impliqué sur son identité scénique</li>
+<li Permettre à chaque groupe de développer la scénographie et la mise en scène de son projet</li>
+<li>Donner à chaque groupe des clefs de développement de son spectacle</li>
 </ul>
 
 <h3>Les étapes de mise en place :</h3>
 
 <div>
+<p>
 	ETAPE 1 : TRAVAIL DU LIVE
-	Durée : 3 jours
-	Objectifs : Sensibilisation à l'action de coaching scénique
+	<br><b>Durée</b> : 3 jours
+	<br><b>Objectifs</b> : Sensibilisation à l'action de coaching scénique
 	
-	Actions proposées :
-Placement dans l'espace
-Interprétation vocale et musicale
-Travail sur l'intensité et la linéarité du set
-Travail sur les transitions
-Lancement des collaboration techniques (technicien son, technicien lumière)
-
-
+	<br><b>Actions proposées</b> :
+	<ul class="dash">
+		<li>Placement dans l'espace</li>
+		<li>Interprétation vocale et musicale</li>
+		<li>Travail sur l'intensité et la linéarité du set</li>
+		<li>Travail sur les transitions</li>
+		<li>Lancement des collaboration techniques (technicien son, technicien lumière)</li>
+	</ul>
+</p>
+<p>
 	ETAPE 2 : SUIVI DURANT LA TOURNEE ET RESIDENCE DE QUESTIONNEMENT
-             
-		Durée : 6 mois
-		Objectifs : Suivi des avancées scéniques du groupe
-		Actions proposées :
-Travail de remédiation au cours de la tournée suivant la 1ere résidence
-Organisation d'une 2eme résidence sur les bases des conclusions tirées sur la tournée 
+	<br><b>Durée</b> : 6 mois
+	<br><b>Objectifs</b> : Suivi des avancées scéniques du groupe
+	<br><b>Actions proposées</b> :
+	<ul class="dash">
+		<li>Travail de remédiation au cours de la tournée suivant la 1ere résidence</li>
+		<li>Organisation d'une 2eme résidence sur les bases des conclusions tirées sur la tournée</li>
+	</ul>	
+</p>
+<p>
+	ETAPE 3 : DEGAGER L'UNIVERS VISUEL DU GROUPE  	
+	<br><b>Durée</b> : 2 mois
+	<br><b>Objectifs</b> : Conception de la scénographie du groupe
+	<br><b>Actions proposées</b> :
+	<ul class="dash">
+		<li>Echanges avec le groupe sur son identité, ses références et ses influences artistiques/li>
+		<li>Collaboration entre le scénographe et le metteur en scène pour la réalisation d'une première scénographie</li>
+		<li>Proposition au groupe, validation et conceptualisation du projet scénographique par un atelier scénographié</li>
+	</ul>	
+</p>
+<p>
 
-
-	ETAPE 3 : DEGAGER L'UNIVERS VISUEL DU GROUPE
-  	
-		Durée : 2 mois
-		Objectifs : Conception de la scénographie du groupe
-		Actions proposées :
-Echanges avec le groupe sur son identité, ses références et ses influences artistiques
-Collaboration entre le scénographe et le metteur en scène pour la réalisation d'une première scénographie
-Proposition au groupe, validation et conceptualisation du projet scénographique par un atelier scénographié
-
-
-	ETAPE 3 : MISE EN SCENE DU LIVE
-		Durée : 3 jours
-		Objectifs : Livraison du matériel scénographique
-		Actions proposées :
-Livraison et installation par le scénographe du matériel de scénographie
-Mise en scène du groupe sur la base du travail précédemment effectué et la nouvelle scénographie
+	ETAPE 4 : MISE EN SCENE DU LIVE
+	<br><b>Durée</b> : 3 jours
+	<br><b>Objectifs</b> : Livraison du matériel scénographique
+	<br><b>Actions proposées</b> :
+	<ul class="dash">
+		<li>Livraison et installation par le scénographe du matériel de scénographie</li>
+		<li>Mise en scène du groupe sur la base du travail précédemment effectué et la nouvelle scénographie</li>
+	</ul>	
+</p>
 </div>
 
 <h3>L'équipe Topophone :</h3>
-<ul>
-	<li>- Mise en scène et scénographie du projet : Stéphane Bénazet : metteur en scène et Damien Schahmanech : scénographe.</li>
-	<li>- Financement du spectacle : Formations de demandes de subventions réalisées par Topophone auprès des groupes.</li>
+<ul class="dash">
+	<li>Mise en scène et scénographie du projet : Stéphane Bénazet : metteur en scène et Damien Schahmanech : scénographe.</li>
+	<li>Financement du spectacle : Formations de demandes de subventions réalisées par Topophone auprès des groupes.</li>
 	<li>Lieu de résidence : Topophone dispose d'un partenariat de mise à disposition auprès de la salle « Le Club » à Rodez.</li>
 </ul>
 
