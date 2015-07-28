@@ -7,6 +7,10 @@
 	height: 380px;
 }
 
+.widgets .small {
+	height: 70px;
+}
+
 .widget {
 	border-radius: 5px;
 }
@@ -20,7 +24,7 @@
 }
 
 .widget .widget-content>div {
-	padding: 10px;
+	padding: 10px 10px 0 10px;
 }
 
 .widget img {
@@ -94,10 +98,9 @@
 }
 
 .column-center .widget {
-	padding: 30px 0px 20px 0px;
-	height: 450px;
+	padding: 30px 0px 10px 0px;
+	height: 455px;
 	position: relative;
-	height: 100%;
 }
 
 .column-center .widget .widget-content {
@@ -241,9 +244,21 @@
 }
 
 /* artistContact */
+.widget .widget-content .artistContact {
+	height: 70px;
+	position: relative;
+	display: block;
+	padding: 0;
+}
+
 .widget .artistContact a {
 	color: white;
 	font-weight: bold;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
 }
 
 /* objectives */
@@ -331,12 +346,20 @@
 	height: 570px;
 }
 
+.artist .widget .opacity-wrap {
+	background-color: #8a8a8a;
+}
+
 .artist .column-center .widget .opacity-wrap-gradient {
 	height: 570px;
 }
 
 .artist .description p {
 	color: white;
+}
+
+.artist .widget .widget-content .description {
+	padding-bottom: 30px;
 }
 
 .artist .description ul li {

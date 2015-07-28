@@ -9,7 +9,7 @@
 		  <@container.widget opacity=true gradient=true class="first">
 		      <#include "/artist/profile.flt">
 		  </@container.widget>
-		   <@container.widget opacity=true gradient=false>
+		   <@container.widget opacity=true gradient=false class="small">
             <#include "/artist/audio.flt">
         </@container.widget>
       </@container.widgets>
@@ -26,7 +26,7 @@
         <@container.widget opacity=true onlyBorder=true class="first">
             <#include "/artist/concert.flt">          
         </@container.widget>
-         <@container.widget opacity=true gradient=false>
+         <@container.widget opacity=true gradient=false class="small">
             <#include "/artist/contact.flt">
         </@container.widget>
       </@container.widgets>
