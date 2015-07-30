@@ -159,6 +159,7 @@ a, a:visited, a:hover {
 #page {
 	position: relative;
 	margin-top: 10px;
+	margin-bottom: 10px;
 	overflow-y: hidden;
 }
 
