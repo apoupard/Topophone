@@ -1,0 +1,8 @@
+<#import "/widget/internallink.flt" as link>
+<ul>
+	<li><@link.internallink href="/contact" label="Contact" /></li>
+	<li>/</li>
+	<li><@link.internallink href="/partner" label="Partenaire" /></li>
+	<li>/</li>
+	<li><@link.internallink href="/credit" label="Credit" /></li>
+</ul>

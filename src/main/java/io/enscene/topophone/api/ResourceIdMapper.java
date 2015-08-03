@@ -16,6 +16,7 @@ public class ResourceIdMapper {
       .put("devartists", "appscenic")
       .put("education", "presentation")
       .put("nav", "1")
+      .put("footer", "1")
       .build();
 
   public Optional<String> getResourceId(String resourceName) {

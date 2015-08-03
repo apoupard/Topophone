@@ -15,6 +15,10 @@ void main() {
   HttpRequest.request(context + "html/sections/nav", method: 'GET', requestHeaders: {'Accept': 'text/html'})
              .then((resp) => querySelector("nav").appendHtml(resp.responseText))
              .catchError((error) => print(error));
+  
+  HttpRequest.request(context + "html/sections/footer", method: 'GET', requestHeaders: {'Accept': 'text/html'})
+               .then((resp) => querySelector("#footer").appendHtml(resp.responseText))
+               .catchError((error) => print(error));
   try {
     route..addHandler(new UrlPattern(context), showHome)
           ..addHandler(new UrlPattern(r''+context+'(.+)'), show)

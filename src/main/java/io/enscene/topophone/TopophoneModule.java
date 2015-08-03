@@ -12,6 +12,7 @@ import io.enscene.topophone.dao.AccompanyingDao;
 import io.enscene.topophone.dao.ArtistDao;
 import io.enscene.topophone.dao.DevArtistsDao;
 import io.enscene.topophone.dao.EducationDao;
+import io.enscene.topophone.dao.FooterDao;
 import io.enscene.topophone.dao.HeaderDao;
 import io.enscene.topophone.dao.MainDao;
 import io.enscene.topophone.dao.NavDao;
@@ -59,6 +60,7 @@ public class TopophoneModule extends ServletModule {
     resourceDaoBinder.addBinding("header").to(new TypeLiteral<HeaderDao>() {});
     resourceDaoBinder.addBinding("main").to(new TypeLiteral<MainDao>() {});
     resourceDaoBinder.addBinding("accompanying").to(new TypeLiteral<AccompanyingDao>() {});
+    resourceDaoBinder.addBinding("footer").to(new TypeLiteral<FooterDao>() {});
     bind(Servlet.class).asEagerSingleton();
     
     serve("/", "/index.html", Servlet.APPLICATION_CONTEXT + "/*").with(Servlet.class);

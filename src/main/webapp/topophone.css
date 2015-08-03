@@ -47,19 +47,18 @@ a, a:visited, a:hover {
 	background-repeat: no-repeat;
 	background-size: 100%;
 	background-attachment: fixed;
-  	background-position: left bottom;
-  	background-image: url(images/background/default.jpg);
-  	
+	background-position: left bottom;
+	background-image: url(images/background/default.jpg);
 }
 
 #background.devartists {
-  background-image: url(images/devartists/background.jpg);
-  background-position: left 15%;
+	background-image: url(images/devartists/background.jpg);
+	background-position: left 15%;
 }
 
 #background.lecommondiamond {
-  background-image: url(images/background/lecommondiamond.png);
-  background-position: left 15%;
+	background-image: url(images/background/lecommondiamond.png);
+	background-position: left 15%;
 }
 
 #background.ihr {
@@ -356,4 +355,35 @@ nav ul ul li a, nav ul ul li a:visited, nav ul ul li a:hover {
 	right: 0;
 	width: 80px;
 	height: 100px;
+}
+
+#footer {
+	position: absolute;
+	width:100%;
+	padding-bottom: 10px;
+}
+
+#footer ul {
+	list-style-type: none;
+	padding: 0;
+	margin-right: 5px;
+	text-align: right;
+	border-bottom: 1px solid grey;
+	margin: 0 20px 0 20px;
+	
+}
+
+#footer ul li {
+	display: inline;
+	padding-right: 5px;
+	color: white;
+}
+
+#footer ul li .internallink {
+	display: inline;
+	color: white;
+}
+
+#footer .internallink a {
+	color: white;
 }

@@ -350,9 +350,9 @@
 	color: white;
 }
 
-.artist .widget .widget-content .description {
-	padding-bottom: 30px;
-}
+/* .artist .widget .widget-content .description { */
+/* 	padding-bottom: 30px; */
+/* } */
 
 .artist .description ul li {
 	color: white;
@@ -364,9 +364,9 @@
 
 #bottom.artist .videos div {
 	display: inline-block;
-	height: 110px;
 	vertical-align: top;
 }
+
 
 #bottom.artist .videos .video {
 	width: 390px;
@@ -377,12 +377,21 @@
 	margin-right: 30px;
 }
 
+#bottom.artist .videos {
+	
+}
+
+#bottom.artist .videos .video{
+height: 110px;
+}
+
 .videos .video .video-content {
 	padding-top: 8px;
 }
 
 #bottom.artist .videos .video-next {
 	width: 30px;
+	height: 110px;
 }
 
 .videos .video-previous a, .videos .video-next a {
