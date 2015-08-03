@@ -1,4 +1,6 @@
 <div class="partner">
-	<img src="${appcontext}${partner.logo}"/>
+	<div class="logo">
+	  <img src="${appcontext}${partner.logo}"/>
+	</div>
 	<p>${partner.description}</p>
 </div>

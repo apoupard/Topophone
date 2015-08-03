@@ -1,5 +1,6 @@
 package io.enscene.topophone.dao;
 
+import io.enscene.topophone.model.artist.Headband;
 import io.enscene.topophone.model.partner.Institution;
 import io.enscene.topophone.model.partner.Partner;
 import io.enscene.topophone.model.partner.Partners;
@@ -17,7 +18,7 @@ public class PartnersDao extends AstractHardCoded<Partners> {
   @Override
   void init(Map<String, Partners> database) {
     Multimap<Institution, Partner> partners = getPartners();
-    database.put("1", new Partners(partners.asMap()));
+    database.put("1", new Partners(partners.asMap(), new Headband("/images/education/headband.png", "/images/education/headbandlogo.png")));
   }
 
   private Multimap<Institution, Partner> getPartners() {

@@ -2,7 +2,7 @@
 <ul>
 	<li><@link.internallink href="/contact" label="Contact" /></li>
 	<li>/</li>
-	<li><@link.internallink href="/partner" label="Partenaire" /></li>
+	<li><@link.internallink href="/partners" label="Partenaire" /></li>
 	<li>/</li>
 	<li><@link.internallink href="/credit" label="Credit" /></li>
 </ul>
