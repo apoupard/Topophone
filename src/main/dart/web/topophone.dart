@@ -1,27 +1,28 @@
 import 'dart:html';
 import 'package:route/client.dart';
+import 'dart:js';
 
 final Router route = new Router();
-String context;
+String contextUrl;
 void main() {
-  context = getContext();
-  HttpRequest.request(context + "html/sections/header", method: 'GET', requestHeaders: {'Accept': 'text/html'})
+  contextUrl = getContextUrl();
+  HttpRequest.request(contextUrl + "html/sections/header", method: 'GET', requestHeaders: {'Accept': 'text/html'})
               .then((resp) {
                 querySelector("#header").appendHtml(resp.responseText);
                 resizeHeader();
                 window.onResize.listen((event)=>resizeHeader());
   }).catchError((error) => print(error));
   
-  HttpRequest.request(context + "html/sections/nav", method: 'GET', requestHeaders: {'Accept': 'text/html'})
+  HttpRequest.request(contextUrl + "html/sections/nav", method: 'GET', requestHeaders: {'Accept': 'text/html'})
              .then((resp) => querySelector("nav").appendHtml(resp.responseText))
              .catchError((error) => print(error));
   
-  HttpRequest.request(context + "html/sections/footer", method: 'GET', requestHeaders: {'Accept': 'text/html'})
+  HttpRequest.request(contextUrl + "html/sections/footer", method: 'GET', requestHeaders: {'Accept': 'text/html'})
                .then((resp) => querySelector("#footer").appendHtml(resp.responseText))
                .catchError((error) => print(error));
   try {
-    route..addHandler(new UrlPattern(context), showHome)
-          ..addHandler(new UrlPattern(r''+context+'(.+)'), show)
+    route..addHandler(new UrlPattern(contextUrl), showHome)
+          ..addHandler(new UrlPattern(r''+contextUrl+'(.+)'), show)
           ..listen();
     
     route.gotoPath(window.location.pathname, '');
@@ -42,7 +43,7 @@ void resizeHeader(){
   
 }
 
-String getContext(){
+String getContextUrl(){
   String pathname = window.location.pathname;
   int index = pathname.indexOf('/appli');
   if(index < 0 ) {
@@ -55,7 +56,7 @@ String getContext(){
 }
 
 void showHome(String path) {
-  show(context+'html/sections/main');
+  show(contextUrl+'html/sections/main');
 }
 
 void show(String path) {
@@ -64,6 +65,7 @@ void show(String path) {
       .then((HttpRequest resp) {
         Element content = querySelector("#section")..nodes.clear()
             ..appendHtml(resp.responseText);
+        showCarousel();
     }
   ).catchError((error) => print(error));
   
@@ -85,3 +87,7 @@ void changeBackground(String path) {
   }
 }
 
+
+void showCarousel() {
+  context.callMethod('startCarousel');
+}

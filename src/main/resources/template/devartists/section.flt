@@ -1,9 +1,9 @@
 <#import "/container/widgets.flt" as container>
-<#import "/widget/headband.flt" as top>
+<#import "/widget/headbandCarousel.flt" as top>
 <#import "/widget/internallink.flt" as link>
 <#import "/widget/image.flt" as images>
 <div id="top">
-  <@top.headband main=devartists.headband.main logo=devartists.headband.logo />
+  <@top.headbandCarousel logo=devartists.headband.logo/>
 </div>
 <div id="page" class="devartists">
     <div class="side column-left">

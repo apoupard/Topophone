@@ -17,6 +17,7 @@ public class ResourceIdMapper {
       .put("education", "presentation")
       .put("nav", "1")
       .put("footer", "1")
+      .put("contacts", "1")
       .build();
 
   public Optional<String> getResourceId(String resourceName) {

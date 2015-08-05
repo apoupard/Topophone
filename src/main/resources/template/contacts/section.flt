@@ -1,0 +1,23 @@
+<#import "/container/widgets.flt" as container>
+<#import "/widget/headbandCarousel.flt" as top>
+<div id="top">
+   <@top.headbandCarousel logo=contacts.headband.logo/>
+</div>
+<div id="page" class="partners">
+  <div class="side column-left">
+    <@container.widgets>
+      <@container.widget opacity=true gradient=false>
+      </@container.widget>
+    </@container.widgets>
+  </div>
+  <div class="column-center">
+    <@container.widgets>
+      <@container.widget opacity=true gradient=false>
+      </@container.widget>
+    </@container.widgets>
+  </div>
+  <div class="side column-right">
+    <@container.widgets>
+    </@container.widgets>
+  </div>
+</div>

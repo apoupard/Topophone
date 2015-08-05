@@ -1,9 +1,9 @@
 <#import "/container/widgets.flt" as container>
-<#import "/widget/headband.flt" as top>
+<#import "/widget/headbandCarousel.flt" as top>
 <#import "/widget/internallink.flt" as link>
 <#import "/widget/image.flt" as images>
 <div id="top">
-  <@top.headband main=education.headband.main logo=education.headband.logo />
+  <@top.headbandCarousel logo=education.headband.logo/>
 </div>
 <div id="page" class="education">
     <div class="side column-left">

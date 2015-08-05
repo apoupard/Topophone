@@ -11,8 +11,12 @@
 <script type="application/dart" src="${appcontext}/web/topophone.dart"></script>
 <script src="${appcontext}/packages/browser/dart.js"></script>
 
+<script src="${appcontext}/lib/jquery-2.1.4.min.js"></script>
+<script src="${appcontext}/lib/jquery.jcarousel.min.js"></script>
+
 </head>
 <body>
+
 	<div id="background"></div>
 	<div id="header"></div>
 	<div id="site">
@@ -21,5 +25,24 @@
 	</div>
 	<div id="footer">
 	</div>
+  <script type='text/javascript'>
+    function startCarousel() {
+      $('.jcarousel')
+        .jcarousel({
+  	      wrap: 'circular'
+        })
+        .jcarouselAutoscroll({
+          interval: 3000,
+          target: '+=1',
+          autostart: true
+        }).on('jcarousel:lastin', 'li', function(event, carousel) {
+			$(carousel.last()).next().addClass('last') ;
+			$(carousel.last()).removeClass('last');
+		}).on('jcarousel:firstin', 'li', function(event, carousel) {
+			$(carousel.first()).next().addClass('first');
+			$(carousel.first()).removeClass('first');
+		});
+    }
+  </script>
 </body>
 </html>

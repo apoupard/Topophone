@@ -1,9 +1,9 @@
 <#import "/container/widgets.flt" as container>
-<#import "/widget/headband.flt" as top>
+<#import "/widget/headbandCarousel.flt" as top>
 <#import "/widget/internallink.flt" as link>
 <#import "/widget/image.flt" as images>
 <div id="top">
-  <@top.headband main=main.headband.main logo=main.headband.logo />
+  <@top.headbandCarousel logo=main.headband.logo/>
 </div>
 <div id="page" class="association">
     <div class="side column-left">

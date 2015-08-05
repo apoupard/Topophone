@@ -1,7 +1,7 @@
 <#import "/container/widgets.flt" as container>
-<#import "/widget/headband.flt" as top>
+<#import "/widget/headbandCarousel.flt" as top>
 <div id="top">
-  <@top.headband main=partners.headband.main logo=partners.headband.logo />
+  <@top.headbandCarousel logo=partners.headband.logo/>
 </div>
 <div id="page" class="partners">
   <div class="side column-left">
