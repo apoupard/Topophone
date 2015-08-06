@@ -1,5 +1,5 @@
-<#macro image href alt="" class="">
+<#macro image href alt="" class="" onclick="">
 	<div class="image ${class}">
-    <img alt="${alt}" src="${appcontext}${href}"></img>
+    <img alt="${alt}" src="${appcontext}${href}" onclick="${onclick}"></img>
 	</div>
 </#macro>

@@ -7,12 +7,17 @@
 
 <link rel="stylesheet" href="${appcontext}/topophone.css">
 <link rel="stylesheet" href="${appcontext}/widgets.css">
+<link rel="stylesheet" href="${appcontext}/bar-ui.css">
 
 <script type="application/dart" src="${appcontext}/web/topophone.dart"></script>
 <script src="${appcontext}/packages/browser/dart.js"></script>
 
 <script src="${appcontext}/lib/jquery-2.1.4.min.js"></script>
 <script src="${appcontext}/lib/jquery.jcarousel.min.js"></script>
+
+<script src="${appcontext}/lib/soundmanager2-jsmin.js"></script>
+<script src="${appcontext}/lib/bar-ui.js"></script>
+
 
 </head>
 <body>
@@ -42,6 +47,15 @@
 			$(carousel.first()).next().addClass('first');
 			$(carousel.first()).removeClass('first');
 		});
+    }
+    function startSoundPlayer() {
+ 		window.SM2BarPlayer($('.sm2-bar-ui')[0])
+ 	}
+ 	function startShowVideo(url) {
+ 		if($('.youtubePopup').attr('data') != url) {
+    		$('.youtubePopup').attr('data', url);
+    	}
+    	$('.toHide.hidden').removeClass('hidden');
     }
   </script>
 </body>

@@ -60,16 +60,19 @@ void showHome(String path) {
 }
 
 void show(String path) {
-  String url = path.replaceAll(new RegExp('appli'), "html/sections");
-  HttpRequest.request(url, method: 'GET', requestHeaders: {'Accept': 'text/html'})
-      .then((HttpRequest resp) {
-        Element content = querySelector("#section")..nodes.clear()
-            ..appendHtml(resp.responseText);
-        showCarousel();
-    }
-  ).catchError((error) => print(error));
-  
-  changeBackground(path);
+  if(!path.contains('#')) {
+    String url = path.replaceAll(new RegExp('appli'), "html/sections");
+    HttpRequest.request(url, method: 'GET', requestHeaders: {'Accept': 'text/html'})
+        .then((HttpRequest resp) {
+          Element content = querySelector("#section")..nodes.clear()
+              ..appendHtml(resp.responseText);
+          showCarousel();
+          startSoundPlayer();
+      }
+    ).catchError((error) => print(error));
+    
+    changeBackground(path);
+  }
 }
 
 void changeBackground(String path) {
@@ -91,3 +94,7 @@ void changeBackground(String path) {
 void showCarousel() {
   context.callMethod('startCarousel');
 }
+void startSoundPlayer() {
+  context.callMethod('startSoundPlayer');
+}
+

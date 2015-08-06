@@ -3,17 +3,21 @@
 	<#list artist.videos as video>
 		<div class="video">
 			<div class="decoLeft"></div>
-			<div class="decoRight"></div>
+			
 			<div class="video-content">
-				<a href="#"> 
-				 <@images.image href=video.thumbnail /> </a>
-				<div class="description">
-	        ${video.description} 
-	 			</div>
+				<@images.image href=video.thumbnail onclick="startShowVideo('${video.youtubeVideo}');return false;" class="clickable vertical-align"/>
+				<div class="description">${video.description}</div>
 			</div>
+			<div class="decoRight"></div>
 		</div>
 	</#list>
 	<div class="video-next">
 		<a href="#"></a>
 	</div>
+</div>
+<div class="toHide youtubePanelBack hidden" onclick="$('.toHide').addClass('hidden');return false;"></div>
+<div class="toHide youtubePanel hidden" >
+  <object class="youtubePopup" type="application/x-shockwave-flash" data="http://www.youtube.com/v/2Y_Y1r6GxlE">
+    <param name="movie" value="http://www.youtube.com/v/2Y_Y1r6GxlE">
+  </object>
 </div>

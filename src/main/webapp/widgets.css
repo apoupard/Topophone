@@ -114,7 +114,7 @@
 
 .column-center .widget, .column-center .widget .opacity-wrap-gradient,
 	.column-center .widget .opacity-wrap {
-	border-top: none!important;
+	border-top: none !important;
 	-webkit-border-top-left-radius: 0px;
 	-webkit-border-top-right-radius: 0px;
 	-moz-border-radius-topleft: 0px;
@@ -350,13 +350,18 @@
 	margin-top: 13px;
 }
 
-#bottom.artist .videos div {
+#bottom.artist .videos>div {
 	display: inline-block;
 	vertical-align: top;
+	width: 320px;
+}
+
+#bottom.artist .videos .video .video-content {
+	width: 320px;
 }
 
 #bottom.artist .videos .video {
-	width: 390px;
+	width: 350px;
 	background-image: url(images/widget/video/background2.png);
 	background-repeat: repeat-x;
 	position: relative;
@@ -370,10 +375,6 @@
 
 #bottom.artist .videos .video {
 	height: 110px;
-}
-
-.videos .video .video-content {
-	padding-top: 8px;
 }
 
 #bottom.artist .videos .video-next {
@@ -400,9 +401,9 @@
 .video .decoLeft {
 	position: absolute;
 	top: 0;
-	left: -20px;
+	left: -18px;
 	height: 100%;
-	width: 20px;
+	width: 18px;
 	background-image: url(images/widget/video/backLeft.png);
 	background-repeat: no-repeat;
 }
@@ -420,6 +421,7 @@
 #bottom.artist .videos .image {
 	height: 80px;
 	width: 140px;
+	display: inline-block;
 }
 
 .widget-selected {
@@ -440,30 +442,28 @@
 	padding: 0;
 }
 
-.headband-carousel ul li img{
+.headband-carousel ul li img {
 	width: 172px;
 }
 
-
 /*jcarousel*/
 .jcarousel {
-    position: relative;
-    overflow: hidden;
+	position: relative;
+	overflow: hidden;
 }
 
 .jcarousel ul {
-    width: 20000em;
-    position: relative;s
-
-    /* Optional, required in this case since it's a <ul> element */
-    list-style: none;
-    margin: 0;
-    padding: 0;
+	width: 20000em;
+	position: relative; s
+	/* Optional, required in this case since it's a <ul> element */
+	list-style : none;
+	margin: 0;
+	padding: 0;
 }
 
 .jcarousel li {
-    /* Required only for block elements like <li>'s */
-    float: left;
+	/* Required only for block elements like <li>'s */
+	float: left;
 }
 
 .jcarousel .first img {
@@ -474,4 +474,63 @@
 .jcarousel .last img {
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
+}
+
+/* Video */
+.youtubePanelBack {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: 0.80;
+	filter: alpha(opacity = 80);
+	z-index: 1000;
+}
+
+.youtubePanel {
+	left: 50%;
+	top: 50%;
+	position: fixed;
+	overflow: visible;
+	display: block;
+	z-index: 1100;
+}
+
+.youtubePopup {
+	border: none;
+	padding: 0;
+	margin: 0;
+	width: 800px;
+	height: 600px;
+	position: relative;
+	margin-top: -300px;
+	margin-left: -400px;
+	display: block;
+}
+.video .description {
+	display: inline-block;
+}
+
+.hidden {
+	display: none;
+}
+
+.show {
+	display: block;
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+.vertical-align>img {
+	height: 80px;
+    width: 140px;
+	position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    left: 10px;
 }
