@@ -2,7 +2,7 @@ package io.enscene.topophone.dao;
 
 import io.enscene.topophone.model.accompanying.Accompanying;
 import io.enscene.topophone.model.accompanying.Contact;
-import io.enscene.topophone.model.artist.Headband;
+import io.enscene.topophone.model.artist.HeadbandCarousel;
 
 import java.util.Collection;
 import java.util.Map;
@@ -19,8 +19,8 @@ public class AccompanyingDao extends AstractHardCoded<Accompanying> {
 
 
 
-  private Headband getHeadBand() {
-    return new Headband("/images/accompanying/headband.png",
+  private HeadbandCarousel getHeadBand() {
+    return new HeadbandCarousel(getDevArtistsHeadbandImages(),
         "/images/accompanying/headbandlogo.png");
   }
 

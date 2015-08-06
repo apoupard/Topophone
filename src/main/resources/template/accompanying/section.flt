@@ -3,7 +3,7 @@
 <#import "/widget/internallink.flt" as link>
 <#import "/widget/image.flt" as images>
 <div id="top">
-  <@top.headbandCarousel logo=accompanying.headband.logo/>
+  <@top.headbandCarousel logo=accompanying.headbandCarousel.logo images=accompanying.headbandCarousel.images/>
 </div>
 <div id="page" class="accompanying">
   <div class="side column-left">

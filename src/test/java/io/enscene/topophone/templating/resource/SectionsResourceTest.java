@@ -33,7 +33,7 @@ public class SectionsResourceTest {
   public void should_getArtist(
       @ArquillianResteasyResource("html/sections/artist/lecommondiamond") ResteasyWebTarget webTarget) {
     String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
-    Assertions.assertThat(href).contains("/artists/lecommondiamond/bandeau.png");
+    Assertions.assertThat(href).contains("<a class=\"youtube\" href=\"http://www.youtube.com/lecommondiamond\"></a>");
   }
 
   @Test
@@ -64,8 +64,9 @@ public class SectionsResourceTest {
       @ArquillianResteasyResource("html/sections/devartists") ResteasyWebTarget webTarget) {
     String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
     Assertions
-        .assertThat(href)
-        .contains(String.format(" <img alt=\"\" src=\"%simages/devartists/ihr.jpg\">", deploymentURL.getPath()));
+        .assertThat(href)                       
+
+        .contains(String.format("<li><img src=\"%simages/headbandCarousel/devartists/05.jpg\"></li>", deploymentURL.getPath()));
   }
 
   @Test

@@ -3,13 +3,13 @@ package io.enscene.topophone.dao;
 import java.util.Map;
 
 import io.enscene.topophone.model.Contacts;
-import io.enscene.topophone.model.artist.Headband;
+import io.enscene.topophone.model.artist.HeadbandCarousel;
 
 public class ContactsDao extends AstractHardCoded<Contacts> {
 
   @Override
   void init(Map<String, Contacts> database) {
-    database.put("1", new Contacts(new Headband("/images/education/headband.png", "/images/education/headbandlogo.png")));
+    database.put("1", new Contacts(new HeadbandCarousel(getDevArtistsHeadbandImages(), "/images/education/headbandlogo.png")));
   }
 
 }

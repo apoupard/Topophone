@@ -9,7 +9,7 @@ import com.google.common.collect.ImmutableList;
 
 import io.enscene.topophone.model.DevArtists;
 import io.enscene.topophone.model.DevArtists.ArtistLink;
-import io.enscene.topophone.model.artist.Headband;
+import io.enscene.topophone.model.artist.HeadbandCarousel;
 
 @Singleton
 public class DevArtistsDao extends AstractHardCoded<DevArtists> {
@@ -28,7 +28,10 @@ public class DevArtistsDao extends AstractHardCoded<DevArtists> {
         new ArtistLink("/images/devartists/ihr.jpg", "/artist/ihr"));
   }
 
-  private Headband getHeadBand() {
-    return new Headband("/images/education/headband.png", "/images/education/headbandlogo.png");
+  private HeadbandCarousel getHeadBand() {
+    return new HeadbandCarousel(getDevArtistsHeadbandImages(), "/images/education/headbandlogo.png");
   }
+
+ 
+
 }

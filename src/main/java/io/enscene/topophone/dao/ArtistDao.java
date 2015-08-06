@@ -45,7 +45,7 @@ public class ArtistDao extends AstractHardCoded<Artist> {
   }
 
   private Headband getHeadband(String id) {
-    return new Headband("/images/artists/" + id + "/bandeau.png", "/images/artists/" + id
+    return new Headband("/images/artists/" + id + "/bandeau.jpg", "/images/artists/" + id
         + "/bandeauLogo.png");
   }
 

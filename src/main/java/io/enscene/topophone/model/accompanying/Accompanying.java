@@ -1,13 +1,13 @@
 package io.enscene.topophone.model.accompanying;
 
 import io.enscene.topophone.api.ResourceModel;
-import io.enscene.topophone.model.artist.Headband;
+import io.enscene.topophone.model.artist.HeadbandCarousel;
 
 import java.util.Collection;
 
 public class Accompanying implements ResourceModel {
   
-  private Headband headband;
+  private HeadbandCarousel headband;
   
   private Collection<String> objectives;
 
@@ -16,7 +16,7 @@ public class Accompanying implements ResourceModel {
   private String description;
   private String picture;
 
-  public Accompanying(Headband headband, Collection<String> objectives, Contact contact, String description, String picture) {
+  public Accompanying(HeadbandCarousel headband, Collection<String> objectives, Contact contact, String description, String picture) {
     this.headband = headband;
     this.objectives = objectives;
     this.contact = contact;
@@ -24,11 +24,11 @@ public class Accompanying implements ResourceModel {
     this.picture = picture;
   }
   
-  public Headband getHeadband() {
+  public HeadbandCarousel getHeadbandCarousel() {
     return headband;
   }
 
-  public void setHeadband(Headband headband) {
+  public void setHeadbandCarousel(HeadbandCarousel headband) {
     this.headband = headband;
   }
 

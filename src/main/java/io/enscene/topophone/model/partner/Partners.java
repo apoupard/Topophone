@@ -1,7 +1,7 @@
 package io.enscene.topophone.model.partner;
 
 import io.enscene.topophone.api.ResourceModel;
-import io.enscene.topophone.model.artist.Headband;
+import io.enscene.topophone.model.artist.HeadbandCarousel;
 
 import java.util.Collection;
 import java.util.Map;
@@ -10,12 +10,12 @@ public class Partners implements ResourceModel {
 
   private Map<Institution, Collection<Partner>> partnersByInstitution;
   
-  private Headband headband;
+  private HeadbandCarousel headband;
 
   public Partners() {
   }
   
-  public Partners(Map<Institution, Collection<Partner>> partnersByInstitution, Headband headband) {
+  public Partners(Map<Institution, Collection<Partner>> partnersByInstitution, HeadbandCarousel headband) {
     super();
     this.partnersByInstitution = partnersByInstitution;
     this.headband = headband;
@@ -31,11 +31,11 @@ public class Partners implements ResourceModel {
     this.partnersByInstitution = partnersByInstitution;
   }
 
-  public Headband getHeadband() {
+  public HeadbandCarousel getHeadbandCarousel() {
     return headband;
   }
 
-  public void setHeadband(Headband headband) {
+  public void setHeadband(HeadbandCarousel headband) {
     this.headband = headband;
   }
   

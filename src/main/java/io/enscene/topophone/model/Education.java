@@ -1,7 +1,7 @@
 package io.enscene.topophone.model;
 
 import io.enscene.topophone.api.ResourceModel;
-import io.enscene.topophone.model.artist.Headband;
+import io.enscene.topophone.model.artist.HeadbandCarousel;
 
 public class Education implements ResourceModel {
 
@@ -9,9 +9,9 @@ public class Education implements ResourceModel {
   private String imageLeft;
   private String description;
   private String image;
-  private Headband headband;
+  private HeadbandCarousel headband;
 
-  public Education(String id, String imageLeft, String description, String image, Headband headband) {
+  public Education(String id, String imageLeft, String description, String image, HeadbandCarousel headband) {
     this.id = id;
     this.imageLeft = imageLeft;
     this.description = description;
@@ -51,11 +51,11 @@ public class Education implements ResourceModel {
     this.id = id;
   }
 
-  public Headband getHeadband() {
+  public HeadbandCarousel getHeadbandCarousel() {
     return headband;
   }
 
-  public void setHeadband(Headband headband) {
+  public void setHeadbandCarousel(HeadbandCarousel headband) {
     this.headband = headband;
   }
 

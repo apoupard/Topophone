@@ -1,16 +1,10 @@
-<#macro headbandCarousel logo>
+<#macro headbandCarousel logo images>
 <div class="headband-carousel">
     <div class="jcarousel">
       <ul>
-        <li class="first"><img src="${appcontext}/images/headband/01.jpg"></li>
-        <li><img src="${appcontext}/images/headband/02.jpg"></li>
-        <li><img src="${appcontext}/images/headband/03.jpg"></li>
-        <li><img src="${appcontext}/images/headband/04.jpg"></li>
-        <li><img src="${appcontext}/images/headband/05.jpg"></li>
-        <li class="last"><img src="${appcontext}/images/headband/06.jpg"></li>
-        <li><img src="${appcontext}/images/headband/07.jpg"></li>
-        <li><img src="${appcontext}/images/headband/08.jpg"></li>
-        <li><img src="${appcontext}/images/headband/09.jpg"></li>
+      	<#list images as image>
+      		<li><img src="${appcontext}/${image}"></li>
+      	 </#list>
       </ul>
     </div>
     <div class="absoluteCenter">

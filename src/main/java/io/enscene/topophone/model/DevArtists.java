@@ -3,22 +3,22 @@ package io.enscene.topophone.model;
 import java.util.List;
 
 import io.enscene.topophone.api.ResourceModel;
-import io.enscene.topophone.model.artist.Headband;
+import io.enscene.topophone.model.artist.HeadbandCarousel;
 
 public class DevArtists implements ResourceModel {
 
   private String id;
   private String description;
   private String image;
-  private Headband headband;
+  private HeadbandCarousel headbandCarousel;
   private List<ArtistLink> artistLinks;
 
-  public DevArtists(String id, String description, String image, Headband headband,
+  public DevArtists(String id, String description, String image, HeadbandCarousel headbandCarousel,
       List<ArtistLink> artistLinks) {
     this.id = id;
     this.description = description;
     this.image = image;
-    this.headband = headband;
+    this.headbandCarousel = headbandCarousel;
     this.artistLinks = artistLinks;
   }
 
@@ -46,12 +46,12 @@ public class DevArtists implements ResourceModel {
     this.id = id;
   }
 
-  public Headband getHeadband() {
-    return headband;
+  public HeadbandCarousel getHeadbandCarousel() {
+    return headbandCarousel;
   }
 
-  public void setHeadband(Headband headband) {
-    this.headband = headband;
+  public void setHeadbandCarousel(HeadbandCarousel headband) {
+    this.headbandCarousel = headband;
   }
 
   public List<ArtistLink> getArtistLinks() {

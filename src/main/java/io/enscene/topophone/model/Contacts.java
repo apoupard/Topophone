@@ -1,23 +1,23 @@
 package io.enscene.topophone.model;
 
 import io.enscene.topophone.api.ResourceModel;
-import io.enscene.topophone.model.artist.Headband;
+import io.enscene.topophone.model.artist.HeadbandCarousel;
 
 public class Contacts implements ResourceModel {
 
-  private Headband headband;
+  private HeadbandCarousel headbandCarousel;
 
-  public Contacts(Headband headband) {
+  public Contacts(HeadbandCarousel headbandCarousel) {
     super();
-    this.headband = headband;
+    this.headbandCarousel = headbandCarousel;
   }
 
-  public Headband getHeadband() {
-    return headband;
+  public HeadbandCarousel getHeadbandCarousel() {
+    return headbandCarousel;
   }
 
-  public void setHeadband(Headband headband) {
-    this.headband = headband;
+  public void setHeadbandCarousel(HeadbandCarousel headbandCarousel) {
+    this.headbandCarousel = headbandCarousel;
   }
 
 }

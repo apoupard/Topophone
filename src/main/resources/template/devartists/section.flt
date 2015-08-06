@@ -3,7 +3,7 @@
 <#import "/widget/internallink.flt" as link>
 <#import "/widget/image.flt" as images>
 <div id="top">
-  <@top.headbandCarousel logo=devartists.headband.logo/>
+  <@top.headbandCarousel logo=devartists.headbandCarousel.logo images=devartists.headbandCarousel.images/>
 </div>
 <div id="page" class="devartists">
     <div class="side column-left">
