@@ -109,7 +109,7 @@
 }
 
 .column-center .widget .opacity-wrap-gradient {
-	border-radius: 0px;
+	border-radius: 5px;
 }
 
 .column-center .widget, .column-center .widget .opacity-wrap-gradient,
@@ -323,25 +323,14 @@
 }
 
 /* ARTIST SECTION */
-.artist .column-center .widget .opacity-wrap-gradient {
-	height: 570px;
-}
-
 .artist .widget .opacity-wrap {
 	background-color: #8a8a8a;
-}
-
-.artist .column-center .widget .opacity-wrap-gradient {
-	height: 570px;
 }
 
 .artist .description p {
 	color: white;
 }
 
-/* .artist .widget .widget-content .description { */
-/* 	padding-bottom: 30px; */
-/* } */
 .artist .description ul li {
 	color: white;
 }
