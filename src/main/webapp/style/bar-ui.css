@@ -392,7 +392,7 @@
 .sm2-bar-ui p,
 .sm2-bar-ui .sm2-playlist ul,
 .sm2-bar-ui .sm2-playlist ul li {
- margin: 0px;
+ margin: 0px !important;
  padding: 0px;
 }
 
@@ -524,19 +524,19 @@
 .play-pause,
 .play-pause:hover,
 .paused .play-pause:hover {
- background-image: url(images/bar-ui/play.png);
+ background-image: url(../images/bar-ui/play.png);
  background-size: 67.5%;
  background-position: 40% 53%;
 }
 
 .playing .play-pause {
- background-image: url(images/bar-ui/pause.png);
+ background-image: url(../images/bar-ui/pause.png);
  background-size: 57.6%;
  background-position: 50% 53%;
 }
 
 .sm2-volume-control {
- background-image: url(images/bar-ui/volume.png);
+ background-image: url(../images/bar-ui/volume.png);
 }
 
 .sm2-volume-control,
@@ -554,17 +554,17 @@
 }
 
 .menu {
- background-image: url(images/bar-ui/list2.png);
+ background-image: url(../images/bar-ui/list2.png);
  background-size: 58%;
  background-position: 54% 51%;
 }
 
 .previous {
- background-image: url(images/bar-ui/first.png);
+ background-image: url(../images/bar-ui/first.png);
 }
 
 .next {
- background-image: url(images/bar-ui/last.png);
+ background-image: url(../images/bar-ui/last.png);
 }
 
 .previous,
@@ -580,13 +580,13 @@
 }
 
 .shuffle {
- background-image: url(images/bar-ui/shuffle.png);
+ background-image: url(../images/bar-ui/shuffle.png);
  background-size: 45%;
  background-position: 50% 50%;
 }
 
 .repeat {
- background-image: url(images/bar-ui/loop.png);
+ background-image: url(../images/bar-ui/loop.png);
  background-position: 50% 43%;
  background-size: 54%;
 }
@@ -647,7 +647,7 @@
 .sm2-playlist-wrapper ul li .sm2-cart,
 .sm2-playlist-wrapper ul li:hover .sm2-cart,
 .sm2-playlist-wrapper ul li.selected .sm2-cart {
- background-image: url(images/bar-ui/cart.png);
+ background-image: url(../images/bar-ui/cart.png);
  /* slight alignment tweak */
  background-position: 48% 50%;
 }
@@ -655,7 +655,7 @@
 .sm2-playlist-wrapper ul li .sm2-music,
 .sm2-playlist-wrapper ul li:hover .sm2-music,
 .sm2-playlist-wrapper ul li.selected .sm2-music {
- background-image: url(images/bar-ui/music.png);
+ background-image: url(../images/bar-ui/music.png);
 }
 
 .sm2-bar-ui.dark-text .sm2-playlist-wrapper ul li .sm2-cart,
@@ -696,7 +696,7 @@
  height: 100%;
  top: 0px;
  left: 0px;
- background: none, url(images/bar-ui/spinner.png);
+ background: none, url(../images/bar-ui/spinner.png);
  background-size: 72%;
  background-position: 50%;
  background-repeat: no-repeat;

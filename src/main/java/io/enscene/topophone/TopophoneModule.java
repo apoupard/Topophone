@@ -28,6 +28,7 @@ import io.enscene.topophone.templating.resource.HeaderResource;
 import io.enscene.topophone.templating.resource.IndexResource;
 import io.enscene.topophone.templating.resource.NavResource;
 import io.enscene.topophone.templating.resource.SectionsResource;
+import ro.isdc.wro.http.WroFilter;
 
 public class TopophoneModule extends ServletModule {
   
@@ -64,8 +65,9 @@ public class TopophoneModule extends ServletModule {
     resourceDaoBinder.addBinding("footer").to(new TypeLiteral<FooterDao>() {});
     resourceDaoBinder.addBinding("contacts").to(new TypeLiteral<ContactsDao>() {});
     bind(Servlet.class).asEagerSingleton();
-    
+    bind(WroFilter.class).asEagerSingleton();
     serve("/", "/index.html", Servlet.APPLICATION_CONTEXT + "/*").with(Servlet.class);
+    filter("/wro/*").through(WroFilter.class);
   }
 
 }

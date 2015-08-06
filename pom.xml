@@ -88,6 +88,27 @@
 
 
 		<dependency>
+			<groupId>ro.isdc.wro4j</groupId>
+			<artifactId>wro4j-core</artifactId>
+			<version>1.7.8</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>2.1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery-jcarousel</artifactId>
+			<version>0.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars.npm</groupId>
+			<artifactId>soundmanager2</artifactId>
+			<version>2.97.20150601-a</version>
+		</dependency>
+
+		<dependency>
 			<groupId>io.enscene.testing.arquillian</groupId>
 			<artifactId>enscene-testing-arquillian-depchain</artifactId>
 			<version>${version.enscene-testing-arquillian}</version>
@@ -105,6 +126,7 @@
 		<dependency>
 			<groupId>org.assertj</groupId>
 			<artifactId>assertj-core</artifactId>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 

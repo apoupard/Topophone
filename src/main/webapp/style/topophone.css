@@ -49,25 +49,25 @@ a, a:visited, a:hover {
 	background-size: 100%;
 	background-attachment: fixed;
 	background-position: left bottom;
-	background-image: url(images/background/default.jpg);
+	background-image: url(../images/background/default.jpg);
 }
 
 #background.devartists {
-	background-image: url(images/devartists/background.jpg);
+	background-image: url(../images/devartists/background.jpg);
 	background-position: left 15%;
 }
 
 #background.lecommondiamond {
-	background-image: url(images/background/lecommondiamond.png);
+	background-image: url(../images/background/lecommondiamond.png);
 	background-position: left 15%;
 }
 
 #background.ihr {
-	background-image: url(images/background/ihr.jpg);
+	background-image: url(../images/background/ihr.jpg);
 }
 
 #background.education {
-	background-image: url(images/background/education.jpg);
+	background-image: url(../images/background/education.jpg);
 }
 
 #site {
@@ -104,7 +104,7 @@ a, a:visited, a:hover {
 }
 
 #header #deco {
-	background: url(images/menutop.png) 0px 0px no-repeat;
+	background: url(../images/menutop.png) 0px 0px no-repeat;
 	width: 1060px;
 	height: 290px;
 	margin-left: auto;
@@ -231,7 +231,7 @@ nav ul:after {
 }
 
 nav .separator, nav .separator:HOVER {
-	background-image: url(images/menuseparator.png);
+	background-image: url(../images/menuseparator.png);
 	background-color: transparent;
 	background-size: 100% 54px;
 	background-repeat: no-repeat;

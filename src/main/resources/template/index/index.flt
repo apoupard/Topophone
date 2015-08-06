@@ -5,17 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Topophone</title>
 
-<link rel="stylesheet" href="${appcontext}/topophone.css">
-<link rel="stylesheet" href="${appcontext}/widgets.css">
-<link rel="stylesheet" href="${appcontext}/bar-ui.css">
-
 <script type="application/dart" src="${appcontext}/web/topophone.dart"></script>
 <script src="${appcontext}/packages/browser/dart.js"></script>
 
-<script src="${appcontext}/lib/jquery-2.1.4.min.js"></script>
-<script src="${appcontext}/lib/jquery.jcarousel.min.js"></script>
+<link rel="stylesheet" type="text/css" href="${appcontext}/wro/all.css" />
 
-<script src="${appcontext}/lib/soundmanager2-jsmin.js"></script>
+<script type="text/javascript" src="${appcontext}/wro/all.js"></script>
 <script src="${appcontext}/lib/bar-ui.js"></script>
 
 

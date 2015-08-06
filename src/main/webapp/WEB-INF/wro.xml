@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<groups xmlns="http://www.isdc.ro/wro">
+    <group name="all">
+        <js>classpath:META-INF/resources/webjars/jquery/2.1.4/jquery.min.js</js>
+   		<js>classpath:META-INF/resources/webjars/soundmanager2/2.97.20150601-a/script/soundmanager2-nodebug-jsmin.js</js>
+   		<js>classpath:META-INF/resources/webjars/jquery-jcarousel/0.3.1/jquery.jcarousel.min.js</js>
+   		<css>/style/*.css</css>
+    </group>
+</groups>       
