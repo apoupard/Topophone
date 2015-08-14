@@ -1,5 +1,6 @@
 <#macro headbandCarousel logo images>
 <div class="headband-carousel">
+	<div class="border-wrap"></div>
     <div class="jcarousel">
       <ul>
       	<#list images as image>

@@ -35,13 +35,7 @@
           interval: 3000,
           target: '+=1',
           autostart: true
-        }).on('jcarousel:lastin', 'li', function(event, carousel) {
-			$(carousel.last()).next().addClass('last') ;
-			$(carousel.last()).removeClass('last');
-		}).on('jcarousel:firstin', 'li', function(event, carousel) {
-			$(carousel.first()).next().addClass('first');
-			$(carousel.first()).removeClass('first');
-		});
+        });
     }
     function startSoundPlayer() {
  		window.SM2BarPlayer($('.sm2-bar-ui')[0])

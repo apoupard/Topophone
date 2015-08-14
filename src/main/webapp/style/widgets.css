@@ -435,6 +435,18 @@
 	width: 172px;
 }
 
+.headband-carousel .border-wrap {
+	position: absolute;
+    width: 1030px;
+    height: 135px;
+    background-color: transparent;
+    border: 5px solid black;
+    border-radius: 15px;
+    margin: -5px;
+    z-index: 100;
+}
+
+
 /*jcarousel*/
 .jcarousel {
 	position: relative;
@@ -453,16 +465,6 @@
 .jcarousel li {
 	/* Required only for block elements like <li>'s */
 	float: left;
-}
-
-.jcarousel .first img {
-	border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px;
-}
-
-.jcarousel .last img {
-	border-top-right-radius: 10px;
-	border-bottom-right-radius: 10px;
 }
 
 /* Video */
