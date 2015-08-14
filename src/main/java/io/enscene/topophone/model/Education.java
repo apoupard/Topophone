@@ -9,14 +9,17 @@ public class Education implements ResourceModel {
   private String imageLeft;
   private String description;
   private String image;
-  private HeadbandCarousel headband;
+  private HeadbandCarousel headbandCarousel;
+  private Nav subNav;
 
-  public Education(String id, String imageLeft, String description, String image, HeadbandCarousel headband) {
+
+  public Education(String id, String imageLeft, String description, String image, HeadbandCarousel headbandCarousel, Nav subNav) {
     this.id = id;
     this.imageLeft = imageLeft;
     this.description = description;
     this.image = image;
-    this.headband = headband;
+    this.headbandCarousel = headbandCarousel;
+    this.subNav = subNav;
   }
   
   public String getImageLeft() {
@@ -52,11 +55,19 @@ public class Education implements ResourceModel {
   }
 
   public HeadbandCarousel getHeadbandCarousel() {
-    return headband;
+    return headbandCarousel;
   }
 
-  public void setHeadbandCarousel(HeadbandCarousel headband) {
-    this.headband = headband;
+  public void setHeadbandCarousel(HeadbandCarousel headbandCarousel) {
+    this.headbandCarousel = headbandCarousel;
   }
 
+  public Nav getSubNav() {
+    return subNav;
+  }
+
+  public void setSubNav(Nav subNav) {
+    this.subNav = subNav;
+  }
+  
 }

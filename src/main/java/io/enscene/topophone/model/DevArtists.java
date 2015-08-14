@@ -12,14 +12,16 @@ public class DevArtists implements ResourceModel {
   private String image;
   private HeadbandCarousel headbandCarousel;
   private List<ArtistLink> artistLinks;
+  private Nav subNav;
 
   public DevArtists(String id, String description, String image, HeadbandCarousel headbandCarousel,
-      List<ArtistLink> artistLinks) {
+      List<ArtistLink> artistLinks, Nav subNav) {
     this.id = id;
     this.description = description;
     this.image = image;
     this.headbandCarousel = headbandCarousel;
     this.artistLinks = artistLinks;
+    this.subNav = subNav;
   }
 
   public String getDescription() {
@@ -61,6 +63,14 @@ public class DevArtists implements ResourceModel {
   public void setArtistLinks(List<ArtistLink> artistLinks) {
     this.artistLinks = artistLinks;
   }
+  
+  public Nav getSubNav() {
+    return subNav;
+  }
+
+  public void setSubNav(Nav subNav) {
+    this.subNav = subNav;
+  }
 
   public static class ArtistLink {
     private String image;
@@ -87,5 +97,6 @@ public class DevArtists implements ResourceModel {
     public void setLink(String link) {
       this.link = link;
     }
+    
   }
 }

@@ -2,18 +2,14 @@
 <#import "/widget/headbandCarousel.flt" as top>
 <#import "/widget/internallink.flt" as link>
 <#import "/widget/image.flt" as images>
+<#import "/widget/subnav.flt" as subnav>
 <div id="top">
   <@top.headbandCarousel logo=education.headbandCarousel.logo images=education.headbandCarousel.images/>
 </div>
 <div id="page" class="education">
     <div class="side column-left">
       <@container.widgets>
-        <@container.widget opacity=true gradient=false>
-          <@link.internallink href="/education/creation" label="Initiation à la création musicale" />
-        </@container.widget>
-        <@container.widget opacity=true gradient=false>
-          <@link.internallink href="/education/meeting" label="A la rencontre des artistes" />
-        </@container.widget>
+      	<@subnav.subnav entries=education.subNav.entries />
         <@container.widget opacity=true gradient=false>
           <@images.image href=education.imageLeft />
         </@container.widget>

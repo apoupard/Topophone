@@ -13,31 +13,37 @@ public class NavEntry implements ResourceModel {
   private String href;
   private List<NavEntry> entries;
   private String styleNames;
+  private Boolean isSelected;
 
   public static NavEntry of(String id, String displayName, String href, List<NavEntry> entries) {
-    return new NavEntry(id, displayName, href, entries, "");
+    return new NavEntry(id, displayName, href, entries, "", false);
   }
 
   public static NavEntry of(String id, String displayName, String href) {
-    return new NavEntry(id, displayName, href, ImmutableList.of(), "");
+    return new NavEntry(id, displayName, href, ImmutableList.of(), "", false);
+  }
+  
+  public static NavEntry of(String id, String displayName, String href, Boolean isSelected) {
+    return new NavEntry(id, displayName, href, ImmutableList.of(), "", isSelected);
   }
 
   public static NavEntry separator() {
-    return new NavEntry("", "", "", ImmutableList.of(), "separator");
+    return new NavEntry("", "", "", ImmutableList.of(), "separator", false);
   }
   
 
   public static NavEntry smallSeparator() {
-    return new NavEntry("", "", "", ImmutableList.of(), "smallSeparator");
+    return new NavEntry("", "", "", ImmutableList.of(), "smallSeparator", false);
   }
 
 
-  public NavEntry(String id, String displayName, String href, List<NavEntry> entries, String styleNames) {
+  public NavEntry(String id, String displayName, String href, List<NavEntry> entries, String styleNames, Boolean isSelected) {
     this.id = id;
     this.displayName = displayName;
     this.href = href;
     this.entries = entries;
     this.styleNames = styleNames;
+    this.isSelected = isSelected;
   }
 
   public String getId() {
@@ -79,4 +85,14 @@ public class NavEntry implements ResourceModel {
   public void setStyleNames(String styleNames) {
     this.styleNames = styleNames;
   }
+
+  public Boolean getIsSelected() {
+    return isSelected;
+  }
+
+  public void setIsSelected(Boolean isSelected) {
+    this.isSelected = isSelected;
+  }
+  
+  
 }

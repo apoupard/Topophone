@@ -2,18 +2,14 @@
 <#import "/widget/headbandCarousel.flt" as top>
 <#import "/widget/internallink.flt" as link>
 <#import "/widget/image.flt" as images>
+<#import "/widget/subnav.flt" as subnav>
 <div id="top">
   <@top.headbandCarousel logo=devartists.headbandCarousel.logo images=devartists.headbandCarousel.images/>
 </div>
 <div id="page" class="devartists">
     <div class="side column-left">
       <@container.widgets>
-        <@container.widget opacity=true gradient=false>
-          <@link.internallink href="/devartists/presentation" label="Développements d'artistes" />
-        </@container.widget>
-        <@container.widget opacity=true gradient=false>
-          <@link.internallink href="/devartists/appscenic" label="Accompagnement scénique" />
-        </@container.widget>
+        <@subnav.subnav entries=devartists.subNav.entries />
         <#list devartists.artistLinks as artistLink>
           <@container.widget opacity=true gradient=false>
 	        <@link.internallink href=artistLink.link class="internallinkImg">

@@ -1,6 +1,8 @@
 package io.enscene.topophone.dao;
 
 import io.enscene.topophone.model.Education;
+import io.enscene.topophone.model.Nav;
+import io.enscene.topophone.model.NavEntry;
 import io.enscene.topophone.model.artist.HeadbandCarousel;
 
 import java.util.List;
@@ -16,17 +18,25 @@ public class EducationDao extends AstractHardCoded<Education> {
   @Override
   void init(Map<String, Education> database) {
     database.put("creation", new Education("creation", "/images/education/educationImageLeft.png",
-        getDescription("education", "creation"), "/images/education/creation.png", getHeadBand()));
+        getDescription("education", "creation"), "/images/education/creation.png", getHeadBand(), getSubNav("creation")));
     database.put("meeting", new Education("meeting", "/images/education/educationImageLeft.png",
-        getDescription("education", "meeting"), "/images/education/meeting.png", getHeadBand()));
+        getDescription("education", "meeting"), "/images/education/meeting.png", getHeadBand(), getSubNav("meeting")));
     database.put("presentation",
         new Education("presentation", "/images/education/educationImageLeft.png",
             getDescription("education", "presentation"), "/images/education/meeting.png",
-            getHeadBand()));
+            getHeadBand(), getSubNav("presentation")));
   }
 
   private HeadbandCarousel getHeadBand() {
     return new HeadbandCarousel(getImages(), "/images/education/headbandlogo.png");
+  }
+  
+  private Nav getSubNav(String id) {
+    List<NavEntry> entries = ImmutableList.of(
+          NavEntry.of(id, "Initiation à la création musicale", "/education/creation", "/education/creation".contains(id)),
+          NavEntry.of(id, "A la rencontre des artistes", "/education/meeting", "/education/meeting".contains(id))
+        );
+    return new Nav(entries);
   }
 
   private List<String> getImages() {
