@@ -65,10 +65,11 @@ void show(String path) {
     HttpRequest.request(url, method: 'GET', requestHeaders: {'Accept': 'text/html'})
         .then((HttpRequest resp) {
           changeBackground(path);
+          
           Element content = querySelector("#section")..nodes.clear()
               ..appendHtml(resp.responseText);
-          showCarousel();
-          startSoundPlayer();
+          
+          onNewSectionDisplay();
       }
     ).catchError((error) => print(error));
   }
@@ -90,10 +91,7 @@ void changeBackground(String path) {
 }
 
 
-void showCarousel() {
-  context.callMethod('startCarousel');
-}
-void startSoundPlayer() {
-  context.callMethod('startSoundPlayer');
+void onNewSectionDisplay() {
+  context.callMethod('onNewSectionDisplay');
 }
 
