@@ -1,5 +1,6 @@
 package io.enscene.topophone;
 
+import com.github.ziplet.filter.compression.CompressingFilter;
 import com.google.inject.TypeLiteral;
 import com.google.inject.multibindings.MapBinder;
 import com.google.inject.servlet.ServletModule;
@@ -68,6 +69,9 @@ public class TopophoneModule extends ServletModule {
     bind(WroFilter.class).asEagerSingleton();
     serve("/", "/index.html", Servlet.APPLICATION_CONTEXT + "/*").with(Servlet.class);
     filter("/wro/*").through(WroFilter.class);
+
+    bind(CompressingFilter.class).asEagerSingleton();
+    filter("/wro/*", "/images/*, /music/*").through(CompressingFilter.class);
   }
 
 }
