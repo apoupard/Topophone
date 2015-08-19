@@ -11,7 +11,7 @@
       <@container.widgets>
         <@subnav.subnav entries=devartists.subNav.entries />
         <#list devartists.artistLinks as artistLink>
-          <@container.widget opacity=true gradient=false>
+          <@container.widget opacity=true gradient=false class='noPadding'>
 	        <@link.internallink href=artistLink.link class="internallinkImg">
               <@images.image href=artistLink.image />
             </@link.internallink>

@@ -88,6 +88,7 @@ a, a:visited, a:hover {
 	position: absolute;
 	left: 50%;
 	top: 0;
+	    z-index: 1000;
 }
 
 .absoluteCenter img {
@@ -297,7 +298,7 @@ nav ul ul {
 	padding: 0;
 	position: absolute;
 	top: 100%;
-	z-index: 100;
+	z-index: 500;
 }
 
 nav ul ul li {
@@ -368,7 +369,7 @@ nav ul ul li a, nav ul ul li a:visited, nav ul ul li a:hover {
 	padding: 0;
 	margin-right: 5px;
 	text-align: right;
-	border-bottom: 1px solid grey;
+	border-bottom: 2px solid grey;
 	margin: 0 20px 0 20px;
 	
 }

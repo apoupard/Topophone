@@ -10,7 +10,7 @@
     <div class="side column-left">
       <@container.widgets>
       	<@subnav.subnav entries=education.subNav.entries />
-        <@container.widget opacity=true gradient=false>
+        <@container.widget opacity=true gradient=false class='noPadding'>
           <@images.image href=education.imageLeft />
         </@container.widget>
       </@container.widgets>
@@ -41,7 +41,7 @@
 	          </ul>
           </div>
         </@container.widget>
-        <@container.widget opacity=true gradient=false>
+        <@container.widget opacity=true gradient=false class='noPadding'>
           <@images.image href=education.image />
         </@container.widget>
        </@container.widgets>

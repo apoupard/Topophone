@@ -16,6 +16,15 @@
 	padding: 10px 10px 10px 10px;
 }
 
+.widget.noPadding {
+	border-radius: 5px;
+	padding: 0px 0px 0px 0px;
+}
+
+.widget.noPadding img{
+	border-radius: 3px;
+}
+
 .widget .widget-content {
 	position: relative;
 	height: 100%;
@@ -104,7 +113,6 @@
 
 .column-center .widget .widget-content {
 	height: 100%;
-	overflow-y: scroll;
 	padding: 0px 20px 0px 20px;
 }
 
