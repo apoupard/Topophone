@@ -16,7 +16,6 @@
 
 </head>
 <body>
-
 	<div id="background"></div>
 	<div id="header"></div>
 	<div id="site">
@@ -25,27 +24,5 @@
 	</div>
 	<div id="footer">
 	</div>
-  <script type='text/javascript'>
-    function startCarousel() {
-      $('.jcarousel')
-        .jcarousel({
-  	      wrap: 'circular'
-        })
-        .jcarouselAutoscroll({
-          interval: 3000,
-          target: '+=1',
-          autostart: true
-        });
-    }
-    function startSoundPlayer() {
- 		window.SM2BarPlayer($('.sm2-bar-ui')[0])
- 	}
- 	function startShowVideo(url) {
- 		if($('.youtubePopup').attr('data') != url) {
-    		$('.youtubePopup').attr('data', url);
-    	}
-    	$('.toHide.hidden').removeClass('hidden');
-    }
-  </script>
 </body>
 </html>
