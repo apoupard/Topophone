@@ -82,7 +82,7 @@
 	background-size: 100% 100%;
 	background-color: #cfcdce;
 	border-radius: 5px;
-	opacity: 0.55 !important;
+/* 	opacity: 0.55 !important; */
 }
 
 .widget .opacity {
@@ -92,7 +92,7 @@
 	margin: 0 auto;
 	top: 0;
 	left: 0;
-	opacity: 0.40;
+	opacity: 0.60;
 }
 
 .widget .opacity-wrap {
@@ -538,3 +538,8 @@
 .subnav.selected {
 	background-color: #fff1e4;
 }
+
+
+.ps-container:hover > .ps-scrollbar-y-rail {
+    background-color: #eee;
+    opacity: 0.9; }
