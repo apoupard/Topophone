@@ -64,14 +64,13 @@ void show(String path) {
     String url = path.replaceAll(new RegExp('appli'), "html/sections");
     HttpRequest.request(url, method: 'GET', requestHeaders: {'Accept': 'text/html'})
         .then((HttpRequest resp) {
+          changeBackground(path);
           Element content = querySelector("#section")..nodes.clear()
               ..appendHtml(resp.responseText);
           showCarousel();
           startSoundPlayer();
       }
     ).catchError((error) => print(error));
-    
-    changeBackground(path);
   }
 }
 
