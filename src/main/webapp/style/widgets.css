@@ -430,8 +430,8 @@
 /*carousel*/
 .headband-carousel {
 	height: 135px;
-	border: 5px solid black;
-	border-radius: 15px;
+	border: 2px solid black;
+	border-radius: 5px;
 }
 
 .headband-carousel ul li {
@@ -440,17 +440,19 @@
 }
 
 .headband-carousel ul li img {
-	width: 172px;
+	width: 175px;
+/*     width: 346px; */
+    height: 135px;
 }
 
 .headband-carousel .border-wrap {
 	position: absolute;
-    width: 1030px;
+    width: 1036px;
     height: 135px;
     background-color: transparent;
-    border: 5px solid black;
-    border-radius: 15px;
-    margin: -5px;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: -2px;
     z-index: 100;
 }
 

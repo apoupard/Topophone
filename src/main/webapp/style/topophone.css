@@ -72,8 +72,9 @@ a, a:visited, a:hover {
 
 #site {
 	height: 100%;
-	width: 1050px;
-	margin: -115px auto 0px;
+	width: 1055px;
+    margin: -115px auto 0px;
+    padding-left: 5px;
 }
 
 #header {
@@ -90,6 +91,15 @@ a, a:visited, a:hover {
 	top: 0;
 	    z-index: 1000;
 }
+
+.absoluteCenterBase {
+	position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    z-index: 1000;
+}
+  
 
 .absoluteCenter img {
 	position: relative;
@@ -139,14 +149,14 @@ a, a:visited, a:hover {
 #top {
 	position: relative;
 	width: 1040px;
-	height: 145px;
+	height: 138px;
 }
 
 #top .headband .main {
-	border: 5px solid black;
-	border-radius: 15px;
-	width: 1030px;
-	height: 137px;
+	border: 2px solid black;
+    border-radius: 5px;
+    width: 1036px;
+    height: 137px;
 }
 
 #top .logo {
