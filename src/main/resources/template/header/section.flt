@@ -1,6 +1,4 @@
-<div class="absoluteCenter">
-	<img class="logo" src="${appcontext}${header.logo}">
-</div>
+<img class="logo absoluteCenterBase" src="${appcontext}${header.logo}">
 <div id="all">
   <div id="decoLeft"></div>
   <div id="decoRight"></div>
