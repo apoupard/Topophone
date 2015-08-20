@@ -11,7 +11,7 @@ void main() {
                 querySelector("#header").appendHtml(resp.responseText);
                 resizeHeader();
                 window.onResize.listen((event)=>resizeHeader());
-  }).catchError((error) => print(error));
+              }).catchError((error) => print(error));
   
   HttpRequest.request(contextUrl + "html/sections/nav", method: 'GET', requestHeaders: {'Accept': 'text/html'})
              .then((resp) => querySelector("nav").appendHtml(resp.responseText))
@@ -29,18 +29,6 @@ void main() {
   } catch (exception, stackTrace){
     showHome('');
   }
-}
-
-void resizeHeader(){
-  Element all = querySelector("#header #all");
-  Element deco = querySelector("#header #deco");
-  Element left = querySelector("#header #decoLeft");
-  Element rigth = querySelector("#header #decoRight");
-  
-  var sideSize = ((window.innerWidth - deco.clientWidth-4)/2)+2;
-  left.style.width = sideSize.toStringAsFixed(0)+'px';
-  rigth.style.width = sideSize.toStringAsFixed(0)+'px';
-  
 }
 
 String getContextUrl(){
@@ -88,6 +76,11 @@ void changeBackground(String path) {
       }
     });
   }
+}
+
+
+void resizeHeader(){
+  context.callMethod('resizeHeader');
 }
 
 

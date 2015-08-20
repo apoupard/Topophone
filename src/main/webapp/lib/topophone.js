@@ -1,4 +1,3 @@
-
 function onNewSectionDisplay() {
 	startCarousel();
 	startSoundPlayer();
@@ -30,4 +29,19 @@ function startShowVideo(url) {
 
 function enginePerfectScrollbar() {
 	$('.column-center .widget-content').perfectScrollbar();
+}
+
+function resizeHeader() {
+	var all = $("#header #all");
+	var deco = $("#header #deco");
+	var left = $("#header #decoLeft");
+	var rigth = $("#header #decoRight");
+
+	var sideSize = ((window.innerWidth - deco.width() - 4) / 2) + 2;
+	if (sideSize < 0) {
+		sideSize = 0;
+	}
+	left.width(sideSize);
+	rigth.width(sideSize);
+
 }
