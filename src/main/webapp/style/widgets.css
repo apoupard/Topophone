@@ -4,7 +4,7 @@
 }
 
 .widgets .first {
-	height: 360px;
+	height: 380px;
 }
 
 .widgets .small {
@@ -13,7 +13,7 @@
 
 .widget {
 	border-radius: 5px;
-	padding: 10px 10px 10px 10px;
+	padding: 2px 2px 2px 2px;
 }
 
 .widget.noPadding {
@@ -231,6 +231,12 @@
 }
 
 /* internallink */
+.widget .internallink {
+	padding: 5px 5px 5px 5px;
+}
+
+
+
 .widget .internallink a, .widget .internallink a:VISITED {
 	color: black;
 	text-transform: uppercase;
