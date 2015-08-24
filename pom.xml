@@ -17,8 +17,6 @@
 		<version.enscene-testing-arquillian>0.0.1-SNAPSHOT</version.enscene-testing-arquillian>
 		<version.shiro>1.2.3</version.shiro>
 
-		<dart.home>/usr/lib/dart</dart.home>
-
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<github.global.server>github</github.global.server>
 	</properties>
@@ -152,14 +150,6 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
 					<archiveClasses>false</archiveClasses>
-					<webResources>
-						<resource>
-							<directory>src/main/dart</directory>
-						</resource>
-						<resource>
-							<directory>target/dart</directory>
-						</resource>
-					</webResources>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -167,41 +157,6 @@
 				<configuration>
 					<encoding>UTF-8</encoding>
 				</configuration>
-				<executions>
-					<execution>
-						<id>copy-resources</id>
-						<phase>compile</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${basedir}/target/dart/web/packages</outputDirectory>
-							<resources>
-								<resource>
-									<directory>src/main/dart/packages</directory>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>com.github.dzwicker.dart</groupId>
-				<artifactId>dart-maven-plugin</artifactId>
-				<version>3.0.8</version>
-				<configuration>
-					<checkedMode>true</checkedMode>
-					<dartSdk>${dart.home}</dartSdk>
-				</configuration>
-				<executions>
-					<execution>
-						<id>compile</id>
-						<phase>compile</phase>
-						<goals>
-							<goal>dart2js</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 			<plugin>
 				<groupId>com.spotify</groupId>
@@ -252,57 +207,7 @@
 				</executions>
 			</plugin>
 		</plugins>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>
-											com.github.dzwicker.dart
-										</groupId>
-										<artifactId>
-											dart-maven-plugin
-										</artifactId>
-										<versionRange>
-											[3.0.8,)
-										</versionRange>
-										<goals>
-											<goal>dart2js</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<execute>
-											<runOnIncremental>false</runOnIncremental>
-										</execute>
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
 	</build>
-
-	<profiles>
-		<profile>
-			<id>dart-mac</id>
-			<activation>
-				<os>
-					<family>mac</family>
-				</os>
-			</activation>
-			<properties>
-				<dart.home>/Applications/Eclipse.app/Contents/Eclipse/dart-sdk</dart.home>
-			</properties>
-		</profile>
-	</profiles>
 
 	<distributionManagement>
 		<repository>
