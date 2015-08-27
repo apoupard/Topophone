@@ -117,7 +117,7 @@ function getContextUrl() {
 		return pathname;
 	}
 	if (index == 0) {
-		return "/";
+		return "";
 	}
 	return pathname.substring(0, index);
 }
