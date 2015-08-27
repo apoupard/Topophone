@@ -3,11 +3,11 @@
 <#macro subnav entries>
 	<#list entries as entry>
 	<#if entry.isSelected> 
-		<@container.widget opacity=true gradient=false class='subnav selected'>
+		<@container.widget opacity=true gradient=false class='subnav height-1 selected'>
 			<@link.internallink href=entry.href label=entry.displayName />
 		</@container.widget>
 	<#else>
-		<@container.widget opacity=true gradient=false class='subnav'>
+		<@container.widget opacity=true gradient=false class='subnav height-1'>
 			<@link.internallink href=entry.href label=entry.displayName />
 		</@container.widget>
 	</#if>

@@ -11,7 +11,7 @@
       <@container.widgets>
         <@subnav.subnav entries=devartists.subNav.entries />
         <#list devartists.artistLinks as artistLink>
-          <@container.widget opacity=true gradient=false class='noPadding'>
+          <@container.widget opacity=true gradient=false class='noPadding height-3'>
 	        <@link.internallink href=artistLink.link class="internallinkImg">
               <@images.image href=artistLink.image />
             </@link.internallink>
@@ -28,7 +28,7 @@
     </div>
     <div class="side column-right">
       <@container.widgets>
-        <@container.widget opacity=true gradient=false>
+        <@container.widget opacity=true gradient=false class='noPadding height-8'>
           <div class="chiffres">
 	          <h3>L'attelier de création en chiffres</h3>
 	          <ul>

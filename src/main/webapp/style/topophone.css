@@ -9,6 +9,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
 	background: transparent;
 }
 
+html {
+	height: 100%;
+}
+
 body {
 	color: black;
 	margin: 0px;
@@ -42,24 +46,25 @@ a, a:visited, a:hover {
 }
 
 #background {
-	width: 100%;
-	height: 100%;
-	position: fixed;
 	background-repeat: no-repeat;
-	background-size: 100%;
-	background-attachment: fixed;
+	background-attachment: scroll;
 	background-position: left bottom;
 	background-image: url(../images/background/default.jpg);
+	bottom: 0px;
+	left: 0px;
+	background-size: 100% 100%;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index: -1000;
 }
 
 #background.devartists {
 	background-image: url(../images/devartists/background.jpg);
-	background-position: left 15%;
 }
 
 #background.lecommondiamond {
 	background-image: url(../images/background/lecommondiamond.png);
-	background-position: left 15%;
 }
 
 #background.ihr {
@@ -72,15 +77,16 @@ a, a:visited, a:hover {
 
 #site {
 	height: 100%;
-    width: 1065px;
-    margin: -115px auto 0px;
-    padding-left: 15px;
+	width: 1065px;
+	margin: -115px auto 0px;
+	padding-left: 15px;
+	padding-bottom: 30px
 }
 
 #header {
 	overflow: hidden;
 	background-color: transparent;
-	height: 290px;
+	height: 280px;
 	width: 100%;
 	position: relative;
 	min-width: 1080px;
@@ -95,12 +101,11 @@ a, a:visited, a:hover {
 
 .absoluteCenterBase {
 	position: absolute;
-    right: 0;
-    left: 0;
-    margin: auto;
-    z-index: 1000;
+	right: 0;
+	left: 0;
+	margin: auto;
+	z-index: 1000;
 }
-  
 
 .absoluteCenter img {
 	position: relative;
@@ -118,9 +123,10 @@ a, a:visited, a:hover {
 #header #deco {
 	background: url(../images/menutop.png) 0px 0px no-repeat;
 	width: 1080px;
-	height: 290px;
 	margin-left: auto;
 	margin-right: auto;
+	height: 131px;
+	border-top: 150px solid black;
 }
 
 #header #decoLeft {
@@ -154,9 +160,9 @@ a, a:visited, a:hover {
 
 #top .headband .main {
 	border: 2px solid black;
-    border-radius: 5px;
-    width: 1036px;
-    height: 137px;
+	border-radius: 5px;
+	width: 1036px;
+	height: 137px;
 }
 
 #top .logo {
@@ -368,10 +374,15 @@ nav ul ul li a, nav ul ul li a:visited, nav ul ul li a:hover {
 	height: 100px;
 }
 
+
+#wrap {min-height: 100%}
+
 #footer {
-	position: absolute;
-	width:100%;
-	padding-bottom: 10px;
+/* 	position: absolute; */
+/* 	width: 100%; */
+/* 	padding-bottom: 10px; */
+    margin-top: -30px;
+    height: 30px;
 }
 
 #footer ul {
@@ -381,7 +392,6 @@ nav ul ul li a, nav ul ul li a:visited, nav ul ul li a:hover {
 	text-align: right;
 	border-bottom: 2px solid grey;
 	margin: 0 20px 0 20px;
-	
 }
 
 #footer ul li {

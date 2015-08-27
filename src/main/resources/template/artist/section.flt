@@ -6,10 +6,10 @@
 <div id="page" class="artist">
 	<div class="side column-left">
 	  <@container.widgets>
-		  <@container.widget opacity=true gradient=true class="first">
+		  <@container.widget opacity=true gradient=true class="first height-7 medium-img">
 		      <#include "/artist/profile.flt">
 		  </@container.widget>
-		   <@container.widget opacity=true gradient=false class="small">
+		   <@container.widget opacity=true gradient=false class="height-1">
             <#include "/artist/audio.flt">
         </@container.widget>
       </@container.widgets>
@@ -26,7 +26,7 @@
         <@container.widget opacity=true onlyBorder=true class="first">
             <#include "/artist/concert.flt">          
         </@container.widget>
-         <@container.widget opacity=true gradient=false class="small">
+         <@container.widget opacity=true gradient=false class="height-1">
             <#include "/artist/contact.flt">
         </@container.widget>
       </@container.widgets>

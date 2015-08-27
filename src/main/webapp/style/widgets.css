@@ -7,8 +7,40 @@
 	height: 380px;
 }
 
-.widgets .small {
-	height: 50px;
+.height-1 {
+	height: 42px;
+}
+
+.height-2 {
+	height: 100px;
+}
+
+.height-3 {
+	height: 158px;
+}
+
+.height-4 {
+	height: 216px;
+}
+
+.height-5 {
+	height: 274px;
+}
+
+.height-6 {
+	height: 332px;
+}
+
+.height-7 {
+	height: 390px;
+}
+
+.height-8 {
+	height: 448px;
+}
+
+.widget .internallinkImg, .widget .internallinkImg a {
+	height: 100%;
 }
 
 .widget {
@@ -21,7 +53,7 @@
 	padding: 0px 0px 0px 0px;
 }
 
-.widget.noPadding img{
+.widget.noPadding img {
 	border-radius: 3px;
 }
 
@@ -82,7 +114,7 @@
 	background-size: 100% 100%;
 	background-color: #cfcdce;
 	border-radius: 5px;
-/* 	opacity: 0.55 !important; */
+	/* 	opacity: 0.55 !important; */
 }
 
 .widget .opacity {
@@ -107,7 +139,7 @@
 
 .column-center .widget {
 	padding: 30px 0px 10px 0px;
-	height: 455px;
+	height: 430px;
 	position: relative;
 }
 
@@ -199,6 +231,11 @@
 .widget .image {
 	padding: 0px;
 	margin: 0px;
+	height: 100%;
+}
+
+.widget.medium-img .image {
+	height: 85%;
 }
 
 /* chiffres */
@@ -234,8 +271,6 @@
 .widget .internallink {
 	padding: 5px 5px 5px 5px;
 }
-
-
 
 .widget .internallink a, .widget .internallink a:VISITED {
 	color: black;
@@ -350,7 +385,8 @@
 }
 
 .artist .column-left .external-link {
-	margin-top: 13px;
+	margin-top: 7px;
+	margin-left: 10px;
 }
 
 #bottom.artist .videos>div {
@@ -447,21 +483,20 @@
 
 .headband-carousel ul li img {
 	width: 175px;
-/*     width: 346px; */
-    height: 135px;
+	/*     width: 346px; */
+	height: 135px;
 }
 
 .headband-carousel .border-wrap {
 	position: absolute;
-    width: 1036px;
-    height: 135px;
-    background-color: transparent;
-    border: 2px solid black;
-    border-radius: 5px;
-    margin: -2px;
-    z-index: 100;
+	width: 1036px;
+	height: 135px;
+	background-color: transparent;
+	border: 2px solid black;
+	border-radius: 5px;
+	margin: -2px;
+	z-index: 100;
 }
-
 
 /*jcarousel*/
 .jcarousel {
@@ -517,6 +552,7 @@
 	margin-left: -400px;
 	display: block;
 }
+
 .video .description {
 	display: inline-block;
 }
@@ -535,11 +571,11 @@
 
 .vertical-align>img {
 	height: 80px;
-    width: 140px;
+	width: 140px;
 	position: absolute;
-    top: 50%;
-    transform: translate(0%, -50%);
-    left: 10px;
+	top: 50%;
+	transform: translate(0%, -50%);
+	left: 10px;
 }
 
 /*Sub menu*/
@@ -547,7 +583,7 @@
 	background-color: #fff1e4;
 }
 
-
-.ps-container:hover > .ps-scrollbar-y-rail {
-    background-color: #eee;
-    opacity: 0.9; }
+.ps-container:hover>.ps-scrollbar-y-rail {
+	background-color: #eee;
+	opacity: 0.9;
+}
