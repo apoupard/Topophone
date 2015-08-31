@@ -139,7 +139,7 @@
 
 .column-center .widget {
 	padding: 30px 0px 10px 0px;
-	height: 430px;
+	height: 450px;
 	position: relative;
 }
 
@@ -471,7 +471,7 @@
 
 /*carousel*/
 .headband-carousel {
-	height: 135px;
+	height: 130px;
 	border: 2px solid black;
 	border-radius: 5px;
 }
@@ -484,13 +484,13 @@
 .headband-carousel ul li img {
 	width: 175px;
 	/*     width: 346px; */
-	height: 135px;
+	height: 130px;
 }
 
 .headband-carousel .border-wrap {
 	position: absolute;
 	width: 1036px;
-	height: 135px;
+	height: 130px;
 	background-color: transparent;
 	border: 2px solid black;
 	border-radius: 5px;

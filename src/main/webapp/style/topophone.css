@@ -86,7 +86,7 @@ a, a:visited, a:hover {
 #header {
 	overflow: hidden;
 	background-color: transparent;
-	height: 280px;
+	height: 270px;
 	width: 100%;
 	position: relative;
 	min-width: 1080px;
@@ -113,11 +113,10 @@ a, a:visited, a:hover {
 }
 
 #header .logo {
-	top: 20px;
+	top: 15px;
 	z-index: 1000;
 	width: 320px;
 	height: 145px;
-	margin-top: 5px;
 }
 
 #header #deco {
@@ -126,11 +125,11 @@ a, a:visited, a:hover {
 	margin-left: auto;
 	margin-right: auto;
 	height: 131px;
-	border-top: 150px solid black;
+	border-top: 140px solid black;
 }
 
 #header #decoLeft {
-	height: 290px;
+	height: 100%;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -138,7 +137,7 @@ a, a:visited, a:hover {
 }
 
 #header #decoRight {
-	height: 290px;
+	height: 100%;
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -155,7 +154,7 @@ a, a:visited, a:hover {
 #top {
 	position: relative;
 	width: 1040px;
-	height: 138px;
+	height: 133px;
 }
 
 #top .headband .main {
