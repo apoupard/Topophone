@@ -7,6 +7,7 @@ import io.enscene.topophone.model.artist.Media;
 import io.enscene.topophone.model.artist.Song;
 import io.enscene.topophone.model.artist.Video;
 
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Map;
@@ -25,13 +26,29 @@ public class ArtistDao extends AstractHardCoded<Artist> {
   }
 
   private Artist getInternationalHyperRythmique(String id) {
-    Song song = new Song("Cowboy", "4:03");
     List<Concert> concerts =
         ImmutableList.of(new Concert(new GregorianCalendar(2015, 06, 11).getTime(), "Club liberté",
             "Helsinki"), new Concert(new GregorianCalendar(2015, 06, 12).getTime(), "Mbar",
             "Helsinki"));
-    return new Artist(getProfileImage(id), getSocialMedia(id), song, concerts, getDescription("artist",id),
+    return new Artist(getProfileImage(id), getSocialMedia(id), getIhrSongs(), concerts, getDescription("artist",id),
         getHeadband(id), "contact@ihr.com", getVideos());
+  }
+
+  private List<Song> getIhrSongs() {
+    List<Song> songs = new ArrayList<>();
+    songs.add(new Song("Cowboy", "music/ihr/cowboy.wav"));
+    songs.add(new Song("Marble giant", "music/ihr/marblegiant.wav"));
+    songs.add(new Song("Norma jeane", "music/ihr/normajeane.wav"));
+    return songs;
+  }
+  
+  private List<Song> getleCommonDiamondSongs() {
+    List<Song> songs = new ArrayList<>();
+    songs.add(new Song("After All", "music/lecommondiamond/afterall.wav"));
+    songs.add(new Song("Scandinavia", "music/lecommondiamond/scandinavia.wav"));
+    songs.add(new Song("Swedish Summer Dream", "music/lecommondiamond/swedishsummerdream.wav"));
+    songs.add(new Song("The Monster", "music/lecommondiamond/themonster.wav"));
+    return songs;
   }
 
   private List<Video> getVideos() {
@@ -51,12 +68,11 @@ public class ArtistDao extends AstractHardCoded<Artist> {
 
   private Artist getLeCommonDiamond(String id) {
     List<Media> medias = getSocialMedia(id);
-    Song song = new Song("Go faster", "3:52");
     List<Concert> concerts =
         ImmutableList.of(new Concert(new GregorianCalendar(2015, 06, 11).getTime(), "Club liberté",
             "Helsinki"), new Concert(new GregorianCalendar(2015, 06, 12).getTime(), "Mbar",
             "Helsinki"));
-    return new Artist(getProfileImage(id), medias, song, concerts, getDescription("artist",id),
+    return new Artist(getProfileImage(id), medias, getleCommonDiamondSongs(), concerts, getDescription("artist",id),
         getHeadband(id), "contact@lecommundiamond.com", getVideos());
   }
 

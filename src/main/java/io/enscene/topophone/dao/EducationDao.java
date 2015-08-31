@@ -4,7 +4,9 @@ import io.enscene.topophone.model.Education;
 import io.enscene.topophone.model.Nav;
 import io.enscene.topophone.model.NavEntry;
 import io.enscene.topophone.model.artist.HeadbandCarousel;
+import io.enscene.topophone.model.artist.Song;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -18,15 +20,25 @@ public class EducationDao extends AstractHardCoded<Education> {
   @Override
   void init(Map<String, Education> database) {
     database.put("creation", new Education("creation", "/images/education/educationImageLeft.png",
-        getDescription("education", "creation"), "/images/education/creation.png", getHeadBand(), getSubNav("creation")));
+        getDescription("education", "creation"), "/images/education/creation.png", getHeadBand(), getSubNav("creation"), getSongs()));
     database.put("meeting", new Education("meeting", "/images/education/educationImageLeft.png",
-        getDescription("education", "meeting"), "/images/education/meeting.png", getHeadBand(), getSubNav("meeting")));
+        getDescription("education", "meeting"), "/images/education/meeting.png", getHeadBand(), getSubNav("meeting"), getSongs()));
     database.put("presentation",
         new Education("presentation", "/images/education/educationImageLeft.png",
             getDescription("education", "presentation"), "/images/education/meeting.png",
-            getHeadBand(), getSubNav("presentation")));
+            getHeadBand(), getSubNav("presentation"), getSongs()));
   }
 
+  private List<Song> getSongs() {
+    List<Song> songs = new ArrayList<>();
+    
+    songs.add(new Song("Chant du pingouin", "music/education/chantdupingouin.mp3"));
+    songs.add(new Song("Grain de folie", "music/education/graindefolie.mp3"));
+    songs.add(new Song("Mix au revoir Paris", "music/education/mixaurevoirparis.wav"));
+    
+    return songs;
+  }
+  
   private HeadbandCarousel getHeadBand() {
     return new HeadbandCarousel(getImages(), "/images/education/headbandlogo.png");
   }

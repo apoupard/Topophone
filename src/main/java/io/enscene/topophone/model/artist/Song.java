@@ -3,11 +3,11 @@ package io.enscene.topophone.model.artist;
 public class Song {
 
   private String title;
-  private String duration;
-
-  public Song(String title, String duration) {
+  private String url;
+  
+  public Song(String title, String url) {
     this.title = title;
-    this.duration = duration;
+    this.url = url;
   }
 
   public String getTitle() {
@@ -18,12 +18,12 @@ public class Song {
     this.title = title;
   }
 
-  public String getDuration() {
-    return duration;
+  public String getUrl() {
+    return url;
   }
 
-  public void setDuration(String duration) {
-    this.duration = duration;
+  public void setUrl(String url) {
+    this.url = url;
   }
 
 }

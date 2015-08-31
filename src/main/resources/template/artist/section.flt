@@ -1,5 +1,6 @@
 <#import "/container/widgets.flt" as container>
 <#import "/widget/headband.flt" as top>
+<#import "/widget/audio.flt" as audio>
 <div id="top">
   <@top.headband main=artist.headband.main logo=artist.headband.logo />
 </div>
@@ -9,9 +10,9 @@
 		  <@container.widget opacity=true gradient=true class="first height-7 medium-img">
 		      <#include "/artist/profile.flt">
 		  </@container.widget>
-		   <@container.widget opacity=true gradient=false class="height-1">
-            <#include "/artist/audio.flt">
-        </@container.widget>
+		  <@container.widget opacity=true gradient=false class="height-1">
+		  	<@audio.player songs=artist.songs />
+          </@container.widget>
       </@container.widgets>
 	</div>
    <div class="column-center">
