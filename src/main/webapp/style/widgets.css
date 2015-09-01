@@ -423,6 +423,24 @@
 	width: 320px;
 }
 
+.video-content .image{
+	overflow: hidden;
+}
+
+.video-content img {
+	margin: auto;
+    top: -10%;
+    right: -10%;
+    bottom: -10%;
+    left: -10%;
+	height: 135%;
+    position: absolute;
+}
+
+.video-content .description {
+	margin-left: 175px;
+}
+
 #bottom.artist .videos .video {
 	width: 345px;
 	background-image: url(../images/widget/video/background.png);
@@ -433,7 +451,12 @@
 }
 
 #bottom.artist .videos {
-	
+	width: 820px;
+	display: inline-block;
+}
+
+#bottom.artist .videos ul {
+	margin: 0px;
 }
 
 #bottom.artist .videos .video {
@@ -455,10 +478,26 @@
 
 .videos .video-previous a {
 	background-image: url(../images/widget/video/left.png);
+	height: 100%;
+    width: 100%;
+    display: block;
 }
 
-.videos .video-next a {
+.video-next, .video-previous {
+	height: 80px;
+    width: 30px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 17px;
+}
+
+.video-next a {
 	background-image: url(../images/widget/video/right.png);
+	background-repeat: no-repeat;
+	height: 100%;
+    width: 100%;
+    display: block;
+	
 }
 
 .video .decoLeft {
@@ -593,7 +632,7 @@
 	cursor: pointer;
 }
 
-.vertical-align>img {
+.vertical-align {
 	height: 80px;
 	width: 140px;
 	position: absolute;

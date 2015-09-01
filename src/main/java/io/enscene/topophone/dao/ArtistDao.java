@@ -52,9 +52,12 @@ public class ArtistDao extends AstractHardCoded<Artist> {
   }
 
   private List<Video> getVideos() {
-    return ImmutableList.of(new Video("2Y_Y1r6GxlE","/images/artists/lecommondiamond/video1.png",
-        "Clip \"le 1er clip\"<br /> Common diamond<br /> Elliot Broué / 2010"), new Video("RfswM1TKImw","/images/artists/lecommondiamond/video2.png",
-        "Clip \"AFTER ALL\"<br /> Common diamond<br /> Elliot Broué / 2010"));
+    return ImmutableList.of(
+        new Video("RfswM1TKImw", "Clip \"AFTER ALL\"<br /> Common diamond<br /> Elliot Broué / 2010"), 
+        new Video("l3kcrbm2aNc", ""), 
+        new Video("AKCVIaO7JzA", ""), 
+        new Video("2Y_Y1r6GxlE", "Clip \"le 1er clip\"<br /> Common diamond<br /> Elliot Broué / 2010"), 
+        new Video("zqI8G4HFMqE", ""));
   }
 
   private String getProfileImage(String id) {

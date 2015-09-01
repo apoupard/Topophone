@@ -129,8 +129,8 @@ function onNewSectionDisplay() {
 }
 
 function startCarousel() {
-	if ($('.jcarousel').size() > 0) {
-		$('.jcarousel').jcarousel({
+	if ($('.jcarousel-auto').size() > 0) {
+		$('.jcarousel-auto').jcarousel({
 			wrap : 'circular'
 		}).jcarouselAutoscroll({
 			interval : 3000,
@@ -138,6 +138,17 @@ function startCarousel() {
 			autostart : true
 		});
 	}
+	
+	if ($('.jcarousel-manual').size() > 0) {
+		$('.jcarousel-manual').jcarousel({
+			wrap : 'circular'
+		});
+	}
+	
+	$('.jcarousel-control-next').jcarouselControl({
+        target: '+=1'
+    });
+
 }
 function startSoundPlayer() {
 	if ($('.sm2-bar-ui').size() > 0) {

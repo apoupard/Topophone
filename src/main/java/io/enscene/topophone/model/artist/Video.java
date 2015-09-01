@@ -3,22 +3,15 @@ package io.enscene.topophone.model.artist;
 public class Video {
 
   private String youtubeId;
-  private String thumbnail;
   private String description;
 
-  public Video(String youtubeId, String thumbnail, String description) {
-    super();
-    this.youtubeId=youtubeId;
-    this.thumbnail = thumbnail;
+  public Video(String youtubeId, String description) {
+    this.youtubeId = youtubeId;
     this.description = description;
   }
 
   public String getThumbnail() {
-    return thumbnail;
-  }
-
-  public void setThumbnail(String thumbnail) {
-    this.thumbnail = thumbnail;
+    return new StringBuilder().append("https://i.ytimg.com/vi/").append(youtubeId).append("/hqdefault.jpg").toString();
   }
 
   public String getYoutubeVideo() {
