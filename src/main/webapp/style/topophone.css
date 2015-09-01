@@ -157,19 +157,25 @@ a, a:visited, a:hover {
 	height: 133px;
 }
 
-#top .headband .main {
+#top .headband {
+	height: 129px;
 	border: 2px solid black;
 	border-radius: 5px;
-	width: 1036px;
-	height: 137px;
+}
+
+#top .headband .main {
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
 }
 
 #top .logo {
 	z-index: 100;
 	height: 100px;
 	width: 100px;
-	top: 95px;
+	top: 85px;
 	left: -43px;
+	border-radius: 50px;
 }
 
 #page {
