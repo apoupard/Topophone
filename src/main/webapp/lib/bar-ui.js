@@ -390,7 +390,7 @@
         // selection
         selectedIndex: 0,
 
-        loopMode: false,
+        loopMode: true,
 
         timer: null
 
