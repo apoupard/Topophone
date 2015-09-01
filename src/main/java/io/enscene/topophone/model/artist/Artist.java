@@ -6,6 +6,7 @@ import java.util.List;
 
 public class Artist implements ResourceModel {
 
+  private String id;
   private String picture;
   private List<Media> medias;
   private List<Video> videos;
@@ -14,8 +15,11 @@ public class Artist implements ResourceModel {
   private String description;
   private Headband headband;
   private String contactEmail;
-  
-  public Artist(String picture, List<Media> medias, List<Song> songs, List<Concert> concerts, String description, Headband headband, String contactEmail, List<Video> videos) {
+
+  public Artist(String id, String picture, List<Media> medias, List<Song> songs,
+      List<Concert> concerts, String description, Headband headband, String contactEmail,
+      List<Video> videos) {
+    this.id = id;
     this.picture = picture;
     this.medias = medias;
     this.songs = songs;
@@ -23,7 +27,15 @@ public class Artist implements ResourceModel {
     this.description = description;
     this.headband = headband;
     this.contactEmail = contactEmail;
-    this.videos= videos; 
+    this.videos = videos;
+  }
+
+  public String getId() {
+    return id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
   }
 
   public String getPicture() {

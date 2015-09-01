@@ -317,15 +317,39 @@
 }
 
 .external-link .youtube {
-	background-image: url(../images/socnet/youtube.png);
+	background-image: url(/images/socnet/youtube.png);
 }
 
 .external-link .facebook {
-	background-image: url(../images/socnet/facebook.png);
+	background-image: url(/images/socnet/facebook.png);
 }
 
 .external-link .bandcamp {
-	background-image: url(../images/socnet/bandcamp.png);
+	background-image: url(/images/socnet/bandcamp.png);
+}
+
+.external-link.lecommondiamond .youtube {
+	background-image: url(/images/artists/lecommondiamond/youtube.png);
+}
+
+.external-link.lecommondiamond .facebook {
+	background-image: url(/images/artists/lecommondiamond/facebook.png);
+}
+
+.external-link.lecommondiamond .bandcamp {
+	background-image: url(/images/artists/lecommondiamond/bandcamp.png);
+}
+
+.external-link.ihr .youtube {
+	background-image: url(/images/artists/ihr/youtube.png);
+}
+
+.external-link.ihr .facebook {
+	background-image: url(/images/artists/ihr/facebook.png);
+}
+
+.external-link.ihr .bandcamp {
+	background-image: url(/images/artists/ihr/bandcamp.png);
 }
 
 /* accompanying */

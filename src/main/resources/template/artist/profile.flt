@@ -1,6 +1,6 @@
 <#import "/widget/image.flt" as images>
 <@images.image href=artist.picture />
-<div class="external-link">
+<div class="external-link ${artist.id}">
   <#list artist.medias as media>
     <a class="${media.id}" href="${media.href}"></a>
   </#list>

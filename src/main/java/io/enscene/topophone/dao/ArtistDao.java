@@ -30,7 +30,7 @@ public class ArtistDao extends AstractHardCoded<Artist> {
         ImmutableList.of(new Concert(new GregorianCalendar(2015, 06, 11).getTime(), "Club liberté",
             "Helsinki"), new Concert(new GregorianCalendar(2015, 06, 12).getTime(), "Mbar",
             "Helsinki"));
-    return new Artist(getProfileImage(id), getSocialMedia(id), getIhrSongs(), concerts, getDescription("artist",id),
+    return new Artist(id, getProfileImage(id), getSocialMedia(id), getIhrSongs(), concerts, getDescription("artist",id),
         getHeadband(id), "contact@ihr.com", getVideos());
   }
 
@@ -62,7 +62,7 @@ public class ArtistDao extends AstractHardCoded<Artist> {
   }
 
   private Headband getHeadband(String id) {
-    return new Headband("/images/artists/" + id + "/bandeau.jpg", "/images/artists/" + id
+    return new Headband("/images/artists/" + id + "/bandeau.png", "/images/artists/" + id
         + "/bandeauLogo.png");
   }
 
@@ -72,7 +72,7 @@ public class ArtistDao extends AstractHardCoded<Artist> {
         ImmutableList.of(new Concert(new GregorianCalendar(2015, 06, 11).getTime(), "Club liberté",
             "Helsinki"), new Concert(new GregorianCalendar(2015, 06, 12).getTime(), "Mbar",
             "Helsinki"));
-    return new Artist(getProfileImage(id), medias, getleCommonDiamondSongs(), concerts, getDescription("artist",id),
+    return new Artist(id, getProfileImage(id), medias, getleCommonDiamondSongs(), concerts, getDescription("artist",id),
         getHeadband(id), "contact@lecommundiamond.com", getVideos());
   }
 
