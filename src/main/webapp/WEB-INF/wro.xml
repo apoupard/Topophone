@@ -8,7 +8,7 @@
    		<js>classpath:META-INF/resources/webjars/perfect-scrollbar/0.6.4/js/perfect-scrollbar.jquery.js</js>
 		<js>/lib/bar-ui.js</js>
 		<js>/lib/page.js</js>
-<!--    		<js>/lib/topophone.js</js> -->
+   		<js>/lib/topophone.js</js>
    		
    		<css>classpath:META-INF/resources/webjars/perfect-scrollbar/0.6.4/css/perfect-scrollbar.min.css</css>
    		<css>/style/*.css</css>
