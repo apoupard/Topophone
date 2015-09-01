@@ -400,8 +400,8 @@
 }
 
 #bottom.artist .videos .video {
-	width: 350px;
-	background-image: url(../images/widget/video/background2.png);
+	width: 345px;
+	background-image: url(../images/widget/video/background.png);
 	background-repeat: repeat-x;
 	position: relative;
 	margin-left: 30px;
@@ -440,9 +440,9 @@
 .video .decoLeft {
 	position: absolute;
 	top: 0;
-	left: -18px;
+	left: -23px;
 	height: 100%;
-	width: 18px;
+	width: 23px;
 	background-image: url(../images/widget/video/backLeft.png);
 	background-repeat: no-repeat;
 }
@@ -450,9 +450,9 @@
 .video .decoRight {
 	position: absolute;
 	top: 0;
-	right: -20px;
+	right: -23px;
 	height: 100%;
-	width: 20px;
+	width: 23px;
 	background-image: url(../images/widget/video/backRight.png);
 	background-repeat: no-repeat;
 }
