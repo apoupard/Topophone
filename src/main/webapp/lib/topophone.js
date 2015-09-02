@@ -7,10 +7,7 @@ $(document).ready(function() {
 });
 
 function bindRoute() {
-	//page(window.contextUrl, showHome);
-	//page(window.contextUrl + '/*', show);
 	page('*', show);
-	
 	page({dispatch:false});
 	page(window.location.pathname);
 }
@@ -79,6 +76,7 @@ function show(ctx) {
 }
 
 function loadBlock(path) {
+	onBeforeNewSectionDisplay();
 	$.ajax({
 		method : "GET",
 		url : path,
@@ -122,6 +120,10 @@ function getContextUrl() {
 	return pathname.substring(0, index);
 }
 
+function onBeforeNewSectionDisplay() {
+	stopSoundPlayer();
+}
+
 function onNewSectionDisplay() {
 	startCarousel();
 	startSoundPlayer();
@@ -152,9 +154,17 @@ function startCarousel() {
 }
 function startSoundPlayer() {
 	if ($('.sm2-bar-ui').size() > 0) {
-		window.SM2BarPlayer($('.sm2-bar-ui')[0])
+		window.SM2BarPlayer($('.sm2-bar-ui')[0]);
 	}
 }
+
+function stopSoundPlayer() {
+	if (typeof soundManager != 'undefined') {
+		soundManager.stopAll();
+	}
+}
+
+
 function startShowVideo(url) {
 	if ($('.youtubePopup').attr('data') != url) {
 		$('.youtubePopup').attr('data', url);
