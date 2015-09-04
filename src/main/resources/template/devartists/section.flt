@@ -29,21 +29,7 @@
     <div class="side column-right">
       <@container.widgets>
         <@container.widget opacity=true gradient=false class='noPadding height-8'>
-          <div class="chiffres">
-	          <h3>L'attelier de création en chiffres</h3>
-	          <ul>
-	            <li class="chiffre">600</li>
-	            <li>jeunes impliqués sur 2013/14</li>
-	            <li class="chiffre">12</li>
-	            <li>projets création</li>
-	            <li class="chiffre">21</li>
-	            <li>structures bénéficiares</li>
-	            <li class="chiffre">42</li>
-	            <li>enregistrements réalisés</li>
-	            <li class="chiffre">22</li>
-	            <li>restitutions publiques organisées</li>
-	          </ul>
-          </div>
+          ${devartists.blockRight}
         </@container.widget>
        </@container.widgets>
     </div>

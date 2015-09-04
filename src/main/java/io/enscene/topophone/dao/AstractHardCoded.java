@@ -37,8 +37,12 @@ public abstract class AstractHardCoded<T extends ResourceModel> implements Resou
   }
 
   protected String getDescription(String objectName, String id) {
+    return getEnginedTemplate(objectName, "description", id);
+  }
+  
+  protected String getEnginedTemplate(String objectName, String templateName, String id) {
     try {
-      return engine.execute(objectName + "/" + id, Optional.of("description"), ImmutableMap.of());
+      return engine.execute(objectName + "/" + id, Optional.of(templateName), ImmutableMap.of());
     } catch (IOException | TemplateException e) {
       e.printStackTrace();
       return "";

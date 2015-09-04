@@ -164,8 +164,21 @@ function stopSoundPlayer() {
 	}
 }
 
+function stopSoundPlayer() {
+	if (typeof soundManager != 'undefined') {
+		soundManager.stopAll();
+	}
+}
+
+function pauseSoundPlayer() {
+	if (typeof soundManager != 'undefined') {
+		soundManager.pauseAll();
+	}
+}
+
 
 function startShowVideo(url) {
+	pauseSoundPlayer();
 	if ($('.youtubePopup').attr('data') != url) {
 		$('.youtubePopup').attr('data', url);
 	}

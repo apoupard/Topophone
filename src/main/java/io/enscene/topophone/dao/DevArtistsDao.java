@@ -19,9 +19,9 @@ public class DevArtistsDao extends AstractHardCoded<DevArtists> {
   @Override
   void init(Map<String, DevArtists> database) {
     database.put("presentation", new DevArtists("presentation", getDescription("devartists","presentation"),
-        "/images/education/creation.png", getHeadBand(), getArtistLinks(), getSubNav("presentation")));
+        "/images/education/creation.png", getHeadBand(), getArtistLinks(), getSubNav("presentation"), getRightBlock("presentation")));
     database.put("appscenic", new DevArtists("appscenic", getDescription("devartists","appscenic"),
-        "/images/education/meeting.png", getHeadBand(), getArtistLinks(), getSubNav("appscenic")));
+        "/images/education/meeting.png", getHeadBand(), getArtistLinks(), getSubNav("appscenic"), getRightBlock("appscenic")));
   }
 
   private List<ArtistLink> getArtistLinks() {
@@ -41,6 +41,8 @@ public class DevArtistsDao extends AstractHardCoded<DevArtists> {
         );
     return new Nav(entries);
   }
- 
 
+  private String getRightBlock(String id) {
+    return getEnginedTemplate("devartists","blockRight",id);
+  }
 }
