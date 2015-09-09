@@ -110,7 +110,7 @@ function getContextUrl() {
 	var pathname = window.location.pathname;
 	var index = pathname.indexOf('/appli');
 	if (index < 0) {
-		if(pathname.endsWith('/')){
+		if(endsWith(pathname, '/')){
 			pathname = pathname.substring(0, pathname.length - 1);
 		}
 		return pathname;
@@ -214,4 +214,8 @@ function handleImageCredit() {
 	$(".hasCredit").mouseout(function(elem) {
 		$(this).find(".credit").addClass('hidden');
 	});
+}
+
+function endsWith(value, suffix){
+	  return value.indexOf(suffix, value.length - suffix.length) !== -1;
 }
