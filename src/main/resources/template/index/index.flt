@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="${appcontext}/wro/all.css" />
 <script type="text/javascript" src="${appcontext}/wro/all.js"></script>
 
+<script type="text/javascript" src="${appcontext}/lib/topophone.js"></script>
 <!--
 <script type="text/javascript" src="${appcontext}/lib/topophone.js"></script>
 <script type="text/javascript" src="${appcontext}/lib/page.js"></script>

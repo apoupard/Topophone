@@ -114,7 +114,7 @@
 	background-size: 100% 100%;
 	background-color: #cfcdce;
 	border-radius: 5px;
-	/* 	opacity: 0.55 !important; */
+	opacity: 0.55 !important;
 }
 
 .widget .opacity {
@@ -124,11 +124,11 @@
 	margin: 0 auto;
 	top: 0;
 	left: 0;
-	opacity: 0.60;
+	opacity: 0.55;
 }
 
 .widget .opacity-wrap {
-	background-color: #fff1e4;
+	background-color: #ffffff;
 	border-radius: 5px;
 }
 
@@ -232,6 +232,31 @@
 	padding: 0px;
 	margin: 0px;
 	height: 100%;
+	position: relative;
+}
+
+.widget .image .credit{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background-color: #828282;
+    color: white;
+    width: 100%;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    text-align: center;
+}
+
+.education .widget .image .credit{
+	background-color: #9db477;
+}
+
+.accompanying .widget .image .credit {
+	background-color: #237587;
+}
+
+.devartists .widget .image .credit {
+	background-color: #237787;
 }
 
 .widget.medium-img .image {
@@ -377,18 +402,27 @@
 
 /* education */
 .education .widget {
-	border: 2px solid #618c00;
+	border: 2px solid #9db477;
 }
 
 .education .column-center .widget {
 	border-top: none;
 }
-/* devartists */
-/* .devartists .widget .opacity-wrap { */
-/* 	background-color: #c4d7d7; */
-/* } */
+
+.widget {
+	border: 2px solid #828282;
+}
+
+.artist .widget {
+	border: 0px;
+}
+
+.bottom .widget {
+	border: 0px;
+}
+
 .devartists .widget {
-	border: 2px solid #6ea2ad;
+	border: 2px solid #237787;
 }
 
 .devartists .internallinkImg {
@@ -398,6 +432,11 @@
 /* ARTIST SECTION */
 .artist .widget .opacity-wrap {
 	background-color: #8a8a8a;
+}
+
+.artist .widget .opacity-wrap-gradient {
+	background-color: #8a8a8a;
+	opacity: 0.85;
 }
 
 .artist .description p {
@@ -421,6 +460,8 @@
 
 #bottom.artist .videos .video .video-content {
 	width: 320px;
+	height: 105px;
+    position: relative;
 }
 
 .video-content .image{
@@ -451,7 +492,7 @@
 }
 
 #bottom.artist .videos {
-	width: 820px;
+	width: 815px;
 	display: inline-block;
 }
 
@@ -524,6 +565,8 @@
 	height: 80px;
 	width: 140px;
 	display: inline-block;
+	border-radius: 5px;
+	border: 2px solid black;
 }
 
 .widget-selected {
@@ -635,7 +678,7 @@
 .vertical-align {
 	height: 80px;
 	width: 140px;
-	position: absolute;
+	position: absolute !important;;
 	top: 50%;
 	transform: translate(0%, -50%);
 	left: 10px;
@@ -667,7 +710,8 @@
 
 /*Sub menu*/
 .subnav.selected {
-	background-color: #fff1e4;
+	background-color: #ffffff;
+    opacity: 0.90;
 }
 
 .ps-container:hover>.ps-scrollbar-y-rail {

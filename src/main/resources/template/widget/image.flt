@@ -1,9 +1,10 @@
-<#macro image href alt="" class="" onclick="" external=false>
-	<div class="image ${class}">
+<#macro image href credit="Test" alt="" class="" onclick=""  external=false>
+<div class="image hasCredit ${class}">
 	<#if external> 
     	<img alt="${alt}" src="${href}" onclick="${onclick}"></img>
     <#else>
     	<img alt="${alt}" src="${appcontext}${href}" onclick="${onclick}"></img>
     </#if>
-	</div>
+    <div class="credit hidden">Crédit: ${credit}</div>
+</div>
 </#macro>

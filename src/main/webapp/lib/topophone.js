@@ -4,6 +4,7 @@ $(document).ready(function() {
 	fillNav();
 	fillFooter();
 	bindRoute();
+	handleImageCredit();
 });
 
 function bindRoute() {
@@ -128,6 +129,7 @@ function onNewSectionDisplay() {
 	startCarousel();
 	startSoundPlayer();
 	enginePerfectScrollbar();
+	handleImageCredit();
 }
 
 function startCarousel() {
@@ -202,4 +204,14 @@ function resizeHeader() {
 	left.width(sideSize);
 	rigth.width(sideSize);
 
+}
+
+function handleImageCredit() {
+	$(".hasCredit").mouseover(function() {
+		$(this).find(".credit").removeClass('hidden');
+	});
+	
+	$(".hasCredit").mouseout(function(elem) {
+		$(this).find(".credit").addClass('hidden');
+	});
 }
