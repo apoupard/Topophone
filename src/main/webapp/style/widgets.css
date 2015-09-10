@@ -407,6 +407,12 @@
 	border: 2px solid #9db477;
 }
 
+.education .column-center .widget h3 {
+	color: #9db477;
+	border-bottom-color: #9db477;
+}
+	
+
 .education .column-center .widget {
 	border-top: none;
 }
@@ -425,6 +431,11 @@
 
 .devartists .widget {
 	border: 2px solid #237787;
+}
+
+.devartists .column-center .widget h3 {
+	color: #237787;
+	border-bottom-color: #237787;
 }
 
 .devartists .internallinkImg {
