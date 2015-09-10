@@ -1,4 +1,7 @@
 <#import "/widget/image.flt" as images>
+<div class="video-control video-previous">
+	<a href="#" class="jcarousel-control-previous"></a>
+</div>
 <div class="videos jcarousel jcarousel-manual">
 	<ul>
 		<#list artist.videos as video>
@@ -15,7 +18,7 @@
 		</#list>
 	</ul>
 </div>
-<div class="video-next">
+<div class="video-control video-next">
 	<a href="#" class="jcarousel-control-next"></a>
 </div>
 <div class="toHide youtubePanelBack hidden" onclick="$('.toHide').addClass('hidden');return false;"></div>

@@ -152,6 +152,9 @@ function startCarousel() {
 	$('.jcarousel-control-next').jcarouselControl({
         target: '+=1'
     });
+	$('.jcarousel-control-previous').jcarouselControl({
+        target: '-=1'
+    });
 
 }
 function startSoundPlayer() {

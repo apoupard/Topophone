@@ -478,11 +478,11 @@
 
 .video-content img {
 	margin: auto;
-    top: -10%;
-    right: -10%;
-    bottom: -10%;
-    left: -10%;
-	height: 135%;
+    top: -13px;
+    right: -13px;
+    bottom: -13px;
+    left: -13px;
+    height: 108px;
     position: absolute;
 }
 
@@ -517,22 +517,7 @@
 	height: 110px;
 }
 
-.videos .video-previous a, .videos .video-next a {
-	display: block;
-	height: 100%;
-	width: 100%;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-.videos .video-previous a {
-	background-image: url(../images/widget/video/left.png);
-	height: 100%;
-    width: 100%;
-    display: block;
-}
-
-.video-next, .video-previous {
+.video-control {
 	height: 80px;
     width: 30px;
     display: inline-block;
@@ -540,13 +525,19 @@
     margin-top: 17px;
 }
 
-.video-next a {
-	background-image: url(../images/widget/video/right.png);
+.video-control a {
 	background-repeat: no-repeat;
 	height: 100%;
     width: 100%;
     display: block;
-	
+}
+
+.video-previous a {
+	background-image: url(../images/widget/video/left.png);
+}
+
+.video-next a {
+	background-image: url(../images/widget/video/right.png);
 }
 
 .video .decoLeft {
@@ -596,8 +587,7 @@
 }
 
 .headband-carousel ul li img {
-	width: 175px;
-	/*     width: 346px; */
+	width: 259px;
 	height: 130px;
 }
 
@@ -692,24 +682,24 @@
 	left: 10px;
 }
 
-.blockRight.appscenic h3{
+.blockRight.appscenic h3 {
 	margin-top: 75px;
 	text-transform: uppercase;
 }
 
-.blockRight.appscenic div{
+.blockRight.appscenic div {
 	text-align: center;
 	text-transform: uppercase;
 	padding-left: 10px;
 	padding-right: 10px;
 }
 
-.blockRight.presentation h3{
+.blockRight.presentation h3 {
 	margin-top: 40px;
 	text-transform: uppercase;
 }
 
-.blockRight.presentation div{
+.blockRight.presentation div {
 	text-align: center;
 	padding-left: 10px;
 	padding-right: 10px;
