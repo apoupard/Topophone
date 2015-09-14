@@ -10,7 +10,12 @@
 				<div class="decoLeft"></div>
 				<div class="video-content">
 					<@images.image href=video.thumbnail onclick="startShowVideo('${video.youtubeVideo}');return false;" external=true class="clickable vertical-align"/>
-					<div class="description">${video.description}</div>
+					<div class="description">
+						<div class="row">${video.title}</div>
+						<div class="row">${video.date}</div>
+						<div class="row">${video.mix}</div>
+						<div class="row">${video.production}</div>
+					</div>
 				</div>
 				<div class="decoRight"></div>
 			</div>

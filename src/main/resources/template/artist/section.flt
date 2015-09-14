@@ -24,7 +24,7 @@
    </div>
 	<div class="side column-right">
       <@container.widgets>
-        <@container.widget opacity=true onlyBorder=true class="first">
+        <@container.widget opacity=true onlyBorder=true class="first perfect-scrollbar">
             <#include "/artist/concert.flt">          
         </@container.widget>
          <@container.widget opacity=true gradient=false class="height-1">

@@ -2,19 +2,22 @@
 <html>
 <head>
 <meta charset="utf-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Topophone</title>
 
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="google-site-verification" content="nqnxTQmZhr0vVfe4ms93UC2Dx7jWyymfFQuiEmi_RwI" />
+
+<title>Topophone, musiques actuelles</title>
+<meta name="description" content="Topophone promeut une musique basée sur l'échange et l'ouverture à l'autre." />
+<meta name="keywords" content="Topophone, Toulouse, Music, pop, éducation, Le Common Diamond" />
+
+<link rel="icon" type="image/png" href="${appcontext}/images/favicon.png" />
 <link rel="stylesheet" type="text/css" href="${appcontext}/wro/all.css" />
+
 <script type="text/javascript" src="${appcontext}/wro/all.js"></script>
-
 <script type="text/javascript" src="${appcontext}/lib/topophone.js"></script>
-<!--
-<script type="text/javascript" src="${appcontext}/lib/topophone.js"></script>
-<script type="text/javascript" src="${appcontext}/lib/page.js"></script>
-<script src="${appcontext}/lib/bar-ui.js"></script>
--->
-
 
 </head>
 <body>

@@ -192,6 +192,7 @@ function startShowVideo(url) {
 
 function enginePerfectScrollbar() {
 	$('.column-center .widget-content').perfectScrollbar();
+	$('.perfect-scrollbar .widget-content').perfectScrollbar();
 }
 
 function resizeHeader() {

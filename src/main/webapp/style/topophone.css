@@ -24,9 +24,9 @@ body {
 }
 
 body, table td, select {
-	font-family: Cabin, "Gill Sans", "Trebuchet MS", Verdana, Arial,
+	font-family: Cabin, "Gill Sans", Verdana, "Trebuchet MS", Arial,
 		"Lucida Grande", Tahoma, Helvetica, "Sans-Serif";
-		font-size: 85%;
+	font-size: 13.6px;
 	line-height: 140%;
 	letter-spacing: 0.03em;
 }

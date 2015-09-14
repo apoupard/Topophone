@@ -496,7 +496,13 @@
 }
 
 .video-content .description {
-	margin-left: 175px;
+	margin-left: 170px;
+    margin-right: 0;
+    margin-top: 15px;
+    display: inline-block;
+    width: 185px;
+    text-align: left;
+    font-size: 0.9em;
 }
 
 #bottom.artist .videos .video {
@@ -664,10 +670,6 @@
 	margin-top: -300px;
 	margin-left: -400px;
 	display: block;
-}
-
-.video .description {
-	display: inline-block;
 }
 
 .hidden {

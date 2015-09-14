@@ -3,11 +3,17 @@ package io.enscene.topophone.model.artist;
 public class Video {
 
   private String youtubeId;
-  private String description;
-
-  public Video(String youtubeId, String description) {
+  private String title;
+  private String date;
+  private String mix;
+  private String production;
+  
+  public Video(String youtubeId, String title, String date, String mix, String production) {
     this.youtubeId = youtubeId;
-    this.description = description;
+    this.title = title;
+    this.date = date;
+    this.mix = mix;
+    this.production = production;
   }
 
   public String getThumbnail() {
@@ -26,12 +32,37 @@ public class Video {
     this.youtubeId = youtubeId;
   }
 
-  public String getDescription() {
-    return description;
+  public String getTitle() {
+    return title;
   }
 
-  public void setDescription(String description) {
-    this.description = description;
+  public void setTitle(String title) {
+    this.title = title;
   }
+
+  public String getDate() {
+    return date;
+  }
+
+  public void setDate(String date) {
+    this.date = date;
+  }
+
+  public String getMix() {
+    return mix;
+  }
+
+  public void setMix(String mix) {
+    this.mix = mix;
+  }
+
+  public String getProduction() {
+    return production;
+  }
+
+  public void setProduction(String production) {
+    this.production = production;
+  }
+
 
 }

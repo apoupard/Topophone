@@ -1,8 +1,13 @@
 package io.enscene.topophone.model.artist;
 
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class Concert {
+
+  public static Concert of(int day, int month, int year, String place, String city) {
+    return new Concert(new GregorianCalendar(year, month, day).getTime(), place, city);
+  }
 
   private Date date;
   private String place;
