@@ -1,10 +1,14 @@
 <div class="blockRight appscenic">
-	<h3>Etape 1</h3>
-	<div>Travail du live</div>
+	<h3>MISE EN PLACE: </h3>
+	<h3 class="noBorder">Etape 1</h3>
+	<div>État des lieux et lancement de la mise en scène</div>
 
-	<h3>Etape 2</h3>
-	<div>Dégager l'univers <br>visuel du groupe</div>
+	<h3 class="noBorder">Etape 2</h3>
+	<div>Suivi de tournée et résidence de remédiation</div>
 
-	<h3>Etape 3</h3>
-	<div>Mise en scene du live</div>
+	<h3 class="noBorder">Etape 3</h3>
+	<div>Installation de l'univers visuel du groupe</div>
+	
+	<h3 class="noBorder">Etape 4</h3>
+	<div>Mise en place de la scénographie - Finalisation du live</div>
 </div>

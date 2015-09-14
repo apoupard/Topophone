@@ -1,16 +1,20 @@
-<#import "/widget/image.flt" as images>
 <h3>Présentation :</h3>
 <p>
-En parallèle au projet « Développement d'artistes », Topophone développe une action annexe de « Développement Scénique ». Celle-ci émane d'un constat réalisé sur les premières années de fonctionnement de Topophone. La plupart des groupes rencontrés se consacrent quasi-exclusivement à la partie musicale de leur projet, en n'envisageant que très rarement la scénographie de leur spectacle.
+En parallèle au projet « Développement d'artistes », Topophone développe une action de
+« Développement Scénique ». Celle-ci émane d'un constat réalisé sur les premières années de
+fonctionnement de Topophone. La plupart des groupes rencontrés se consacrent quasiexclusivement
+à la partie musicale de leur projet, en n'envisageant que très rarement la scénographie
+de leur spectacle. 
 </p>
 <p>
-Après avoir initié cette action dans le cadre du projet « Développement d'Artistes » Topophone a décidé développer ce volet à part entière et de le proposer à tout groupe désireux de travailler la mise en scène de son spectacle afin de construire un live ambitieux et authentique.
+Après avoir initié cette action dans le cadre du projet « Développement d'Artistes » Topophone a
+décidé développer ce volet à part entière et de le proposer à tout groupe désireux de travailler la
+mise en scène de son spectacle afin de construire un live ambitieux et authentique.
 </p>
 
 <h3>Objectifs généraux :</h3>
 <ul class="dash">
-<li>Questionner le groupe impliqué sur son identité scénique</li>
-<li Permettre à chaque groupe de développer la scénographie et la mise en scène de son projet</li>
+<li>Construire et finaliser le spectacle d'un groupe</li>
 <li>Donner à chaque groupe des clefs de développement de son spectacle</li>
 </ul>
 
@@ -74,15 +78,15 @@ Après avoir initié cette action dans le cadre du projet « Développement d'A
 
 <h3>Exemple d'accompagnement scénique mené : Le Common Diamond</h3>
 <p>
-ETAPE 1 : Résidence son/lumière + coaching scénique. Résidence au Bolégason à Castres septembre 2013.
+ETAPE 1 : Résidence son/lumière + coaching scénique. Résidence au Bolégason à Castres septembre 2013
 </p>
 <p>
-ETAPE 2 : Réflexions sur la partie visuelle du live, conceptualisation d'une scénographie reposant sur un diamant réfléchissant et équipés de LED à l'intérieur   
-                  et sur 5 barres LED posés au sol. Janvier à Juillet 2013
+ETAPE 2 : Réflexions sur la partie visuelle du live, conceptualisation d'une scénographie reposant sur un diamant retro-éclairé ainsi que sur 5 barres LED posées au sol. Janvier à Juillet 2014
 </p>
-<@images.image href="/images/devartists/scenicDesc1.png" />
 <p>
-ETAPE 3 : Livraison de la scénographie, synchronisation des éléments lumineux avec la musique, mise en scène du live. Résidence au Club à Rodez.
+ETAPE 3 : Conception de l'objet scénographique par l'Agence de Fabrication « Förma » Juillet/Août 2014
 </p>
-<@images.image href="/images/devartists/scenicDesc2.png" />
-
+<p>
+ETAPE 4 : Livraison de la scénographie, synchronisation des éléments lumineux, mise en scène du live. Résidence au Club à Rodez
+Septembre 2014
+</p>

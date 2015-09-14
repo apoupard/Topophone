@@ -7,12 +7,19 @@ public class Main implements ResourceModel {
 
   private final HeadbandCarousel headband;
   
-  public Main(HeadbandCarousel headband) {
+  private String description;
+  
+  public Main(HeadbandCarousel headband, String description) {
     this.headband = headband;
+    this.description = description;
   }
 
   public HeadbandCarousel getHeadbandCarousel() {
     return headband;
   }
-  
+
+  public String getDescription() {
+    return description;
+  }
+ 
 }

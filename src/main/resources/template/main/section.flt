@@ -8,37 +8,33 @@
 <div id="page" class="association">
     <div class="side column-left">
       <@container.widgets>
-        <@container.widget opacity=true gradient=false>
-        </@container.widget>
-        <@container.widget opacity=true gradient=false>
+        <@container.widget opacity=true gradient=false class="height-8">
+        	<div class="blockRight presentation">
+	        	<h3>Action <br>Développer d'artiste :</h3>
+				<div>Booking</div>
+				<div>Scénographie et Mise en scène</div>
+				<div>Demandes de financement</div>
+				<div>Coordination du projet</div>
+			</div>
         </@container.widget>
       </@container.widgets>
     </div>
     <div class="column-center">
        <@container.widgets>
          <@container.widget opacity=true gradient=false>
-			<h3>Présentation:</h3>
-			<p>Topophone est une association toulousaine créée en juillet 2012.</p>
-			<p>Son action est structurée en 2 volets :</p>
-			<p>Elle met en place un projet de développement scénique et professionnel auprès de groupes en développement de la région Midi-Pyrénées, en s’appuyant sur un réseau de partenaires professionnels de la musique.</p>
-			<p>Plus d'inforations sur le projet Développement d'Artistes : (icône cliquable?)</p>
-			<p>En parallèle, Topophone met en place des actions d'éducation par la musique à destination des structures scolaires, péri- et extrascolaires de la région Midi-Pyrénées.</p>
-			<p>Plus d'inforations sur le projet Actions Educatives : (icône cliquable?)</p>
+			${main.description}
          </@container.widget>
        </@container.widgets>
     </div>
     <div class="side column-right">
       <@container.widgets>
-        <@container.widget opacity=true gradient=false>
-          <div class="chiffres">
-	          <h3>Objectifs :</h3>
-	          <ul class="dash">
-	            <li>Développer le projet artistique et professionnel des groupes accompagnés</li>
-	            <li>Utiliser la musique comme un vecteur de partage et d'ouverture à l'autre</li>
-	            <li>Sensibiliser les artistes à la mise en place d'actions de partage et de transmission auprès de jeunes</li>
-	            <li>Utiliser la musique comme un vecteur d'éducation et de citoyennete</li>
-	          </ul>
-          </div>
+        <@container.widget opacity=true gradient=false class="height-8">
+        	<div class="blockRight presentation">
+				<h3>Action <br>Action éducatives :</h3>
+				<div>Rencontres d'Artistes Professionnels</div>
+				<div>Enregistrement de sa création en studio</div>
+				<div>Participation à l’événement Topophone de fin d'année</div>
+			</div>
         </@container.widget>
        </@container.widgets>
     </div>

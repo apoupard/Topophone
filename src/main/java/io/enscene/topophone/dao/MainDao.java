@@ -12,7 +12,7 @@ public class MainDao extends AstractHardCoded<Main> {
 
   @Override
   void init(Map<String, Main> database) {
-    database.put("1", new Main(new HeadbandCarousel(getDevArtistsHeadbandImages(), "/images/education/headbandlogo.png")));
+    database.put("1", new Main(new HeadbandCarousel(getDevArtistsHeadbandImages(), "/images/education/headbandlogo.png"), getEnginedTemplate("main", "description")));
   }
   
 }
