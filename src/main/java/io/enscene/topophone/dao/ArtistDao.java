@@ -25,12 +25,11 @@ public class ArtistDao extends AstractHardCoded<Artist> {
   }
 
   private Artist getInternationalHyperRythmique(String id) {
-    List<Concert> concerts =
-        getCommonDiamondConcerts();
-    return new Artist(id, getProfileImage(id), getSocialMedia(id), getIhrSongs(), concerts, getDescription("artist",id),
-        getHeadband(id), "contact@ihr.com", getVideos());
+    return new Artist(id, getProfileImage(id), getSocialMedia(id), getIhrSongs(), getIhrConcert(), getDescription("artist",id),
+        getHeadband(id), "contact@ihr.com", getIhrVideos());
   }
-
+  
+  
   private List<Song> getIhrSongs() {
     List<Song> songs = new ArrayList<>();
     songs.add(new Song("Cowboy", "music/ihr/cowboy.wav"));
@@ -48,12 +47,21 @@ public class ArtistDao extends AstractHardCoded<Artist> {
     return songs;
   }
 
-  private List<Video> getVideos() {
+  private List<Video> getCommonDiamondVideos() {
     return ImmutableList.of(
         new Video("RfswM1TKImw", "\"AFTER ALL\""," Avril 2014 "," Mix. A.Workman & A.Libeyre "," Elliot Broué"), 
         new Video("l3kcrbm2aNc", "\"SCANDINAVIA\" "," Octobre 2014 "," Live @ Le Bikini "," Réal. Ypok"), 
         new Video("AKCVIaO7JzA", "\"KILL US TONIGHT\" "," Avril 2015 "," Live @ Le Printemps de Bourges "," Réal. Le Printemps de Bourges"), 
         new Video("2Y_Y1r6GxlE", "\"GO OUT FOR A WALK\" "," Mai 2012 "," Mix. Thom La Juv's "," Mix. Thom La Juv's"));
+  }
+  
+  private List<Video> getIhrVideos() {
+    return ImmutableList.of(
+        new Video("Z5vk0QCY8zk", "\"COWBOYS\"","Mars 2013","","Réal. P. Gilbert"), 
+        new Video("QGP4n2mxln0", "\"NORMA JEAN\" ","Mars 2014","","Réal. Mamy Scopitone "), 
+        new Video("bGZvlud8lIE", "\"STONE AND DUST\" ","Septembre 2014","","Réal. P. Gilbert"), 
+        new Video("VJ3pbTeSIJI", "\"THE BOAT\" ","Juin 2015","Live @ Espace Bonnefoy","Réal. Ypok"), 
+        new Video("l7ocDe3Qleg", "\"COWBOYS\" ","Juin 2015","Live @ Espace Bonnefoy"," Réal. Ypok"));
   }
   
   private String getProfileImage(String id) {
@@ -69,7 +77,7 @@ public class ArtistDao extends AstractHardCoded<Artist> {
     List<Concert> concerts =
         getCommonDiamondConcerts();
     return new Artist(id, getProfileImage(id), medias, getleCommonDiamondSongs(), concerts, getDescription("artist",id),
-        getHeadband(id), "contact@lecommundiamond.com", getVideos());
+        getHeadband(id), "contact@lecommundiamond.com", getCommonDiamondVideos());
   }
 
   private ImmutableList<Concert> getCommonDiamondConcerts() {
@@ -88,6 +96,24 @@ public class ArtistDao extends AstractHardCoded<Artist> {
         Concert.of(15,1,2015,"Le Bikini", "Ramonville Saint-Agne – w/Sébastien Tellier"),
         Concert.of(11,1,2015,"Le Festi'Val De Marne – JIMI", "Ivry sur Seine"));
   }
+  
+  private ImmutableList<Concert> getIhrConcert() {
+    return ImmutableList.of(
+        Concert.of(16,11,2015,"Les 3 Baudets", "Paris"), 
+        Concert.of(28,6,2015,"La Dynamo", "Toulouse – w/Alpaga"), 
+        Concert.of(8,4,2015,"Le Coeur de Boeuf", "Lons Le Saunier"), 
+        Concert.of(17,1,2015,"Le Chapeau Rouge", "Carcassonne"), 
+        Concert.of(29,11,2014,"Le Bus Palladium", "Paris – w/Le Common Diamond"), 
+        Concert.of(25,11,2014,"Le Bikini", "Ramonville Saint-Agne – w/Emilie Simon"), 
+        Concert.of(7,11,2014,"L'Escapade", "Hénin Beaumont – w/Le Common Diamond"), 
+        Concert.of(04,11,2014,"L'Espace Bonnefoy", "Toulouse – w/The Telescopes"), 
+        Concert.of(28,10,2014,"La Dynamo", "Toulouse – w/Sebadoh"), 
+        Concert.of(11,10,2014,"Celtic Pub", "Tarbes"), 
+        Concert.of(2,8,2014,"Festival de Carcassonne", "Carcassonne – w/Kavinsky"), 
+        Concert.of(5,07,2014,"Festival Les Brasseurs du Lac", "Villeneuve Tolosane"));
+  }
+  
+
   
   private List<Media> getSocialMedia(String id) {
     List<Media> medias =
