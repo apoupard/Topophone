@@ -93,6 +93,16 @@
 }
 
 .widget ul.dash>li:before {
+	content: "•";
+	position: absolute;
+	margin-left: -1em;
+}
+
+.widget .widget-content ul.dash li ul {
+	margin: 10px 0px 0px 20px;
+}
+
+.widget ul.dash li ul>li:before {
 	content: "-";
 	position: absolute;
 	margin-left: -1em;
@@ -239,19 +249,19 @@
 	position: relative;
 }
 
-.widget .image .credit{
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    background-color: #828282;
-    color: white;
-    width: 100%;
-    border-bottom-right-radius: 2px;
-    border-bottom-left-radius: 2px;
-    text-align: center;
+.widget .image .credit {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	background-color: #828282;
+	color: white;
+	width: 100%;
+	border-bottom-right-radius: 2px;
+	border-bottom-left-radius: 2px;
+	text-align: center;
 }
 
-.education .widget .image .credit{
+.education .widget .image .credit {
 	background-color: #9db477;
 }
 
@@ -272,8 +282,13 @@
 	text-align: center;
 }
 
+.widget .chiffres h3 {
+	margin-top: 15px;
+}
+
 .widget .chiffres .chiffre {
 	font-size: 1.3em;
+	margin-top: 20px;
 }
 
 /* concerts */
@@ -319,7 +334,7 @@
 	width: 100%;
 	transform: translate(-50%, -50%);
 	-ms-transform: translate(-50%, -50%);
-	-webkit-transform:translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
 }
 
 /* objectives */
@@ -415,7 +430,6 @@
 	color: #9db477;
 	border-bottom-color: #9db477;
 }
-	
 
 .education .column-center .widget {
 	border-top: none;
@@ -478,31 +492,31 @@
 #bottom.artist .videos .video .video-content {
 	width: 320px;
 	height: 105px;
-    position: relative;
+	position: relative;
 }
 
-.video-content .image{
+.video-content .image {
 	overflow: hidden;
 }
 
 .video-content img {
 	margin: auto;
-    top: -13px;
-    right: -13px;
-    bottom: -13px;
-    left: -13px;
-    height: 108px;
-    position: absolute;
+	top: -13px;
+	right: -13px;
+	bottom: -13px;
+	left: -13px;
+	height: 108px;
+	position: absolute;
 }
 
 .video-content .description {
 	margin-left: 170px;
-    margin-right: 0;
-    margin-top: 15px;
-    display: inline-block;
-    width: 185px;
-    text-align: left;
-    font-size: 0.9em;
+	margin-right: 0;
+	margin-top: 15px;
+	display: inline-block;
+	width: 185px;
+	text-align: left;
+	font-size: 0.9em;
 }
 
 #bottom.artist .videos .video {
@@ -534,17 +548,17 @@
 
 .video-control {
 	height: 80px;
-    width: 30px;
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 17px;
+	width: 30px;
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 17px;
 }
 
 .video-control a {
 	background-repeat: no-repeat;
 	height: 100%;
-    width: 100%;
-    display: block;
+	width: 100%;
+	display: block;
 }
 
 .video-previous a {
@@ -627,7 +641,7 @@
 	width: 20000em;
 	position: relative;
 	/* Optional, required in this case since it's a <ul> element */
-	list-style : none;
+	list-style: none;
 	margin: 0;
 	padding: 0;
 }
@@ -691,11 +705,11 @@
 	top: 50%;
 	transform: translate(0%, -50%);
 	-ms-transform: translate(0%, -50%);
-	-webkit-transform:translate(0%, -50%);
+	-webkit-transform: translate(0%, -50%);
 	left: 10px;
 }
 
-.blockRight.appscenic h3 {
+.blockRight h3 {
 	margin-top: 40px;
 	text-transform: uppercase;
 }
@@ -710,11 +724,6 @@
 	padding-right: 10px;
 }
 
-.blockRight.presentation h3 {
-	margin-top: 40px;
-	text-transform: uppercase;
-}
-
 .blockRight.presentation div {
 	text-align: center;
 	padding-left: 10px;
@@ -725,7 +734,7 @@
 /*Sub menu*/
 .subnav.selected {
 	background-color: #ffffff;
-    opacity: 0.90;
+	opacity: 0.90;
 }
 
 .ps-container:hover>.ps-scrollbar-y-rail {
