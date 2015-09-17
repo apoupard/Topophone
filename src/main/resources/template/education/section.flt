@@ -4,6 +4,7 @@
 <#import "/widget/image.flt" as images>
 <#import "/widget/subnav.flt" as subnav>
 <#import "/widget/audio.flt" as audio>
+<#import "/widget/video.flt" as video>
 <div id="top">
   <@top.headbandCarousel logo=education.headbandCarousel.logo images=education.headbandCarousel.images/>
 </div>
@@ -44,7 +45,7 @@
           </div>
         </@container.widget>
         <@container.widget opacity=true gradient=false class='noPadding height-3'>
-          <@images.image href=education.image />
+         	<@video.youtube thumbnail=education.video.thumbnail url=education.video.youtubeVideo/>
         </@container.widget>
        </@container.widgets>
     </div>

@@ -2,20 +2,24 @@
 <#import "/widget/headbandCarousel.flt" as top>
 <#import "/widget/internallink.flt" as link>
 <#import "/widget/image.flt" as images>
+<#import "/widget/video.flt" as video>
 <div id="top">
   <@top.headbandCarousel logo=main.headbandCarousel.logo images=main.headbandCarousel.images/>
 </div>
 <div id="page" class="association">
     <div class="side column-left">
       <@container.widgets>
-        <@container.widget opacity=true gradient=false class="height-8">
+        <@container.widget opacity=true gradient=false class="height-5">
         	<div class="blockRight presentation">
-	        	<h3>Action <br>Développer d'artiste :</h3>
+	        	<h3>Développement d'Artistes</h3>
 				<div>Booking</div>
 				<div>Scénographie et Mise en scène</div>
 				<div>Demandes de financement</div>
 				<div>Coordination du projet</div>
 			</div>
+        </@container.widget>
+        <@container.widget opacity=true gradient=false class="height-3">
+        	<@video.youtube thumbnail=main.videoLeft.thumbnail url=main.videoLeft.youtubeVideo/>
         </@container.widget>
       </@container.widgets>
     </div>
@@ -28,13 +32,16 @@
     </div>
     <div class="side column-right">
       <@container.widgets>
-        <@container.widget opacity=true gradient=false class="height-8">
+        <@container.widget opacity=true gradient=false class="height-5">
         	<div class="blockRight presentation">
-				<h3>Action <br>Action éducatives :</h3>
+				<h3>Actions éducatives</h3>
 				<div>Rencontres d'Artistes Professionnels</div>
 				<div>Enregistrement de sa création en studio</div>
 				<div>Participation à l’événement Topophone de fin d'année</div>
 			</div>
+        </@container.widget>
+        <@container.widget opacity=true gradient=false class="height-3">
+        	<@video.youtube thumbnail=main.videoRight.thumbnail url=main.videoRight.youtubeVideo/>
         </@container.widget>
        </@container.widgets>
     </div>

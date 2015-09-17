@@ -50,7 +50,6 @@ a, a:visited, a:hover {
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position: left bottom;
-	background-image: url(../images/background/default.jpg);
 	bottom: 0px;
 	left: 0px;
 	background-size: cover;
@@ -58,6 +57,10 @@ a, a:visited, a:hover {
 	width: 100%;
 	position: fixed;
 	z-index: -1000;
+}
+
+#background {
+	background-image: url(../images/background/presentation.jpg);
 }
 
 #background.devartists {
@@ -75,6 +78,8 @@ a, a:visited, a:hover {
 #background.education {
 	background-image: url(../images/background/education.jpg);
 }
+
+
 
 #site {
 	height: 100%;

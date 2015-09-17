@@ -1,0 +1,11 @@
+<#macro youtube thumbnail url>
+<div class="video-youtube">
+	<@images.image href=thumbnail onclick="startShowVideo('${url}');return false;" external=true class="clickable vertical-align"/>
+	<@images.image href="/images/widget/video/play.png" class="clickable vertical-align play"/>
+</div>
+<div class="toHide youtubePanelBack hidden" onclick="$('.toHide').addClass('hidden');return false;"></div>
+<div class="toHide youtubePanel hidden" >
+  <object class="youtubePopup" type="application/x-shockwave-flash" data="">
+  </object>
+</div>
+</#macro>

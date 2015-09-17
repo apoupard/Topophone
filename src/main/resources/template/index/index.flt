@@ -14,7 +14,12 @@
 <meta name="keywords" content="Topophone, Toulouse, Music, pop, éducation, Le Common Diamond" />
 
 <link rel="icon" type="image/png" href="${appcontext}/images/favicon.png" />
+
 <link rel="stylesheet" type="text/css" href="${appcontext}/wro/all.css" />
+
+<link rel="stylesheet" type="text/css" href="${appcontext}/style/fonts.css" />
+<link rel="stylesheet" type="text/css" href="${appcontext}/style/topophone.css" />
+<link rel="stylesheet" type="text/css" href="${appcontext}/style/widgets.css" />
 
 <script type="text/javascript" src="${appcontext}/wro/all.js"></script>
 <script type="text/javascript" src="${appcontext}/lib/topophone.js"></script>

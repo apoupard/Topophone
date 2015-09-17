@@ -3,6 +3,7 @@ package io.enscene.topophone.dao;
 import io.enscene.topophone.model.Education;
 import io.enscene.topophone.model.Nav;
 import io.enscene.topophone.model.NavEntry;
+import io.enscene.topophone.model.Youtube;
 import io.enscene.topophone.model.artist.HeadbandCarousel;
 import io.enscene.topophone.model.artist.Song;
 
@@ -20,13 +21,17 @@ public class EducationDao extends AstractHardCoded<Education> {
   @Override
   void init(Map<String, Education> database) {
     database.put("creation", new Education("creation", "/images/education/educationImageLeft.png",
-        getDescription("education", "creation"), "/images/education/creation.png", getHeadBand(), getSubNav("creation"), getSongs()));
+        getDescription("education", "creation"), getVideo(), getHeadBand(), getSubNav("creation"), getSongs()));
     database.put("meeting", new Education("meeting", "/images/education/educationImageLeft.png",
-        getDescription("education", "meeting"), "/images/education/meeting.png", getHeadBand(), getSubNav("meeting"), getSongs()));
+        getDescription("education", "meeting"), getVideo(), getHeadBand(), getSubNav("meeting"), getSongs()));
     database.put("presentation",
         new Education("presentation", "/images/education/educationImageLeft.png",
-            getDescription("education", "presentation"), "/images/education/meeting.png",
+            getDescription("education", "presentation"), getVideo(),
             getHeadBand(), getSubNav("presentation"), getSongs()));
+  }
+  
+  private Youtube getVideo(){
+    return new Youtube("31o3xo3Lohg");
   }
 
   private List<Song> getSongs() {

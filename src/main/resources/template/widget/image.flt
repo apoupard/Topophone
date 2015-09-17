@@ -4,7 +4,7 @@
     	<img alt="${alt}" src="${href}" onclick="${onclick}"></img>
     <#else>
     	<img alt="${alt}" src="${appcontext}${href}" onclick="${onclick}"></img>
+    	<div class="credit hidden">Crédit: ${credit}</div>
     </#if>
-    <div class="credit hidden">Crédit: ${credit}</div>
 </div>
 </#macro>

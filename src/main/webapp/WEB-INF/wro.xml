@@ -11,6 +11,6 @@
 <!--    		<js>/lib/topophone.js</js> -->
    		
    		<css>classpath:META-INF/resources/webjars/perfect-scrollbar/0.6.4/css/perfect-scrollbar.min.css</css>
-   		<css>/style/*.css</css>
+   		<css>/style/bar-ui.css</css>
     </group>
 </groups>       

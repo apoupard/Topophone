@@ -3,11 +3,11 @@
   font-family: 'Cabin';
   font-style: normal;
   font-weight: 500;
-  src: url('/fonts/cabin-v7-latin-500.eot'); /* IE9 Compat Modes */
-  src: local('Cabin Medium'), local('Cabin-Medium'),
-       url('/fonts/cabin-v7-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/fonts/cabin-v7-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/fonts/cabin-v7-latin-500.woff') format('woff'), /* Modern Browsers */
-       url('/fonts/cabin-v7-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/fonts/cabin-v7-latin-500.svg#Cabin') format('svg'); /* Legacy iOS */
+  src: url('fonts/cabin-v7-latin-500.eot'); /* IE9 Compat Modes */
+  src: local('Cabin'), local('Cabin'),
+       url('fonts/cabin-v7-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/cabin-v7-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/cabin-v7-latin-500.woff') format('woff'), /* Modern Browsers */
+       url('fonts/cabin-v7-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/cabin-v7-latin-500.svg#Cabin') format('svg'); /* Legacy iOS */
 }

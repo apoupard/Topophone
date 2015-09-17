@@ -11,16 +11,16 @@ public class Education implements ResourceModel {
   private String id;
   private String imageLeft;
   private String description;
-  private String image;
+  private Youtube video;
   private HeadbandCarousel headbandCarousel;
   private Nav subNav;
   private List<Song> songs;
 
-  public Education(String id, String imageLeft, String description, String image, HeadbandCarousel headbandCarousel, Nav subNav, List<Song> songs) {
+  public Education(String id, String imageLeft, String description, Youtube video, HeadbandCarousel headbandCarousel, Nav subNav, List<Song> songs) {
     this.id = id;
     this.imageLeft = imageLeft;
     this.description = description;
-    this.image = image;
+    this.video = video;
     this.headbandCarousel = headbandCarousel;
     this.subNav = subNav;
     this.songs = songs;
@@ -42,12 +42,12 @@ public class Education implements ResourceModel {
     this.description = description;
   }
 
-  public String getImage() {
-    return image;
+  public Youtube getVideo() {
+    return video;
   }
 
-  public void setImage(String image) {
-    this.image = image;
+  public void setVideo(Youtube video) {
+    this.video = video;
   }
 
   public String getId() {
