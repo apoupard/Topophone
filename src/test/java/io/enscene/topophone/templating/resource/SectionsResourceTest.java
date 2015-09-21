@@ -54,8 +54,8 @@ public class SectionsResourceTest {
     Assertions
         .assertThat(href)
         .contains(
-            "<li><a onclick=\"document.getElementById('institutionnels').scrollIntoView()\">Institutionnels</a></li>")
-        .contains(String.format("<img src=\"%simages/partners/fse.png\"/>", deploymentURL.getPath()));
+            "<a onclick=\"document.getElementById('financiers').scrollIntoView()\">Financiers</a>")
+        .contains(String.format("<img src=\"%simages/partners/mapcu.png\"/>", deploymentURL.getPath()));
   }
   
   @Test
