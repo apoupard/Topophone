@@ -9,7 +9,7 @@
 			<div class="video">
 				<div class="decoLeft"></div>
 				<div class="video-content">
-					<@images.image href=video.thumbnail onclick="startShowVideo('${video.youtubeVideo}');return false;" external=true class="clickable vertical-align"/>
+					<@images.image href=video.thumbnail onclick="startShowVideo('${video.youtubeVideo}');return false;" hasCredit=false external=true class="clickable vertical-align"/>
 					<div class="description">
 						<div class="row">${video.title}</div>
 						<div class="row">${video.date}</div>

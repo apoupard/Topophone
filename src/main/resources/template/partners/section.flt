@@ -1,23 +1,27 @@
 <#import "/container/widgets.flt" as container>
 <#import "/widget/headbandCarousel.flt" as top>
+<#import "/widget/image.flt" as images>
 <div id="top">
   <@top.headbandCarousel logo=partners.headbandCarousel.logo images=partners.headbandCarousel.images/>
 </div>
 <div id="page" class="partners">
   <div class="side column-left">
     <@container.widgets>
-      <@container.widget opacity=true gradient=false>
-       <ul>
-	      <#list partners.partnersByInstitution?keys as institution>
-	        <li><a onclick="document.getElementById('${institution.code}').scrollIntoView()">${institution.displayName}</a></li>
-	      </#list>
-        </ul>
+      <#list partners.partnersByInstitution?keys as institution>
+        <@container.widget opacity=true class='subnav height-1'>
+        	<div class="internallink">
+	          <a onclick="document.getElementById('${institution.code}').scrollIntoView()">${institution.displayName}</a>
+	        </div>
+        </@container.widget>
+      </#list>
+      <@container.widget opacity=true class='noPadding height-6'>
+          <@images.image href="/images/education/educationImageLeft.png" />
       </@container.widget>
     </@container.widgets>
   </div>
   <div class="column-center">
     <@container.widgets>
-      <@container.widget opacity=true gradient=false>
+      <@container.widget opacity=true>
         <#list partners.partnersByInstitution?keys as key>
           <div class="institution">
             <h3 id="${key.code}">${key.displayName}</h3>
@@ -31,6 +35,13 @@
   </div>
   <div class="side column-right">
     <@container.widgets>
+      <@container.widget opacity=true class='noPadding height-8'>
+	    <div class="blockRight presentation">
+		  <h3>Mécenat</h3>
+		  <div>Vous pouvez soutenir Topophone à travers des actions de mécénat associatif qui ouvrent droit à des mesures de défiscalisation.</div>
+		  <div>N’hésitez pas à nous contacter pour tout renseignement au 06.51.44.52.31 ou <a href="mailto:contact@topophone.fr">contact@topophone.fr</a></div>
+	    </div>
+      </@container.widget>
     </@container.widgets>
   </div>
 </div>

@@ -123,13 +123,13 @@
 	border-radius: 5px;
 }
 
-.widget .opacity-wrap-gradient-border {
-	background-image: url(../images/artists/backgroundBorder.png);
-	background-position: top center;
-	background-size: 100% 100%;
+.widget .opacity-wrap-border {
+	border: 2px solid black;
 	background-color: #cfcdce;
 	border-radius: 5px;
 	opacity: 0.55 !important;
+	width: 216px !important;
+	height: 380px !important;
 }
 
 .widget .opacity {
@@ -178,11 +178,11 @@
 	border-top-right-radius: 0px;
 }
 
-.column-center .widget h3 {
+.widget h3 {
 	margin-top: 25px;
 	margin-bottom: 10px;
 	color: black;
-	border-bottom: 1px solid #828282;
+	border-bottom: 1px solid black;
 	text-transform: uppercase;
 }
 
@@ -211,10 +211,8 @@
 }
 
 .side .widget h3 {
-	color: black;
 	text-align: center;
 	display: block;
-	border-bottom: 1px solid white;
 }
 
 /* partners */
@@ -261,6 +259,11 @@
 	border-bottom-right-radius: 2px;
 	border-bottom-left-radius: 2px;
 	text-align: center;
+	opacity: 0.55;
+}
+
+.artist .widget .image .credit {
+	background-color: black;
 }
 
 .education .widget .image .credit {
@@ -311,7 +314,13 @@
 
 /* internallink */
 .widget .internallink {
-	padding: 5px 5px 5px 5px;
+	position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.widget.subnav .internallink a{
+    width: 200px;
 }
 
 .widget .internallink a, .widget .internallink a:VISITED {
@@ -320,6 +329,13 @@
 	text-align: center;
 	display: block;
 	font-weight: bold;
+	position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
 }
 
 /* artistContact */
@@ -396,8 +412,6 @@
 	background-image: url(../images/artists/ihr/bandcamp.png);
 }
 
-
-
 /* accompanying */
 .association .column-left .widget .opacity-wrap {
 	background-color: #93d6d8;
@@ -406,7 +420,6 @@
 .association .column-right .widget .opacity-wrap {
 	background-color: #aee582;
 }
-
 
 /* accompanying */
 .accompanying .widget .opacity-wrap {
@@ -436,7 +449,11 @@
 	border: 2px solid #9db477;
 }
 
-.education .column-center .widget h3 {
+.education .widget .image {
+	height: initial;
+}
+
+.education .widget h3 {
 	color: #9db477;
 	border-bottom-color: #9db477;
 }
@@ -449,7 +466,7 @@
 	border: 2px solid black;
 }
 
-.artist .column-center .widget h3 {
+.artist .widget h3 {
 	color: white;
 	border-bottom-color: white;
 }
@@ -466,7 +483,7 @@
 	border: 2px solid #237787;
 }
 
-.devartists .column-center .widget h3 {
+.devartists .widget h3 {
 	color: #237787;
 	border-bottom-color: #237787;
 }
@@ -475,9 +492,14 @@
 	padding: 0px !important;
 }
 
+.devartists .column-left .widget img {
+	height: initial;
+}
+
 /* ARTIST SECTION */
 .artist .widget .opacity-wrap {
-	background-color: #8a8a8a;
+	background-color: black;
+	opacity: 0.50;
 }
 
 .artist .description p {
@@ -663,26 +685,27 @@
 
 /* Video youtube */
 .widget .video-youtube {
-    height: 100%;
-    width: 100%;
-    position: relative;
+	height: 100%;
+	width: 100%;
+	position: relative;
 }
+
 .widget .video-youtube .image {
-    height: 215px;
-    width: 222px;
-    left: -2px;
+	height: 215px;
+	width: 222px;
+	left: -2px;
 }
 
 .widget .video-youtube .play {
-    height: 70px;
-    width: 70px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    opacity: 0.65;
+	height: 70px;
+	width: 70px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	opacity: 0.65;
 }
 
 /* Video artist */
@@ -735,7 +758,7 @@
 .vertical-align {
 	height: 80px;
 	width: 140px;
-	position: absolute !important;;
+	position: absolute !important;
 	top: 50%;
 	transform: translate(0%, -50%);
 	-ms-transform: translate(0%, -50%);
@@ -743,8 +766,8 @@
 	left: 10px;
 }
 
-.column-left h3, .column-right h3{
-    margin-top: 15px;
+.column-left h3, .column-right h3 {
+	margin-top: 15px;
 }
 
 .blockRight.appscenic h3.noBorder {
@@ -773,4 +796,12 @@
 .ps-container:hover>.ps-scrollbar-y-rail {
 	background-color: #eee;
 	opacity: 0.9;
+}
+
+.contacts .column-center {
+	 text-align: center;
+}
+
+.contacts .column-center ul li,  .contacts .column-center p{
+	margin-top: 40px;
 }

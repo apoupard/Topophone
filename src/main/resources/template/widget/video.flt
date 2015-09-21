@@ -1,7 +1,7 @@
 <#macro youtube thumbnail url>
-<div class="video-youtube">
-	<@images.image href=thumbnail onclick="startShowVideo('${url}');return false;" external=true class="clickable vertical-align"/>
-	<@images.image href="/images/widget/video/play.png" class="clickable vertical-align play"/>
+<div class="video-youtube" onclick="startShowVideo('${url}');return false;">
+	<@images.image href=thumbnail  external=true class="clickable vertical-align" hasCredit=false/>
+	<@images.image href="/images/widget/video/play.png" class="clickable vertical-align play" hasCredit=false/>
 </div>
 <div class="toHide youtubePanelBack hidden" onclick="$('.toHide').addClass('hidden');return false;"></div>
 <div class="toHide youtubePanel hidden" >

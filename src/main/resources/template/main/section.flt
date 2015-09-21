@@ -9,7 +9,7 @@
 <div id="page" class="association">
     <div class="side column-left">
       <@container.widgets>
-        <@container.widget opacity=true gradient=false class="height-5">
+        <@container.widget opacity=true class="height-5">
         	<div class="blockRight presentation">
 	        	<h3>Développement d'Artistes</h3>
 				<div>Booking</div>
@@ -18,21 +18,21 @@
 				<div>Coordination du projet</div>
 			</div>
         </@container.widget>
-        <@container.widget opacity=true gradient=false class="height-3">
+        <@container.widget opacity=true class="height-3">
         	<@video.youtube thumbnail=main.videoLeft.thumbnail url=main.videoLeft.youtubeVideo/>
         </@container.widget>
       </@container.widgets>
     </div>
     <div class="column-center">
        <@container.widgets>
-         <@container.widget opacity=true gradient=false>
+         <@container.widget opacity=true>
 			${main.description}
          </@container.widget>
        </@container.widgets>
     </div>
     <div class="side column-right">
       <@container.widgets>
-        <@container.widget opacity=true gradient=false class="height-5">
+        <@container.widget opacity=true class="height-5">
         	<div class="blockRight presentation">
 				<h3>Actions éducatives</h3>
 				<div>Rencontres d'Artistes Professionnels</div>
@@ -40,7 +40,7 @@
 				<div>Participation à l’événement Topophone de fin d'année</div>
 			</div>
         </@container.widget>
-        <@container.widget opacity=true gradient=false class="height-3">
+        <@container.widget opacity=true class="height-3">
         	<@video.youtube thumbnail=main.videoRight.thumbnail url=main.videoRight.youtubeVideo/>
         </@container.widget>
        </@container.widgets>

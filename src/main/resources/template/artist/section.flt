@@ -7,27 +7,27 @@
 <div id="page" class="artist">
 	<div class="side column-left">
 	  <@container.widgets>
-		  <@container.widget opacity=true gradient=true class="first height-7 medium-img">
+		  <@container.widget opacity=true class="first height-7 medium-img">
 		      <#include "/artist/profile.flt">
 		  </@container.widget>
-		  <@container.widget opacity=true gradient=false class="height-1">
+		  <@container.widget opacity=true class="height-1">
 		  	<@audio.player songs=artist.songs />
           </@container.widget>
       </@container.widgets>
 	</div>
    <div class="column-center">
       <@container.widgets>
-        <@container.widget opacity=true gradient=true>
+        <@container.widget opacity=true>
           ${artist.description}
         </@container.widget>
       </@container.widgets>
    </div>
 	<div class="side column-right">
       <@container.widgets>
-        <@container.widget opacity=true onlyBorder=true class="first perfect-scrollbar">
+        <@container.widget opacity=true opacityClass="opacity-wrap-border" class="first perfect-scrollbar">
             <#include "/artist/concert.flt">          
         </@container.widget>
-         <@container.widget opacity=true gradient=false class="height-1">
+         <@container.widget opacity=true class="height-1">
             <#include "/artist/contact.flt">
         </@container.widget>
       </@container.widgets>
@@ -35,7 +35,7 @@
 </div>
 <div id="bottom" class="artist">
   <@container.widgets>
-      <@container.widget opacity=false gradient=false>
+      <@container.widget opacity=false>
         <#include "/artist/videos.flt">
       </@container.widget>
     </@container.widgets>

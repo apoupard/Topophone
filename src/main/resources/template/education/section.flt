@@ -12,24 +12,24 @@
     <div class="side column-left">
       <@container.widgets>
       	<@subnav.subnav entries=education.subNav.entries />
-        <@container.widget opacity=true gradient=false class='noPadding height-5'>
+        <@container.widget opacity=true class='noPadding height-5'>
           <@images.image href=education.imageLeft />
         </@container.widget>
-        <@container.widget opacity=true gradient=false class="height-1">
+        <@container.widget opacity=true class="height-1">
           <@audio.player songs=education.songs/>
         </@container.widget>
       </@container.widgets>
     </div>
     <div class="column-center">
        <@container.widgets>
-         <@container.widget opacity=true gradient=false>
+         <@container.widget opacity=true>
           ${education.description}
          </@container.widget>
        </@container.widgets>
     </div>
     <div class="side column-right">
       <@container.widgets>
-        <@container.widget opacity=true gradient=false class="height-5">
+        <@container.widget opacity=true class="height-5">
           <div class="chiffres">
 	          <h3>LES CHIFFRES :</h3>
 	          <ul>
@@ -44,7 +44,7 @@
 	          </ul>
           </div>
         </@container.widget>
-        <@container.widget opacity=true gradient=false class='noPadding height-3'>
+        <@container.widget opacity=true class='noPadding height-3'>
          	<@video.youtube thumbnail=education.video.thumbnail url=education.video.youtubeVideo/>
         </@container.widget>
        </@container.widgets>

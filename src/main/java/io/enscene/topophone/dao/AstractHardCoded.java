@@ -12,6 +12,7 @@ import java.util.Optional;
 
 import javax.inject.Inject;
 
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 
@@ -80,6 +81,32 @@ public abstract class AstractHardCoded<T extends ResourceModel> implements Resou
     list.add("images/headbandCarousel/devartists/18.jpg");
     list.add("images/headbandCarousel/devartists/19.jpg");
     return list;
+  }
+  
+  protected List<String> getEducationHeadbandImages() {
+    return ImmutableList.<String>builder().add("images/headbandCarousel/education/01.jpg")
+        .add("images/headbandCarousel/education/02.jpg")
+        .add("images/headbandCarousel/education/03.jpg")
+        .add("images/headbandCarousel/education/04.jpg")
+        .add("images/headbandCarousel/education/05.jpg")
+        .add("images/headbandCarousel/education/06.jpg")
+        .add("images/headbandCarousel/education/07.jpg")
+        .add("images/headbandCarousel/education/08.jpg")
+        .add("images/headbandCarousel/education/09.jpg")
+        .add("images/headbandCarousel/education/10.jpg")
+        .add("images/headbandCarousel/education/11.jpg")
+        .add("images/headbandCarousel/education/12.jpg")
+        .add("images/headbandCarousel/education/13.jpg")
+        .add("images/headbandCarousel/education/14.jpg")
+        .add("images/headbandCarousel/education/15.jpg")
+        .add("images/headbandCarousel/education/16.jpg")
+        .add("images/headbandCarousel/education/17.jpg")
+        .add("images/headbandCarousel/education/18.jpg")
+        .add("images/headbandCarousel/education/19.jpg")
+        .add("images/headbandCarousel/education/20.jpg")
+        .add("images/headbandCarousel/education/21.jpg")
+        .add("images/headbandCarousel/education/22.jpg")
+        .build();
   }
 
 }
