@@ -121,7 +121,7 @@
 		</dependency>
 		<dependency>
 			<groupId>io.enscene.testing.arquillian</groupId>
-			<artifactId>enscene-testing-arquillian-jetty-8</artifactId>
+			<artifactId>enscene-testing-arquillian-tomcat-8</artifactId>
 			<version>${project.version}</version>
 			<type>pom</type>
 			<scope>test</scope>
