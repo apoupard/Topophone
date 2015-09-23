@@ -6,7 +6,6 @@ import com.google.inject.multibindings.MapBinder;
 import com.google.inject.servlet.ServletModule;
 
 import freemarker.template.Configuration;
-import io.enscene.topophone.account.AccountsResource;
 import io.enscene.topophone.api.ResourceDao;
 import io.enscene.topophone.api.ResourceModel;
 import io.enscene.topophone.dao.AccompanyingDao;
@@ -41,7 +40,6 @@ public class TopophoneModule extends ServletModule {
     bind(HtmlTemplateEngine.class).to(FreemakerTemplateEngine.class);
     bind(Configuration.class).toProvider(FreemarkerConfigurationProvider.class);
 
-    bind(AccountsResource.class);
     bind(ArtistResource.class);
     bind(NavResource.class);
     bind(HeaderResource.class);
