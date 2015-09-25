@@ -5,6 +5,11 @@ $(document).ready(function() {
 	fillFooter();
 	bindRoute();
 	handleImageCredit();
+	
+	$(window).resize(function() {
+		resizeHeader();
+		resizeColumnCenterWidget();
+	});
 });
 
 function bindRoute() {
@@ -23,9 +28,6 @@ function fillHeader() {
 	}).done(function(data) {
 		$("#header").append(data);
 		resizeHeader();
-		$(window).resize(function() {
-			resizeHeader();
-		});
 	}).fail(function() {
 		alert("error");
 	});
@@ -130,6 +132,7 @@ function onNewSectionDisplay() {
 	startSoundPlayer();
 	enginePerfectScrollbar();
 	handleImageCredit();
+	resizeColumnCenterWidget();
 }
 
 function startCarousel() {
@@ -222,4 +225,40 @@ function handleImageCredit() {
 
 function endsWith(value, suffix){
 	  return value.indexOf(suffix, value.length - suffix.length) !== -1;
+}
+
+function resizeColumnCenterWidget(){
+	var headerHeight = $("#header").height();
+	var siteMarginTop = 115;
+	var siteMarginBottom = 30;
+	var siteMarginHeight = $("#site").height();
+	var spaceleft = window.innerHeight - ((headerHeight - siteMarginTop) + siteMarginHeight + siteMarginBottom )
+	var widgetContent = $('.column-center .widget-content');
+	var middleWidget = $(".column-center .widget");
+	if(spaceleft > 0 && hasScrollBar(widgetContent) ) {
+		var newSize = getNewSize(widgetContent, middleWidget, spaceleft);
+		middleWidget.height(newSize);
+	} else if(spaceleft < 0) {
+		var minSize = 450;
+		var newSize = middleWidget.height() + spaceleft;
+		if(newSize < minSize) {
+			middleWidget.height(minSize);
+		} else {
+			middleWidget.height(newSize);
+		}
+	}
+}
+
+function hasScrollBar(widgetContent){
+	return widgetContent[0].scrollHeight > widgetContent.height();
+}
+
+function getNewSize(widgetContent, middleWidget, spaceleft){
+	var newSize = middleWidget.height() + spaceleft;
+	var scrollSize = widgetContent[0].scrollHeight;
+	if(scrollSize > newSize) {
+		return newSize;
+	} else {
+		return scrollSize;
+	}
 }
