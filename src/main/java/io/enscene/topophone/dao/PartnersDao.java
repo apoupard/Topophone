@@ -36,14 +36,14 @@ public class PartnersDao extends AstractHardCoded<Partners> {
             "Le Conseil Régional Midi-Pyrénées soutient l'association Topophone pour la mise en place de ses « Actions Educatives ». "
             + "Elle accompagne l'association sur son fonctionnement au titre de la Politique de la Ville."))
         .put( financiers, new Partner(
-            "Financiers", "/images/partners/.png",
+            "Financiers", "/images/partners/caisseDepot.png",
             "Le groupe Caisse des Dépôts est un groupe public, investisseur de long terme au service de l’intérêt général et du développement économique du pays. "
                 + "Les actions de mécénat de la Caisse des Dépôts visent avant tout à favoriser l’accès à la culture d’un large public. "
                 + "En phase avec les évolutions et les besoins de la société, elles sont portées par des valeurs fortes : la modernité, l’ouverture, le suivi sur le long terme. "
                 + "Le groupe Caisse des Dépôts soutient l'association depuis 2 ans pour le développement de ses Actions Educatives, "
                 + "ainsi que pour la mise en place du projet « L'Evènement des Apprentis-Musiciens »"))
         .put( financiers, new Partner(
-            "Financiers", "/images/partners/.png",
+            "Financiers", "/images/partners/fdbp.png",
             "La Banque Populaire revendique des valeurs de responsabilité, de proximité et de solidarité avec son territoire. "
                 + "Cet engagement s’est traduit par la création au printemps 2011 d’une Fondation d’entreprise, "
                 + "impulsée par une démarche associant l’ensemble des collaborateurs de la banque. "
@@ -65,7 +65,7 @@ public class PartnersDao extends AstractHardCoded<Partners> {
             + "(réunions de travail, mise en relation avec des structures péri et extra scolaires...)."))
         
         .put( operationnels, new Partner(
-            "Opérationnels", "/images/partners/.png",
+            "Opérationnels", "/images/partners/inspecAca.jpg",
             "Topophone travaille en lien avec L'Inspection Académique de la Haute-Garonne dans le cadre des actions actions éducatives. "
                 + "L'association s'appuie sur l'Inspection Académique pour la construction de ses contenus pédagogiques ainsi que pour la mise en place de ses "
                 + "interventions au sein des structures scolaires."))
