@@ -1,22 +1,20 @@
+<#import "/widget/internallink.flt" as link>
 <h3>Description</h3>
-<p>
 Topophone est une association toulousaine créée en 2012.<br>
 Son action est structurée en 2 volets :<br>
-</p>
-<p>
 Elle met en place un projet de développement scénique et professionnel auprès de groupes en
 développement de la région Midi-Pyrénées, en s’appuyant sur un réseau de partenaires
-professionnels de la musique.
-</p>
-Plus d'informations sur le projet Développement d'Artistes : cliquez ici (lien cliquable?)
+professionnels de la musique.<br/>
+Plus d'informations sur le projet Développement d'Artistes : <@link.internallink href="/devartists/presentation" label="cliquez ici" />
+<br><br>
+
 En parallèle, Topophone met en place des actions d'éducation par la musique à destination des
-structures scolaires, péri- et extrascolaires de la région Midi-Pyrénées.
-Plus d'informations sur le projet Actions Éducatives : cliquez ici (lien cliquable?)
-<p>
+structures scolaires, péri- et extrascolaires de la région Midi-Pyrénées.<br/>
+Plus d'informations sur le projet Actions Éducatives : <@link.internallink href="/education/presentation" label="cliquez ici" />
 <h3>Objectifs :</h3>
 <ul class="dash">
 	<li>Développer le projet artistique et professionnel des groupes accompagnés</li>
-	<li>Utiliser la musique comme un vecteur de partage et d'ouverture à l'autre/li>
-	<li>Sensibiliser les artistes à la mise en place d'actions de partage et de transmission auprès de jeunes/li>
-	<li>Utiliser la musique comme un outil d'éducation et de citoyenneté/li>
+	<li>Utiliser la musique comme un vecteur de partage et d'ouverture à l'autre</li>
+	<li>Sensibiliser les artistes à la mise en place d'actions de partage et de transmission auprès de jeunes</li>
+	<li>Utiliser la musique comme un outil d'éducation et de citoyenneté</li>
 </ul>

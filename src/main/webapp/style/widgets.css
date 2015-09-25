@@ -313,6 +313,11 @@
 
 /* internallink */
 .widget .internallink {
+	display: inline-block;	
+}
+
+
+.widget.subnav .internallink {
 	position: relative;
     height: 100%;
     width: 100%;
@@ -322,7 +327,7 @@
     width: 200px;
 }
 
-.widget .internallink a, .widget .internallink a:VISITED {
+.widget.subnav  .internallink a, .widget.subnav .internallink a:VISITED {
 	color: black;
 	text-transform: uppercase;
 	text-align: center;
@@ -413,13 +418,18 @@
 	background-image: url(../images/artists/ihr/bandcamp.png);
 }
 
-/* accompanying */
+/* association */
 .association .column-left .widget .opacity-wrap {
 	background-color: #93d6d8;
 }
 
 .association .column-right .widget .opacity-wrap {
 	background-color: #aee582;
+}
+
+.association .side .blockRight.presentation div {
+    font-size: 1.1em;
+    margin-top: 25px;
 }
 
 /* accompanying */
