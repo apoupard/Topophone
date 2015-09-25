@@ -231,6 +231,7 @@ nav {
 	width: 1050px;
 	padding-left: 5px;
 	height: 50px;
+	
 }
 
 nav ul {
@@ -249,7 +250,7 @@ nav ul ul {
 
 nav ul li:hover>ul {
 	display: block;
-	margin: -20px 0 0 0;
+/* 	margin: -20px 0 0 0; */
 }
 
 nav ul:after {
@@ -295,17 +296,22 @@ nav .mini, nav .mini:HOVER {
 }
 
 nav ul li {
+	position: relative;
 	float: left;
 	width: 322px;
 	height: 45px;
 	margin: 0px;
 	background: black;
 	text-align: center;
+	color: white;
+	font-weight: bold;
 }
 
-nav ul .selected, nav ul li:hover {
-	height: 65px;
+nav ul li div{
+	cursor: default;
 }
+
+
 
 nav ul .selected, nav ul li ul li:hover {
 	border-bottom: none;
@@ -317,7 +323,6 @@ nav ul li a, nav ul li a:visited, nav ul li a:hover {
 	color: white;
 	text-decoration: none;
 	font-weight: bold;
-	padding-top: 12px;
 }
 
 nav ul ul {
@@ -338,7 +343,6 @@ nav ul ul li {
 nav ul ul li a, nav ul ul li a:visited, nav ul ul li a:hover {
 	color: white;
 	text-decoration: none;
-	padding-top: 8px;
 }
 
 .main .news {

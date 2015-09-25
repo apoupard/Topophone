@@ -337,6 +337,8 @@
     -webkit-transform: translate(-50%, -50%);
 }
 
+
+
 /* artistContact */
 .widget .artistContact a {
 	color: white;
@@ -803,4 +805,14 @@
 
 .contacts .column-center ul li,  .contacts .column-center p{
 	margin-top: 40px;
+}
+
+.verticalCenter {
+	position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
 }

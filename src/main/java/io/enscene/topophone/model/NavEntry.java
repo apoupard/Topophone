@@ -15,6 +15,10 @@ public class NavEntry implements ResourceModel {
   private String styleNames;
   private Boolean isSelected;
 
+  public static NavEntry of(String id, String displayName, List<NavEntry> entries) {
+    return new NavEntry(id, displayName, "", entries, "", false);
+  }
+  
   public static NavEntry of(String id, String displayName, String href, List<NavEntry> entries) {
     return new NavEntry(id, displayName, href, entries, "", false);
   }

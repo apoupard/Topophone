@@ -1,22 +1,26 @@
 <ul>
-  <li class="first"><a href="${appcontext}"><img src="${appcontext}/images/home.png" border="0"></a>
+  <li class="first ">
+  	<a href="${appcontext}/" class="verticalCenter"><img src="${appcontext}/images/home.png" border="0">
+  </a>
   </li>
   <#list nav.entries as entry>
     <li class="${entry.styleNames}">
       <#if entry.href != ''>
-        <a href="${restcontext}${entry.href}">${entry.displayName}</a>
+        <a href="${restcontext}${entry.href}" class="verticalCenter">${entry.displayName}</a>
+      <#else>
+      	<div class="verticalCenter">${entry.displayName}</div>
       </#if>
       <ul>
         <#list entry.entries as sub>
           <li class="${sub.styleNames}">
-            <a href="${restcontext}${sub.href}">${sub.displayName}</a>
+            <a href="${restcontext}${sub.href}" class="verticalCenter">${sub.displayName}</a>
           </li>
        </#list>
       </ul>
      </li>
   </#list>
 	<li class="last">
-	 <a class="facebook" href="http://www.facebook.com/pages/Topophone/251065455030560">
+	 <a class="facebook verticalCenter" href="http://www.facebook.com/pages/Topophone/251065455030560">
 		<img src="${appcontext}/images/facebook.png" border="0"></a>
 	</li>
 </ul>
