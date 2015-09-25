@@ -1,4 +1,6 @@
-<img class="logo absoluteCenterBase" src="${appcontext}${header.logo}">
+<a href="${appcontext}/" class="logo absoluteCenterBase">
+	<img src="${appcontext}${header.logo}">
+</a>
 <div id="all">
   <div id="decoLeft"></div>
   <div id="decoRight"></div>
