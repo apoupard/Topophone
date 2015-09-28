@@ -4,7 +4,7 @@
 	</h3>
 	<ul>
 	  <#list artist.concerts as concert>
-	   <li>${concert.date?string["dd.MM"]} -  ${concert.place} (${concert.city})</li>
+	   <li>${concert.date?string["dd.MM"]} - ${concert.place} <br/>${concert.city}</li>
 	  </#list>
 	</ul>
 </div>

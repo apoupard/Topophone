@@ -49,12 +49,12 @@ public class ArtistDao extends AstractHardCoded<Artist> {
 
   private List<Video> getCommonDiamondVideos() {
     return ImmutableList.of(
-        new Video("RfswM1TKImw", "\"AFTER ALL\""," Avril 2014 "," Mix. A.Workman & A.Libeyre "," Elliot Broué"), 
-        new Video("l3kcrbm2aNc", "\"SCANDINAVIA\" "," Octobre 2014 "," Live @ Le Bikini "," Réal. Ypok"), 
-        new Video("AKCVIaO7JzA", "\"KILL US TONIGHT\" "," Avril 2015 "," Live @ Le Printemps de Bourges "," Réal. Le Printemps de Bourges"), 
-        new Video("2Y_Y1r6GxlE", "\"GO OUT FOR A WALK\" "," Mai 2012 "," Mix. Thom La Juv's "," Mix. Thom La Juv's"));
+        new Video("RfswM1TKImw", "\"AFTER ALL\"","Avril 2014","Mix. A.Workman & A.Libeyre","Real. Elliott Broué"), 
+        new Video("l3kcrbm2aNc", "\"SCANDINAVIA\" ","Octobre 2014","Live @ Le Bikini","Réal. Ypok"), 
+        new Video("AKCVIaO7JzA", "\"KILL US TONIGHT\" ","Avril 2015","Live @ Le Printemps de Bourges","Réal. Le Printemps de Bourges"), 
+        new Video("2Y_Y1r6GxlE", "\"GO OUT FOR A WALK\" ","Mai 2012","Mix. Thom La Juv's","Réal. Laureline Lavergne"));
   }
-  
+
   private List<Video> getIhrVideos() {
     return ImmutableList.of(
         new Video("Z5vk0QCY8zk", "\"COWBOYS\"","Mars 2013","","Réal. P. Gilbert"), 
@@ -82,39 +82,37 @@ public class ArtistDao extends AstractHardCoded<Artist> {
 
   private ImmutableList<Concert> getCommonDiamondConcerts() {
     return ImmutableList.of(
-        Concert.of(6,8,2015,"Festival Toulouse d'Eté", "Toulouse - w/Fanel"),
-        Concert.of(8,7,2015,"Festival Pause Guitare", "Albi - w/Bob Dylan"),
-        Concert.of(25,4,2015,"Les Inouïs du Printemps de Bourges", "Bourges"),
-        Concert.of(9,04,2015,"Le Stereolux", "Nantes – w/Kid Wise"),
-        Concert.of(21,3,2015,"Le Portail Coucou", "Salon de Provence"),
-        Concert.of(13,3,2015,"MJC L'Escale", "Aubagne – w/Martin Mey"),
-        Concert.of(5,3,2015,"Le Bouillon", "Orléans – w/Martin Mey"),
-        Concert.of(4,3,2015,"Les 3 Baudets", "Paris"),
-        Concert.of(29,11,2015,"Le Bus Palladium", "Paris – International Hyper Rythmique"),
-        Concert.of(27,11,2015,"Le Connexion", "Toulouse – w/Isaac Delusion"),
-        Concert.of(7,11,2015,"L'Escapade", "Hénin Beaumont – w/International Hyper Rythmique"),
-        Concert.of(15,1,2015,"Le Bikini", "Ramonville Saint-Agne – w/Sébastien Tellier"),
-        Concert.of(11,1,2015,"Le Festi'Val De Marne – JIMI", "Ivry sur Seine"));
+        Concert.of(6,9,2015,"Festival Toulouse d'Eté", "Toulouse - w/Fanel"),
+        Concert.of(8,8,2015,"Festival Pause Guitare", "Albi - w/Bob Dylan"),
+        Concert.of(25,5,2015,"Les Inouïs du Printemps de Bourges", "Bourges - w/Puts Marie"),
+        Concert.of(9,5,2015,"Le Stereolux", "Nantes – w/Kid Wise"),
+        Concert.of(21,4,2015,"Le Portail Coucou", "Salon de Provence"),
+        Concert.of(13,4,2015,"MJC L'Escale", "Aubagne – w/Martin Mey"),
+        Concert.of(5,4,2015,"Le Bouillon", "Orléans – w/Martin Mey"),
+        Concert.of(4,4,2015,"Les 3 Baudets", "Paris"),
+        Concert.of(29,12,2014,"Le Bus Palladium", "Paris – International Hyper Rythmique"),
+        Concert.of(27,12,2014,"Le Connexion", "Toulouse – w/Isaac Delusion"),
+        Concert.of(7,12,2014,"L'Escapade", "Hénin Beaumont – w/International Hyper Rythmique"),
+        Concert.of(15,2,2014,"Le Bikini", "Ramonville Saint-Agne – w/Sébastien Tellier")
+        );
   }
+  
   
   private ImmutableList<Concert> getIhrConcert() {
     return ImmutableList.of(
         Concert.of(16,11,2015,"Les 3 Baudets", "Paris"), 
-        Concert.of(28,6,2015,"La Dynamo", "Toulouse – w/Alpaga"), 
-        Concert.of(8,4,2015,"Le Coeur de Boeuf", "Lons Le Saunier"), 
-        Concert.of(17,1,2015,"Le Chapeau Rouge", "Carcassonne"), 
-        Concert.of(29,11,2014,"Le Bus Palladium", "Paris – w/Le Common Diamond"), 
-        Concert.of(25,11,2014,"Le Bikini", "Ramonville Saint-Agne – w/Emilie Simon"), 
-        Concert.of(7,11,2014,"L'Escapade", "Hénin Beaumont – w/Le Common Diamond"), 
-        Concert.of(04,11,2014,"L'Espace Bonnefoy", "Toulouse – w/The Telescopes"), 
-        Concert.of(28,10,2014,"La Dynamo", "Toulouse – w/Sebadoh"), 
-        Concert.of(11,10,2014,"Celtic Pub", "Tarbes"), 
-        Concert.of(2,8,2014,"Festival de Carcassonne", "Carcassonne – w/Kavinsky"), 
-        Concert.of(5,07,2014,"Festival Les Brasseurs du Lac", "Villeneuve Tolosane"));
+        Concert.of(28,7,2015,"La Dynamo", "Toulouse – w/Alpaga"), 
+        Concert.of(8,5,2015,"Le Coeur de Boeuf", "Lons Le Saunier"), 
+        Concert.of(17,2,2015,"Le Chapeau Rouge", "Carcassonne"), 
+        Concert.of(29,12,2014,"Le Bus Palladium", "Paris – w/Le Common Diamond"), 
+        Concert.of(25,12,2014,"Le Bikini", "Ramonville Saint-Agne – w/Emilie Simon"), 
+        Concert.of(7,12,2014,"L'Escapade", "Hénin Beaumont – w/Le Common Diamond"), 
+        Concert.of(04,12,2014,"L'Espace Bonnefoy", "Toulouse – w/The Telescopes"), 
+        Concert.of(28,11,2014,"La Dynamo", "Toulouse – w/Sebadoh"), 
+        Concert.of(2,9,2014,"Festival de Carcassonne", "Carcassonne – w/Kavinsky"), 
+        Concert.of(5,8,2014,"Festival Les Brasseurs du Lac", "Villeneuve Tolosane"));
   }
-  
 
-  
   private List<Media> getSocialMedia(String id) {
     List<Media> medias =
         ImmutableList.of(new Media("youtube", "http://www.youtube.com/" + id), new Media(

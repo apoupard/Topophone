@@ -300,6 +300,11 @@
 	margin-bottom: 5px;
 }
 
+.widget .concerts ul li {
+	margin-top: 10px;
+	text-align: center;
+}
+
 .widget .artistContact {
 	text-align: center;
 }
