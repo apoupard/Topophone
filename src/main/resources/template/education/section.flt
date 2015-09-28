@@ -31,7 +31,7 @@
       <@container.widgets>
         <@container.widget opacity=true class="height-5">
           <div class="chiffres">
-	          <h3>LES CHIFFRES :</h3>
+	          <h3>LES CHIFFRES</h3>
 	          <ul>
 	            <li class="chiffre">700</li>
 	            <li>jeunes impliqués chaque année</li>
