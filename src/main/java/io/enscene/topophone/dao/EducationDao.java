@@ -31,7 +31,7 @@ public class EducationDao extends AstractHardCoded<Education> {
   }
   
   private Youtube getVideo(){
-    return new Youtube("31o3xo3Lohg");
+    return new Youtube("D1QOwfWPUZI");
   }
 
   private List<Song> getSongs() {
@@ -50,8 +50,8 @@ public class EducationDao extends AstractHardCoded<Education> {
   
   private Nav getSubNav(String id) {
     List<NavEntry> entries = ImmutableList.of(
-          NavEntry.of(id, "Initiation à la création musicale", "/education/creation", "/education/creation".contains(id)),
-          NavEntry.of(id, "A la rencontre des artistes", "/education/meeting", "/education/meeting".contains(id))
+          NavEntry.of(id, "Création musicale", "/education/creation", "/education/creation".contains(id)),
+          NavEntry.of(id, "L'évenement des apprentis-musiciens", "/education/meeting", "/education/meeting".contains(id))
         );
     return new Nav(entries);
   }
