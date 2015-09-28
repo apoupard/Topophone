@@ -19,9 +19,9 @@ public class DevArtistsDao extends AstractHardCoded<DevArtists> {
   @Override
   void init(Map<String, DevArtists> database) {
     database.put("presentation", new DevArtists("presentation", getDescription("devartists","presentation"),
-        "/images/education/creation.png", getHeadBand(), getArtistLinks(), getSubNav("presentation"), getRightBlock("presentation")));
+        "/images/education/creation.png", getHeadBand(), getSubNav("presentation"), getRightBlock("presentation"), getArtistLinks()));
     database.put("appscenic", new DevArtists("appscenic", getDescription("devartists","appscenic"),
-        "/images/education/meeting.png", getHeadBand(), getArtistLinks(), getSubNav("appscenic"), getRightBlock("appscenic")));
+        "/images/education/meeting.png", getHeadBand(), getSubNav("appscenic"), getRightBlock("appscenic"), "/images/devartists/mosaique.png"));
   }
 
   private List<ArtistLink> getArtistLinks() {
@@ -36,8 +36,8 @@ public class DevArtistsDao extends AstractHardCoded<DevArtists> {
 
   private Nav getSubNav(String id) {
     List<NavEntry> entries = ImmutableList.of(
-          NavEntry.of(id, "Développements d'artistes", "/devartists/presentation", "/devartists/presentation".contains(id)),
-          NavEntry.of(id, "Accompagnement scéniques", "/devartists/appscenic", "/devartists/appscenic".contains(id))
+          NavEntry.of(id, "Développement d'artistes", "/devartists/presentation", "/devartists/presentation".contains(id)),
+          NavEntry.of(id, "Accompagnement Scénique", "/devartists/appscenic", "/devartists/appscenic".contains(id))
         );
     return new Nav(entries);
   }

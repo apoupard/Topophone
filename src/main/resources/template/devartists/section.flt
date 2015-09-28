@@ -10,13 +10,19 @@
     <div class="side column-left">
       <@container.widgets>
         <@subnav.subnav entries=devartists.subNav.entries />
-        <#list devartists.artistLinks as artistLink>
-          <@container.widget opacity=true class='noPadding height-3'>
-	        <@link.internallink href=artistLink.link class="internallinkImg">
-              <@images.image href=artistLink.image />
-            </@link.internallink>
+         <#if (devartists.artistLinks)??> 
+           <#list devartists.artistLinks as artistLink>
+            <@container.widget opacity=true class='noPadding height-3'>
+	          <@link.internallink href=artistLink.link class="internallinkImg">
+                <@images.image href=artistLink.image />
+              </@link.internallink>
+            </@container.widget>
+          </#list>
+        <#else>
+          <@container.widget opacity=true class='noPadding height-6'>
+            <@images.image href=devartists.imageLeft />
           </@container.widget>
-        </#list>
+        </#if>
       </@container.widgets>
     </div>
     <div class="column-center">

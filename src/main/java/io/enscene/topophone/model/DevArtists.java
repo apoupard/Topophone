@@ -12,18 +12,30 @@ public class DevArtists implements ResourceModel {
   private String image;
   private HeadbandCarousel headbandCarousel;
   private List<ArtistLink> artistLinks;
+  private String imageLeft;
   private Nav subNav;
   private String blockRight;
 
-  public DevArtists(String id, String description, String image, HeadbandCarousel headbandCarousel,
-      List<ArtistLink> artistLinks, Nav subNav, String blockRight) {
+  private DevArtists(String id, String description, String image, HeadbandCarousel headbandCarousel,
+      Nav subNav, String blockRight) {
     this.id = id;
     this.description = description;
     this.image = image;
     this.headbandCarousel = headbandCarousel;
-    this.artistLinks = artistLinks;
     this.subNav = subNav;
     this.blockRight = blockRight;
+  }
+
+  public DevArtists(String id, String description, String image, HeadbandCarousel headbandCarousel,
+      Nav subNav, String blockRight, List<ArtistLink> artistLinks) {
+    this(id, description, image, headbandCarousel, subNav, blockRight);
+    this.artistLinks = artistLinks;
+  }
+
+  public DevArtists(String id, String description, String image, HeadbandCarousel headbandCarousel,
+      Nav subNav, String blockRight, String imageLeft) {
+    this(id, description, image, headbandCarousel, subNav, blockRight);
+    this.imageLeft = imageLeft;
   }
 
   public String getDescription() {
@@ -58,22 +70,22 @@ public class DevArtists implements ResourceModel {
     this.headbandCarousel = headband;
   }
 
-  public List<ArtistLink> getArtistLinks() {
-    return artistLinks;
-  }
-
-  public void setArtistLinks(List<ArtistLink> artistLinks) {
-    this.artistLinks = artistLinks;
-  }
-  
   public Nav getSubNav() {
     return subNav;
+  }
+
+  public String getImageLeft() {
+    return imageLeft;
+  }
+
+  public void setImageLeft(String imageLeft) {
+    this.imageLeft = imageLeft;
   }
 
   public void setSubNav(Nav subNav) {
     this.subNav = subNav;
   }
-  
+
   public String getBlockRight() {
     return blockRight;
   }
@@ -82,10 +94,19 @@ public class DevArtists implements ResourceModel {
     this.blockRight = blockRight;
   }
 
+  public List<ArtistLink> getArtistLinks() {
+    return artistLinks;
+  }
+
+  public void setArtistLinks(List<ArtistLink> artistLinks) {
+    this.artistLinks = artistLinks;
+  }
+
+
   public static class ArtistLink {
     private String image;
     private String link;
-    
+
     public ArtistLink(String image, String link) {
       super();
       this.image = image;
@@ -107,6 +128,6 @@ public class DevArtists implements ResourceModel {
     public void setLink(String link) {
       this.link = link;
     }
-    
+
   }
 }

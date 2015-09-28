@@ -1,5 +1,5 @@
 <#import "/widget/image.flt" as images>
-<h3>Présentation :</h3>
+<h3>Présentation</h3>
 <p>L’association développe le projet professionnel d'artistes musiciens « en développement ».</p>
 <p>A l’aide d’un réseau de partenaires professionnels qui mettent leurs compétences au service du
 groupe, Topophone coordonne le développement de chaque artiste en mettant à sa disposition des
@@ -9,25 +9,25 @@ volets « booking », « financement », « scénographie et mise en scène » e
 parallèle, selon les besoins du groupe, elle mobilise des partenaires (édition, label, communication)
 afin de développer en cohérence l'ensemble du projet.</p>
 
-<h3>Objectifs généraux :</h3>
+<h3>Objectifs généraux</h3>
 <ul class="dash">
 	<li>Développer les projets artistiques des groupes accompagnés, avec une orientation donnée surle développement « scénique » du groupe.</li>
 	<li>Faciliter la professionnalisation des groupes accompagnés par la mutualisation des compétences des partenaires engagés auprès du groupe.</li>
 </ul>
-<h3>Les étapes d’accompagnement :</h3>
+<h3>Les étapes d’accompagnement</h3>
 <ol>
 	<li>Analyse du profil du groupe, de ses besoins et de ses ambitions </li>
 	<li>Établissement d’objectifs de développement du groupe à court et moyen terme</li>
 	<li>Mise en place par Topophone d’une formule d’accompagnement adaptée</li>
 	<li>Mobilisation des partenaires en fonction de l'état d'avancée du développement (scénographe, metteur en scène, techniciens, label, studio d’enregistrement)</li>
 </ol>
-<h3>L'équipe Topophone :</h3>
+<h3>L'équipe Topophone</h3>
 <p>Topophone est composée de deux équipes:</p>
 <ul class="dash">
 	<li>Une équipe « Production » - booking, administration, financement et coordination du projet.</li>
 	<li>Une équipe « Accompagnement scénique » - scénographie & mise en scène, que Topophone met à disposition du groupe en fonction de ses besoins et de son état d'avancement.</li>
 </ul>
-<h3>Une mutualisation des compétences :</h3>
+<h3>Une mutualisation des compétences</h3>
 <p>
 Topophone mobilise un ensemble d’acteurs professionnels (studio d’enregistrement, graphiste,
 metteur en scène, photographe, techniciens son et lumière, chargé de diffusion, scénographe) qui
