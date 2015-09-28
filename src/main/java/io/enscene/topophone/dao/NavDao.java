@@ -31,19 +31,19 @@ public class NavDao extends AstractHardCoded<Nav> {
   }
 
   private NavEntry artist() {
-    return NavEntry.of("artist", "Développement d'artistes",
+    return NavEntry.of("artist", "Développement d'Artistes",
         ImmutableList.of(
-            NavEntry.of("presentation", "Présentation", "/devartists/presentation"),
-            NavEntry.of("lecommondiamond", "le common diamond", "/artist/lecommondiamond"),
-            NavEntry.of("ihr", "international hyper rythmique", "/artist/ihr")));
+            NavEntry.of("presentation", "Présentation du Projet", "/devartists/presentation"),
+            NavEntry.of("lecommondiamond", "Le Common Diamond", "/artist/lecommondiamond"),
+            NavEntry.of("ihr", "International Hyper Rythmique", "/artist/ihr")));
   }
 
   private NavEntry educationSubMenu() {
-    return NavEntry.of("education", "Actions éducatives",
+    return NavEntry.of("education", "Actions Éducatives",
         ImmutableList.of(
-            NavEntry.of("presentation", "Présentation", "/education/presentation"),
-            NavEntry.of("creation", "Création musicale", "/education/creation"),
-            NavEntry.of("meeting", "Rencontre d'artistes", "/education/meeting")));
+            NavEntry.of("presentation", "Présentation du Projet", "/education/presentation"),
+            NavEntry.of("creation", "Création Musicale", "/education/creation"),
+            NavEntry.of("meeting", "L'Évenement des Apprentis-Musiciens", "/education/meeting")));
   }
 
 }
