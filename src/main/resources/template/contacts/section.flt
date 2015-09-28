@@ -8,7 +8,9 @@
     <@container.widgets>
       <@container.widget opacity=true class='noPadding height-8'>
 	    <div class="blockRight presentation">
-		  <h3>Adhésions</h3>
+		  <div class="title">
+		    <h3>Adhésions</h3>
+		  </div>
 		  <div>Topophone est une structure en développement.</div>
 		  <div>Nous mobilions un large réseau de sympatisants qui se mobilise pour défendre une musique basée sur le partage et l’ouverture à l’autre.</div>
 		  <div>C’est pourquoi nous avons besoin de votre soutien ! Contactez-nous !</div>
@@ -46,7 +48,9 @@
     <@container.widgets>
       <@container.widget opacity=true class='noPadding height-8'>
 	    <div class="blockRight presentation">
-		  <h3>Contactez-nous</h3>
+	      <div class="title">
+		    <h3>Contactez-nous</h3>
+		  </div>
 		  <div>Que vous soyez une association, une salle de concert, une école, ou simple curieux, </div>
 		  <div>Topophone se tient à votre disposition pour répondre à vos questions et vous donner plus d’informations sur les différentes actions de l’association.</div>
 		  <div>N’hésitez pas à nous contacter!</div>

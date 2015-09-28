@@ -11,7 +11,9 @@
       <@container.widgets>
         <@container.widget opacity=true class="height-5">
         	<div class="blockRight presentation">
-	        	<h3>Développement d'Artistes</h3>
+        		<div class="title">
+	        	  <h3>Développement d'Artistes</h3>
+				</div>
 				<div>Booking</div>
 				<div>Scénographie et Mise en scène</div>
 				<div>Demandes de financement</div>
@@ -34,7 +36,9 @@
       <@container.widgets>
         <@container.widget opacity=true class="height-5">
         	<div class="blockRight presentation">
-				<h3>Actions <br>éducatives</h3>
+        		<div class="title">
+				  <h3>Actions <br>éducatives</h3>
+				</div>
 				<div>Rencontres d'Artistes Professionnels</div>
 				<div>Enregistrement de sa création en studio</div>
 				<div>Participation à l’événement Topophone de fin d'année</div>

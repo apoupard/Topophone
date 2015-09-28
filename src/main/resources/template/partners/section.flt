@@ -37,7 +37,9 @@
     <@container.widgets>
       <@container.widget opacity=true class='noPadding height-8'>
 	    <div class="blockRight presentation">
-		  <h3>Mécenat</h3>
+	      <div class="title">
+		    <h3>Mécenat</h3>
+		  </div>
 		  <div>Vous pouvez soutenir Topophone à travers des actions de mécénat associatif qui ouvrent droit à des mesures de défiscalisation.</div>
 		  <div>N’hésitez pas à nous contacter pour tout renseignement au 06.51.44.52.31 ou <a href="mailto:contact@topophone.fr">contact@topophone.fr</a></div>
 	    </div>
