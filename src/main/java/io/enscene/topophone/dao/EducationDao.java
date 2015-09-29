@@ -20,12 +20,12 @@ public class EducationDao extends AstractHardCoded<Education> {
 
   @Override
   void init(Map<String, Education> database) {
-    database.put("creation", new Education("creation", "/images/education/educationImageLeft.png",
+    database.put("creation", new Education("creation", "/images/education/left/05.jpg",
         getDescription("education", "creation"), getVideo(), getHeadBand(), getSubNav("creation"), getSongs()));
-    database.put("meeting", new Education("meeting", "/images/education/educationImageLeft.png",
+    database.put("meeting", new Education("meeting", "/images/education/left/03.jpg",
         getDescription("education", "meeting"), getVideo(), getHeadBand(), getSubNav("meeting"), getSongs()));
     database.put("presentation",
-        new Education("presentation", "/images/education/educationImageLeft.png",
+        new Education("presentation", "/images/education/left/01.jpg",
             getDescription("education", "presentation"), getVideo(),
             getHeadBand(), getSubNav("presentation"), getSongs()));
   }
