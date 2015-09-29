@@ -19,7 +19,7 @@ public class PartnersDao extends AstractHardCoded<Partners> {
   void init(Map<String, Partners> database) {
     Multimap<Institution, Partner> partners = getPartners();
     database.put("1", new Partners(partners.asMap(),
-        new HeadbandCarousel(getDevArtistsHeadbandImages(), "/images/education/headbandlogo.png")));
+        new HeadbandCarousel(getAllHeadbandImages(), "/images/education/headbandlogo.png")));
   }
 
   private Multimap<Institution, Partner> getPartners() {

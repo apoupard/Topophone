@@ -9,7 +9,7 @@ public class ContactsDao extends AstractHardCoded<Contacts> {
 
   @Override
   void init(Map<String, Contacts> database) {
-    database.put("1", new Contacts(new HeadbandCarousel(getDevArtistsHeadbandImages(), "/images/education/headbandlogo.png")));
+    database.put("1", new Contacts(new HeadbandCarousel(getAllHeadbandImages(), "/images/education/headbandlogo.png")));
   }
 
 }
