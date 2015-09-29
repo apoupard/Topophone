@@ -22,25 +22,27 @@
     <@container.widgets>
       <@container.widget opacity=true>
         <h3>Association TOPOPHONE</h3>
-        <ul>
-          <li>
-            <b>QUESTIONS GENERALES</b> : <a href="mailto:contact@topophone.fr">contact@topophone.fr</a> 
-            <br/> Sébastien BENAZET - 06.51.44.52.31
-          </li> 
-           <li>
-            <b>BOOKING / DEVELOPPEMENT D'ARTISTES</b> : <a href="booking@topophone.fr">booking@topophone.fr</a> 
-            <br/> Augustin SERES - 06.87.05.85.28
-          </li> 
-           <li>
-            <b>ACTIONS EDUCATIVES</b> : <a href="mailto:association.topophone@gmail.com">association.topophone@gmail.com</a> 
-            <br/> Karine RUIZ - 06.17.99.00.43
-          </li>        
-        </ul>
-        <p>
-          ADRESSE POSTALE<br/>
-          6, rue des Daims, 31300 TOULOUSE <br/>
-          N° siret : 753 392 927 000 12
-        </p>
+        <div class="verticalCenter">
+          <ul>
+            <li>
+              <b>QUESTIONS GENERALES</b> : <a href="mailto:contact@topophone.fr">contact@topophone.fr</a> 
+              <br/> Sébastien BENAZET - 06.51.44.52.31
+            </li> 
+            <li>
+              <b>BOOKING / DEVELOPPEMENT D'ARTISTES</b> : <a href="booking@topophone.fr">booking@topophone.fr</a> 
+              <br/> Augustin SERES - 06.87.05.85.28
+            </li> 
+            <li>
+              <b>ACTIONS EDUCATIVES</b> : <a href="mailto:association.topophone@gmail.com">association.topophone@gmail.com</a> 
+              <br/> Karine RUIZ - 06.17.99.00.43
+            </li>        
+          </ul>
+          <p>
+            ADRESSE POSTALE<br/>
+            6, rue des Daims, 31300 TOULOUSE <br/>
+            N° siret : 753 392 927 000 12
+          </p>
+        </div>
       </@container.widget>
     </@container.widgets>
   </div>
