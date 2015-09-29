@@ -76,9 +76,9 @@ public class SectionsResourceTest {
     String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
     System.out.println(href);
     Assertions.assertThat(href).contains(
-        String.format("<a href=\"%sappli/artist/lecommondiamond\">le common diamond</a>",
+        String.format("<a href=\"%sappli/artist/lecommondiamond\" class=\"verticalCenter\">Le Common Diamond</a>",
             deploymentURL.getPath()))
-            .contains(String.format("<a href=\"%sappli/education/creation\">Création musicale</a>",
+            .contains(String.format("<a href=\"%sappli/education/creation\" class=\"verticalCenter\">Création Musicale</a>",
                 deploymentURL.getPath()));
   }
 
@@ -90,7 +90,7 @@ public class SectionsResourceTest {
     String path = deploymentURL.getPath();
     String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
     System.out.println(href);
-    Assertions.assertThat(href).contains(String.format("<img class=\"logo absoluteCenterBase\" src=\"%simages/logo.png\">", path));
+    Assertions.assertThat(href).contains(String.format("<img src=\"%simages/logo.png\">", path));
   }
   
 }

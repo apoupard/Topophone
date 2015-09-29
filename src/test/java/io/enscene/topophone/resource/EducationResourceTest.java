@@ -25,9 +25,7 @@ public class EducationResourceTest {
 
   @Deployment
   public static WebArchive createDeployment() {
-    WebArchive archive = TopophoneWebArchive.get();
-    System.out.println(archive.toString(true));
-    return archive;
+    return TopophoneWebArchive.get();
   }
 
   @Test

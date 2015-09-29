@@ -34,7 +34,7 @@ public class NavResourceTest {
       @ArquillianResteasyResource("html/nav") ResteasyWebTarget webTarget) {
     String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
     System.out.println(href);
-    Assertions.assertThat(href).contains(String.format("<a href=\"%sappli/artist/lecommondiamond\">le common diamond</a>", deploymentURL.getPath()));
+    Assertions.assertThat(href).contains(String.format("<a href=\"%sappli/artist/lecommondiamond\" class=\"verticalCenter\">Le Common Diamond</a>", deploymentURL.getPath()));
   }
   
 //  @Test

@@ -36,7 +36,7 @@ public class HeaderResourceTest {
     String path = deploymentURL.getPath();
     String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
     System.out.println(href);
-    Assertions.assertThat(href).contains(String.format("<img class=\"logo absoluteCenterBase\" src=\"%simages/logo.png\">", path));
+    Assertions.assertThat(href).contains(String.format("<img src=\"%simages/logo.png\">", path));
   }
 }
 
