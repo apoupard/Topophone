@@ -33,7 +33,7 @@ public class SectionsResourceTest {
   public void should_getArtist(
       @ArquillianResteasyResource("html/sections/artist/lecommondiamond") ResteasyWebTarget webTarget) {
     String href = webTarget.request(MediaType.TEXT_HTML).get(String.class);
-    Assertions.assertThat(href).contains("<a class=\"youtube\" href=\"http://www.youtube.com/lecommondiamond\"></a>");
+    Assertions.assertThat(href).contains("<a class=\"youtube\" href=\"https://www.youtube.com/user/LeCommonDiamond\" target=\"_blank\"></a>");
   }
 
   @Test

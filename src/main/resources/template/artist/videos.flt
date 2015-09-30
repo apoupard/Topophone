@@ -11,7 +11,7 @@
 				<div class="video-content">
 					<@images.image href=video.thumbnail onclick="startShowVideo('${video.youtubeVideo}');return false;" hasCredit=false external=true class="clickable vertical-align"/>
 					<div class="description">
-						<div class="row">${video.title}</div>
+						<div class="row bold">${video.title}</div>
 						<div class="row">${video.date}</div>
 						<div class="row">${video.mix}</div>
 						<div class="row">${video.production}</div>

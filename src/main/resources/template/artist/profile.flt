@@ -2,6 +2,6 @@
 <@images.image href=artist.picture />
 <div class="external-link ${artist.id}">
   <#list artist.medias as media>
-    <a class="${media.id}" href="${media.href}"></a>
+    <a class="${media.id}" href="${media.href}" target="_blank"></a>
   </#list>
 </div>

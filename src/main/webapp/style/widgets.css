@@ -711,7 +711,7 @@
 	transform: translate(-50%, -50%);
 	-ms-transform: translate(-50%, -50%);
 	-webkit-transform: translate(-50%, -50%);
-	opacity: 0.65;
+	opacity: 0.85;
 }
 
 /* Video artist */
@@ -777,7 +777,7 @@
 }
 
 .blockRight.appscenic h3.noBorder {
-	margin-top: 30px;
+	margin-top: 20px;
 }
 
 .blockRight.appscenic div {
@@ -829,8 +829,13 @@
 	height: 65px;
 	width: 100%;
 }
+
 .side .widget-content .title h3 {
 	position: absolute;
-    bottom: 0px;
-    width: 100%;
+	bottom: 0px;
+	width: 100%;
+}
+
+.bold, b, h4 {
+	font-weight: 900;
 }

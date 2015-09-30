@@ -25,7 +25,7 @@ public class ArtistDao extends AstractHardCoded<Artist> {
   }
 
   private Artist getInternationalHyperRythmique(String id) {
-    return new Artist(id, getProfileImage(id), getSocialMedia(id), getIhrSongs(), getIhrConcert(), getDescription("artist",id),
+    return new Artist(id, getProfileImage(id), getIhrSocialMedia(), getIhrSongs(), getIhrConcert(), getDescription("artist",id),
         getHeadband(id), "contact@ihr.com", getIhrVideos());
   }
   
@@ -73,7 +73,7 @@ public class ArtistDao extends AstractHardCoded<Artist> {
   }
 
   private Artist getLeCommonDiamond(String id) {
-    List<Media> medias = getSocialMedia(id);
+    List<Media> medias = getCommonDiamondSocialMedia();
     List<Concert> concerts =
         getCommonDiamondConcerts();
     return new Artist(id, getProfileImage(id), medias, getleCommonDiamondSongs(), concerts, getDescription("artist",id),
@@ -112,12 +112,20 @@ public class ArtistDao extends AstractHardCoded<Artist> {
         Concert.of(2,9,2014,"Festival de Carcassonne", "Carcassonne – w/Kavinsky"), 
         Concert.of(5,8,2014,"Festival Les Brasseurs du Lac", "Villeneuve Tolosane"));
   }
-
-  private List<Media> getSocialMedia(String id) {
+  
+  private List<Media> getIhrSocialMedia() {
     List<Media> medias =
-        ImmutableList.of(new Media("youtube", "http://www.youtube.com/" + id), new Media(
-            "facebook", "http://www.facebook.com/" + id), new Media("bandcamp",
-            "http://www.bandcamp.com/" + id));
+        ImmutableList.of(new Media("youtube", "https://www.youtube.com/channel/UC5180Stl_9dDHwyO5hwK-Jw"), new Media(
+            "facebook", "https://www.facebook.com/International-Hyper-Rythmique-37427384425/timeline/"), new Media("bandcamp",
+            "https://ihrmusic.bandcamp.com"));
+    return medias;
+  } 
+
+  private List<Media> getCommonDiamondSocialMedia() {
+    List<Media> medias =
+        ImmutableList.of(new Media("youtube", "https://www.youtube.com/user/LeCommonDiamond"), new Media(
+            "facebook", "https://www.facebook.com/LeCommonDiamond"), new Media("bandcamp",
+            "https://lecommondiamond.bandcamp.com/"));
     return medias;
   }
 

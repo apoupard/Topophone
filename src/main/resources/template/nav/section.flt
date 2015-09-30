@@ -20,7 +20,7 @@
      </li>
   </#list>
 	<li class="last">
-	 <a class="facebook verticalCenter" href="http://www.facebook.com/pages/Topophone/251065455030560">
+	 <a class="facebook verticalCenter" href="http://www.facebook.com/pages/Topophone/251065455030560" target="_blank">
 		<img src="${appcontext}/images/facebook.png" border="0"></a>
 	</li>
 </ul>

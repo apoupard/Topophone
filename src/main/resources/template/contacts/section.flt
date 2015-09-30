@@ -13,7 +13,8 @@
 		  </div>
 		  <div>Topophone est une structure en développement.</div>
 		  <div>Nous mobilions un large réseau de sympatisants qui se mobilise pour défendre une musique basée sur le partage et l’ouverture à l’autre.</div>
-		  <div>C’est pourquoi nous avons besoin de votre soutien ! Contactez-nous !</div>
+		  <div>C’est pourquoi <b>nous avons besoin de votre soutien !</b></div>
+		  <div>Contactez-nous !</div>
 	    </div>
       </@container.widget>>
     </@container.widgets>
@@ -25,15 +26,15 @@
         <div class="verticalCenter">
           <ul>
             <li>
-              <b>QUESTIONS GENERALES</b> : <a href="mailto:contact@topophone.fr">contact@topophone.fr</a> 
+              <b>QUESTIONS GENERALES :</b> <a href="mailto:contact@topophone.fr">contact@topophone.fr</a> 
               <br/> Sébastien BENAZET - 06.51.44.52.31
             </li> 
             <li>
-              <b>BOOKING / DEVELOPPEMENT D'ARTISTES</b> : <a href="booking@topophone.fr">booking@topophone.fr</a> 
+              <b>BOOKING / DEVELOPPEMENT D'ARTISTES :</b> <a href="booking@topophone.fr">booking@topophone.fr</a> 
               <br/> Augustin SERES - 06.87.05.85.28
             </li> 
             <li>
-              <b>ACTIONS EDUCATIVES</b> : <a href="mailto:association.topophone@gmail.com">association.topophone@gmail.com</a> 
+              <b>ACTIONS EDUCATIVES :</b> <a href="mailto:association.topophone@gmail.com">association.topophone@gmail.com</a> 
               <br/> Karine RUIZ - 06.17.99.00.43
             </li>        
           </ul>
@@ -54,7 +55,7 @@
 		    <h3>Contactez-nous</h3>
 		  </div>
 		  <div>Que vous soyez une association, une salle de concert, une école, ou simple curieux, </div>
-		  <div>Topophone se tient à votre disposition pour répondre à vos questions et vous donner plus d’informations sur les différentes actions de l’association.</div>
+		  <div>Topophone se tient à votre disposition pour <b>répondre à vos questions</b> et vous donner plus d’informations sur les différentes actions de l’association.</div>
 		  <div>N’hésitez pas à nous contacter!</div>
 	    </div>
       </@container.widget>
