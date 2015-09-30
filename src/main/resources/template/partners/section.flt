@@ -15,7 +15,7 @@
         </@container.widget>
       </#list>
       <@container.widget opacity=true class='noPadding height-6'>
-          <@images.image href="/images/education/educationImageLeft.png" />
+          <@images.image href="/images/education/left/04.jpg" />
       </@container.widget>
     </@container.widgets>
   </div>
