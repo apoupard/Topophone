@@ -59,10 +59,10 @@ public class PartnersDao extends AstractHardCoded<Partners> {
         
         .put( operationnels, new Partner(
             "Opérationnels", "/images/partners/mlep.png",
-            "<b>Mouvement laïque d'éducation populaire, la Ligue de l'Enseignement est une fédération regroupant diverses associations adhérentes. "
+            "Mouvement laïque d'éducation populaire, la Ligue de l'Enseignement est une fédération regroupant diverses associations adhérentes. "
             + "Topophone est affilié à la Ligue de l’Enseignement 31 et bénéficie, outre les services proposés à tout adhérent (formations, rencontres...) "
             + "d’un accompagnement individualisé sur la partie « actions éducatives » "
-            + "(réunions de travail, mise en relation avec des structures péri et extra scolaires...).</b>"))
+            + "(réunions de travail, mise en relation avec des structures péri et extra scolaires...)."))
         
         .put( operationnels, new Partner(
             "Opérationnels", "/images/partners/inspecAca.jpg",
