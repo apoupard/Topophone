@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
+	xmlns:mobile="https://www.google.com/schemas/sitemap-mobile/1.0">
+	<url>
+		<loc>http://www.topophone.fr/</loc>
+	</url>
+	<url>
+		<loc>http://www.topophone.fr/appli/devartists/presentation</loc>
+	</url>
+	<url>
+		<loc>http://www.topophone.fr/appli/devartists/appscenic</loc>
+	</url>
+	<url>
+		<loc>http://www.topophone.fr/appli/artist/lecommondiamond</loc>
+	</url>
+	<url>
+		<loc>http://www.topophone.fr/appli/artist/ihr</loc>
+	</url>
+	<url>
+		<loc>http://www.topophone.fr/appli/education/presentation</loc>
+	</url>
+	<url>
+		<loc>http://www.topophone.fr/appli/education/creation</loc>
+	</url>
+	<url>
+		<loc>http://www.topophone.fr/appli/education/meeting</loc>
+	</url>
+	<url>
+		<loc>http://www.topophone.fr/appli/contacts</loc>
+	</url>
+	<url>
+		<loc>http://www.topophone.fr/appli/partners</loc>
+	</url>
+</urlset>
