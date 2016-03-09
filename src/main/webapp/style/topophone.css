@@ -15,9 +15,9 @@ html {
 
 body {
 	color: black;
-	margin: 0px;
-	border: 0px;
-	padding: 0px;
+	margin: 0;
+	border: 0;
+	padding: 0;
 	direction: ltr;
 	overflow-y: scroll;
 	height: 100%;
@@ -50,8 +50,8 @@ a, a:visited, a:hover {
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position: left bottom;
-	bottom: 0px;
-	left: 0px;
+	bottom: 0;
+	left: 0;
 	background-size: cover;
 	height: 100%;
 	width: 100%;
@@ -84,7 +84,7 @@ a, a:visited, a:hover {
 #site {
 	height: 100%;
 	width: 1065px;
-	margin: -115px auto 0px;
+	margin: -115px auto 0;
 	padding-left: 15px;
 	padding-bottom: 30px
 }
@@ -126,7 +126,7 @@ a, a:visited, a:hover {
 }
 
 #header #deco {
-	background: url(../images/menutop.png) 0px 0px no-repeat;
+	background: url(../images/menutop.png) 0 0 no-repeat;
 	width: 1080px;
 	margin-left: auto;
 	margin-right: auto;
@@ -239,8 +239,8 @@ nav ul {
 	list-style: none;
 	position: relative;
 	display: inline-block;
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 	margin-bottom: 5px;
 }
 
@@ -274,24 +274,24 @@ nav .smallSeparator, nav .smallSeparator:HOVER {
 	background-color: transparent;
 	width: 2px;
 	border: 0;
-	margin: 0px;
+	margin: 0;
 }
 
 nav .first, nav .first:HOVER {
 	width: 95px;
-	margin: 0px;
+	margin: 0;
 	border-radius: 50px 0 0 0;
 }
 
 nav .last, nav .last:HOVER {
 	width: 95px;
-	margin: 0px;
+	margin: 0;
 	border-radius: 0 50px 0 0;
 }
 
 nav .mini, nav .mini:HOVER {
 	width: 41px;
-	margin: 0px;
+	margin: 0;
 	background: black;
 }
 
@@ -300,7 +300,7 @@ nav ul li {
 	float: left;
 	width: 322px;
 	height: 45px;
-	margin: 0px;
+	margin: 0;
 	background: black;
 	text-align: center;
 	color: white;
@@ -336,7 +336,7 @@ nav ul ul {
 nav ul ul li {
 	float: none;
 	position: relative;
-	margin: 5px 0px 0px 0px;
+	margin: 5px 0 0 0;
 	background: black;
 }
 
