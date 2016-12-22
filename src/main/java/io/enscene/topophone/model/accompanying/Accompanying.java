@@ -1,67 +1,43 @@
 package io.enscene.topophone.model.accompanying;
 
+import com.google.auto.value.AutoValue;
 import io.enscene.topophone.api.ResourceModel;
 import io.enscene.topophone.model.artist.HeadbandCarousel;
 
 import java.util.Collection;
 
-public class Accompanying implements ResourceModel {
-  
-  private HeadbandCarousel headband;
-  
-  private Collection<String> objectives;
+@AutoValue
+public abstract class Accompanying implements ResourceModel {
 
-  private Contact contact;
-
-  private String description;
-  private String picture;
-
-  public Accompanying(HeadbandCarousel headband, Collection<String> objectives, Contact contact, String description, String picture) {
-    this.headband = headband;
-    this.objectives = objectives;
-    this.contact = contact;
-    this.description = description;
-    this.picture = picture;
-  }
-  
-  public HeadbandCarousel getHeadbandCarousel() {
-    return headband;
+  public static Accompanying of(HeadbandCarousel headband, Collection<String> objectives, Contact contact, String description, String picture) {
+    return new AutoValue_Accompanying.Builder().headbandCarousel(headband).objectives(objectives).contact(contact).description(description).picture(picture).build();
   }
 
-  public void setHeadbandCarousel(HeadbandCarousel headband) {
-    this.headband = headband;
+  @AutoValue.Builder
+  public abstract static class Builder {
+
+    public abstract Builder headbandCarousel(HeadbandCarousel headbandCarousel);
+
+    public abstract Builder objectives(Collection<String> objectives);
+
+    public abstract Builder contact(Contact contact);
+
+    public abstract Builder description(String description);
+
+    public abstract Builder picture(String picture);
+
+    public abstract Accompanying build();
+
   }
 
-  public Collection<String> getObjectives() {
-    return objectives;
-  }
+  public abstract HeadbandCarousel getHeadbandCarousel();
 
-  public void setObjectives(Collection<String> objectives) {
-    this.objectives = objectives;
-  }
+  public abstract Collection<String> getObjectives();
 
-  public Contact getContact() {
-    return contact;
-  }
+  public abstract Contact getContact();
 
-  public void setContact(Contact contact) {
-    this.contact = contact;
-  }
+  public abstract String getDescription();
 
-  public String getDescription() {
-    return description;
-  }
+  public abstract String getPicture();
 
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  public String getPicture() {
-    return picture;
-  }
-
-  public void setPicture(String picture) {
-    this.picture = picture;
-  }
-  
 }

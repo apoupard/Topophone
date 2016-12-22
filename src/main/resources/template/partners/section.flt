@@ -1,6 +1,7 @@
 <#import "/container/widgets.flt" as container>
 <#import "/widget/headbandCarousel.flt" as top>
 <#import "/widget/image.flt" as images>
+<#import "/widget/partner.flt" as partnerWidget>
 <div id="top">
   <@top.headbandCarousel logo=partners.headbandCarousel.logo images=partners.headbandCarousel.images/>
 </div>
@@ -26,7 +27,7 @@
           <div class="institution">
             <h3 id="${key.code}">${key.displayName}</h3>
               <#list partners.partnersByInstitution?values[key_index] as partner>
-                <#include "/partners/widgets/partner.flt"> 
+                 <@partnerWidget.partner logo=partner.logo description=partner.description/>
               </#list>
           </div>
         </#list>

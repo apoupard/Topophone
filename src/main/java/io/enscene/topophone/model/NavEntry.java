@@ -1,102 +1,70 @@
 package io.enscene.topophone.model;
 
+import com.google.auto.value.AutoValue;
+import com.google.common.collect.ImmutableList;
 import io.enscene.topophone.api.ResourceModel;
 
 import java.util.List;
 
-import com.google.common.collect.ImmutableList;
+@AutoValue
+public abstract class NavEntry implements ResourceModel {
 
-public class NavEntry implements ResourceModel {
+  @AutoValue.Builder
+  public abstract static class Builder {
+    public abstract Builder id(String id);
 
-  private String id;
-  private String displayName;
-  private String href;
-  private List<NavEntry> entries;
-  private String styleNames;
-  private Boolean isSelected;
+    public abstract Builder displayName(String displayName);
+
+    public abstract Builder href(String href);
+
+    public abstract Builder entries(List<NavEntry> entries);
+
+    public abstract Builder styleNames(String styleNames);
+
+    public abstract Builder isSelected(Boolean isSelected);
+
+    public abstract NavEntry build();
+  }
 
   public static NavEntry of(String id, String displayName, List<NavEntry> entries) {
-    return new NavEntry(id, displayName, "", entries, "", false);
+    return new AutoValue_NavEntry.Builder().id(id).displayName(displayName).entries(entries)
+        .isSelected(false).href("").styleNames("").build();
   }
   
   public static NavEntry of(String id, String displayName, String href, List<NavEntry> entries) {
-    return new NavEntry(id, displayName, href, entries, "", false);
+    return new AutoValue_NavEntry.Builder().id(id).displayName(displayName).href(href).entries(entries)
+        .isSelected(false).styleNames("").build();
   }
 
   public static NavEntry of(String id, String displayName, String href) {
-    return new NavEntry(id, displayName, href, ImmutableList.of(), "", false);
+    return new AutoValue_NavEntry.Builder().id(id).displayName(displayName).href(href)
+        .isSelected(false).entries(ImmutableList.of()).styleNames("").build();
   }
   
   public static NavEntry of(String id, String displayName, String href, Boolean isSelected) {
-    return new NavEntry(id, displayName, href, ImmutableList.of(), "", isSelected);
+    return new AutoValue_NavEntry.Builder().id(id).displayName(displayName).href(href).isSelected(isSelected)
+        .entries(ImmutableList.of()).styleNames("").build();
   }
 
   public static NavEntry separator() {
-    return new NavEntry("", "", "", ImmutableList.of(), "separator", false);
+    return new AutoValue_NavEntry.Builder().id("").displayName("").href("").entries(ImmutableList.of()).styleNames("separator").isSelected(false).build();
   }
   
 
   public static NavEntry smallSeparator() {
-    return new NavEntry("", "", "", ImmutableList.of(), "smallSeparator", false);
+    return new AutoValue_NavEntry.Builder().id("").displayName("").href("").entries(ImmutableList.of()).styleNames("smallSeparator").isSelected(false).build();
   }
 
+  public abstract String getId();
 
-  public NavEntry(String id, String displayName, String href, List<NavEntry> entries, String styleNames, Boolean isSelected) {
-    this.id = id;
-    this.displayName = displayName;
-    this.href = href;
-    this.entries = entries;
-    this.styleNames = styleNames;
-    this.isSelected = isSelected;
-  }
+  public abstract String getDisplayName();
 
-  public String getId() {
-    return id;
-  }
+  public abstract String getHref();
 
-  public void setId(String id) {
-    this.id = id;
-  }
+  public abstract List<NavEntry> getEntries();
 
-  public String getDisplayName() {
-    return displayName;
-  }
+  public abstract String getStyleNames();
 
-  public void setDisplayName(String displayName) {
-    this.displayName = displayName;
-  }
+  public abstract Boolean getIsSelected();
 
-  public String getHref() {
-    return href;
-  }
-
-  public void setHref(String href) {
-    this.href = href;
-  }
-
-  public List<NavEntry> getEntries() {
-    return entries;
-  }
-
-  public void setEntries(List<NavEntry> entries) {
-    this.entries = entries;
-  }
-
-  public String getStyleNames() {
-    return styleNames;
-  }
-
-  public void setStyleNames(String styleNames) {
-    this.styleNames = styleNames;
-  }
-
-  public Boolean getIsSelected() {
-    return isSelected;
-  }
-
-  public void setIsSelected(Boolean isSelected) {
-    this.isSelected = isSelected;
-  }
-  
-  
 }

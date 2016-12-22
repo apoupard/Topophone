@@ -11,6 +11,7 @@ public class ResourceIdMapper {
   private final Map<String, String> idMapper = ImmutableMap.<String, String>builder()
       .put("accompanying", "1")
       .put("header", "1")
+      .put("index", "1")
       .put("main", "1")
       .put("partners", "1")
       .put("devartists", "appscenic")

@@ -1,11 +1,11 @@
-package io.enscene.topophone.templating.resource;
+package io.enscene.topophone.resource;
 
 import static java.util.Optional.empty;
 import static java.util.Optional.ofNullable;
 import io.enscene.topophone.api.ResourceDao;
 import io.enscene.topophone.api.ResourceIdMapper;
 import io.enscene.topophone.api.ResourceModel;
-import io.enscene.topophone.templating.HtmlTemplateEngine;
+import io.enscene.topophone.api.HtmlTemplateEngine;
 
 import java.util.Map;
 
@@ -24,6 +24,7 @@ public class SectionsResource {
 
   private final HtmlTemplateEngine templateEngine;
   private final ResourceIdMapper resourceIdMapper;
+
   private final Map<String, ? extends ResourceDao<? extends ResourceModel>> daos;
 
   @Inject
@@ -72,5 +73,9 @@ public class SectionsResource {
       @QueryParam("version") String version) throws Exception {
     ResourceModel res = getResourceModels(name, version);
     return templateEngine.execute(name, empty(), ImmutableMap.of(name, res));
+  }
+
+  public Map<String, ? extends ResourceDao<? extends ResourceModel>> getDaos() {
+    return daos;
   }
 }

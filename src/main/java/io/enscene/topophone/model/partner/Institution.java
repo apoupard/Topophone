@@ -1,56 +1,25 @@
 package io.enscene.topophone.model.partner;
 
-public class Institution {
-  
-  private String code;
-  private String displayName;
-  
-  public Institution(String code, String displayName) {
-    this.code = code;
-    this.displayName = displayName;
+import com.google.auto.value.AutoValue;
+
+@AutoValue
+public abstract class Institution {
+
+  public static Institution of(String code, String displayName) {
+    return new AutoValue_Institution.Builder().code(code).displayName(displayName).build();
   }
 
-  public String getCode() {
-    return code;
+  @AutoValue.Builder
+  public abstract static class Builder {
+    public abstract Builder code(String code);
+
+    public abstract Builder displayName(String displayName);
+
+    public abstract Institution build();
   }
 
+  public abstract String getCode();
 
-  public void setCode(String code) {
-    this.code = code;
-  }
+  public abstract String getDisplayName();
 
-
-  public String getDisplayName() {
-    return displayName;
-  }
-
-  public void setDisplayName(String displayName) {
-    this.displayName = displayName;
-  }
-
-  @Override
-  public int hashCode() {
-    final int prime = 31;
-    int result = 1;
-    result = prime * result + ((code == null) ? 0 : code.hashCode());
-    return result;
-  }
-
-  @Override
-  public boolean equals(Object obj) {
-    if (this == obj)
-      return true;
-    if (obj == null)
-      return false;
-    if (getClass() != obj.getClass())
-      return false;
-    Institution other = (Institution) obj;
-    if (code == null) {
-      if (other.code != null)
-        return false;
-    } else if (!code.equals(other.code))
-      return false;
-    return true;
-  } 
-  
 }

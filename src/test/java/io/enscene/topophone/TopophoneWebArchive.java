@@ -9,7 +9,7 @@ public class TopophoneWebArchive {
   public static WebArchive get() {
     WebArchive archive = ShrinkWrap
         .create(WebArchive.class)
-        .addPackages(true, TopophoneGuiceConfiguration.class.getPackage())
+        .addPackages(true, "io.enscene.topophone")
         .addAsLibraries(
             Maven.resolver().loadPomFromFile("pom.xml").importCompileAndRuntimeDependencies()
                 .resolve().withTransitivity().asFile());

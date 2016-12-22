@@ -1,13 +1,12 @@
 package io.enscene.topophone.dao;
 
-import java.util.Map;
-
-import javax.inject.Singleton;
-
 import io.enscene.topophone.model.Footer;
 
+import javax.inject.Singleton;
+import java.util.Map;
+
 @Singleton
-public class FooterDao extends AstractHardCoded<Footer> {
+public class IndexDao extends AstractHardCoded<Footer> {
 
   @Override
   void init(Map<String, Footer> database) {

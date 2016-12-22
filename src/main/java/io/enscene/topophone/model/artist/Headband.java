@@ -1,29 +1,24 @@
 package io.enscene.topophone.model.artist;
 
-public class Headband {
+import com.google.auto.value.AutoValue;
 
-  private String main;
-  private String logo;
-  
-  public Headband(String main, String logo) {
-    this.main = main;
-    this.logo = logo;
+@AutoValue
+public abstract class Headband {
+
+  public abstract String getMain();
+
+  public abstract String getLogo();
+
+  @AutoValue.Builder
+  public abstract static class Builder {
+    public abstract Builder main(String main);
+
+    public abstract Builder logo(String logo);
+
+    public abstract Headband build();
   }
 
-  public String getMain() {
-    return main;
+  public static Headband of(String main, String logo) {
+    return new AutoValue_Headband.Builder().main(main).logo(logo).build();
   }
-
-  public void setMain(String main) {
-    this.main = main;
-  }
-
-  public String getLogo() {
-    return logo;
-  }
-
-  public void setLogo(String logo) {
-    this.logo = logo;
-  }
-  
 }

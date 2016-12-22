@@ -1,37 +1,35 @@
 package io.enscene.topophone.model;
 
+import com.google.auto.value.AutoValue;
 import io.enscene.topophone.api.ResourceModel;
 import io.enscene.topophone.model.artist.HeadbandCarousel;
 
-public class Main implements ResourceModel {
+@AutoValue
+public abstract class Main implements ResourceModel {
 
-  private final HeadbandCarousel headband;
-  private final Youtube videoLeft;
-  private final Youtube videoRight;
-  
-  private String description;
-  
-  public Main(HeadbandCarousel headband, String description, Youtube videoLeft, Youtube videoRight) {
-    this.headband = headband;
-    this.description = description;
-    this.videoLeft = videoLeft;
-    this.videoRight = videoRight;
+  public static Main of(HeadbandCarousel headband, String description, Youtube videoLeft, Youtube videoRight) {
+    return new AutoValue_Main.Builder().headbandCarousel(headband).description(description).videoLeft(videoLeft).videoRight(videoRight).build();
   }
 
-  public HeadbandCarousel getHeadbandCarousel() {
-    return headband;
+  @AutoValue.Builder
+  public abstract static class Builder {
+    public abstract Builder headbandCarousel(HeadbandCarousel headband);
+
+    public abstract Builder videoLeft(Youtube videoLeft);
+
+    public abstract Builder videoRight(Youtube videoRight);
+
+    public abstract Builder description(String description);
+
+    public abstract Main build();
   }
 
-  public String getDescription() {
-    return description;
-  }
+  public abstract HeadbandCarousel getHeadbandCarousel();
 
-  public Youtube getVideoLeft() {
-    return videoLeft;
-  }
+  public abstract String getDescription();
 
-  public Youtube getVideoRight() {
-    return videoRight;
-  }
+  public abstract Youtube getVideoLeft();
+
+  public abstract Youtube getVideoRight();
   
 }

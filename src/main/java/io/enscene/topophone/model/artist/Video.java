@@ -1,67 +1,47 @@
 package io.enscene.topophone.model.artist;
 
-public class Video {
+import com.google.auto.value.AutoValue;
 
-  private String youtubeId;
-  private String title;
-  private String date;
-  private String mix;
-  private String production;
-  
-  public Video(String youtubeId, String title, String date, String mix, String production) {
-    this.youtubeId = youtubeId;
-    this.title = title;
-    this.date = date;
-    this.mix = mix;
-    this.production = production;
+@AutoValue
+public abstract class Video {
+
+  public static Video of(String youtubeId, String title, String date, String mix, String production) {
+    return new AutoValue_Video.Builder().youtubeId(youtubeId).title(title).date(date).mix(mix).production(production).build();
   }
 
+  @AutoValue.Builder
+  public abstract static class Builder {
+
+    public abstract Builder youtubeId(String youtubeId);
+
+    public abstract Builder title(String title);
+
+    public abstract Builder date(String date);
+
+    public abstract Builder mix(String mix);
+
+    public abstract Builder production(String production);
+
+    public abstract Video build();
+
+  }
+
+  public abstract String getYoutubeId();
+
+  public abstract String getTitle();
+
+  public abstract String getDate();
+
+  public abstract String getMix();
+
+  public abstract String getProduction();
+
   public String getThumbnail() {
-    return new StringBuilder().append("https://i.ytimg.com/vi/").append(youtubeId).append("/hqdefault.jpg").toString();
+    return new StringBuilder().append("https://i.ytimg.com/vi/").append(getYoutubeId()).append("/hqdefault.jpg").toString();
   }
 
   public String getYoutubeVideo() {
-    return new StringBuilder().append("http://www.youtube.com/v/").append(youtubeId).toString();
-  }
-
-  public String getYoutubeId() {
-    return youtubeId;
-  }
-
-  public void setYoutubeId(String youtubeId) {
-    this.youtubeId = youtubeId;
-  }
-
-  public String getTitle() {
-    return title;
-  }
-
-  public void setTitle(String title) {
-    this.title = title;
-  }
-
-  public String getDate() {
-    return date;
-  }
-
-  public void setDate(String date) {
-    this.date = date;
-  }
-
-  public String getMix() {
-    return mix;
-  }
-
-  public void setMix(String mix) {
-    this.mix = mix;
-  }
-
-  public String getProduction() {
-    return production;
-  }
-
-  public void setProduction(String production) {
-    this.production = production;
+    return new StringBuilder().append("http://www.youtube.com/v/").append(getYoutubeId()).toString();
   }
 
 }

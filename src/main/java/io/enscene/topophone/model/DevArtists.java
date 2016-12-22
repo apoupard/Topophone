@@ -1,133 +1,81 @@
 package io.enscene.topophone.model;
 
-import java.util.List;
-
+import com.google.auto.value.AutoValue;
+import com.google.common.collect.ImmutableList;
 import io.enscene.topophone.api.ResourceModel;
 import io.enscene.topophone.model.artist.HeadbandCarousel;
 
-public class DevArtists implements ResourceModel {
+import javax.annotation.Nullable;
+import java.util.List;
 
-  private String id;
-  private String description;
-  private String image;
-  private HeadbandCarousel headbandCarousel;
-  private List<ArtistLink> artistLinks;
-  private String imageLeft;
-  private Nav subNav;
-  private String blockRight;
+@AutoValue
+public abstract class DevArtists implements ResourceModel {
 
-  private DevArtists(String id, String description, String image, HeadbandCarousel headbandCarousel,
-      Nav subNav, String blockRight) {
-    this.id = id;
-    this.description = description;
-    this.image = image;
-    this.headbandCarousel = headbandCarousel;
-    this.subNav = subNav;
-    this.blockRight = blockRight;
+  public static DevArtists of(String id, String description, String image, HeadbandCarousel headbandCarousel, Nav subNav, String blockRight, List<ArtistLink> artistLinks) {
+    return new AutoValue_DevArtists.Builder().id(id).description(description).image(image).headbandCarousel(headbandCarousel).subNav(subNav).blockRight(blockRight).artistLinks(artistLinks).build();
   }
 
-  public DevArtists(String id, String description, String image, HeadbandCarousel headbandCarousel,
-      Nav subNav, String blockRight, List<ArtistLink> artistLinks) {
-    this(id, description, image, headbandCarousel, subNav, blockRight);
-    this.artistLinks = artistLinks;
+  public static DevArtists of(String id, String description, String image, HeadbandCarousel headbandCarousel, Nav subNav, String blockRight, String imageLeft) {
+    return new AutoValue_DevArtists.Builder().id(id).description(description).image(image).headbandCarousel(headbandCarousel).subNav(subNav).blockRight(blockRight).artistLinks(ImmutableList.of()).imageLeft(imageLeft).build();
   }
 
-  public DevArtists(String id, String description, String image, HeadbandCarousel headbandCarousel,
-      Nav subNav, String blockRight, String imageLeft) {
-    this(id, description, image, headbandCarousel, subNav, blockRight);
-    this.imageLeft = imageLeft;
+  @AutoValue.Builder
+  public abstract static class Builder {
+    public abstract Builder id(String id);
+
+    public abstract Builder description(String description);
+
+    public abstract Builder image(String image);
+
+    public abstract Builder headbandCarousel(HeadbandCarousel headband);
+
+    public abstract Builder artistLinks(List<ArtistLink> artistLinks);
+
+    public abstract Builder imageLeft(String imageLeft);
+
+    public abstract Builder subNav(Nav subNav);
+
+    public abstract Builder blockRight(String blockRight);
+
+    public abstract DevArtists build();
   }
 
-  public String getDescription() {
-    return description;
-  }
+  public abstract String getDescription();
 
-  public void setDescription(String description) {
-    this.description = description;
-  }
+  public abstract String getImage();
 
-  public String getImage() {
-    return image;
-  }
+  public abstract String getId();
 
-  public void setImage(String image) {
-    this.image = image;
-  }
+  public abstract HeadbandCarousel getHeadbandCarousel();
 
-  public String getId() {
-    return id;
-  }
+  public abstract Nav getSubNav();
 
-  public void setId(String id) {
-    this.id = id;
-  }
+  @Nullable
+  public abstract String getImageLeft();
 
-  public HeadbandCarousel getHeadbandCarousel() {
-    return headbandCarousel;
-  }
+  public abstract String getBlockRight();
 
-  public void setHeadbandCarousel(HeadbandCarousel headband) {
-    this.headbandCarousel = headband;
-  }
+  public abstract List<ArtistLink> getArtistLinks();
 
-  public Nav getSubNav() {
-    return subNav;
-  }
+  @AutoValue
+  public abstract static class ArtistLink {
 
-  public String getImageLeft() {
-    return imageLeft;
-  }
-
-  public void setImageLeft(String imageLeft) {
-    this.imageLeft = imageLeft;
-  }
-
-  public void setSubNav(Nav subNav) {
-    this.subNav = subNav;
-  }
-
-  public String getBlockRight() {
-    return blockRight;
-  }
-
-  public void setBlockRight(String blockRight) {
-    this.blockRight = blockRight;
-  }
-
-  public List<ArtistLink> getArtistLinks() {
-    return artistLinks;
-  }
-
-  public void setArtistLinks(List<ArtistLink> artistLinks) {
-    this.artistLinks = artistLinks;
-  }
-
-
-  public static class ArtistLink {
-    private String image;
-    private String link;
-
-    public ArtistLink(String image, String link) {
-      super();
-      this.image = image;
-      this.link = link;
+    public static ArtistLink of(String image, String link) {
+      return new AutoValue_DevArtists_ArtistLink.Builder().image(image).link(link).build();
     }
 
-    public String getImage() {
-      return image;
+    @AutoValue.Builder
+    public abstract static class Builder {
+      public abstract Builder image(String image);
+
+      public abstract Builder link(String link);
+
+      public abstract ArtistLink build();
     }
 
-    public void setImage(String image) {
-      this.image = image;
-    }
+    public abstract String getImage();
 
-    public String getLink() {
-      return link;
-    }
-
-    public void setLink(String link) {
-      this.link = link;
-    }
+    public abstract String getLink();
 
   }
 }

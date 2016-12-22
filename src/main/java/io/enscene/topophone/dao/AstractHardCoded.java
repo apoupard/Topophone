@@ -1,12 +1,7 @@
 package io.enscene.topophone.dao;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Random;
+import java.util.*;
 
 import javax.inject.Inject;
 
@@ -16,7 +11,7 @@ import com.google.common.collect.Maps;
 import freemarker.template.TemplateException;
 import io.enscene.topophone.api.ResourceDao;
 import io.enscene.topophone.api.ResourceModel;
-import io.enscene.topophone.templating.HtmlTemplateEngine;
+import io.enscene.topophone.api.HtmlTemplateEngine;
 
 public abstract class AstractHardCoded<T extends ResourceModel> implements ResourceDao<T> {
 
@@ -25,7 +20,7 @@ public abstract class AstractHardCoded<T extends ResourceModel> implements Resou
   private HtmlTemplateEngine engine;
 
   @Inject
-  void injectinit(HtmlTemplateEngine engine) {
+  public void injectinit(HtmlTemplateEngine engine) {
     this.engine = engine;
     init(database);
   }
@@ -35,6 +30,11 @@ public abstract class AstractHardCoded<T extends ResourceModel> implements Resou
   @Override
   public Optional<T> get(String id, Optional<String> version) {
     return Optional.ofNullable(database.get(id));
+  }
+
+  @Override
+  public Collection<T> getAll() {
+   return database.values();
   }
 
   protected String getDescription(String objectName, String id) {

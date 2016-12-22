@@ -1,29 +1,27 @@
 package io.enscene.topophone.model.artist;
 
-public class Media {
+import com.google.auto.value.AutoValue;
 
-  private String id;
-  private String href;
-  
-  public Media(String id, String href) {
-    this.id = id;
-    this.href = href;
+@AutoValue
+public abstract class Media {
+
+  public static Media of(String id, String href) {
+    return new AutoValue_Media.Builder().id(id).href(href).build();
   }
 
-  public String getId() {
-    return id;
+  @AutoValue.Builder
+  public abstract static class Builder {
+
+    public abstract Builder id(String id);
+
+    public abstract Builder href(String href);
+
+    public abstract Media build();
+
   }
 
-  public void setId(String id) {
-    this.id = id;
-  }
+  public abstract String getId();
 
-  public String getHref() {
-    return href;
-  }
-
-  public void setHref(String href) {
-    this.href = href;
-  }
+  public abstract String getHref();
 
 }

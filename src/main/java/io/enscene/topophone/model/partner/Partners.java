@@ -1,42 +1,30 @@
 package io.enscene.topophone.model.partner;
 
+import com.google.auto.value.AutoValue;
 import io.enscene.topophone.api.ResourceModel;
 import io.enscene.topophone.model.artist.HeadbandCarousel;
 
 import java.util.Collection;
 import java.util.Map;
 
-public class Partners implements ResourceModel {
+@AutoValue
+public abstract class Partners implements ResourceModel {
 
-  private Map<Institution, Collection<Partner>> partnersByInstitution;
-  
-  private HeadbandCarousel headband;
-
-  public Partners() {
-  }
-  
-  public Partners(Map<Institution, Collection<Partner>> partnersByInstitution, HeadbandCarousel headband) {
-    super();
-    this.partnersByInstitution = partnersByInstitution;
-    this.headband = headband;
+  public static Partners of(Map<Institution, Collection<Partner>> partnersByInstitution, HeadbandCarousel headband) {
+    return new AutoValue_Partners.Builder().headbandCarousel(headband).partnersByInstitution(partnersByInstitution).build();
   }
 
+  @AutoValue.Builder
+  public abstract static class Builder {
+    public abstract Builder partnersByInstitution(Map<Institution, Collection<Partner>> partnersByInstitution);
 
-  
-  public Map<Institution, Collection<Partner>> getPartnersByInstitution() {
-    return partnersByInstitution;
+    public abstract Builder headbandCarousel(HeadbandCarousel headband);
+
+    public abstract Partners build();
   }
 
-  public void setPartnersByInstitution(Map<Institution, Collection<Partner>> partnersByInstitution) {
-    this.partnersByInstitution = partnersByInstitution;
-  }
+  public abstract Map<Institution, Collection<Partner>> getPartnersByInstitution();
 
-  public HeadbandCarousel getHeadbandCarousel() {
-    return headband;
-  }
+  public abstract HeadbandCarousel getHeadbandCarousel();
 
-  public void setHeadband(HeadbandCarousel headband) {
-    this.headband = headband;
-  }
-  
 }

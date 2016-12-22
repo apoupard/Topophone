@@ -1,23 +1,23 @@
 package io.enscene.topophone.model;
 
+import com.google.auto.value.AutoValue;
 import io.enscene.topophone.api.ResourceModel;
 import io.enscene.topophone.model.artist.HeadbandCarousel;
 
-public class Contacts implements ResourceModel {
+@AutoValue
+public abstract class Contacts implements ResourceModel {
 
-  private HeadbandCarousel headbandCarousel;
-
-  public Contacts(HeadbandCarousel headbandCarousel) {
-    super();
-    this.headbandCarousel = headbandCarousel;
+  public static Contacts of(HeadbandCarousel headbandCarousel) {
+    return new AutoValue_Contacts.Builder().headbandCarousel(headbandCarousel).build();
   }
 
-  public HeadbandCarousel getHeadbandCarousel() {
-    return headbandCarousel;
+  @AutoValue.Builder
+  public abstract static class Builder {
+    public abstract Builder headbandCarousel(HeadbandCarousel headband);
+
+    public abstract Contacts build();
   }
 
-  public void setHeadbandCarousel(HeadbandCarousel headbandCarousel) {
-    this.headbandCarousel = headbandCarousel;
-  }
-
+  public abstract HeadbandCarousel getHeadbandCarousel();
+  
 }

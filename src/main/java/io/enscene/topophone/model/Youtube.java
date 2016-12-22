@@ -1,11 +1,21 @@
 package io.enscene.topophone.model;
 
-public class Youtube {
+import com.google.auto.value.AutoValue;
+
+@AutoValue
+public abstract class Youtube {
 
   private String youtubeId;
 
-  public Youtube(String youtubeId) {
-    this.youtubeId = youtubeId;
+  public static Youtube of(String youtubeId) {
+    return new AutoValue_Youtube.Builder().youtubeId(youtubeId).build();
+  }
+
+  @AutoValue.Builder
+  public abstract static class Builder {
+    public abstract Builder youtubeId(String youtubeId);
+
+    public abstract Youtube build();
   }
 
   public String getThumbnail() {
@@ -16,12 +26,6 @@ public class Youtube {
     return new StringBuilder().append("http://www.youtube.com/v/").append(youtubeId).toString();
   }
 
-  public String getYoutubeId() {
-    return youtubeId;
-  }
-
-  public void setYoutubeId(String youtubeId) {
-    this.youtubeId = youtubeId;
-  }
+  public abstract String getYoutubeId();
 
 }

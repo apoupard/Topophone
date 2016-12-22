@@ -1,24 +1,24 @@
 package io.enscene.topophone.model;
 
+import com.google.auto.value.AutoValue;
 import io.enscene.topophone.api.ResourceModel;
 
 import java.util.List;
 
-public class Nav implements ResourceModel{
+@AutoValue
+public abstract class Nav implements ResourceModel {
 
-  List<NavEntry> entries;
-
-  public Nav(List<NavEntry> entries) {
-    super();
-    this.entries = entries;
+  public static Nav of(List<NavEntry> entries) {
+    return new AutoValue_Nav.Builder().entries(entries).build();
   }
 
-  public List<NavEntry> getEntries() {
-    return entries;
+  @AutoValue.Builder
+  public abstract static class Builder {
+    public abstract Builder entries(List<NavEntry> entries);
+
+    public abstract Nav build();
   }
 
-  public void setEntries(List<NavEntry> entries) {
-    this.entries = entries;
-  }
+  public abstract List<NavEntry> getEntries();
 
 }

@@ -1,4 +1,4 @@
-package io.enscene.topophone.templating;
+package io.enscene.topophone.api;
 
 import java.io.IOException;
 import java.util.Map;

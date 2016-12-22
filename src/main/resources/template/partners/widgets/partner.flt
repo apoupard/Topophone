@@ -1,6 +1,0 @@
-<div class="partner">
-	<div class="logo">
-	  <img src="${appcontext}${partner.logo}"/>
-	</div>
-	<p>${partner.description}</p>
-</div>

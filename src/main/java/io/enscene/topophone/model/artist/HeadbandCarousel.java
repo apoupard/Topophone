@@ -1,31 +1,29 @@
 package io.enscene.topophone.model.artist;
 
+import com.google.auto.value.AutoValue;
+
 import java.util.List;
 
-public class HeadbandCarousel {
+@AutoValue
+public abstract class HeadbandCarousel {
 
-  private String logo;
-  private List<String> images;
-  
-  public HeadbandCarousel(List<String> images, String logo) {
-    this.images = images;
-    this.logo = logo;
+  public static HeadbandCarousel of(List<String> images, String logo) {
+    return new AutoValue_HeadbandCarousel.Builder().images(images).logo(logo).build();
   }
 
-  public List<String> getImages() {
-    return images;
+  @AutoValue.Builder
+  public abstract static class Builder {
+
+    public abstract Builder images(List<String> images);
+
+    public abstract Builder logo(String logo);
+
+    public abstract HeadbandCarousel build();
+
   }
 
-  public void setImages(List<String> images) {
-    this.images = images;
-  }
+  public abstract List<String> getImages();
 
-  public String getLogo() {
-    return logo;
-  }
+  public abstract String getLogo();
 
-  public void setLogo(String logo) {
-    this.logo = logo;
-  }
-  
 }

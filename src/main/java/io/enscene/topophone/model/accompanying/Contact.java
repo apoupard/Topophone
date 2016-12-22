@@ -1,46 +1,35 @@
 package io.enscene.topophone.model.accompanying;
 
-public class Contact {
-  
-  private String name;
-  private String phone;
-  private String email;
-  private String address;
+import com.google.auto.value.AutoValue;
 
-  public String getName() {
-    return name;
+@AutoValue
+public abstract class Contact {
+
+  public static Builder builder() {
+    return new AutoValue_Contact.Builder();
   }
 
-  public Contact setName(String name) {
-    this.name = name;
-    return this;
+  @AutoValue.Builder
+  public abstract static class Builder {
+
+    public abstract Builder name(String name);
+
+    public abstract Builder phone(String phone);
+
+    public abstract Builder email(String email);
+
+    public abstract Builder address(String address);
+
+    public abstract Contact build();
+
   }
 
-  public String getPhone() {
-    return phone;
-  }
+  public abstract String getName();
 
-  public Contact setPhone(String phone) {
-    this.phone = phone;
-    return this;
-  }
+  public abstract String getPhone();
 
-  public String getEmail() {
-    return email;
-  }
+  public abstract String getEmail();
 
-  public Contact setEmail(String email) {
-    this.email = email;
-    return this;
-  }
-
-  public String getAddress() {
-    return address;
-  }
-
-  public Contact setAddress(String address) {
-    this.address = address;
-    return this;
-  }
+  public abstract String getAddress();
 
 }

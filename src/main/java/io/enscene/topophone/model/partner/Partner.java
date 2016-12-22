@@ -1,41 +1,30 @@
 package io.enscene.topophone.model.partner;
 
+import com.google.auto.value.AutoValue;
 import io.enscene.topophone.api.ResourceModel;
 
-public class Partner implements ResourceModel {
+@AutoValue
+public abstract class Partner implements ResourceModel {
 
-  private String type;
-  private String logo;
-  private String description;
-
-  public Partner(String type, String logo, String description) {
-    this.type = type;
-    this.logo = logo;
-    this.description = description;
+  public static Partner of(String type, String logo, String description) {
+    return new AutoValue_Partner.Builder().type(type).logo(logo).description(description).build();
   }
 
-  public String getLogo() {
-    return logo;
+  @AutoValue.Builder
+  public abstract static class Builder {
+    public abstract Builder type(String type);
+
+    public abstract Builder logo(String logo);
+
+    public abstract Builder description(String description);
+
+    public abstract Partner build();
   }
 
-  public void setLogo(String logo) {
-    this.logo = logo;
-  }
+  public abstract String getLogo();
 
-  public String getDescription() {
-    return description;
-  }
+  public abstract String getDescription();
 
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  public String getType() {
-    return type;
-  }
-
-  public void setType(String type) {
-    this.type = type;
-  }
+  public abstract String getType();
 
 }

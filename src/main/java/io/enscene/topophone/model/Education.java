@@ -1,85 +1,50 @@
 package io.enscene.topophone.model;
 
-import java.util.List;
-
+import com.google.auto.value.AutoValue;
 import io.enscene.topophone.api.ResourceModel;
 import io.enscene.topophone.model.artist.HeadbandCarousel;
 import io.enscene.topophone.model.artist.Song;
 
-public class Education implements ResourceModel {
+import java.util.List;
 
-  private String id;
-  private String imageLeft;
-  private String description;
-  private Youtube video;
-  private HeadbandCarousel headbandCarousel;
-  private Nav subNav;
-  private List<Song> songs;
+@AutoValue
+public abstract class Education implements ResourceModel {
 
-  public Education(String id, String imageLeft, String description, Youtube video, HeadbandCarousel headbandCarousel, Nav subNav, List<Song> songs) {
-    this.id = id;
-    this.imageLeft = imageLeft;
-    this.description = description;
-    this.video = video;
-    this.headbandCarousel = headbandCarousel;
-    this.subNav = subNav;
-    this.songs = songs;
-  }
-  
-  public String getImageLeft() {
-    return imageLeft;
+  public static Education of(String id, String imageLeft, String description, Youtube video, HeadbandCarousel headbandCarousel, Nav subNav, List<Song> songs) {
+    return new AutoValue_Education.Builder().id(id).imageLeft(imageLeft).description(description).video(video).headbandCarousel(headbandCarousel).subNav(subNav).songs(songs).build();
   }
 
-  public void setImageLeft(String imageLeft) {
-    this.imageLeft = imageLeft;
+  @AutoValue.Builder
+  public abstract static class Builder {
+    public abstract Builder id(String id);
+
+    public abstract Builder imageLeft(String imageLeft);
+
+    public abstract Builder description(String description);
+
+    public abstract Builder video(Youtube video);
+
+    public abstract Builder headbandCarousel(HeadbandCarousel headbandCarousel);
+
+    public abstract Builder subNav(Nav subNav);
+
+    public abstract Builder songs(List<Song> songs);
+
+    public abstract Education build();
   }
 
-  public String getDescription() {
-    return description;
-  }
+  public abstract String getImageLeft();
 
-  public void setDescription(String description) {
-    this.description = description;
-  }
+  public abstract String getDescription();
 
-  public Youtube getVideo() {
-    return video;
-  }
+  public abstract Youtube getVideo();
 
-  public void setVideo(Youtube video) {
-    this.video = video;
-  }
+  public abstract String getId();
 
-  public String getId() {
-    return id;
-  }
+  public abstract HeadbandCarousel getHeadbandCarousel();
 
-  public void setId(String id) {
-    this.id = id;
-  }
+  public abstract Nav getSubNav();
 
-  public HeadbandCarousel getHeadbandCarousel() {
-    return headbandCarousel;
-  }
+  public abstract List<Song> getSongs();
 
-  public void setHeadbandCarousel(HeadbandCarousel headbandCarousel) {
-    this.headbandCarousel = headbandCarousel;
-  }
-
-  public Nav getSubNav() {
-    return subNav;
-  }
-
-  public void setSubNav(Nav subNav) {
-    this.subNav = subNav;
-  }
-  
-  public List<Song> getSongs() {
-    return songs;
-  }
-
-  public void setSong(List<Song> songs) {
-    this.songs = songs;
-  }
-  
 }

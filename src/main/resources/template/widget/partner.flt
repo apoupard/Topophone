@@ -1,0 +1,8 @@
+<#macro partner logo description>
+<div class="partner">
+	<div class="logo">
+	  <img src="${appcontext}${logo}"/>
+	</div>
+	<p>${description}</p>
+</div>
+</#macro>

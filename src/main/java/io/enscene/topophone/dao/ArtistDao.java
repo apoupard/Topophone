@@ -1,19 +1,12 @@
 package io.enscene.topophone.dao;
 
+import com.google.common.collect.ImmutableList;
+import io.enscene.topophone.model.artist.*;
+
+import javax.inject.Singleton;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
-import javax.inject.Singleton;
-
-import com.google.common.collect.ImmutableList;
-
-import io.enscene.topophone.model.artist.Artist;
-import io.enscene.topophone.model.artist.Concert;
-import io.enscene.topophone.model.artist.Headband;
-import io.enscene.topophone.model.artist.Media;
-import io.enscene.topophone.model.artist.Song;
-import io.enscene.topophone.model.artist.Video;
 
 @Singleton
 public class ArtistDao extends AstractHardCoded<Artist> {
@@ -25,43 +18,51 @@ public class ArtistDao extends AstractHardCoded<Artist> {
   }
 
   private Artist getInternationalHyperRythmique(String id) {
-    return new Artist(id, getProfileImage(id), getIhrSocialMedia(), getIhrSongs(), getIhrConcert(), getDescription("artist",id),
-        getHeadband(id), "contact@ihr.com", getIhrVideos());
+    return Artist.builder()
+        .id(id)
+        .picture(getProfileImage(id))
+        .medias(getIhrSocialMedia())
+        .songs(getIhrSongs())
+        .concerts(getIhrConcert())
+        .description(getDescription("artist", id))
+        .headband(getHeadband(id))
+        .contactEmail("contact@ihr.com")
+        .videos(getIhrVideos())
+        .build();
   }
-  
-  
+
   private List<Song> getIhrSongs() {
     List<Song> songs = new ArrayList<>();
-    songs.add(new Song("Cowboy", "music/ihr/cowboy.wav"));
-    songs.add(new Song("Marble giant", "music/ihr/marblegiant.wav"));
-    songs.add(new Song("Norma jeane", "music/ihr/normajeane.wav"));
+    songs.add(Song.of("Cowboy", "music/ihr/cowboy.wav"));
+    songs.add(Song.of("Marble giant", "music/ihr/marblegiant.wav"));
+    songs.add(Song.of("Norma jeane", "music/ihr/normajeane.wav"));
     return songs;
   }
   
   private List<Song> getleCommonDiamondSongs() {
     List<Song> songs = new ArrayList<>();
-    songs.add(new Song("After All", "music/lecommondiamond/afterall.wav"));
-    songs.add(new Song("Scandinavia", "music/lecommondiamond/scandinavia.wav"));
-    songs.add(new Song("Swedish Summer Dream", "music/lecommondiamond/swedishsummerdream.wav"));
-    songs.add(new Song("The Monster", "music/lecommondiamond/themonster.wav"));
+    songs.add(Song.of("After All", "music/lecommondiamond/afterall.wav"));
+    songs.add(Song.of("Scandinavia", "music/lecommondiamond/scandinavia.wav"));
+    songs.add(Song.of("Swedish Summer Dream", "music/lecommondiamond/swedishsummerdream.wav"));
+    songs.add(Song.of("The Monster", "music/lecommondiamond/themonster.wav"));
     return songs;
   }
 
   private List<Video> getCommonDiamondVideos() {
     return ImmutableList.of(
-        new Video("RfswM1TKImw", "\"AFTER ALL\"","Avril 2014","Mix. A.Workman & A.Libeyre","Real. Elliott Broué"), 
-        new Video("l3kcrbm2aNc", "\"SCANDINAVIA\" ","Octobre 2014","Live @ Le Bikini","Réal. Ypok"), 
-        new Video("AKCVIaO7JzA", "\"KILL US TONIGHT\" ","Avril 2015","Live @ Le Printemps de Bourges","Réal. Le Printemps de Bourges"), 
-        new Video("2Y_Y1r6GxlE", "\"GO OUT FOR A WALK\" ","Mai 2012","Mix. Thom La Juv's","Réal. Laureline Lavergne"));
+        Video.of("RfswM1TKImw", "\"AFTER ALL\"", "Avril 2014", "Mix. A.Workman & A.Libeyre", "Real. Elliott Broué"),
+        Video.of("l3kcrbm2aNc", "\"SCANDINAVIA\" ", "Octobre 2014", "Live @ Le Bikini", "Réal. Ypok"),
+        Video.of("AKCVIaO7JzA", "\"KILL US TONIGHT\" ", "Avril 2015", "Live @ Le Printemps de Bourges", "Réal. Le Printemps de Bourges"),
+        Video.of("2Y_Y1r6GxlE", "\"GO OUT FOR A WALK\" ", "Mai 2012", "Mix. Thom La Juv's", "Réal. Laureline Lavergne"));
   }
 
   private List<Video> getIhrVideos() {
     return ImmutableList.of(
-        new Video("Z5vk0QCY8zk", "\"COWBOYS\"","Mars 2013","","Réal. P. Gilbert"), 
-        new Video("QGP4n2mxln0", "\"NORMA JEAN\" ","Mars 2014","","Réal. Mamy Scopitone "), 
-        new Video("bGZvlud8lIE", "\"STONE AND DUST\" ","Septembre 2014","","Réal. P. Gilbert"), 
-        new Video("VJ3pbTeSIJI", "\"THE BOAT\" ","Juin 2015","Live @ Espace Bonnefoy","Réal. Ypok"), 
-        new Video("l7ocDe3Qleg", "\"COWBOYS\" ","Juin 2015","Live @ Espace Bonnefoy"," Réal. Ypok"));
+        Video.of("Z5vk0QCY8zk", "\"COWBOYS\"", "Mars 2013", "", "Réal. P. Gilbert"),
+        Video.of("QGP4n2mxln0", "\"NORMA JEAN\" ", "Mars 2014", "", "Réal. Mamy Scopitone "),
+        Video.of("bGZvlud8lIE", "\"STONE AND DUST\" ", "Septembre 2014", "", "Réal. P. Gilbert"),
+        Video.of("VJ3pbTeSIJI", "\"THE BOAT\" ", "Juin 2015", "Live @ Espace Bonnefoy", "Réal. Ypok"),
+        Video.of("l7ocDe3Qleg", "\"COWBOYS\" ", "Juin 2015", "Live @ Espace Bonnefoy", " Réal. Ypok"));
   }
   
   private String getProfileImage(String id) {
@@ -69,15 +70,25 @@ public class ArtistDao extends AstractHardCoded<Artist> {
   }
 
   private Headband getHeadband(String id) {
-    return new Headband("/images/artists/" + id + "/bandeau.png", "/images/artists/" + id + "/bandeauLogo.png");
+    return Headband.of("/images/artists/" + id + "/bandeau.png", "/images/artists/" + id + "/bandeauLogo.png");
   }
 
   private Artist getLeCommonDiamond(String id) {
     List<Media> medias = getCommonDiamondSocialMedia();
     List<Concert> concerts =
         getCommonDiamondConcerts();
-    return new Artist(id, getProfileImage(id), medias, getleCommonDiamondSongs(), concerts, getDescription("artist",id),
-        getHeadband(id), "contact@lecommundiamond.com", getCommonDiamondVideos());
+
+    return Artist.builder()
+        .id(id)
+        .picture(getProfileImage(id))
+        .medias(medias)
+        .songs(getleCommonDiamondSongs())
+        .concerts(concerts)
+        .description(getDescription("artist", id))
+        .headband(getHeadband(id))
+        .contactEmail("contact@lecommundiamond.com")
+        .videos(getCommonDiamondVideos())
+        .build();
   }
 
   private ImmutableList<Concert> getCommonDiamondConcerts() {
@@ -97,7 +108,6 @@ public class ArtistDao extends AstractHardCoded<Artist> {
         );
   }
   
-  
   private ImmutableList<Concert> getIhrConcert() {
     return ImmutableList.of(
         Concert.of(16,11,2015,"Les 3 Baudets", "Paris"), 
@@ -115,16 +125,16 @@ public class ArtistDao extends AstractHardCoded<Artist> {
   
   private List<Media> getIhrSocialMedia() {
     List<Media> medias =
-        ImmutableList.of(new Media("youtube", "https://www.youtube.com/channel/UC5180Stl_9dDHwyO5hwK-Jw"), new Media(
-            "facebook", "https://www.facebook.com/International-Hyper-Rythmique-37427384425/timeline/"), new Media("bandcamp",
+        ImmutableList.of(Media.of("youtube", "https://www.youtube.com/channel/UC5180Stl_9dDHwyO5hwK-Jw"), Media.of(
+            "facebook", "https://www.facebook.com/International-Hyper-Rythmique-37427384425/timeline/"), Media.of("bandcamp",
             "https://ihrmusic.bandcamp.com"));
     return medias;
   } 
 
   private List<Media> getCommonDiamondSocialMedia() {
     List<Media> medias =
-        ImmutableList.of(new Media("youtube", "https://www.youtube.com/user/LeCommonDiamond"), new Media(
-            "facebook", "https://www.facebook.com/LeCommonDiamond"), new Media("bandcamp",
+        ImmutableList.of(Media.of("youtube", "https://www.youtube.com/user/LeCommonDiamond"), Media.of(
+            "facebook", "https://www.facebook.com/LeCommonDiamond"), Media.of("bandcamp",
             "https://lecommondiamond.bandcamp.com/"));
     return medias;
   }

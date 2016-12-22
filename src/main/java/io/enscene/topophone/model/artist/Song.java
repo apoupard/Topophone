@@ -1,29 +1,27 @@
 package io.enscene.topophone.model.artist;
 
-public class Song {
+import com.google.auto.value.AutoValue;
 
-  private String title;
-  private String url;
-  
-  public Song(String title, String url) {
-    this.title = title;
-    this.url = url;
+@AutoValue
+public abstract class Song {
+
+  public static Song of(String title, String url) {
+    return new AutoValue_Song.Builder().title(title).url(url).build();
   }
 
-  public String getTitle() {
-    return title;
-  }
+  public abstract String getTitle();
 
-  public void setTitle(String title) {
-    this.title = title;
-  }
+  public abstract String getUrl();
 
-  public String getUrl() {
-    return url;
-  }
+  @AutoValue.Builder
+  public abstract static class Builder {
 
-  public void setUrl(String url) {
-    this.url = url;
+    public abstract Builder title(String id);
+
+    public abstract Builder url(String href);
+
+    public abstract Song build();
+
   }
 
 }

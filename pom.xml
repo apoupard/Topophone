@@ -39,13 +39,18 @@
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-core</artifactId>
-			<version>1.1.3</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>commons-lang</groupId>
 			<artifactId>commons-lang</artifactId>
 			<version>2.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>19.0</version>
 		</dependency>
 
 		<dependency>
@@ -55,15 +60,51 @@
 		</dependency>
 
 		<dependency>
+			<groupId>com.google.auto.value</groupId>
+			<artifactId>auto-value</artifactId>
+			<version>1.3</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+		    <groupId>com.google.auto.service</groupId>
+		    <artifactId>auto-service</artifactId>
+		    <version>1.0-rc2</version>
+		    <scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.immutables</groupId>
+			<artifactId>value</artifactId>
+			<version>2.3.10</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.findbugs</groupId>
+			<artifactId>jsr305</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+		
+		<dependency>
+  <groupId>com.fasterxml.jackson.datatype</groupId>
+  <artifactId>jackson-datatype-guava</artifactId>
+  <version>2.4.0</version>
+</dependency>
+<dependency>
+  <groupId>com.fasterxml.jackson.datatype</groupId>
+  <artifactId>jackson-datatype-jdk8</artifactId>
+  <version>2.6.3</version>
+</dependency>
+
+		<dependency>
 			<groupId>io.enscene.core</groupId>
 			<artifactId>enscene-core-impl-resteasy</artifactId>
 			<version>${version.enscene}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jboss.resteasy</groupId>
-			<artifactId>resteasy-jackson-provider</artifactId>
+			<artifactId>resteasy-jackson2-provider</artifactId>
 			<version>3.0.8.Final</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.freemarker</groupId>
 			<artifactId>freemarker</artifactId>
@@ -80,7 +121,14 @@
 			<artifactId>ziplet</artifactId>
 			<version>2.0.0</version>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.3.2</version>
+		</dependency>
+
+
 		<dependency>
 			<groupId>ro.isdc.wro4j</groupId>
 			<artifactId>wro4j-core</artifactId>
@@ -107,9 +155,9 @@
 			<version>2.97.20150601-a</version>
 		</dependency>
 		<dependency>
-		    <groupId>org.webjars.bower</groupId>
-		    <artifactId>perfect-scrollbar</artifactId>
-		    <version>0.6.4</version>
+			<groupId>org.webjars.bower</groupId>
+			<artifactId>perfect-scrollbar</artifactId>
+			<version>0.6.4</version>
 		</dependency>
 		
 		<dependency>
@@ -118,6 +166,12 @@
 			<version>${version.enscene-testing-arquillian}</version>
 			<type>pom</type>
 			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.jboss.resteasy</groupId>
+					<artifactId>resteasy-jackson-provider</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>io.enscene.testing.arquillian</groupId>
@@ -132,6 +186,7 @@
 			<artifactId>assertj-core</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -148,6 +203,24 @@
 				<configuration>
 					<encoding>UTF-8</encoding>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>add-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>${project.build.directory}/generated-sources/annotations/</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>com.spotify</groupId>
@@ -167,7 +240,6 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-deploy-plugin</artifactId>
-				<version>2.8.2</version>
 				<configuration>
 					<altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo</altDeploymentRepository>
 				</configuration>

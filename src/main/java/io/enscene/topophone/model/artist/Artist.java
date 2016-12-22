@@ -1,104 +1,60 @@
 package io.enscene.topophone.model.artist;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.google.auto.value.AutoValue;
 import io.enscene.topophone.api.ResourceModel;
 
 import java.util.List;
 
-public class Artist implements ResourceModel {
+@AutoValue
+@JsonDeserialize(builder = AutoValue_Artist.Builder.class)
+public abstract class Artist implements ResourceModel {
 
-  private String id;
-  private String picture;
-  private List<Media> medias;
-  private List<Video> videos;
-  private List<Concert> concerts;
-  private List<Song> songs;
-  private String description;
-  private Headband headband;
-  private String contactEmail;
+    public static Builder builder() {
+        return new AutoValue_Artist.Builder();
+    }
 
-  public Artist(String id, String picture, List<Media> medias, List<Song> songs,
-      List<Concert> concerts, String description, Headband headband, String contactEmail,
-      List<Video> videos) {
-    this.id = id;
-    this.picture = picture;
-    this.medias = medias;
-    this.songs = songs;
-    this.concerts = concerts;
-    this.description = description;
-    this.headband = headband;
-    this.contactEmail = contactEmail;
-    this.videos = videos;
-  }
+    @AutoValue.Builder
+    public abstract static class Builder {
 
-  public String getId() {
-    return id;
-  }
+        public abstract Builder id(String s);
 
-  public void setId(String id) {
-    this.id = id;
-  }
+        public abstract Builder picture(String n);
 
-  public String getPicture() {
-    return picture;
-  }
+        public abstract Builder medias(List<Media> medias);
 
-  public void setPicture(String picture) {
-    this.picture = picture;
-  }
+        public abstract Builder videos(List<Video> videos);
 
-  public List<Media> getMedias() {
-    return medias;
-  }
+        public abstract Builder concerts(List<Concert> concerts);
 
-  public void setMedias(List<Media> medias) {
-    this.medias = medias;
-  }
+        public abstract Builder songs(List<Song> songs);
 
-  public List<Song> getSongs() {
-    return songs;
-  }
+        public abstract Builder description(String s);
 
-  public void setSong(List<Song> songs) {
-    this.songs = songs;
-  }
+        public abstract Builder headband(Headband s);
 
-  public List<Concert> getConcerts() {
-    return concerts;
-  }
+        public abstract Builder contactEmail(String s);
 
-  public void setConcerts(List<Concert> concerts) {
-    this.concerts = concerts;
-  }
+        public abstract Artist build();
 
-  public String getDescription() {
-    return description;
-  }
+    }
 
-  public void setDescription(String description) {
-    this.description = description;
-  }
+    public abstract String getid();
 
-  public Headband getHeadband() {
-    return headband;
-  }
+    public abstract String getPicture();
 
-  public void setHeadband(Headband headband) {
-    this.headband = headband;
-  }
+    public abstract List<Media> getMedias();
 
-  public String getContactEmail() {
-    return contactEmail;
-  }
+    public abstract List<Video> getVideos();
 
-  public void setContactEmail(String contactEmail) {
-    this.contactEmail = contactEmail;
-  }
+    public abstract List<Concert> getConcerts();
 
-  public List<Video> getVideos() {
-    return videos;
-  }
+    public abstract List<Song> getSongs();
 
-  public void setVideos(List<Video> videos) {
-    this.videos = videos;
-  }
+    public abstract String getDescription();
+
+    public abstract Headband getHeadband();
+
+    public abstract String getContactEmail();
+
 }
