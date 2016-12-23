@@ -56,7 +56,7 @@ public class TopophoneModule extends ServletModule {
     filter("/wro/*").through(WroFilter.class);
 
     bind(CompressingFilter.class).asEagerSingleton();
-    filter("/wro/*", "/images/*, /music/*").through(CompressingFilter.class);
+    filter("/wro/*", "/images/*", "/music/*").through(CompressingFilter.class);
   }
 
 
