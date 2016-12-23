@@ -7,9 +7,10 @@ import java.util.Map;
 
 public class ContactsDao extends AstractHardCoded<Contacts> {
 
-  @Override
-  void init(Map<String, Contacts> database) {
-    database.put("1", Contacts.of(HeadbandCarousel.of(getAllHeadbandImages(), "/images/education/headbandlogo.png")));
-  }
+    @Override
+    void init(Map<String, Contacts> database) {
+        database.put("1", Contacts.builder()
+                .headbandCarousel(HeadbandCarousel.of(getAllHeadbandImages(), "/images/education/headbandlogo.png")).build());
+    }
 
 }

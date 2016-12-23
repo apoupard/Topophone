@@ -1,81 +1,60 @@
 package io.enscene.topophone.model;
 
-import com.google.auto.value.AutoValue;
+import java.util.List;
+
+import javax.annotation.Nullable;
+
+import org.immutables.value.Value;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.google.common.collect.ImmutableList;
+
 import io.enscene.topophone.api.ResourceModel;
 import io.enscene.topophone.model.artist.HeadbandCarousel;
 
-import javax.annotation.Nullable;
-import java.util.List;
-
-@AutoValue
-public abstract class DevArtists implements ResourceModel {
+@Value.Immutable
+@JsonSerialize(as = ImmutableDevArtists.class)
+@JsonDeserialize(as = ImmutableDevArtists.class)
+public interface DevArtists extends ResourceModel {
 
   public static DevArtists of(String id, String description, String image, HeadbandCarousel headbandCarousel, Nav subNav, String blockRight, List<ArtistLink> artistLinks) {
-    return new AutoValue_DevArtists.Builder().id(id).description(description).image(image).headbandCarousel(headbandCarousel).subNav(subNav).blockRight(blockRight).artistLinks(artistLinks).build();
+    return ImmutableDevArtists.builder().id(id).description(description).image(image).headbandCarousel(headbandCarousel).subNav(subNav).blockRight(blockRight).artistLinks(artistLinks).build();
   }
 
   public static DevArtists of(String id, String description, String image, HeadbandCarousel headbandCarousel, Nav subNav, String blockRight, String imageLeft) {
-    return new AutoValue_DevArtists.Builder().id(id).description(description).image(image).headbandCarousel(headbandCarousel).subNav(subNav).blockRight(blockRight).artistLinks(ImmutableList.of()).imageLeft(imageLeft).build();
+    return ImmutableDevArtists.builder().id(id).description(description).image(image).headbandCarousel(headbandCarousel).subNav(subNav).blockRight(blockRight).artistLinks(ImmutableList.of()).imageLeft(imageLeft).build();
   }
 
-  @AutoValue.Builder
-  public abstract static class Builder {
-    public abstract Builder id(String id);
+  String getDescription();
 
-    public abstract Builder description(String description);
+  String getImage();
 
-    public abstract Builder image(String image);
+  String getId();
 
-    public abstract Builder headbandCarousel(HeadbandCarousel headband);
+  HeadbandCarousel getHeadbandCarousel();
 
-    public abstract Builder artistLinks(List<ArtistLink> artistLinks);
-
-    public abstract Builder imageLeft(String imageLeft);
-
-    public abstract Builder subNav(Nav subNav);
-
-    public abstract Builder blockRight(String blockRight);
-
-    public abstract DevArtists build();
-  }
-
-  public abstract String getDescription();
-
-  public abstract String getImage();
-
-  public abstract String getId();
-
-  public abstract HeadbandCarousel getHeadbandCarousel();
-
-  public abstract Nav getSubNav();
+  Nav getSubNav();
 
   @Nullable
-  public abstract String getImageLeft();
+  String getImageLeft();
 
-  public abstract String getBlockRight();
+  String getBlockRight();
 
-  public abstract List<ArtistLink> getArtistLinks();
+  List<ArtistLink> getArtistLinks();
 
-  @AutoValue
-  public abstract static class ArtistLink {
+  @Value.Immutable
+  @JsonSerialize(as = ImmutableArtistLink.class)
+  @JsonDeserialize(as = ImmutableArtistLink.class)
+  static public interface  ArtistLink {
 
     public static ArtistLink of(String image, String link) {
-      return new AutoValue_DevArtists_ArtistLink.Builder().image(image).link(link).build();
+      return ImmutableArtistLink.builder().image(image).link(link).build();
     }
 
-    @AutoValue.Builder
-    public abstract static class Builder {
-      public abstract Builder image(String image);
+    String getImage();
 
-      public abstract Builder link(String link);
-
-      public abstract ArtistLink build();
-    }
-
-    public abstract String getImage();
-
-    public abstract String getLink();
+    String getLink();
 
   }
 }

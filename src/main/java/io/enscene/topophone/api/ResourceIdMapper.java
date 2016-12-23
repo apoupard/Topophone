@@ -13,10 +13,10 @@ public class ResourceIdMapper {
       .put("header", "1")
       .put("index", "1")
       .put("main", "1")
-      .put("partners", "1")
+      .put("partners", "all")
       .put("devartists", "appscenic")
       .put("education", "presentation")
-      .put("nav", "1")
+      .put("nav", "main")
       .put("footer", "1")
       .put("contacts", "1")
       .build();

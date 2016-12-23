@@ -1,0 +1,65 @@
+{
+  "id":"presentation",
+  "description":"<h3>Présentation</h3>\n<p>L’association développe le projet professionnel d'artistes musiciens « en développement ».</p>\n<p>A l’aide d’un réseau de partenaires professionnels qui mettent leurs compétences au service du\ngroupe, Topophone coordonne le développement de chaque artiste en mettant à sa disposition des\nservices lui permettant d’opérer une mutation vers sa professionnalisation.</p>\n<p>Topophone oriente son travail vers le développement « live » du groupe. Elle gère en interne les\nvolets « booking », « financement », « scénographie et mise en scène » et « management ». En\nparallèle, selon les besoins du groupe, elle mobilise des partenaires (édition, label, communication)\nafin de développer en cohérence l'ensemble du projet.</p>\n\n<h3>Objectifs généraux</h3>\n<ul class=\"dash\">\n\t<li>Développer les projets artistiques des groupes accompagnés, avec une orientation donnée surle développement « scénique » du groupe.</li>\n\t<li>Faciliter la professionnalisation des groupes accompagnés par la mutualisation des compétences des partenaires engagés auprès du groupe.</li>\n</ul>\n<h3>Les étapes d’accompagnement</h3>\n<ol>\n\t<li>Analyse du profil du groupe, de ses besoins et de ses ambitions </li>\n\t<li>Établissement d’objectifs de développement du groupe à court et moyen terme</li>\n\t<li>Mise en place par Topophone d’une formule d’accompagnement adaptée</li>\n\t<li>Mobilisation des partenaires en fonction de l'état d'avancée du développement (scénographe, metteur en scène, techniciens, label, studio d’enregistrement)</li>\n</ol>\n<h3>L'équipe Topophone</h3>\n<p>Topophone est composée de deux équipes:</p>\n<ul class=\"dash\">\n\t<li>Une équipe « Production » - booking, administration, financement et coordination du projet.</li>\n\t<li>Une équipe « Accompagnement scénique » - scénographie & mise en scène, que Topophone met à disposition du groupe en fonction de ses besoins et de son état d'avancement.</li>\n</ul>\n<h3>Une mutualisation des compétences</h3>\n<p>\nTopophone mobilise un ensemble d’acteurs professionnels (studio d’enregistrement, graphiste,\nmetteur en scène, photographe, techniciens son et lumière, chargé de diffusion, scénographe) qui\nmutualisent leurs compétences pour développer le projet artistique du groupe accompagné.<br>\nTopophone coordonne la mise en œuvre des actions afin de proposer un projet cohérent et abouti.\n</p>",
+  "image":"/images/education/creation.png",
+  "headbandCarousel":{
+     "images":[
+        "images/headbandCarousel/devartists/09.jpg",
+        "images/headbandCarousel/devartists/17.jpg",
+        "images/headbandCarousel/devartists/19.jpg",
+        "images/headbandCarousel/devartists/06.jpg",
+        "images/headbandCarousel/devartists/16.jpg",
+        "images/headbandCarousel/devartists/01.jpg",
+        "images/headbandCarousel/devartists/11.jpg",
+        "images/headbandCarousel/devartists/03.jpg",
+        "images/headbandCarousel/devartists/15.jpg",
+        "images/headbandCarousel/devartists/18.jpg",
+        "images/headbandCarousel/devartists/14.jpg",
+        "images/headbandCarousel/devartists/12.jpg",
+        "images/headbandCarousel/devartists/04.jpg",
+        "images/headbandCarousel/devartists/05.jpg",
+        "images/headbandCarousel/devartists/08.jpg",
+        "images/headbandCarousel/devartists/02.jpg",
+        "images/headbandCarousel/devartists/07.jpg",
+        "images/headbandCarousel/devartists/13.jpg",
+        "images/headbandCarousel/devartists/10.jpg"
+     ],
+     "logo":"/images/education/headbandlogo.png"
+  },
+  "subNav":{
+     "entries":[
+        {
+           "id":"presentation",
+           "displayName":"Développement d'artistes",
+           "href":"/devartists/presentation",
+           "entries":[
+
+           ],
+           "styleNames":"",
+           "isSelected":true
+        },
+        {
+           "id":"presentation",
+           "displayName":"Accompagnement Scénique",
+           "href":"/devartists/appscenic",
+           "entries":[
+
+           ],
+           "styleNames":"",
+           "isSelected":false
+        }
+     ]
+  },
+  "imageLeft":null,
+  "blockRight":"<div class=\"blockRight presentation\">\n  <div class=\"title\">\n    <h3>Objectifs généraux</h3>\n  </div>\n  <div>Développer le projet professionnel du groupe par la mise en place d'une stratégie de développement construite autour du « live »</div>\n  <div>Faciliter sa progression par une mutualisation d'acteurs professionnels partenaires du projet</div>\n  <div>Sensibiliser les artistes à la mise en place d'actions de médiation culturelle</div>\n</div",
+  "artistLinks":[
+     {
+        "image":"/images/devartists/lecommondiamond.jpg",
+        "link":"/artist/lecommondiamond"
+     },
+     {
+        "image":"/images/devartists/ihr.jpg",
+        "link":"/artist/ihr"
+     }
+  ]
+}

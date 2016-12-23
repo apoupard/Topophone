@@ -1,37 +1,30 @@
 package io.enscene.topophone.model.artist;
 
-import com.google.auto.value.AutoValue;
-
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-@AutoValue
-public abstract class Concert {
+import org.immutables.value.Value;
 
-    public static Builder builder() {
-        return new AutoValue_Concert.Builder();
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@Value.Immutable
+@JsonSerialize(as = ImmutableConcert.class)
+@JsonDeserialize(as = ImmutableConcert.class)
+public interface Concert {
+
+    public static ImmutableConcert.Builder builder() {
+        return ImmutableConcert.builder();
     }
 
     public static Concert of(int day, int month, int year, String place, String city) {
         return builder().city(city).place(place).date(new GregorianCalendar(year, month, day).getTime()).build();
     }
 
-    @AutoValue.Builder
-    public abstract static class Builder {
+    Date getDate();
 
-        public abstract Builder date(Date s);
+    String getPlace();
 
-        public abstract Builder place(String s);
-
-        public abstract Builder city(String s);
-
-        public abstract Concert build();
-    }
-
-    public abstract Date getDate();
-
-    public abstract String getPlace();
-
-    public abstract String getCity();
+    String getCity();
 
 }

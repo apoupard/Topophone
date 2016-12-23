@@ -1,31 +1,29 @@
 package io.enscene.topophone.model;
 
-import com.google.auto.value.AutoValue;
+import org.immutables.value.Value;
 
-@AutoValue
-public abstract class Youtube {
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-  private String youtubeId;
+@Value.Immutable
+@JsonSerialize(as = ImmutableYoutube.class)
+@JsonDeserialize(as = ImmutableYoutube.class)
+public interface Youtube {
 
   public static Youtube of(String youtubeId) {
-    return new AutoValue_Youtube.Builder().youtubeId(youtubeId).build();
+    return ImmutableYoutube.builder().youtubeId(youtubeId).build();
   }
 
-  @AutoValue.Builder
-  public abstract static class Builder {
-    public abstract Builder youtubeId(String youtubeId);
-
-    public abstract Youtube build();
+  @Value.Default
+  public default String getThumbnail() {
+    return new StringBuilder().append("https://i.ytimg.com/vi/").append(getYoutubeId()).append("/hqdefault.jpg").toString();
   }
 
-  public String getThumbnail() {
-    return new StringBuilder().append("https://i.ytimg.com/vi/").append(youtubeId).append("/hqdefault.jpg").toString();
+  @Value.Default
+  public default String getYoutubeVideo() {
+    return new StringBuilder().append("http://www.youtube.com/v/").append(getYoutubeId()).toString();
   }
 
-  public String getYoutubeVideo() {
-    return new StringBuilder().append("http://www.youtube.com/v/").append(youtubeId).toString();
-  }
-
-  public abstract String getYoutubeId();
+  String getYoutubeId();
 
 }

@@ -1,0 +1,112 @@
+{
+  "entries":[
+     {
+        "id":"",
+        "displayName":"",
+        "href":"",
+        "entries":[
+
+        ],
+        "styleNames":"smallSeparator",
+        "isSelected":false
+     },
+     {
+        "id":"artist",
+        "displayName":"Développement d'Artistes",
+        "href":"",
+        "entries":[
+           {
+              "id":"presentation",
+              "displayName":"Présentation du Projet",
+              "href":"/devartists/presentation",
+              "entries":[
+
+              ],
+              "styleNames":"",
+              "isSelected":false
+           },
+           {
+              "id":"lecommondiamond",
+              "displayName":"Le Common Diamond",
+              "href":"/artist/lecommondiamond",
+              "entries":[
+
+              ],
+              "styleNames":"",
+              "isSelected":false
+           },
+           {
+              "id":"ihr",
+              "displayName":"International Hyper Rythmique",
+              "href":"/artist/ihr",
+              "entries":[
+
+              ],
+              "styleNames":"",
+              "isSelected":false
+           }
+        ],
+        "styleNames":"",
+        "isSelected":false
+     },
+     {
+        "id":"",
+        "displayName":"",
+        "href":"",
+        "entries":[
+
+        ],
+        "styleNames":"separator",
+        "isSelected":false
+     },
+     {
+        "id":"education",
+        "displayName":"Actions Éducatives",
+        "href":"",
+        "entries":[
+           {
+              "id":"presentation",
+              "displayName":"Présentation du Projet",
+              "href":"/education/presentation",
+              "entries":[
+
+              ],
+              "styleNames":"",
+              "isSelected":false
+           },
+           {
+              "id":"creation",
+              "displayName":"Création Musicale",
+              "href":"/education/creation",
+              "entries":[
+
+              ],
+              "styleNames":"",
+              "isSelected":false
+           },
+           {
+              "id":"meeting",
+              "displayName":"L'Évenement des Apprentis-Musiciens",
+              "href":"/education/meeting",
+              "entries":[
+
+              ],
+              "styleNames":"",
+              "isSelected":false
+           }
+        ],
+        "styleNames":"",
+        "isSelected":false
+     },
+     {
+        "id":"",
+        "displayName":"",
+        "href":"",
+        "entries":[
+
+        ],
+        "styleNames":"smallSeparator",
+        "isSelected":false
+     }
+  ]
+}

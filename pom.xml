@@ -16,6 +16,11 @@
 		<version.enscene>0.0.1-SNAPSHOT</version.enscene>
 		<version.enscene-testing-arquillian>0.0.1-SNAPSHOT</version.enscene-testing-arquillian>
 		<version.shiro>1.2.3</version.shiro>
+		<version.immutables>2.3.10</version.immutables>
+		<version.guava>20.0</version.guava>
+		<version.jackson>2.8.5</version.jackson>
+		<version.freemarker>2.3.23</version.freemarker>
+		<version.guice>4.0</version.guice>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<github.global.server>github</github.global.server>
@@ -30,90 +35,71 @@
 	</licenses>
 
 	<dependencies>
-
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-core</artifactId>
 		</dependency>
 
 		<dependency>
-			<groupId>commons-lang</groupId>
-			<artifactId>commons-lang</artifactId>
-			<version>2.6</version>
-		</dependency>
-
-		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
-			<version>19.0</version>
+			<version>${version.guava}</version>
 		</dependency>
 
-		<dependency>
-			<groupId>com.github.rjeschke</groupId>
-			<artifactId>txtmark</artifactId>
-			<version>0.11</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.google.auto.value</groupId>
-			<artifactId>auto-value</artifactId>
-			<version>1.3</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-		    <groupId>com.google.auto.service</groupId>
-		    <artifactId>auto-service</artifactId>
-		    <version>1.0-rc2</version>
-		    <scope>provided</scope>
-		</dependency>
 		<dependency>
 			<groupId>org.immutables</groupId>
 			<artifactId>value</artifactId>
-			<version>2.3.10</version>
+			<version>${version.immutables}</version>
 			<scope>provided</scope>
 		</dependency>
+		
 		<dependency>
 			<groupId>com.google.code.findbugs</groupId>
 			<artifactId>jsr305</artifactId>
 			<version>3.0.1</version>
 		</dependency>
-		
+
 		<dependency>
-  <groupId>com.fasterxml.jackson.datatype</groupId>
-  <artifactId>jackson-datatype-guava</artifactId>
-  <version>2.4.0</version>
-</dependency>
-<dependency>
-  <groupId>com.fasterxml.jackson.datatype</groupId>
-  <artifactId>jackson-datatype-jdk8</artifactId>
-  <version>2.6.3</version>
-</dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-core</artifactId>
+		    <version>${version.jackson}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-guava</artifactId>
+			<version>${version.jackson}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jdk8</artifactId>
+			<version>${version.jackson}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${version.jackson}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>io.enscene.core</groupId>
 			<artifactId>enscene-core-impl-resteasy</artifactId>
 			<version>${version.enscene}</version>
 		</dependency>
-		<dependency>
-			<groupId>org.jboss.resteasy</groupId>
-			<artifactId>resteasy-jackson2-provider</artifactId>
-			<version>3.0.8.Final</version>
-		</dependency>
 
 		<dependency>
 			<groupId>org.freemarker</groupId>
 			<artifactId>freemarker</artifactId>
-			<version>2.3.22</version>
+			<version>${version.freemarker}</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>com.google.inject.extensions</groupId>
 			<artifactId>guice-multibindings</artifactId>
-			<version>4.0</version>
+			<version>${version.guice}</version>
 		</dependency>
 
 		<dependency>
@@ -121,14 +107,6 @@
 			<artifactId>ziplet</artifactId>
 			<version>2.0.0</version>
 		</dependency>
-
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>2.3.2</version>
-		</dependency>
-
-
 		<dependency>
 			<groupId>ro.isdc.wro4j</groupId>
 			<artifactId>wro4j-core</artifactId>
@@ -159,7 +137,7 @@
 			<artifactId>perfect-scrollbar</artifactId>
 			<version>0.6.4</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>io.enscene.testing.arquillian</groupId>
 			<artifactId>enscene-testing-arquillian-depchain</artifactId>
@@ -176,7 +154,7 @@
 		<dependency>
 			<groupId>io.enscene.testing.arquillian</groupId>
 			<artifactId>enscene-testing-arquillian-tomcat-8</artifactId>
-			<version>${project.version}</version>
+			<version>${version.enscene-testing-arquillian}</version>
 			<type>pom</type>
 			<scope>test</scope>
 		</dependency>

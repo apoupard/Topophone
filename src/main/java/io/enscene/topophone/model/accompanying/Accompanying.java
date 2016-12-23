@@ -1,43 +1,32 @@
 package io.enscene.topophone.model.accompanying;
 
-import com.google.auto.value.AutoValue;
+import java.util.Collection;
+
+import org.immutables.value.Value;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import io.enscene.topophone.api.ResourceModel;
 import io.enscene.topophone.model.artist.HeadbandCarousel;
 
-import java.util.Collection;
-
-@AutoValue
-public abstract class Accompanying implements ResourceModel {
+@Value.Immutable
+@JsonSerialize(as = ImmutableAccompanying.class)
+@JsonDeserialize(as = ImmutableAccompanying.class)
+public interface Accompanying extends ResourceModel {
 
   public static Accompanying of(HeadbandCarousel headband, Collection<String> objectives, Contact contact, String description, String picture) {
-    return new AutoValue_Accompanying.Builder().headbandCarousel(headband).objectives(objectives).contact(contact).description(description).picture(picture).build();
+    return ImmutableAccompanying.builder().headbandCarousel(headband).objectives(objectives).contact(contact).description(description).picture(picture).build();
   }
 
-  @AutoValue.Builder
-  public abstract static class Builder {
+  HeadbandCarousel getHeadbandCarousel();
 
-    public abstract Builder headbandCarousel(HeadbandCarousel headbandCarousel);
+  Collection<String> getObjectives();
 
-    public abstract Builder objectives(Collection<String> objectives);
+  Contact getContact();
 
-    public abstract Builder contact(Contact contact);
+  String getDescription();
 
-    public abstract Builder description(String description);
-
-    public abstract Builder picture(String picture);
-
-    public abstract Accompanying build();
-
-  }
-
-  public abstract HeadbandCarousel getHeadbandCarousel();
-
-  public abstract Collection<String> getObjectives();
-
-  public abstract Contact getContact();
-
-  public abstract String getDescription();
-
-  public abstract String getPicture();
+  String getPicture();
 
 }

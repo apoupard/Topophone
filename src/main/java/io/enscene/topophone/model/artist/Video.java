@@ -1,46 +1,36 @@
 package io.enscene.topophone.model.artist;
 
-import com.google.auto.value.AutoValue;
+import org.immutables.value.Value;
 
-@AutoValue
-public abstract class Video {
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@Value.Immutable
+@JsonSerialize(as = ImmutableVideo.class)
+@JsonDeserialize(as = ImmutableVideo.class)
+public interface Video {
 
   public static Video of(String youtubeId, String title, String date, String mix, String production) {
-    return new AutoValue_Video.Builder().youtubeId(youtubeId).title(title).date(date).mix(mix).production(production).build();
+    return ImmutableVideo.builder().youtubeId(youtubeId).title(title).date(date).mix(mix).production(production).build();
   }
 
-  @AutoValue.Builder
-  public abstract static class Builder {
+  String getYoutubeId();
 
-    public abstract Builder youtubeId(String youtubeId);
+  String getTitle();
 
-    public abstract Builder title(String title);
+  String getDate();
 
-    public abstract Builder date(String date);
+  String getMix();
 
-    public abstract Builder mix(String mix);
-
-    public abstract Builder production(String production);
-
-    public abstract Video build();
-
-  }
-
-  public abstract String getYoutubeId();
-
-  public abstract String getTitle();
-
-  public abstract String getDate();
-
-  public abstract String getMix();
-
-  public abstract String getProduction();
-
-  public String getThumbnail() {
+  String getProduction();
+  
+  @Value.Default
+  public default String getThumbnail() {
     return new StringBuilder().append("https://i.ytimg.com/vi/").append(getYoutubeId()).append("/hqdefault.jpg").toString();
   }
 
-  public String getYoutubeVideo() {
+  @Value.Default
+  public default String getYoutubeVideo() {
     return new StringBuilder().append("http://www.youtube.com/v/").append(getYoutubeId()).toString();
   }
 

@@ -1,0 +1,116 @@
+{
+  "partnersByInstitution":[
+  	{
+  		"institution": {
+  			"code":"financiers", 
+  			"displayName":"Financiers"
+  		},
+     	"partners":[
+	        {
+	           "logo":"/images/partners/mairieToulouse.png",
+	           "description":"La Marie de Toulouse soutient l'association Topophone au titre du dispositif du « Passeport pour l'Art ». Elle met également à disposition de Topophone la salle de concert « Le Metronum » pour organiser « L'Evènement des Apprentis-Musiciens »",
+	           "type":"Financiers"
+	        },
+	        {
+	           "logo":"/images/partners/midiPyrenees.png",
+	           "description":"Le Conseil Régional Midi-Pyrénées soutient l'association Topophone pour la mise en place de ses « Actions Educatives ». Elle accompagne l'association sur son fonctionnement au titre de la Politique de la Ville.",
+	           "type":"Financiers"
+	        },
+	        {
+	           "logo":"/images/partners/caisseDepot.png",
+	           "description":"Le groupe Caisse des Dépôts est un groupe public, investisseur de long terme au service de l’intérêt général et du développement économique du pays. Les actions de mécénat de la Caisse des Dépôts visent avant tout à favoriser l’accès à la culture d’un large public. En phase avec les évolutions et les besoins de la société, elles sont portées par des valeurs fortes : la modernité, l’ouverture, le suivi sur le long terme. Le groupe Caisse des Dépôts soutient l'association depuis 2 ans pour le développement de ses Actions Educatives, ainsi que pour la mise en place du projet « L'Evènement des Apprentis-Musiciens »",
+	           "type":"Financiers"
+	        },
+	        {
+	           "logo":"/images/partners/fdbp.png",
+	           "description":"La Banque Populaire revendique des valeurs de responsabilité, de proximité et de solidarité avec son territoire. Cet engagement s’est traduit par la création au printemps 2011 d’une Fondation d’entreprise, impulsée par une démarche associant l’ensemble des collaborateurs de la banque. La Fondation d'Entreprise Banque Populaire Occitane soutient l'association pour le développement de ses « Actions Educatives », ainsi que pour la mise en place du projet « L'Evènement des Apprentis-Musiciens »",
+	           "type":"Financiers"
+	        },
+	        {
+	           "logo":"/images/partners/franceactive.png",
+	           "description":"France Active est un réseau de proximité qui aide les personnes en difficulté et finance les entreprises solidaires (insertion par l’activité économique, associations d’utilité sociale). Topophone est accompagné par Midi-Pyrénées Active au titre du \"Contrat d’amorçage associatif\",  qui a pour objectif de proposer aux petites associations en création une première marche vers la structuration financière.",
+	           "type":"Financiers"
+	        }
+     	]
+     },
+     {
+  		"institution": {
+  			"code":"operationnels", 
+  			"displayName":"Opérationnels"
+  		},
+  		"partners":[
+	        {
+	           "logo":"/images/partners/mlep.png",
+	           "description":"Mouvement laïque d'éducation populaire, la Ligue de l'Enseignement est une fédération regroupant diverses associations adhérentes. Topophone est affilié à la Ligue de l’Enseignement 31 et bénéficie, outre les services proposés à tout adhérent (formations, rencontres...) d’un accompagnement individualisé sur la partie « actions éducatives » (réunions de travail, mise en relation avec des structures péri et extra scolaires...).",
+	           "type":"Opérationnels"
+	        },
+	        {
+	           "logo":"/images/partners/inspecAca.jpg",
+	           "description":"Topophone travaille en lien avec L'Inspection Académique de la Haute-Garonne dans le cadre des actions actions éducatives. L'association s'appuie sur l'Inspection Académique pour la construction de ses contenus pédagogiques ainsi que pour la mise en place de ses interventions au sein des structures scolaires.",
+	           "type":"Opérationnels"
+	        },
+	        {
+	           "logo":"/images/partners/producson.png",
+	           "description":"Fondé en 1994, Produc’son est un studio d’enregistrement et de répétition indépendant pour les particuliers et les professionnels. Il accompagne nos artistes lors de l’enregistrement de morceaux.Cyril Château, gérant du studio, accueille également des groupes de jeunes auprès desquels Topophone intervient afin de leur faire découvrir le lieu et d’enregistrer les morceaux qu’ils ont créé lors des ateliers éducatifs.",
+	           "type":"Opérationnels"
+	        },
+	        {
+	           "logo":"/images/partners/gandi.png",
+	           "description":"Gandi SAS est une société française d'enregistrement de noms de domaine et hébergeur web.Elle constitue une alternative crédible pour tous ceux qui veulent être présents sur le Web. A ce titre, Gandi apporte un coup de pouce à Topophone pour la mise en place et le lancement de son site internet.",
+	           "type":"Opérationnels"
+	        },
+	        {
+	           "logo":"/images/partners/mapcu.png",
+	           "description":"Le MAPCU, (Mouvement Associatif Pour les Cultures Urbaines) est un collectif d'acteurs de terrains réunis pour promouvoir la culture et les Sports Urbains. L’association se donne comme objectifs d’être une force de représentation, de médiation et de proposition auprès des institutions publiques et de participer activement à la promotion des cultures urbaines (musique, graff, danse, sports).Le MAPCU met son studio d'enregistrement professionnel à dispotition de l'association, afin de permettre aux jeunes de finaliser leur création dans des conditions professionnelles.",
+	           "type":"Opérationnels"
+	        }
+		]
+	}
+  ],
+  "headbandCarousel":{
+     "images":[
+        "images/headbandCarousel/devartists/11.jpg",
+        "images/headbandCarousel/education/07.jpg",
+        "images/headbandCarousel/education/02.jpg",
+        "images/headbandCarousel/education/09.jpg",
+        "images/headbandCarousel/education/14.jpg",
+        "images/headbandCarousel/education/21.jpg",
+        "images/headbandCarousel/devartists/16.jpg",
+        "images/headbandCarousel/education/05.jpg",
+        "images/headbandCarousel/devartists/07.jpg",
+        "images/headbandCarousel/education/04.jpg",
+        "images/headbandCarousel/devartists/15.jpg",
+        "images/headbandCarousel/devartists/14.jpg",
+        "images/headbandCarousel/devartists/01.jpg",
+        "images/headbandCarousel/education/13.jpg",
+        "images/headbandCarousel/devartists/08.jpg",
+        "images/headbandCarousel/education/19.jpg",
+        "images/headbandCarousel/education/16.jpg",
+        "images/headbandCarousel/devartists/13.jpg",
+        "images/headbandCarousel/education/03.jpg",
+        "images/headbandCarousel/education/11.jpg",
+        "images/headbandCarousel/devartists/17.jpg",
+        "images/headbandCarousel/devartists/18.jpg",
+        "images/headbandCarousel/devartists/12.jpg",
+        "images/headbandCarousel/devartists/19.jpg",
+        "images/headbandCarousel/education/12.jpg",
+        "images/headbandCarousel/education/08.jpg",
+        "images/headbandCarousel/education/18.jpg",
+        "images/headbandCarousel/education/17.jpg",
+        "images/headbandCarousel/devartists/10.jpg",
+        "images/headbandCarousel/education/06.jpg",
+        "images/headbandCarousel/education/01.jpg",
+        "images/headbandCarousel/education/10.jpg",
+        "images/headbandCarousel/education/15.jpg",
+        "images/headbandCarousel/devartists/03.jpg",
+        "images/headbandCarousel/education/22.jpg",
+        "images/headbandCarousel/devartists/05.jpg",
+        "images/headbandCarousel/devartists/09.jpg",
+        "images/headbandCarousel/devartists/04.jpg",
+        "images/headbandCarousel/devartists/02.jpg",
+        "images/headbandCarousel/education/20.jpg",
+        "images/headbandCarousel/devartists/06.jpg"
+     ],
+     "logo":"/images/education/headbandlogo.png"
+  }
+}

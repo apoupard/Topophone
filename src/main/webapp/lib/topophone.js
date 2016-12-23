@@ -36,7 +36,7 @@ function fillHeader() {
 function fillNav() {
 	$.ajax({
 		method : "GET",
-		url : window.contextUrl + "/html/sections/nav",
+		url : window.contextUrl + "/html/sections/nav/main",
 		headers : {
 			'Accept' : 'text/html'
 		}

@@ -1,35 +1,25 @@
 package io.enscene.topophone.model.accompanying;
 
-import com.google.auto.value.AutoValue;
+import org.immutables.value.Value;
 
-@AutoValue
-public abstract class Contact {
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-  public static Builder builder() {
-    return new AutoValue_Contact.Builder();
+@Value.Immutable
+@JsonSerialize(as = ImmutableContact.class)
+@JsonDeserialize(as = ImmutableContact.class)
+public interface Contact {
+
+  public static ImmutableContact.Builder builder() {
+    return ImmutableContact.builder();
   }
 
-  @AutoValue.Builder
-  public abstract static class Builder {
+  String getName();
 
-    public abstract Builder name(String name);
+  String getPhone();
 
-    public abstract Builder phone(String phone);
+  String getEmail();
 
-    public abstract Builder email(String email);
-
-    public abstract Builder address(String address);
-
-    public abstract Contact build();
-
-  }
-
-  public abstract String getName();
-
-  public abstract String getPhone();
-
-  public abstract String getEmail();
-
-  public abstract String getAddress();
+  String getAddress();
 
 }

@@ -1,27 +1,20 @@
 package io.enscene.topophone.model.artist;
 
-import com.google.auto.value.AutoValue;
+import org.immutables.value.Value;
 
-@AutoValue
-public abstract class Song {
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@Value.Immutable
+@JsonSerialize(as = ImmutableSong.class)
+@JsonDeserialize(as = ImmutableSong.class)
+public interface Song {
 
   public static Song of(String title, String url) {
-    return new AutoValue_Song.Builder().title(title).url(url).build();
+    return ImmutableSong.builder().title(title).url(url).build();
   }
 
-  public abstract String getTitle();
+  String getTitle();
 
-  public abstract String getUrl();
-
-  @AutoValue.Builder
-  public abstract static class Builder {
-
-    public abstract Builder title(String id);
-
-    public abstract Builder url(String href);
-
-    public abstract Song build();
-
-  }
-
+  String getUrl();
 }

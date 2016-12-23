@@ -1,60 +1,39 @@
 package io.enscene.topophone.model.artist;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.google.auto.value.AutoValue;
-import io.enscene.topophone.api.ResourceModel;
-
 import java.util.List;
 
-@AutoValue
-@JsonDeserialize(builder = AutoValue_Artist.Builder.class)
-public abstract class Artist implements ResourceModel {
+import org.immutables.value.Value;
 
-    public static Builder builder() {
-        return new AutoValue_Artist.Builder();
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+import io.enscene.topophone.api.ResourceModel;
+
+@Value.Immutable
+@JsonSerialize(as = ImmutableArtist.class)
+@JsonDeserialize(as = ImmutableArtist.class)
+public interface Artist extends ResourceModel {
+
+    public static ImmutableArtist.Builder builder() {
+        return ImmutableArtist.builder();
     }
 
-    @AutoValue.Builder
-    public abstract static class Builder {
+    String getId();
 
-        public abstract Builder id(String s);
+    String getPicture();
 
-        public abstract Builder picture(String n);
+    List<Media> getMedias();
 
-        public abstract Builder medias(List<Media> medias);
+    List<Video> getVideos();
 
-        public abstract Builder videos(List<Video> videos);
+    List<Concert> getConcerts();
 
-        public abstract Builder concerts(List<Concert> concerts);
+    List<Song> getSongs();
 
-        public abstract Builder songs(List<Song> songs);
+    String getDescription();
 
-        public abstract Builder description(String s);
+    Headband getHeadband();
 
-        public abstract Builder headband(Headband s);
-
-        public abstract Builder contactEmail(String s);
-
-        public abstract Artist build();
-
-    }
-
-    public abstract String getid();
-
-    public abstract String getPicture();
-
-    public abstract List<Media> getMedias();
-
-    public abstract List<Video> getVideos();
-
-    public abstract List<Concert> getConcerts();
-
-    public abstract List<Song> getSongs();
-
-    public abstract String getDescription();
-
-    public abstract Headband getHeadband();
-
-    public abstract String getContactEmail();
+    String getContactEmail();
 
 }

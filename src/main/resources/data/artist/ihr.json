@@ -1,0 +1,142 @@
+{
+  "id":"ihr",
+  "picture":"/images/artists/ihr/profile.png",
+  "medias":[
+     {
+        "id":"youtube",
+        "href":"https://www.youtube.com/channel/UC5180Stl_9dDHwyO5hwK-Jw"
+     },
+     {
+        "id":"facebook",
+        "href":"https://www.facebook.com/International-Hyper-Rythmique-37427384425/timeline/"
+     },
+     {
+        "id":"bandcamp",
+        "href":"https://ihrmusic.bandcamp.com"
+     }
+  ],
+  "videos":[
+     {
+        "youtubeId":"Z5vk0QCY8zk",
+        "title":"\"COWBOYS\"",
+        "date":"Mars 2013",
+        "mix":"",
+        "production":"Réal. P. Gilbert",
+        "thumbnail":"https://i.ytimg.com/vi/Z5vk0QCY8zk/hqdefault.jpg",
+        "youtubeVideo":"http://www.youtube.com/v/Z5vk0QCY8zk"
+     },
+     {
+        "youtubeId":"QGP4n2mxln0",
+        "title":"\"NORMA JEAN\" ",
+        "date":"Mars 2014",
+        "mix":"",
+        "production":"Réal. Mamy Scopitone ",
+        "thumbnail":"https://i.ytimg.com/vi/QGP4n2mxln0/hqdefault.jpg",
+        "youtubeVideo":"http://www.youtube.com/v/QGP4n2mxln0"
+     },
+     {
+        "youtubeId":"bGZvlud8lIE",
+        "title":"\"STONE AND DUST\" ",
+        "date":"Septembre 2014",
+        "mix":"",
+        "production":"Réal. P. Gilbert",
+        "thumbnail":"https://i.ytimg.com/vi/bGZvlud8lIE/hqdefault.jpg",
+        "youtubeVideo":"http://www.youtube.com/v/bGZvlud8lIE"
+     },
+     {
+        "youtubeId":"VJ3pbTeSIJI",
+        "title":"\"THE BOAT\" ",
+        "date":"Juin 2015",
+        "mix":"Live @ Espace Bonnefoy",
+        "production":"Réal. Ypok",
+        "thumbnail":"https://i.ytimg.com/vi/VJ3pbTeSIJI/hqdefault.jpg",
+        "youtubeVideo":"http://www.youtube.com/v/VJ3pbTeSIJI"
+     },
+     {
+        "youtubeId":"l7ocDe3Qleg",
+        "title":"\"COWBOYS\" ",
+        "date":"Juin 2015",
+        "mix":"Live @ Espace Bonnefoy",
+        "production":" Réal. Ypok",
+        "thumbnail":"https://i.ytimg.com/vi/l7ocDe3Qleg/hqdefault.jpg",
+        "youtubeVideo":"http://www.youtube.com/v/l7ocDe3Qleg"
+     }
+  ],
+  "concerts":[
+     {
+        "date":1450220400000,
+        "place":"Les 3 Baudets",
+        "city":"Paris"
+     },
+     {
+        "date":1440712800000,
+        "place":"La Dynamo",
+        "city":"Toulouse – w/Alpaga"
+     },
+     {
+        "date":1433714400000,
+        "place":"Le Coeur de Boeuf",
+        "city":"Lons Le Saunier"
+     },
+     {
+        "date":1426546800000,
+        "place":"Le Chapeau Rouge",
+        "city":"Carcassonne"
+     },
+     {
+        "date":1422486000000,
+        "place":"Le Bus Palladium",
+        "city":"Paris – w/Le Common Diamond"
+     },
+     {
+        "date":1422140400000,
+        "place":"Le Bikini",
+        "city":"Ramonville Saint-Agne – w/Emilie Simon"
+     },
+     {
+        "date":1420585200000,
+        "place":"L'Escapade",
+        "city":"Hénin Beaumont – w/Le Common Diamond"
+     },
+     {
+        "date":1420326000000,
+        "place":"L'Espace Bonnefoy",
+        "city":"Toulouse – w/The Telescopes"
+     },
+     {
+        "date":1419721200000,
+        "place":"La Dynamo",
+        "city":"Toulouse – w/Sebadoh"
+     },
+     {
+        "date":1412200800000,
+        "place":"Festival de Carcassonne",
+        "city":"Carcassonne – w/Kavinsky"
+     },
+     {
+        "date":1409868000000,
+        "place":"Festival Les Brasseurs du Lac",
+        "city":"Villeneuve Tolosane"
+     }
+  ],
+  "songs":[
+     {
+        "title":"Cowboy",
+        "url":"music/ihr/cowboy.wav"
+     },
+     {
+        "title":"Marble giant",
+        "url":"music/ihr/marblegiant.wav"
+     },
+     {
+        "title":"Norma jeane",
+        "url":"music/ihr/normajeane.wav"
+     }
+  ],
+  "description":"<div class=\"description\">\n\t<h3>Bio</h3>\n\t<p>Réunis sous le nom de <b>International Hyper Rythmique</b>, Jean, Claire et Laurence créent une musique pop, élégante et atmosphérique.\n\t«Below Sea Level» poursuit cette introspection délicate entamée avec «Uncity Nation», où l’on découvrait une pop song mélancolique et radieuse portée\n\tpar le chant incantatoire de Laurence.\n\t</p>\n\t<h3>Actu</h3>\n\t<p>\n\t<b>2013 – ALBUM « Below Sea Level »</b> Sortie 09 0ctobre 2013\n\t<br>Collaboration – Julien Barbagallo (TAME IMPALA)\n\t<br>Production - Label Etrange\n\t<br>Distribution – Believe Digital\n\t</p>\n\t<h3>Ils en parlent</h3>\n\t<p>\n\t<b>Pop revue Express</b>\n\t<br>“Jean, Claire et Laurence, signent là un album assez remarquable, extrêmement varié, duquel ressortent d’abord des guitares réverbérées et les harmonies\n\tvocales.”\n\t</p>\n\t<p>\n\t<b>Ground Control to Major Tom</b>\n\t<br>“Ce second album offre des paysages sonores contrastés, échappés d’un road movie initiatique.”\n\t</p>\n\t<p>\n\t<b>Benzine</b>\n\t<br>“IHR est remarquable par ses entrelacs de dentelles de guitares réverbérées et de claviers qui éclairent une brume matinale de jolies loupiotes.”\n\t</p>\n\t<p>\n\t<b>Abus Dangereux</b>\n\t<br>\"Le style navigue entre les brumes de la new wave (The Chameleons, And Also The Trees, The Cure, Cocteau Twins) et la pop mélancolique teintée de rock\n\tprécieux.\"\n\t</p>\n\t<p>\n\t<b>Longueur d'Onde #70</b>\n\t<br>\"Par sa douceur, son absence d’aspérités et ses mélodies si enveloppantes, cet universdream pop se traverse comme un doux songe vaporeux dont la magie\n\tsecrète se renouvelle à chaque écoute.\"\n\t</p>\n</div>",
+  "headband":{
+     "main":"/images/artists/ihr/bandeau.png",
+     "logo":"/images/artists/ihr/bandeauLogo.png"
+  },
+  "contactEmail":"contact@ihr.com"
+}

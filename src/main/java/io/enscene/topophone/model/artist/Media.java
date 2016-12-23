@@ -1,27 +1,21 @@
 package io.enscene.topophone.model.artist;
 
-import com.google.auto.value.AutoValue;
+import org.immutables.value.Value;
 
-@AutoValue
-public abstract class Media {
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@Value.Immutable
+@JsonSerialize(as = ImmutableMedia.class)
+@JsonDeserialize(as = ImmutableMedia.class)
+public interface Media {
 
   public static Media of(String id, String href) {
-    return new AutoValue_Media.Builder().id(id).href(href).build();
+    return ImmutableMedia.builder().id(id).href(href).build();
   }
 
-  @AutoValue.Builder
-  public abstract static class Builder {
+  String getId();
 
-    public abstract Builder id(String id);
-
-    public abstract Builder href(String href);
-
-    public abstract Media build();
-
-  }
-
-  public abstract String getId();
-
-  public abstract String getHref();
+  String getHref();
 
 }

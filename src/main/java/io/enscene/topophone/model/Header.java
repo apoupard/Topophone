@@ -1,24 +1,21 @@
 package io.enscene.topophone.model;
 
+import org.immutables.value.Value;
+
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.google.auto.value.AutoValue;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import io.enscene.topophone.api.ResourceModel;
 
-@AutoValue
-@JsonDeserialize(builder = AutoValue_Header.Builder.class)
-public abstract class Header implements ResourceModel {
+@Value.Immutable
+@JsonSerialize(as = ImmutableHeader.class)
+@JsonDeserialize(as = ImmutableHeader.class)
+public interface Header extends ResourceModel {
 
   public static Header of(String logo) {
-    return new AutoValue_Header.Builder().logo(logo).build();
+    return ImmutableHeader.builder().logo(logo).build();
   }
-
-  @AutoValue.Builder
-  public abstract static class Builder {
-    public abstract Builder logo(String logo);
-
-    public abstract Header build();
-  }
-
-  public abstract String getLogo();
+  
+  String getLogo();
 
 }

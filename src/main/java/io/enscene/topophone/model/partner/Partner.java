@@ -1,30 +1,25 @@
 package io.enscene.topophone.model.partner;
 
-import com.google.auto.value.AutoValue;
+import org.immutables.value.Value;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import io.enscene.topophone.api.ResourceModel;
 
-@AutoValue
-public abstract class Partner implements ResourceModel {
+@Value.Immutable
+@JsonSerialize(as = ImmutablePartner.class)
+@JsonDeserialize(as = ImmutablePartner.class)
+public interface Partner extends ResourceModel {
 
   public static Partner of(String type, String logo, String description) {
-    return new AutoValue_Partner.Builder().type(type).logo(logo).description(description).build();
+    return ImmutablePartner.builder().type(type).logo(logo).description(description).build();
   }
 
-  @AutoValue.Builder
-  public abstract static class Builder {
-    public abstract Builder type(String type);
+  String getLogo();
 
-    public abstract Builder logo(String logo);
+  String getDescription();
 
-    public abstract Builder description(String description);
-
-    public abstract Partner build();
-  }
-
-  public abstract String getLogo();
-
-  public abstract String getDescription();
-
-  public abstract String getType();
+  String getType();
 
 }

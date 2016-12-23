@@ -1,23 +1,27 @@
 package io.enscene.topophone.config;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.ziplet.filter.compression.CompressingFilter;
-import com.google.inject.Binding;
-import com.google.inject.MembersInjector;
-import com.google.inject.Module;
 import com.google.inject.TypeLiteral;
-import com.google.inject.matcher.Matcher;
 import com.google.inject.multibindings.MapBinder;
 import com.google.inject.servlet.ServletModule;
+
 import freemarker.template.Configuration;
+import io.enscene.topophone.api.HtmlTemplateEngine;
 import io.enscene.topophone.api.ResourceDao;
 import io.enscene.topophone.api.ResourceModel;
 import io.enscene.topophone.config.templating.FreemarkerConfigurationProvider;
-import io.enscene.topophone.dao.*;
 import io.enscene.topophone.config.templating.FreemarkerTemplateEngine;
-import io.enscene.topophone.api.HtmlTemplateEngine;
+import io.enscene.topophone.dao.ArtistDao;
+import io.enscene.topophone.dao.ContactsDao;
+import io.enscene.topophone.dao.DevArtistsDao;
+import io.enscene.topophone.dao.EducationDao;
+import io.enscene.topophone.dao.FooterDao;
+import io.enscene.topophone.dao.HeaderDao;
+import io.enscene.topophone.dao.IndexDao;
+import io.enscene.topophone.dao.MainDao;
+import io.enscene.topophone.dao.NavDao;
+import io.enscene.topophone.dao.PartnersDao;
 import io.enscene.topophone.resource.SectionsResource;
-import io.enscene.topophone.resource.XmlResource;
 import ro.isdc.wro.http.WroFilter;
 
 public class TopophoneModule extends ServletModule {
@@ -29,7 +33,6 @@ public class TopophoneModule extends ServletModule {
     bind(Configuration.class).toProvider(FreemarkerConfigurationProvider.class);
 
     bind(SectionsResource.class);
-    bind(XmlResource.class);
 
     MapBinder<String, ResourceDao<? extends ResourceModel>> resourceDaoBinder =
         MapBinder.newMapBinder(binder(), new TypeLiteral<String>() {},
@@ -42,7 +45,7 @@ public class TopophoneModule extends ServletModule {
     resourceDaoBinder.addBinding("partners").to(new TypeLiteral<PartnersDao>() {});
     resourceDaoBinder.addBinding("nav").to(new TypeLiteral<NavDao>() {});
     resourceDaoBinder.addBinding("header").to(new TypeLiteral<HeaderDao>() {});
-//    resourceDaoBinder.addBinding("main").to(new TypeLiteral<MainDao>() {});
+    resourceDaoBinder.addBinding("main").to(new TypeLiteral<MainDao>() {});
     resourceDaoBinder.addBinding("footer").to(new TypeLiteral<FooterDao>() {});
     resourceDaoBinder.addBinding("contacts").to(new TypeLiteral<ContactsDao>() {});
 

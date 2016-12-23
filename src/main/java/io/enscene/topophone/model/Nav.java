@@ -1,24 +1,23 @@
 package io.enscene.topophone.model;
 
-import com.google.auto.value.AutoValue;
-import io.enscene.topophone.api.ResourceModel;
-
 import java.util.List;
 
-@AutoValue
-public abstract class Nav implements ResourceModel {
+import org.immutables.value.Value;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+import io.enscene.topophone.api.ResourceModel;
+
+@Value.Immutable
+@JsonSerialize(as = ImmutableNav.class)
+@JsonDeserialize(as = ImmutableNav.class)
+public interface Nav extends ResourceModel {
 
   public static Nav of(List<NavEntry> entries) {
-    return new AutoValue_Nav.Builder().entries(entries).build();
+    return ImmutableNav.builder().entries(entries).build();
   }
 
-  @AutoValue.Builder
-  public abstract static class Builder {
-    public abstract Builder entries(List<NavEntry> entries);
-
-    public abstract Nav build();
-  }
-
-  public abstract List<NavEntry> getEntries();
+  List<NavEntry> getEntries();
 
 }

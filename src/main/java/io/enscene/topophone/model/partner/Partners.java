@@ -1,30 +1,38 @@
 package io.enscene.topophone.model.partner;
 
-import com.google.auto.value.AutoValue;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+
+import org.immutables.value.Value;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import io.enscene.topophone.api.ResourceModel;
 import io.enscene.topophone.model.artist.HeadbandCarousel;
 
-import java.util.Collection;
-import java.util.Map;
+@Value.Immutable
+@JsonSerialize(as = ImmutablePartners.class)
+@JsonDeserialize(as = ImmutablePartners.class)
+public interface Partners extends ResourceModel {
 
-@AutoValue
-public abstract class Partners implements ResourceModel {
-
-  public static Partners of(Map<Institution, Collection<Partner>> partnersByInstitution, HeadbandCarousel headband) {
-    return new AutoValue_Partners.Builder().headbandCarousel(headband).partnersByInstitution(partnersByInstitution).build();
+  public static ImmutablePartners.Builder builder(Map<Institution, Collection<Partner>> partnersByInstitution, HeadbandCarousel headband) {
+    return ImmutablePartners.builder();
   }
 
-  @AutoValue.Builder
-  public abstract static class Builder {
-    public abstract Builder partnersByInstitution(Map<Institution, Collection<Partner>> partnersByInstitution);
-
-    public abstract Builder headbandCarousel(HeadbandCarousel headband);
-
-    public abstract Partners build();
+  HeadbandCarousel getHeadbandCarousel();
+  
+  List<PartnersByInstitution> getPartnersByInstitution();
+  
+  @Value.Immutable
+  @JsonSerialize(as = ImmutablePartnersByInstitution.class)
+  @JsonDeserialize(as = ImmutablePartnersByInstitution.class)
+  public static interface PartnersByInstitution {
+      
+      Institution getInstitution();
+      Collection<Partner> getPartners();
+  
   }
-
-  public abstract Map<Institution, Collection<Partner>> getPartnersByInstitution();
-
-  public abstract HeadbandCarousel getHeadbandCarousel();
-
+  
 }

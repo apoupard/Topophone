@@ -1,24 +1,20 @@
 package io.enscene.topophone.model.artist;
 
-import com.google.auto.value.AutoValue;
+import org.immutables.value.Value;
 
-@AutoValue
-public abstract class Headband {
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@Value.Immutable
+@JsonSerialize(as = ImmutableHeadband.class)
+@JsonDeserialize(as = ImmutableHeadband.class)
+public interface Headband {
 
   public abstract String getMain();
 
   public abstract String getLogo();
 
-  @AutoValue.Builder
-  public abstract static class Builder {
-    public abstract Builder main(String main);
-
-    public abstract Builder logo(String logo);
-
-    public abstract Headband build();
-  }
-
   public static Headband of(String main, String logo) {
-    return new AutoValue_Headband.Builder().main(main).logo(logo).build();
+    return ImmutableHeadband.builder().main(main).logo(logo).build();
   }
 }

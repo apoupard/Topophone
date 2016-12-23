@@ -1,0 +1,76 @@
+{
+  "id":"meeting",
+  "imageLeft":"/images/education/left/03.jpg",
+  "description":"<h3>Présentation</h3>\n<p>\nChaque fin d'année, Topophone organise « l’Événement des Apprentis-Musiciens » au sein de la salle de spectacle « Le Metronum ». Cette journée rassemble les jeunes auprès desquels l'association est intervenue durant l'année dans le cadre des ateliers de création musicale.\n</p>\n<p>\nCes derniers sont réunis le matin afin de participer à des activités éducatives et culturelles. L'après- midi, ils présentent sur scène leur création auprès des autres enfants, parents et partenaires de l'association réunis pour l'occasion.\n</p>\n<p>\nCette journée représente la finalité des actions menées durant l’année. Elle permet de valoriser le travail mené par les jeunes au sein de leurs écoles, mais également de remercier l'ensemble des partenaires mobilisés autour de Topophone.\n</p>\n<p>\nEn 2015, 300 personnes ont participé à « L’Événement des Apprentis-Musiciens »\n</p>\n\n<h3>Déroulement</h3>\n\n<h4>La journée est divisée en 2 temps forts :</h4>\n<ul class=\"dash\">\n\t<li>La matinée, dédiée à la mise en place d'ateliers éducatifs et musicaux, aux balances des groupes, ainsi qu'à une rencontre entre le groupe professionnel et les jeunes musiciens</li>\n\t<li>L'après-midi, dédiée à la restitution des projets des jeunes, ainsi qu'au concert du groupe I Me Mine</li>\n</ul>\n\n<h4>Matinée :</h4>\n<ul>\n<li><b>Atelier « Balances » :</b> Les jeunes s'initient à l'épreuve rituelle des balances. Durant ce temps, ils sont sensibilisés au fonctionnement et au déroulement d'un concert par les éducateurs Topophone et le régisseur du lieu.</li>\n<li><b>Atelier « Découverte de la Lumière » :</b> Un technicien lumière sensibilise les jeunes aux lumières scéniques. Après avoir réalisé une démonstration des différents dispositifs présents, il échange avec les jeunes autour du rôle et des possibilités qu'offre la lumière sur scène.</li>\n<li><b>Atelier « Quizz » :</b> Au sein des studios de répétition attenant à la salle, les groupes de jeunes testent tour à tour à leurs connaissances du rock. Animés par les bénévoles Topophone, ces quizzs permettent de passer en revue de manière ludique les apprentissages de l'année.</li>\n<li><b>Atelier « Rencontre d'Artistes » :</b> Le groupe vient à la rencontre des jeunes. Ils répètent avec ces derniers un morceau qu'ils joueront sur scène en clou de la journée. En parallèle, et sur la base d'un récit d'expérience, ils échangent avec les jeunes autour du métier de musicien et des méthodes de création.\n</li>\n</ul>\n<h4>Après-midi :</h4>\n<ul>\n<li><b>Restitution des créations :</b> Durant 2 heures, chaque groupe vient sur scène interpréter sa chanson qu'il créé durant l'année. Il s'agit de création de texte, ou instrumentales.</li>\n<li><b>Concert du groupe professionnel :</b> A la suite des restitutions des jeunes, I Me Mine propose un concert interactif an compagnie des jeunes, parents, partenaires et sympathisants de Topophone.</li>\n</ul>\n\n<h3>L'IMPLICATION D'ACTEURS PROFESSIONNELS</h3>\n<h4>LES ARTISTES :</h4>\n<p>Un groupe professionnel est invité sur l’événement.</p>\n<p>Le matin, il rencontre et échange avec les jeunes autour du métier de musicien, dans le cadre d'une « Rencontre d'Artistes ». Le groupe travaille ensuite avec les apprentis-musiciens sur la répétition d'un morceau qu'il joueront ensemble lors de la représentation finale organisée l'après- midi.</p>\n<p>L'après-midi, le groupe invité accompagne les jeunes durant leur interprétation, puis donne un concert éducatif et interactif en fin de journée pour clôturer l’événement.</p>\n\n<h4>LES AUTRES INTERVENANTS :</h4>\n<p>Durant l’événement, Topophone mobilise des régisseurs, éducateurs, photographes et vidéastes afin de participer à l'animation et à la promotion de la journée.</p>\n<p>Ces éducateurs guident les groupes de jeunes présents durant le circuit éducatif proposé par Topophone. Le régisseur anime l'atelier « Découverte de la Lumière ». Les photographes et vidéastes, eux, sont chargés de la captation de l'événement, et de sa valorisation auprès des partenaires et du grand public.</p>",
+  "video":{
+     "youtubeId":"D1QOwfWPUZI",
+     "thumbnail":"https://i.ytimg.com/vi/null/hqdefault.jpg",
+     "youtubeVideo":"http://www.youtube.com/v/null"
+  },
+  
+  "headbandCarousel":{
+     "images":[
+        "images/headbandCarousel/education/19.jpg",
+        "images/headbandCarousel/education/13.jpg",
+        "images/headbandCarousel/education/11.jpg",
+        "images/headbandCarousel/education/07.jpg",
+        "images/headbandCarousel/education/01.jpg",
+        "images/headbandCarousel/education/15.jpg",
+        "images/headbandCarousel/education/16.jpg",
+        "images/headbandCarousel/education/10.jpg",
+        "images/headbandCarousel/education/12.jpg",
+        "images/headbandCarousel/education/18.jpg",
+        "images/headbandCarousel/education/17.jpg",
+        "images/headbandCarousel/education/05.jpg",
+        "images/headbandCarousel/education/20.jpg",
+        "images/headbandCarousel/education/03.jpg",
+        "images/headbandCarousel/education/08.jpg",
+        "images/headbandCarousel/education/09.jpg",
+        "images/headbandCarousel/education/06.jpg",
+        "images/headbandCarousel/education/21.jpg",
+        "images/headbandCarousel/education/22.jpg",
+        "images/headbandCarousel/education/02.jpg",
+        "images/headbandCarousel/education/04.jpg",
+        "images/headbandCarousel/education/14.jpg"
+     ],
+     "logo":"/images/education/headbandlogo.png"
+  },
+  "subNav":{
+     "entries":[
+        {
+           "id":"meeting",
+           "displayName":"Création musicale",
+           "href":"/education/creation",
+           "entries":[
+
+           ],
+           "styleNames":"",
+           "isSelected":false
+        },
+        {
+           "id":"meeting",
+           "displayName":"L'évenement des apprentis-musiciens",
+           "href":"/education/meeting",
+           "entries":[
+
+           ],
+           "styleNames":"",
+           "isSelected":true
+        }
+     ]
+  },
+  "songs":[
+     {
+        "title":"Chant du pingouin",
+        "url":"music/education/chantdupingouin.mp3"
+     },
+     {
+        "title":"Grain de folie",
+        "url":"music/education/graindefolie.mp3"
+     },
+     {
+        "title":"Mix au revoir Paris",
+        "url":"music/education/mixaurevoirparis.wav"
+     }
+  ]
+}

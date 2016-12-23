@@ -1,25 +1,21 @@
 package io.enscene.topophone.model.partner;
 
-import com.google.auto.value.AutoValue;
+import org.immutables.value.Value;
 
-@AutoValue
-public abstract class Institution {
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@Value.Immutable
+@JsonSerialize(as = ImmutableInstitution.class)
+@JsonDeserialize(as = ImmutableInstitution.class)
+public interface Institution {
 
   public static Institution of(String code, String displayName) {
-    return new AutoValue_Institution.Builder().code(code).displayName(displayName).build();
+    return ImmutableInstitution.builder().code(code).displayName(displayName).build();
   }
 
-  @AutoValue.Builder
-  public abstract static class Builder {
-    public abstract Builder code(String code);
+  String getCode();
 
-    public abstract Builder displayName(String displayName);
-
-    public abstract Institution build();
-  }
-
-  public abstract String getCode();
-
-  public abstract String getDisplayName();
+  String getDisplayName();
 
 }
